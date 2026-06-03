@@ -24,7 +24,7 @@ const barlow = Barlow({
 });
 
 export const metadata = {
-  title: "Ashes Between Us",
+  title: "Client",
   description: "An apocalyptic butterfly-effect RPG. Your future self is trying to reach you.",
 };
 
