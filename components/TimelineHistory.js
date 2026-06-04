@@ -46,6 +46,12 @@ export default function TimelineHistory({ attempts }) {
               {attempt.scenarioTitle ?? "Unknown Scenario"}
             </h3>
 
+            {attempt.avatarName && (
+              <p className="font-mono text-[9px] tracking-[0.2em] text-[#4ECDC4] uppercase mb-2">
+                {attempt.avatarName}
+              </p>
+            )}
+
             <p className="text-sm text-[#6B6558] font-light leading-snug mb-3">
               {attempt.choiceText ?? attempt.outcome}
             </p>
