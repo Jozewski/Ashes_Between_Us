@@ -375,7 +375,17 @@ export default function GamePage() {
       {/* ── Body ── */}
       {selectedChoice ? (
         /* Outcome view */
-        <OutcomeCard choice={selectedChoice} onContinue={handleContinue} />
+        <div
+          className="flex-1 grid place-items-center"
+          style={{
+            paddingLeft: "clamp(16px, 4vw, 40px)",
+            paddingRight: "clamp(16px, 4vw, 40px)",
+            paddingTop: "clamp(16px, 3vh, 28px)",
+            paddingBottom: "clamp(16px, 3vh, 28px)",
+          }}
+        >
+          <OutcomeCard choice={selectedChoice} onContinue={handleContinue} />
+        </div>
       ) : (
         /* Scenario + choices view */
         <div
