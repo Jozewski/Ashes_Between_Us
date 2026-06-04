@@ -1,6 +1,6 @@
 // components/ScenarioCard.js
 
-export default function ScenarioCard({ scenario, scenarioIndex }) {
+export default function ScenarioCard({ scenario, scenarioIndex, imageHeightClass = "h-[220px]" }) {
   return (
     <div className="flex flex-col gap-4">
 
@@ -19,9 +19,8 @@ export default function ScenarioCard({ scenario, scenarioIndex }) {
 
       {/* Scene image */}
       <div
-        className="w-full relative overflow-hidden flex items-center justify-center"
+        className={`w-full relative overflow-hidden flex items-center justify-center ${imageHeightClass}`}
         style={{
-          height: 160,
           background:
             scenario.imageUrl
               ? `linear-gradient(to bottom, transparent 40%, #1A1814 100%), url(${scenario.imageUrl}) center/cover`

@@ -1,7 +1,9 @@
 // components/ChoiceButton.js
 "use client";
 
-const KEYS = ["A", "B", "C"];
+const KEYS = ["A", "B", "C", "D", "E", "F"
+
+];
 
 function StatTag({ label, value }) {
   const isPos = value > 0;
@@ -22,7 +24,7 @@ function StatTag({ label, value }) {
 }
 
 export default function ChoiceButton({ choice, index, onClick, disabled }) {
-  const letter = KEYS[index] ?? String(index + 1);
+  const letter = KEYS[index] ?? String(index);
 
   return (
     <button
