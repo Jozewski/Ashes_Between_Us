@@ -331,38 +331,44 @@ export default function GamePage() {
 
       {/* ── Header ── */}
       <header
-        className="flex items-center justify-between px-6 py-4 flex-shrink-0"
-        style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}
+        className="py-4 flex-shrink-0"
+        style={{
+          borderBottom: "1px solid rgba(255,255,255,0.06)",
+          paddingLeft: "clamp(16px, 4vw, 72px)",
+          paddingRight: "clamp(16px, 4vw, 72px)",
+        }}
       >
-        <div className="flex items-center gap-4">
-          <Link href="/" className="font-display text-lg tracking-[0.1em] text-[#4ECDC4]">
-            ASHES BETWEEN US
-          </Link>
-          <span className="font-mono text-[9px] tracking-[0.2em] text-[#6B6558] uppercase">
-            {selectedAvatar.name}
-          </span>
-          <button
-            onClick={handleChangeAvatar}
-            className="font-mono text-[9px] tracking-[0.2em] text-[#6B6558] uppercase hover:text-[#4ECDC4] transition-colors"
-          >
-            ∷ Change avatar
-          </button>
-        </div>
-        <div className="flex items-center gap-4">
-          <label className="flex items-center gap-2">
-            <span className="font-mono text-[9px] tracking-[0.2em] text-[#6B6558] uppercase whitespace-nowrap">
-              Username
+        <div className="w-full max-w-[1480px] mx-auto flex flex-col gap-3 xl:flex-row xl:items-center xl:justify-between">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <Link href="/" className="font-display text-lg tracking-[0.1em] text-[#4ECDC4]">
+              ASHES BETWEEN US
+            </Link>
+            <span className="font-mono text-[9px] tracking-[0.2em] text-[#6B6558] uppercase">
+              {selectedAvatar.name}
             </span>
-            <input
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              placeholder="Traveler"
-              maxLength={18}
-              className="bg-transparent px-2 py-1 text-sm text-[#F0EAD6] outline-none"
-              style={{ border: "1px solid rgba(255,255,255,0.12)" }}
-            />
-          </label>
-          <StatsPanel stats={stats} />
+            <button
+              onClick={handleChangeAvatar}
+              className="font-mono text-[9px] tracking-[0.2em] text-[#6B6558] uppercase hover:text-[#4ECDC4] transition-colors"
+            >
+              ∷ Change avatar
+            </button>
+          </div>
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+            <label className="flex items-center gap-2">
+              <span className="font-mono text-[9px] tracking-[0.2em] text-[#6B6558] uppercase whitespace-nowrap">
+                Username
+              </span>
+              <input
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                placeholder="Traveler"
+                maxLength={18}
+                className="bg-transparent px-2 py-1 text-sm text-[#F0EAD6] outline-none w-36"
+                style={{ border: "1px solid rgba(255,255,255,0.12)" }}
+              />
+            </label>
+            <StatsPanel stats={stats} />
+          </div>
         </div>
       </header>
 
@@ -372,47 +378,63 @@ export default function GamePage() {
         <OutcomeCard choice={selectedChoice} onContinue={handleContinue} />
       ) : (
         /* Scenario + choices view */
-        <div className="flex-1 flex flex-col gap-6 px-6 py-8 max-w-2xl mx-auto w-full">
+        <div
+          className="flex-1 w-full max-w-[1480px] mx-auto py-8"
+          style={{
+            paddingLeft: "clamp(16px, 4vw, 72px)",
+            paddingRight: "clamp(16px, 4vw, 72px)",
+          }}
+        >
+          <div className="grid gap-6 xl:grid-cols-12">
+            <div className="xl:col-span-8 flex flex-col gap-6">
+              <ScenarioCard
+                scenario={scenario}
+                scenarioIndex={scenarioIndex}
+                imageHeightClass="h-[220px] sm:h-[280px] xl:h-[340px]"
+              />
+            </div>
 
-          <ScenarioCard scenario={scenario} scenarioIndex={scenarioIndex} />
+            <div className="xl:col-span-4 flex flex-col">
+              <div>
+                <p className="font-mono text-[9px] tracking-[0.3em] text-[#6B6558] uppercase mb-3">
+                  Choose your action
+                </p>
+                <div className="flex flex-col gap-3">
+                  {availableChoices.map((choice, i) => (
+                    <ChoiceButton
+                      key={choice.id}
+                      choice={choice}
+                      index={i}
+                      onClick={handleChoice}
+                    />
+                  ))}
+                </div>
+              </div>
 
-          <FutureMessageCard
-            message={scenario.futureMsg}
-            futureImageUrl={selectedAvatar.futureImageUrl}
-            futureLabel={`${selectedAvatar.name} ∷ Future Self`}
-          />
+              {/* History link */}
+              <div className="pt-5 pb-4 mt-auto">
+                {saveMode === "local" && (
+                  <p className="font-mono text-[9px] tracking-[0.2em] text-[#6B6558] uppercase mb-3">
+                    Saving timeline locally until backend sync is available
+                  </p>
+                )}
+                <Link
+                  href="/history"
+                  className="font-mono text-[9px] tracking-[0.25em] text-[#6B6558] uppercase hover:text-[#4ECDC4] transition-colors"
+                >
+                  ∷ View timeline history
+                </Link>
+              </div>
+            </div>
 
-          <div>
-            <p className="font-mono text-[9px] tracking-[0.3em] text-[#6B6558] uppercase mb-3">
-              Choose your action
-            </p>
-            <div className="flex flex-col gap-3">
-              {availableChoices.map((choice, i) => (
-                <ChoiceButton
-                  key={choice.id}
-                  choice={choice}
-                  index={i}
-                  onClick={handleChoice}
-                />
-              ))}
+            <div className="xl:col-span-12">
+              <FutureMessageCard
+                message={scenario.futureMsg}
+                futureImageUrl={selectedAvatar.futureImageUrl}
+                futureLabel={`${selectedAvatar.name} ∷ Future Self`}
+              />
             </div>
           </div>
-
-          {/* History link */}
-          <div className="pt-2 pb-4">
-            {saveMode === "local" && (
-              <p className="font-mono text-[9px] tracking-[0.2em] text-[#6B6558] uppercase mb-3">
-                Saving timeline locally until backend sync is available
-              </p>
-            )}
-            <Link
-              href="/history"
-              className="font-mono text-[9px] tracking-[0.25em] text-[#6B6558] uppercase hover:text-[#4ECDC4] transition-colors"
-            >
-              ∷ View timeline history
-            </Link>
-          </div>
-
         </div>
       )}
     </div>
