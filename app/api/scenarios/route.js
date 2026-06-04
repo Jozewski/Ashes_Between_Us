@@ -18,10 +18,8 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 import { NextResponse } from "next/server";
+import { getAllScenarios } from "@/lib/scenarioGenerationService";
 
 export async function GET() {
-  return NextResponse.json(
-    { error: "Backend not connected yet — frontend is using mock data." },
-    { status: 501 }
-  );
+  return NextResponse.json(getAllScenarios());
 }

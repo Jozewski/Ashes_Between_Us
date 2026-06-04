@@ -14,10 +14,8 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 import { NextResponse } from "next/server";
+import { getAttemptHistory } from "@/lib/scenarioGenerationService";
 
 export async function GET() {
-  return NextResponse.json(
-    { error: "Backend not connected yet." },
-    { status: 501 }
-  );
+  return NextResponse.json(getAttemptHistory());
 }
