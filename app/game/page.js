@@ -499,6 +499,41 @@ export default function GamePage() {
         >
           <OutcomeCard choice={selectedChoice} onContinue={handleContinue} />
         </div>
+      ) : loadingScenario ? (
+        /* Between-turn loading screen */
+        <div className="flex-1 flex flex-col items-center justify-center gap-6 select-none"
+          style={{ background: "radial-gradient(ellipse at 50% 40%, rgba(78,205,196,0.07) 0%, transparent 65%)" }}>
+          {/* Animated scan lines */}
+          <div className="relative flex flex-col items-center gap-3">
+            <div className="flex gap-1.5 mb-2">
+              {[0, 1, 2, 3, 4].map((i) => (
+                <div
+                  key={i}
+                  className="w-0.5 bg-[#4ECDC4] rounded-full animate-pulse"
+                  style={{
+                    height: `${14 + (i % 3) * 8}px`,
+                    animationDelay: `${i * 120}ms`,
+                    animationDuration: "900ms",
+                    opacity: 0.6 + i * 0.08,
+                  }}
+                />
+              ))}
+            </div>
+            <p className="font-mono text-[9px] tracking-[0.45em] text-[#4ECDC4] uppercase animate-pulse">
+              Timeline diverging
+            </p>
+            <p
+              className="font-display text-[#F0EAD6] tracking-wide text-center"
+              style={{ fontSize: "clamp(26px, 5vw, 44px)" }}
+            >
+              TURN {turn + 1} OF {GAME_TURN_LIMIT}
+            </p>
+            <p className="font-mono text-[9px] tracking-[0.3em] text-[#6B6558] uppercase mt-1 animate-pulse"
+              style={{ animationDelay: "400ms" }}>
+              Calculating consequences…
+            </p>
+          </div>
+        </div>
       ) : (
         /* Scenario + choices view */
         <div
