@@ -10,7 +10,7 @@
           "title": "The Cartographer's Debt",
           "setting": "Three days into the ash belt, you find the body of another scout slumped against a road sign, frozen mid-sketch. Her map is better than yours — it marks a water cache your own charts call a dead zone. Her satchel also holds a child's drawing and a name. Taking the map means survival. It also means deciding what you owe the dead.",
           "futureMsg": "Future-you remembers this crossroads as the moment you learned that every map is written in someone else's footsteps. What you took here decided whether you walked the rest of the wastes as a thief or a steward.",
-          "imageUrl": "/images/backgrounds/ruined-city.png",
+          "imageUrl": "/images/backgrounds/bunker.png",
           "progressionBand": "early",
           "weight": 3,
           "choices": [
@@ -75,7 +75,7 @@
           "title": "What the Tower Saw",
           "setting": "The old fire-watch tower still has working optics. From its platform you can see two convoys converging on the same valley town at dusk — one flying relief colors, one flying none. They cannot see each other yet. By dawn, only one will hold the town. You have a radio, a rifle, and the only god's-eye view for fifty miles.",
           "futureMsg": "Future-you marks this dusk as the day you understood the weight of a high vantage. Knowing what's coming is its own kind of power — and refusing to use it is still a choice.",
-          "imageUrl": "/images/backgrounds/radio-tower.png",
+          "imageUrl": "/images/backgrounds/forest-safe-zone.png",
           "progressionBand": "mid",
           "weight": 2,
           "choices": [
@@ -140,7 +140,7 @@
           "title": "The Glass Orchard Trail",
           "setting": "A greenhouse district has collapsed into a glittering maze of cracked panels and wild fruit trees. The shortest path to the safe zone runs through the glass, but every step sings underfoot and something large keeps circling outside the panes.",
           "futureMsg": "Future-you remembers the orchard not for its fruit, but for the sound of patience. The path you chose decided whether the hungry followed you or the hunters did.",
-          "imageUrl": "/images/backgrounds/forest-safe-zone.png",
+          "imageUrl": "/images/backgrounds/ruined-city.png",
           "progressionBand": "early",
           "weight": 3,
           "choices": [
@@ -205,7 +205,7 @@
           "title": "Footprints That Walk Backward",
           "setting": "After a night of aurora static, you wake to find fresh footprints entering camp from every direction and none leaving. Each print is your size. Some are wet with seawater, though the coast is two days away.",
           "futureMsg": "Future-you says the wrong footprints were not a warning about enemies. They were a warning about which version of you had already passed this way.",
-          "imageUrl": "/images/skyscapes/aurora-winter-forest.png",
+          "imageUrl": "/images/skyscapes/aurora-mountain-storm.png",
           "progressionBand": "mid",
           "weight": 2,
           "choices": [
@@ -335,7 +335,7 @@
           "title": "The Town That Moved Overnight",
           "setting": "A valley settlement that was west of the river yesterday now stands east of it, chimneys smoking as if nothing happened. Your map argues with your eyes. The gate guard waves at you by name though you have never been here.",
           "futureMsg": "Future-you warns that the moved town was not asking to be solved. It was asking whether you could respect a place that survived by slipping sideways.",
-          "imageUrl": "/images/backgrounds/ruined-city.png",
+          "imageUrl": "/images/skyscapes/aurora-winter-forest.png",
           "progressionBand": "mid",
           "weight": 2,
           "choices": [
@@ -400,7 +400,7 @@
           "title": "Under the Singing Overpass",
           "setting": "Wind through the cracked highway overpass produces a low chord that changes when people lie beneath it. A refugee column waits there, accusing one another of stealing insulin and route papers while the bridge hums like a judge.",
           "futureMsg": "Future-you says the bridge never cared who was guilty. It cared who you became when the crowd begged you to make certainty out of noise.",
-          "imageUrl": "/images/backgrounds/desert-highway.png",
+          "imageUrl": "/images/backgrounds/radio-tower.png",
           "progressionBand": "mid",
           "weight": 3,
           "choices": [
@@ -465,7 +465,7 @@
           "title": "The Library of Wind Maps",
           "setting": "Inside a sand-packed university, weather maps hang from the ceiling and shift without hands. One map shows tomorrow’s dust storm, another shows a route through it, and a third is drawn in red ink over a settlement that has not called for help yet.",
           "futureMsg": "Future-you remembers choosing which future deserved warning first. A scout can outrun weather, but not consequence.",
-          "imageUrl": "/images/backgrounds/bunker.png",
+          "imageUrl": "/images/outcomes/ending-balanced-future.png",
           "progressionBand": "late",
           "weight": 2,
           "choices": [
@@ -530,7 +530,7 @@
           "title": "The Dog With Three Collars",
           "setting": "A scarred dog appears at dusk wearing three collars: one military, one handmade from ribbon, one stamped with the emblem of a raider pack. It refuses food but keeps looking back toward a drainage tunnel under the city.",
           "futureMsg": "Future-you says the dog was a question with teeth: do you follow loyalty, suspicion, or hunger when they all point underground?",
-          "imageUrl": "/images/backgrounds/ruined-city.png",
+          "imageUrl": "/images/skyscapes/aurora-coastal-beacon.png",
           "progressionBand": "any",
           "weight": 3,
           "choices": [
@@ -595,7 +595,7 @@
           "title": "Last Light on Needle Ridge",
           "setting": "The only pass through Needle Ridge closes at sunset when freezing fog fills the stone needles. From the crest you can see fires in three directions: your camp, a stranger camp, and a place where no camp existed yesterday.",
           "futureMsg": "Future-you whispers that the last light always shows more need than one person can answer. What matters is the rule you choose before darkness chooses for you.",
-          "imageUrl": "/images/skyscapes/aurora-mountain-storm.png",
+          "imageUrl": "/images/outcomes/ending-chaotic-future.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [

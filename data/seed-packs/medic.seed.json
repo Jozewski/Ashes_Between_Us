@@ -10,7 +10,7 @@
           "title": "The Fever Choir",
           "setting": "In an abandoned chapel clinic, thirty patients hum the same tune whenever their fever spikes. The melody matches a numbers station broadcasting from the ruined tower, and the sickest child hums tomorrow’s date between breaths.",
           "futureMsg": "Future-you remembers that the song was not madness. It was the body trying to translate danger before the mind could bear it.",
-          "imageUrl": "/images/backgrounds/bunker.png",
+          "imageUrl": "/images/backgrounds/ruined-city.png",
           "progressionBand": "early",
           "weight": 3,
           "choices": [
@@ -75,7 +75,7 @@
           "title": "The Red Inventory",
           "setting": "Your medical ledger shows six red marks beside supplies you have not used yet. By morning, each mark corresponds to a patient who arrives bleeding, burned, or poisoned. Someone or something is editing your inventory before the wounds happen.",
           "futureMsg": "Future-you says the red ledger tempted you to become a prophet. The timeline wanted a doctor instead.",
-          "imageUrl": "/images/backgrounds/bunker.png",
+          "imageUrl": "/images/backgrounds/desert-highway.png",
           "progressionBand": "early",
           "weight": 2,
           "choices": [
@@ -140,7 +140,7 @@
           "title": "The Mercy Engine",
           "setting": "A pre-collapse hospital machine still powers one surgical bay, but it speaks through canned announcement tones and refuses to operate unless you answer ethical prompts. Outside, five patients wait and the battery gauge keeps falling.",
           "futureMsg": "Future-you warns that the machine did not measure medical skill. It measured what you believed a life was worth when the plug was warm in your hand.",
-          "imageUrl": "/images/backgrounds/bunker.png",
+          "imageUrl": "/images/skyscapes/aurora-winter-forest.png",
           "progressionBand": "mid",
           "weight": 2,
           "choices": [
@@ -205,7 +205,7 @@
           "title": "Salt for the Sleepless",
           "setting": "The bunker’s children have stopped sleeping, drawing the same ocean on every wall. Their pulse rates sync whenever the old desalination pipes clatter below the floor. The adults ask for sedatives; the drawings show a door you never built.",
           "futureMsg": "Future-you remembers that exhaustion made cruelty sound practical. The cure was not rest. It was listening sideways.",
-          "imageUrl": "/images/backgrounds/bunker.png",
+          "imageUrl": "/images/backgrounds/radio-tower.png",
           "progressionBand": "mid",
           "weight": 3,
           "choices": [
@@ -270,7 +270,7 @@
           "title": "The Antivenom Wedding",
           "setting": "Two rival families arrive at your clinic with snakebite victims after a disastrous wedding hunt. You have enough antivenom for one full dose or two dangerous half doses. Each family claims the marriage treaty dies if their child does.",
           "futureMsg": "Future-you says you did not choose between lovers. You chose whether medicine would become another family weapon.",
-          "imageUrl": "/images/backgrounds/forest-safe-zone.png",
+          "imageUrl": "/images/skyscapes/aurora-coastal-beacon.png",
           "progressionBand": "any",
           "weight": 2,
           "choices": [
@@ -335,7 +335,7 @@
           "title": "The Borrowed Heartbeat",
           "setting": "A scavenged monitor in the maternity room begins playing a heartbeat from a patient who has not arrived yet. The rhythm falters whenever you move the emergency cot away from the east wall.",
           "futureMsg": "Future-you says the unborn future knocked softly that night. You almost mistook it for faulty wiring.",
-          "imageUrl": "/images/backgrounds/bunker.png",
+          "imageUrl": "/images/outcomes/ending-broken-future.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [
@@ -400,7 +400,7 @@
           "title": "Ash Lung Market",
           "setting": "A traveling bazaar arrives selling black filters woven from pre-collapse fabric. They work better than yours, but the merchants price them by years of service owed after recovery. Your ward coughs gray into cloth rags.",
           "futureMsg": "Future-you learned that a cure can still be a cage. Breathing is not freedom if every inhale is leased.",
-          "imageUrl": "/images/backgrounds/ruined-city.png",
+          "imageUrl": "/images/backgrounds/forest-safe-zone.png",
           "progressionBand": "mid",
           "weight": 2,
           "choices": [
@@ -465,7 +465,7 @@
           "title": "The Ward Beneath the Ice",
           "setting": "A frozen subway station holds survivors in suspended hypothermia, alive but slowing. You can thaw them one by one, but the power cells needed are also heating your current clinic through the coldest week of the year.",
           "futureMsg": "Future-you says the ice did not ask whether strangers mattered. It asked how far your circle could stretch before it snapped.",
-          "imageUrl": "/images/skyscapes/aurora-mountain-storm.png",
+          "imageUrl": "/images/outcomes/ending-rebuilding-future.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [
@@ -530,7 +530,7 @@
           "title": "The Mask That Chooses Voices",
           "setting": "A child wearing an antique plague mask speaks with the voices of patients you lost, naming symptoms before they appear. The mask cannot be removed without causing seizures, and the camp wants either an oracle or an exorcism.",
           "futureMsg": "Future-you warns that grief can wear a useful face. That does not make it holy, and it does not make it disposable.",
-          "imageUrl": "/images/backgrounds/ruined-city.png",
+          "imageUrl": "/images/skyscapes/aurora-lake-sunset.png",
           "progressionBand": "any",
           "weight": 2,
           "choices": [
@@ -595,7 +595,7 @@
           "title": "The Last Clean Needle",
           "setting": "At dawn, a convoy brings a vaccine sample that must be diluted with your last sterile needle set. The same kit is needed for emergency surgery on your oldest mentor, whose hands taught you every stitch you know.",
           "futureMsg": "Future-you says love made the room smaller. Duty made it unbearable. The person you saved shaped the healer you became.",
-          "imageUrl": "/images/backgrounds/bunker.png",
+          "imageUrl": "/images/outcomes/ending-balanced-future.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [

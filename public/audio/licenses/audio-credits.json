@@ -1,0 +1,119 @@
+[
+  {
+    "file": "music/start-screen.mp3",
+    "title": "",
+    "creator": "",
+    "source": "",
+    "license": "",
+    "requiresAttribution": false,
+    "notes": "Landing / start screen loop."
+  },
+  {
+    "file": "music/scenario-low-ruins.mp3",
+    "title": "",
+    "creator": "",
+    "source": "",
+    "license": "",
+    "requiresAttribution": false,
+    "notes": "Ruined-city scenarios (also default fallback)."
+  },
+  {
+    "file": "music/scenario-radio-tension.mp3",
+    "title": "",
+    "creator": "",
+    "source": "",
+    "license": "",
+    "requiresAttribution": false,
+    "notes": "Radio-tower scenarios."
+  },
+  {
+    "file": "music/scenario-bunker-dread.mp3",
+    "title": "",
+    "creator": "",
+    "source": "",
+    "license": "",
+    "requiresAttribution": false,
+    "notes": "Bunker scenarios."
+  },
+  {
+    "file": "music/scenario-chaos-percussion.mp3",
+    "title": "",
+    "creator": "",
+    "source": "",
+    "license": "",
+    "requiresAttribution": false,
+    "notes": "Desert-highway and aurora-mountain-storm scenarios."
+  },
+  {
+    "file": "music/scenario-forest-hope.mp3",
+    "title": "",
+    "creator": "",
+    "source": "",
+    "license": "",
+    "requiresAttribution": false,
+    "notes": "Forest-safe-zone scenarios."
+  },
+  {
+    "file": "music/scenario-timeline-mystery.mp3",
+    "title": "",
+    "creator": "",
+    "source": "",
+    "license": "",
+    "requiresAttribution": false,
+    "notes": "Aurora skyscape scenarios."
+  },
+  {
+    "file": "music/ending-balanced.mp3",
+    "title": "",
+    "creator": "",
+    "source": "",
+    "license": "",
+    "requiresAttribution": false,
+    "notes": "Balanced ending."
+  },
+  {
+    "file": "music/ending-broken.mp3",
+    "title": "",
+    "creator": "",
+    "source": "",
+    "license": "",
+    "requiresAttribution": false,
+    "notes": "Broken ending."
+  },
+  {
+    "file": "music/ending-chaotic.mp3",
+    "title": "",
+    "creator": "",
+    "source": "",
+    "license": "",
+    "requiresAttribution": false,
+    "notes": "Chaotic ending."
+  },
+  {
+    "file": "music/ending-rebuilding.mp3",
+    "title": "",
+    "creator": "",
+    "source": "",
+    "license": "",
+    "requiresAttribution": false,
+    "notes": "Rebuilding ending."
+  },
+  {
+    "file": "sfx/ui-click.wav",
+    "title": "",
+    "creator": "",
+    "source": "",
+    "license": "",
+    "requiresAttribution": false,
+    "notes": "UI click."
+  },
+  {
+    "file": "sfx/choice-confirm.wav",
+    "title": "",
+    "creator": "",
+    "source": "",
+    "license": "",
+    "requiresAttribution": false,
+    "notes": "Choice confirm."
+  }
+]

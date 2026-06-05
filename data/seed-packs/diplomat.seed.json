@@ -10,7 +10,7 @@
           "title": "The Salt Table",
           "setting": "Six factions meet around a cafeteria table covered in salt because no one trusts shared water. Each leader brought a different rumor about who poisoned the northern wells. Your cup is the only one nobody has touched.",
           "futureMsg": "Future-you says the first treaty was seasoned with fear. You did not need everyone to trust each other yet — only to trust the next sentence.",
-          "imageUrl": "/images/backgrounds/bunker.png",
+          "imageUrl": "/images/backgrounds/ruined-city.png",
           "progressionBand": "early",
           "weight": 3,
           "choices": [
@@ -75,7 +75,7 @@
           "title": "Flags in the Fog Market",
           "setting": "A foggy market uses colored flags instead of spoken language after a massacre began with a mistranslated greeting. Today, a child flies two forbidden colors together, and armed traders reach for knives.",
           "futureMsg": "Future-you remembers that translation is not finding the right word. It is building a room where the wrong word does not kill.",
-          "imageUrl": "/images/backgrounds/ruined-city.png",
+          "imageUrl": "/images/backgrounds/desert-highway.png",
           "progressionBand": "early",
           "weight": 2,
           "choices": [
@@ -140,7 +140,7 @@
           "title": "Wedding at the Broken Aqueduct",
           "setting": "Two settlements plan a marriage alliance beneath an aqueduct that both claim. The bride’s family brings seeds; the groom’s family brings pipe valves. A third faction arrives with evidence both gifts were stolen.",
           "futureMsg": "Future-you says the wedding could become a treaty, a theft trial, or a funeral. You were the hinge in the vows.",
-          "imageUrl": "/images/backgrounds/forest-safe-zone.png",
+          "imageUrl": "/images/backgrounds/radio-tower.png",
           "progressionBand": "mid",
           "weight": 2,
           "choices": [
@@ -205,7 +205,7 @@
           "title": "The Hostage Banquet",
           "setting": "A warlord invites you to dinner and seats hostages at every course: a farmer beside soup, a mechanic beside bread, a child beside dessert. Each concession you refuse costs someone food, warmth, or medicine.",
           "futureMsg": "Future-you says the banquet taught you that negotiation under cruelty can preserve life without blessing the table.",
-          "imageUrl": "/images/backgrounds/bunker.png",
+          "imageUrl": "/images/backgrounds/forest-safe-zone.png",
           "progressionBand": "mid",
           "weight": 2,
           "choices": [
@@ -335,7 +335,7 @@
           "title": "Constitution by Candlelift",
           "setting": "Three floors of a vertical settlement draft laws by raising candles in the open elevator shaft. Upper floors want defense spending; lower floors want sanitation; roof gardeners want seed rights. The lift jams between levels during the vote.",
           "futureMsg": "Future-you says democracy failed first as a pulley problem. Fixing the shaft did not fix the settlement unless everyone could see the flame.",
-          "imageUrl": "/images/backgrounds/bunker.png",
+          "imageUrl": "/images/skyscapes/aurora-mountain-storm.png",
           "progressionBand": "mid",
           "weight": 3,
           "choices": [
@@ -400,7 +400,7 @@
           "title": "The Trial of the Radio Ghost",
           "setting": "A voice on the radio has been impersonating dead leaders, urging settlements to break treaties. Captured equipment points toward an ally, but the voice also knows private words spoken at funerals.",
           "futureMsg": "Future-you says grief made people easy to command. Your task was not proving the dead silent, but helping the living stop obeying ghosts.",
-          "imageUrl": "/images/backgrounds/radio-tower.png",
+          "imageUrl": "/images/outcomes/ending-rebuilding-future.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [
@@ -465,7 +465,7 @@
           "title": "Neutral Road, Red Dust",
           "setting": "A road declared neutral by all factions now carries red dust that sticks only to weapon barrels. Refugees beg to use it, merchants demand escort rights, and commanders want to test whether the dust can identify treaty violations.",
           "futureMsg": "Future-you says neutrality is not an empty road. It is a road someone keeps sweeping even when everyone wants to march.",
-          "imageUrl": "/images/backgrounds/desert-highway.png",
+          "imageUrl": "/images/skyscapes/aurora-coastal-beacon.png",
           "progressionBand": "any",
           "weight": 2,
           "choices": [
@@ -530,7 +530,7 @@
           "title": "The Apology Vault",
           "setting": "An old bank vault contains recorded apologies from leaders who died before making them public. Releasing the files could heal families or reopen feuds. One apology names your settlement as beneficiary of stolen medicine.",
           "futureMsg": "Future-you says the past does not stay buried because it is old. It stays buried because someone profits from the ground staying flat.",
-          "imageUrl": "/images/backgrounds/bunker.png",
+          "imageUrl": "/images/outcomes/ending-balanced-future.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [
@@ -595,7 +595,7 @@
           "title": "Midnight at the Six Fires",
           "setting": "On the longest night, six camps light fires around a frozen lake, each waiting for someone else to cross first. The ice will hold until dawn. After that, the lake breaks and the season of raids begins again.",
           "futureMsg": "Future-you says peace never arrived as one big banner. It came as footsteps across bad ice, one suspicious campfire at a time.",
-          "imageUrl": "/images/skyscapes/aurora-lake-sunset.png",
+          "imageUrl": "/images/outcomes/ending-chaotic-future.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [

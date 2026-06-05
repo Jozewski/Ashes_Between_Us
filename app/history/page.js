@@ -5,12 +5,15 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import TimelineHistory from "@/components/TimelineHistory";
+import MuteButton from "@/components/MuteButton";
+import { useMusic } from "@/components/MusicProvider";
 import { deriveFutureStateFromStats } from "@/lib/outcomeEngine";
 import {
   generateEndingNarrative,
   deriveEndingState,
   calculateEndingScore,
 } from "@/lib/endingEngine";
+import { trackKeyForEnding } from "@/lib/endingAudioMap";
 
 const SESSION_USERNAME_KEY = "abu_username_v1";
 const SESSION_RUN_ID_KEY = "abu_run_id_v1";
@@ -20,6 +23,7 @@ function getLatestAttempt(attempts) {
 }
 
 export default function HistoryPage() {
+  const { playMusic } = useMusic();
   const [attempts, setAttempts] = useState([]);
   const [avatars, setAvatars] = useState([]);
   const [source, setSource] = useState("api");
@@ -131,6 +135,12 @@ export default function HistoryPage() {
     : deriveFutureStateFromStats(latestAttempt ?? {});
   const endingScore = finalStatValues ? calculateEndingScore(finalStatValues) : null;
 
+  // Play the ending track once we know the final state.
+  useEffect(() => {
+    if (loading || !finalStatValues) return;
+    playMusic(trackKeyForEnding(endingState));
+  }, [loading, endingState, finalStatValues, playMusic]);
+
   const futureImageUrl =
     latestAvatar?.futureImageByState?.[endingState] ??
     latestAvatar?.futureImageUrl ??
@@ -163,12 +173,15 @@ export default function HistoryPage() {
           <Link href="/" className="font-display text-lg tracking-[0.1em] text-[#4ECDC4]">
             ASHES BETWEEN US
           </Link>
-          <Link
-            href="/game"
-            className="font-mono text-[9px] tracking-[0.25em] text-[#6B6558] uppercase hover:text-[#4ECDC4] transition-colors"
-          >
-            ← Continue timeline
-          </Link>
+          <div className="flex items-center gap-4">
+            <MuteButton />
+            <Link
+              href="/game"
+              className="font-mono text-[9px] tracking-[0.25em] text-[#6B6558] uppercase hover:text-[#4ECDC4] transition-colors"
+            >
+              ← Continue timeline
+            </Link>
+          </div>
         </div>
       </header>
 

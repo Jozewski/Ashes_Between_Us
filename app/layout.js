@@ -1,6 +1,7 @@
 // app/layout.js
 import { Bebas_Neue, Share_Tech_Mono, Barlow } from "next/font/google";
 import "./globals.css";
+import { MusicProvider } from "@/components/MusicProvider";
 
 const bebasNeue = Bebas_Neue({
   weight: "400",
@@ -33,8 +34,11 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       className={`${bebasNeue.variable} ${shareTechMono.variable} ${barlow.variable}`}
+      suppressHydrationWarning
     >
-      <body className="font-body antialiased">{children}</body>
+      <body className="font-body antialiased" suppressHydrationWarning>
+        <MusicProvider>{children}</MusicProvider>
+      </body>
     </html>
   );
 }

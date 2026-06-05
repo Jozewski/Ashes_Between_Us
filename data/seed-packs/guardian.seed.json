@@ -10,7 +10,7 @@
           "title": "The Gate With No Hinges",
           "setting": "Your settlement’s main gate has warped shut after a heat storm, trapping guards outside with a raider scout approaching under a white cloth. Inside, frightened families beg you to keep the gate sealed no matter who knocks.",
           "futureMsg": "Future-you says the gate was not the test. The test was whether protection meant closing every door or standing in the doorway yourself.",
-          "imageUrl": "/images/backgrounds/forest-safe-zone.png",
+          "imageUrl": "/images/backgrounds/bunker.png",
           "progressionBand": "early",
           "weight": 3,
           "choices": [
@@ -75,7 +75,7 @@
           "title": "Orchard Mines in Spring",
           "setting": "Children discover old pressure mines beneath a blooming orchard just as a starving crowd gathers outside the fence. The fruit is almost ripe. One wrong step can turn spring into shrapnel.",
           "futureMsg": "Future-you remembers petals falling like snow over metal teeth. Protection that only guards fruit is just another kind of hunger.",
-          "imageUrl": "/images/backgrounds/forest-safe-zone.png",
+          "imageUrl": "/images/backgrounds/ruined-city.png",
           "progressionBand": "early",
           "weight": 2,
           "choices": [
@@ -140,7 +140,7 @@
           "title": "The Bell That Calls Wolves",
           "setting": "A school bell still hangs over the courtyard. Ringing it summons defenders from the walls, but it also draws a pack of mutated wolves that learned the sound means panic and meat. Smoke rises beyond the east ridge.",
           "futureMsg": "Future-you says alarms are promises. Break them too often and people stop running toward danger for one another.",
-          "imageUrl": "/images/backgrounds/ruined-city.png",
+          "imageUrl": "/images/skyscapes/aurora-mountain-storm.png",
           "progressionBand": "mid",
           "weight": 2,
           "choices": [
@@ -205,7 +205,7 @@
           "title": "Trial by Barricade",
           "setting": "A captured raider claims their warband is forcing children to carry explosives. Your council wants execution before sunset. Outside, refugees pound at the barricade demanding protection from the same raiders.",
           "futureMsg": "Future-you says justice under siege is still justice, or it becomes camouflage for fear.",
-          "imageUrl": "/images/backgrounds/ruined-city.png",
+          "imageUrl": "/images/skyscapes/aurora-winter-forest.png",
           "progressionBand": "mid",
           "weight": 3,
           "choices": [
@@ -270,7 +270,7 @@
           "title": "The Lantern Patrol",
           "setting": "Every night patrol carries one lantern. Tonight, six lanterns appear outside the wall, each burning with a different color. One belongs to a patrol that never returned, and one is lit with blue flame no one recognizes.",
           "futureMsg": "Future-you says you wanted the colors to tell you who deserved rescue. Colors only show where courage must start.",
-          "imageUrl": "/images/skyscapes/aurora-coastal-beacon.png",
+          "imageUrl": "/images/skyscapes/aurora-lake-sunset.png",
           "progressionBand": "any",
           "weight": 2,
           "choices": [
@@ -335,7 +335,7 @@
           "title": "The Arena of Canned Thunder",
           "setting": "Two settlements settle disputes in an old sports arena using nonlethal duels and thunderous drums. Your ally asks you to fight as their champion, but the losing side must surrender winter fuel.",
           "futureMsg": "Future-you remembers that you won the fight before realizing the rules were the wound.",
-          "imageUrl": "/images/backgrounds/ruined-city.png",
+          "imageUrl": "/images/backgrounds/radio-tower.png",
           "progressionBand": "mid",
           "weight": 2,
           "choices": [
@@ -400,7 +400,7 @@
           "title": "The White Flag Convoy",
           "setting": "A convoy approaches under white sheets tied to antennas, carrying wounded enemies and stolen grain. Your scouts confirm they are being chased by something worse. The gate can hold against either threat, not both.",
           "futureMsg": "Future-you says a white flag is not innocence. It is a request to be judged after the shooting stops.",
-          "imageUrl": "/images/backgrounds/desert-highway.png",
+          "imageUrl": "/images/outcomes/ending-chaotic-future.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [
@@ -465,7 +465,7 @@
           "title": "Winter Names on the Wall",
           "setting": "During the coldest week, citizens carve names into the inner wall: people they believe deserve food priority. Anonymous names begin appearing for exiles, prisoners, and enemies who once spared children.",
           "futureMsg": "Future-you says scarcity made lists feel like truth. The wall revealed that memory could be rationed too.",
-          "imageUrl": "/images/backgrounds/bunker.png",
+          "imageUrl": "/images/outcomes/ending-broken-future.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [
@@ -530,7 +530,7 @@
           "title": "The Quiet Mutiny",
           "setting": "Your night watch refuses orders after learning the council hid extra ammunition beneath the nursery floor. They do not raise weapons. They simply sit down at every stairwell and stop guarding anyone.",
           "futureMsg": "Future-you says mutiny without violence is still a message. How you answered decided whether command remained service or became ownership.",
-          "imageUrl": "/images/backgrounds/bunker.png",
+          "imageUrl": "/images/outcomes/ending-rebuilding-future.png",
           "progressionBand": "late",
           "weight": 2,
           "choices": [
@@ -595,7 +595,7 @@
           "title": "Last Stand at Mercy Road",
           "setting": "A canyon road called Mercy is the only route for evacuees before a firestorm. Raiders block the exit with shields made from road signs painted with names of people your settlement failed to save.",
           "futureMsg": "Future-you says the last stand was not about dying well. It was about deciding whether the road would remember mercy or revenge.",
-          "imageUrl": "/images/backgrounds/desert-highway.png",
+          "imageUrl": "/images/outcomes/ending-balanced-future.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [

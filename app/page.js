@@ -1,5 +1,5 @@
 // app/page.js
-import Link from "next/link";
+import StartTransmissionButton from "@/components/StartTransmissionButton";
 
 export const metadata = {
   title: "Ashes Between Us",
@@ -57,13 +57,7 @@ export default function LandingPage() {
         </p>
 
         {/* CTA */}
-        <Link
-          href="/game"
-          className="font-display text-lg tracking-[0.15em] text-[#1A1814] bg-[#4ECDC4] px-12 py-4 transition-all duration-200 hover:bg-[#F7C948] hover:scale-105 active:scale-100 animate-fade-up opacity-0 [animation-delay:1000ms] [animation-fill-mode:forwards]"
-          style={{ clipPath: "polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%)" }}
-        >
-          ⬡ START TRANSMISSION
-        </Link>
+        <StartTransmissionButton />
 
         {/* Warning strip */}
         <p className="mt-12 font-mono text-[10px] tracking-[0.25em] text-[#8B1A1A] animate-pulse animate-fade-up opacity-0 [animation-delay:1200ms] [animation-fill-mode:forwards]">
