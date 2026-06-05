@@ -17,7 +17,7 @@ export default function OutcomeCard({ choice, onContinue }) {
   ].filter((c) => c.val !== 0);
 
   return (
-    <div className="flex flex-col items-center text-center max-w-xl xl:max-w-2xl mx-auto w-full px-6 py-8 sm:py-10 xl:py-14">
+    <div className="flex flex-col items-center text-center max-w-xl xl:max-w-2xl mx-auto w-full px-4 py-6 pb-10 sm:px-6 sm:py-10 xl:py-14">
 
       <p className="font-mono text-[10px] xl:text-[11px] tracking-[0.3em] text-[#6B6558] uppercase mb-5 xl:mb-6">
         Timeline branch locked
@@ -63,11 +63,9 @@ export default function OutcomeCard({ choice, onContinue }) {
 
       <button
         onClick={onContinue}
-        className="font-display text-xl xl:text-3xl tracking-[0.15em] text-[#1A1814] bg-[#4ECDC4] py-6 xl:py-8 transition-all duration-200 hover:bg-[#F7C948] hover:scale-105 active:scale-100"
+        className="w-full max-w-sm font-display text-lg sm:text-xl xl:text-3xl tracking-[0.12em] sm:tracking-[0.15em] text-[#1A1814] bg-[#4ECDC4] px-6 py-4 sm:px-12 sm:py-6 xl:px-20 xl:py-8 transition-all duration-200 hover:bg-[#F7C948] hover:scale-105 active:scale-100"
         style={{
           clipPath: "polygon(14px 0%, 100% 0%, calc(100% - 14px) 100%, 0% 100%)",
-          paddingLeft: "5rem",
-          paddingRight: "5rem",
         }}
       >
         CONTINUE TIMELINE

@@ -1,21 +1,21 @@
 // app/history/page.js
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
-import TimelineHistory from "@/components/TimelineHistory";
+import FinalResultsPanel from "@/components/final-results/FinalResultsPanel";
 import MuteButton from "@/components/MuteButton";
 import { useMusic } from "@/components/MusicProvider";
 import { deriveFutureStateFromStats } from "@/lib/outcomeEngine";
 import {
-  generateEndingNarrative,
-  deriveEndingState,
   calculateEndingScore,
+  deriveEndingState,
+  generateEndingNarrative,
 } from "@/lib/endingEngine";
 import { trackKeyForEnding } from "@/lib/endingAudioMap";
 
+const LOCAL_AVATAR_KEY = "abu_avatar_v1";
 const SESSION_USERNAME_KEY = "abu_username_v1";
 const SESSION_RUN_ID_KEY = "abu_run_id_v1";
 
@@ -23,15 +23,13 @@ function getLatestAttempt(attempts) {
   return Array.isArray(attempts) && attempts.length > 0 ? attempts[0] : null;
 }
 
-const LOCAL_AVATAR_KEY = "abu_avatar_v1";
-
 function handleNewGame(router) {
   if (typeof window !== "undefined") {
     window.localStorage.removeItem(LOCAL_AVATAR_KEY);
     window.sessionStorage.removeItem(SESSION_RUN_ID_KEY);
     window.sessionStorage.removeItem(SESSION_USERNAME_KEY);
   }
-  // Start fresh from the opening screen, not the avatar picker.
+
   router.push("/");
 }
 
@@ -41,7 +39,7 @@ export default function HistoryPage() {
   const [attempts, setAttempts] = useState([]);
   const [avatars, setAvatars] = useState([]);
   const [source, setSource] = useState("api");
-  const [loading, setLoading]   = useState(true);
+  const [loading, setLoading] = useState(true);
   const [playerProfile, setPlayerProfile] = useState(null);
   const [loadError, setLoadError] = useState("");
 
@@ -56,6 +54,7 @@ export default function HistoryPage() {
         setAvatars([]);
       }
     }
+
     loadAvatars();
   }, []);
 
@@ -83,6 +82,7 @@ export default function HistoryPage() {
         setLoading(false);
       }
     }
+
     load();
   }, []);
 
@@ -147,18 +147,19 @@ export default function HistoryPage() {
   const endingState = finalStatValues
     ? deriveEndingState(finalStatValues)
     : deriveFutureStateFromStats(latestAttempt ?? {});
-  const endingScore = finalStatValues ? calculateEndingScore(finalStatValues) : null;
-
-  // Play the ending track once we know the final state.
-  useEffect(() => {
-    if (loading || !finalStatValues) return;
-    playMusic(trackKeyForEnding(endingState));
-  }, [loading, endingState, finalStatValues, playMusic]);
-
+  const endingScore = finalStatValues
+    ? calculateEndingScore(finalStatValues)
+    : null;
   const futureImageUrl =
     latestAvatar?.futureImageByState?.[endingState] ??
     latestAvatar?.futureImageUrl ??
     null;
+  const endingTrackKey = finalStatValues ? trackKeyForEnding(endingState) : null;
+
+  useEffect(() => {
+    if (!endingTrackKey) return;
+    playMusic(endingTrackKey);
+  }, [endingTrackKey, playMusic]);
 
   const finalStats = latestAttempt
     ? [
@@ -171,275 +172,69 @@ export default function HistoryPage() {
 
   return (
     <div
-      className="min-h-screen flex flex-col bg-[#1A1814]"
-      style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(139,26,26,0.15) 0%, transparent 55%), #1A1814" }}
+      className="min-h-screen bg-[#1A1814]"
+      style={{
+        background:
+          "radial-gradient(ellipse at 50% 0%, rgba(139,26,26,0.15) 0%, transparent 55%), #1A1814",
+      }}
     >
-      {/* Header */}
       <header
         className="py-4"
         style={{
           borderBottom: "1px solid rgba(255,255,255,0.06)",
-          paddingLeft: "clamp(28px, 5vw, 96px)",
-          paddingRight: "clamp(28px, 5vw, 96px)",
+          paddingLeft: "clamp(18px, 5vw, 96px)",
+          paddingRight: "clamp(18px, 5vw, 96px)",
         }}
       >
-        <div className="w-full max-w-[1500px] mx-auto flex items-center justify-between">
-          <Link href="/" className="font-display text-lg tracking-[0.1em] text-[#4ECDC4]">
+        <div className="mx-auto flex w-full max-w-[1500px] flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <Link
+            href="/"
+            className="font-display text-lg tracking-[0.1em] text-[#4ECDC4]"
+          >
             ASHES BETWEEN US
           </Link>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-4">
             <MuteButton />
             <Link
               href="/game"
-              className="font-mono text-[9px] tracking-[0.25em] text-[#6B6558] uppercase hover:text-[#4ECDC4] transition-colors"
+              className="font-mono text-[9px] tracking-[0.25em] text-[#6B6558] uppercase transition-colors hover:text-[#4ECDC4]"
             >
-              ← Continue timeline
+              Continue timeline
             </Link>
             <button
+              type="button"
               onClick={() => handleNewGame(router)}
-              className="font-mono text-[9px] tracking-[0.25em] text-[#1A1814] bg-[#4ECDC4] px-4 py-2 uppercase hover:bg-[#F7C948] transition-colors"
+              className="bg-[#4ECDC4] px-4 py-2 font-mono text-[9px] tracking-[0.25em] text-[#1A1814] uppercase transition-colors hover:bg-[#F7C948]"
             >
-              ↺ New game
+              New game
             </button>
           </div>
         </div>
       </header>
 
-      {/* Body */}
       <div
-        className="flex-1 w-full max-w-[1500px] mx-auto py-10"
+        className="mx-auto w-full max-w-[1500px] py-6 sm:py-10"
         style={{
-          paddingLeft: "clamp(28px, 5vw, 96px)",
-          paddingRight: "clamp(28px, 5vw, 96px)",
+          paddingLeft: "clamp(18px, 5vw, 96px)",
+          paddingRight: "clamp(18px, 5vw, 96px)",
+          paddingBottom: "max(40px, env(safe-area-inset-bottom))",
         }}
       >
-        <div className="grid gap-8 lg:grid-cols-3 items-stretch">
-          <aside className="flex flex-col gap-4 h-full justify-between">
-            <div>
-              <p className="font-mono text-[10px] tracking-[0.3em] text-[#6B6558] uppercase mb-2">
-                Backstory archive
-              </p>
-              <h1
-                className="font-display tracking-wide text-[#F0EAD6] mb-4"
-                style={{ fontSize: "clamp(30px, 4vw, 44px)" }}
-              >
-                {playerProfile?.profileTitle ?? "WHY YOU WERE HERE"}
-              </h1>
-            </div>
-
-            {latestAvatar && (
-              <div className="relative w-full aspect-[3/4] overflow-hidden border border-white/10 bg-black/20">
-                <Image
-                  src={latestAvatar.imageUrl}
-                  alt={latestAvatar.name}
-                  fill
-                  sizes="(max-width: 1280px) 100vw, 360px"
-                  className="object-contain object-center p-2"
-                />
-                <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
-                  <p className="font-mono text-[9px] tracking-[0.25em] text-[#4ECDC4] uppercase">
-                    {latestAvatar.trait}
-                  </p>
-                  <p className="font-display text-xl text-[#F0EAD6] tracking-wide leading-none">
-                    {latestAvatar.name}
-                  </p>
-                </div>
-              </div>
-            )}
-
-            <div className="p-4 border border-white/10 bg-white/3">
-              <p className="font-mono text-[9px] tracking-[0.25em] text-[#4ECDC4] uppercase mb-2">
-                Bio
-              </p>
-              <p className="text-sm text-[#6B6558] leading-relaxed">
-                {playerProfile?.bio ?? "Play through a few branches to generate a custom player bio from your timeline choices."}
-              </p>
-            </div>
-
-            <div className="p-4 border border-white/10 bg-white/3">
-              <p className="font-mono text-[9px] tracking-[0.25em] text-[#4ECDC4] uppercase mb-2">
-                Backstory
-              </p>
-              <p className="text-sm text-[#6B6558] leading-relaxed">
-                {playerProfile?.backstory ??
-                  latestAvatar?.backstory ??
-                  "Your backstory will be populated by the AI profile engine using avatar context, stat trajectory, and recent choices."}
-              </p>
-            </div>
-
-            <div className="p-4 border border-white/10 bg-white/3">
-              <p className="font-mono text-[9px] tracking-[0.25em] text-[#4ECDC4] uppercase mb-2">
-                Future notes
-              </p>
-              <ul className="space-y-2 text-sm text-[#6B6558] leading-relaxed list-disc pl-4">
-                {(playerProfile?.futureNotes ?? [
-                  "Finish one full scenario chain to seed the profile system.",
-                  "Your stat direction will shape this panel dynamically.",
-                  "Future warnings become more specific with more choices.",
-                ]).map((note) => (
-                  <li key={note}>{note}</li>
-                ))}
-              </ul>
-            </div>
-          </aside>
-
-          <section className="flex flex-col h-full">
-            <p className="font-mono text-[10px] tracking-[0.3em] text-[#6B6558] uppercase mb-2">
-              Timeline record
-            </p>
-            <h2
-              className="font-display tracking-wide text-[#F0EAD6] mb-8 xl:mb-4"
-              style={{ fontSize: "clamp(32px, 6vw, 48px)" }}
-            >
-              YOUR CHOICES
-            </h2>
-
-            {!loading && source === "none" && loadError && (
-              <p className="font-mono text-[9px] tracking-[0.2em] text-[#6B6558] uppercase mb-4">
-                {loadError}
-              </p>
-            )}
-
-            <div className="flex-1">
-              {loading ? (
-                <p className="font-mono text-[10px] tracking-[0.3em] text-[#6B6558] uppercase animate-pulse">
-                  Loading timeline…
-                </p>
-              ) : (
-                <TimelineHistory attempts={attempts} />
-              )}
-            </div>
-          </section>
-
-          <aside className="flex flex-col gap-4 h-full justify-between">
-            {endingNarrative && (
-              <div className="p-4 border border-[#4ECDC4]/30 bg-[#4ECDC4]/5">
-                <div className="flex items-center gap-3 mb-2">
-                  <span className="text-3xl leading-none">{endingNarrative.icon}</span>
-                  <div>
-                    <p className="font-display text-xl text-[#F0EAD6] tracking-wide leading-none">
-                      {endingNarrative.title}
-                    </p>
-                    <p className="font-mono text-[9px] tracking-[0.2em] text-[#6B6558] uppercase mt-1">
-                      {endingState}
-                      {endingScore !== null ? ` ∷ Score ${endingScore}` : ""}
-                    </p>
-                  </div>
-                </div>
-                <p className="text-sm text-[#D4C5A0] font-light leading-relaxed">
-                  {endingNarrative.narrative}
-                </p>
-              </div>
-            )}
-
-            <div className="p-4 border border-white/10 bg-white/3">
-              <p className="font-mono text-[9px] tracking-[0.25em] text-[#4ECDC4] uppercase mb-2">
-                Future self
-              </p>
-              {latestAvatar ? (
-                <div>
-                  <p className="font-display text-[#F0EAD6] tracking-wide text-lg leading-none">
-                    {latestAvatar.name}
-                  </p>
-                  <p className="font-mono text-[9px] tracking-[0.2em] text-[#6B6558] uppercase mt-1">
-                    {latestAvatar.trait} ∷ {endingState}
-                  </p>
-                </div>
-              ) : (
-                <p className="text-sm text-[#6B6558] leading-relaxed">
-                  Select an avatar and play a few scenarios to populate this panel.
-                </p>
-              )}
-            </div>
-
-            {finalStats && (
-              <div className="p-4 border border-white/10 bg-white/3">
-                <p className="font-mono text-[9px] tracking-[0.2em] text-[#6B6558] uppercase mb-3">
-                  Final stats
-                </p>
-                <div className="grid grid-cols-2 gap-3">
-                  {finalStats.map(({ label, value, color }) => (
-                    <div key={label}>
-                      <p className="font-mono text-[8px] tracking-[0.15em] text-[#6B6558] uppercase mb-1">
-                        {label}
-                      </p>
-                      <div
-                        className="relative h-1.5 bg-[rgba(255,255,255,0.05)] mb-1"
-                        style={{ borderRadius: "1px" }}
-                      >
-                        <div
-                          className="h-full transition-all duration-300"
-                          style={{
-                            width: `${value}%`,
-                            backgroundColor: color,
-                            boxShadow: `0 0 8px ${color}`,
-                          }}
-                        />
-                      </div>
-                      <p
-                        className="font-display text-lg tracking-wide"
-                        style={{ color }}
-                      >
-                        {value}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            <div className="p-4 border border-white/10 bg-white/3 flex-1 flex flex-col">
-              <p className="font-mono text-[9px] tracking-[0.25em] text-[#4ECDC4] uppercase mb-2">
-                Future state
-              </p>
-              <div className="relative w-full flex-1 min-h-[260px] overflow-hidden border border-white/10">
-                {futureImageUrl && (
-                  <Image
-                    src={futureImageUrl}
-                    alt={`Future state: ${endingState}`}
-                    fill
-                    sizes="(max-width: 1280px) 100vw, 360px"
-                    className="object-cover"
-                  />
-                )}
-              </div>
-            </div>
-
-            <div className="p-4 border border-white/10 bg-white/3">
-              <p className="font-mono text-[9px] tracking-[0.25em] text-[#4ECDC4] uppercase mb-2">
-                Latest branch
-              </p>
-              {latestAttempt ? (
-                <p className="text-sm text-[#D4C9A8] leading-relaxed">
-                  {latestAttempt.choiceText ?? latestAttempt.outcome}
-                </p>
-              ) : (
-                <p className="text-sm text-[#6B6558] leading-relaxed">
-                  No timeline branch yet.
-                </p>
-              )}
-            </div>
-
-            {/* ── Restart CTA ── */}
-            <div className="p-5 border border-[#4ECDC4]/30 bg-[#4ECDC4]/5 flex flex-col gap-3">
-              <p className="font-mono text-[9px] tracking-[0.25em] text-[#4ECDC4] uppercase">
-                Timeline complete
-              </p>
-              <button
-                onClick={() => handleNewGame(router)}
-                className="w-full font-display text-sm tracking-[0.12em] text-[#1A1814] bg-[#4ECDC4] px-4 py-3 transition-all duration-200 hover:bg-[#F7C948] active:scale-95"
-                style={{ clipPath: "polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%)" }}
-              >
-                ↺ NEW TIMELINE
-              </button>
-              <Link href="/game" className="block">
-                <button className="w-full font-mono text-[9px] tracking-[0.15em] text-[#6B6558] border border-white/10 px-4 py-2 transition-colors duration-200 hover:text-[#4ECDC4] hover:border-[#4ECDC4]/40">
-                  CONTINUE CURRENT RUN
-                </button>
-              </Link>
-            </div>
-          </aside>
-        </div>
+        <FinalResultsPanel
+          attempts={attempts}
+          loading={loading}
+          source={source}
+          loadError={loadError}
+          playerProfile={playerProfile}
+          latestAvatar={latestAvatar}
+          latestAttempt={latestAttempt}
+          endingNarrative={endingNarrative}
+          endingState={endingState}
+          endingScore={endingScore}
+          finalStats={finalStats}
+          futureImageUrl={futureImageUrl}
+          onNewGame={() => handleNewGame(router)}
+        />
       </div>
     </div>
   );

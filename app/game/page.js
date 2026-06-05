@@ -113,7 +113,6 @@ export default function GamePage() {
     selectedAvatar?.futureImageUrl ??
     null;
 
-  // Background music follows the scenario's background image.
   useEffect(() => {
     if (!scenario?.imageUrl) return;
     playMusic(trackKeyForImage(scenario.imageUrl));
@@ -489,12 +488,12 @@ export default function GamePage() {
       {selectedChoice ? (
         /* Outcome view */
         <div
-          className="flex-1 grid place-items-center"
+          className="flex-1 grid items-start justify-items-center overflow-y-auto"
           style={{
             paddingLeft: "clamp(16px, 4vw, 40px)",
             paddingRight: "clamp(16px, 4vw, 40px)",
             paddingTop: "clamp(16px, 3vh, 28px)",
-            paddingBottom: "clamp(16px, 3vh, 28px)",
+            paddingBottom: "max(32px, env(safe-area-inset-bottom))",
           }}
         >
           <OutcomeCard choice={selectedChoice} onContinue={handleContinue} />
@@ -537,14 +536,15 @@ export default function GamePage() {
       ) : (
         /* Scenario + choices view */
         <div
-          className="flex-1 w-full max-w-[1480px] mx-auto py-8"
+          className="flex-1 w-full max-w-[1480px] mx-auto py-6 pb-10 sm:py-8"
           style={{
             paddingLeft: "clamp(16px, 4vw, 72px)",
             paddingRight: "clamp(16px, 4vw, 72px)",
+            paddingBottom: "max(40px, env(safe-area-inset-bottom))",
           }}
         >
-          <div className="grid gap-6 xl:grid-cols-12">
-            <div className="xl:col-span-8 flex flex-col gap-6">
+          <div className="grid gap-5 xl:grid-cols-12">
+            <div className="xl:col-span-8 flex flex-col gap-4">
               <ScenarioCard
                 scenario={scenario}
                 scenarioIndex={turn - 1}
@@ -557,7 +557,7 @@ export default function GamePage() {
                 <p className="font-mono text-[9px] tracking-[0.3em] text-[#6B6558] uppercase mb-3">
                   Choose your action
                 </p>
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-2.5">
                   {availableChoices.map((choice, i) => (
                     <ChoiceButton
                       key={choice.id}

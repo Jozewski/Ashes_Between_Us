@@ -2,7 +2,7 @@
 
 export default function ScenarioCard({ scenario, scenarioIndex, imageHeightClass = "h-[220px]" }) {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-3.5">
 
       {/* Tag + title */}
       <div>
@@ -36,7 +36,7 @@ export default function ScenarioCard({ scenario, scenarioIndex, imageHeightClass
       </div>
 
       {/* Setting text */}
-      <p className="text-sm text-[#6B6558] font-light leading-relaxed">
+      <p className="text-base text-[#8F856D] font-light leading-relaxed">
         {scenario.setting}
       </p>
 
