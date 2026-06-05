@@ -10,6 +10,9 @@ import FutureMessageCard from "@/components/FutureMessageCard";
 import ScenarioCard from "@/components/ScenarioCard";
 import ChoiceButton from "@/components/ChoiceButton";
 import OutcomeCard from "@/components/OutcomeCard";
+import MuteButton from "@/components/MuteButton";
+import { useMusic } from "@/components/MusicProvider";
+import { trackKeyForImage } from "@/lib/sceneAudioMap";
 import { INITIAL_STATS } from "@/lib/mockData";
 import { deriveFutureStateFromStats } from "@/lib/outcomeEngine";
 
@@ -90,6 +93,7 @@ function applyRoleBonus(choice, avatarId) {
 // ─── page ──────────────────────────────────────────────────────
 export default function GamePage() {
   const router = useRouter();
+  const { playMusic } = useMusic();
   const [scenario, setScenario] = useState(null);
   const [turn, setTurn] = useState(1);
   const [stats, setStats]               = useState(INITIAL_STATS);
@@ -108,6 +112,12 @@ export default function GamePage() {
     selectedAvatar?.futureImageByState?.[futureState] ??
     selectedAvatar?.futureImageUrl ??
     null;
+
+  // Background music follows the scenario's background image.
+  useEffect(() => {
+    if (!scenario?.imageUrl) return;
+    playMusic(trackKeyForImage(scenario.imageUrl));
+  }, [scenario?.imageUrl, playMusic]);
 
   useEffect(() => {
     if (didHardRefresh()) {
@@ -454,6 +464,7 @@ export default function GamePage() {
             >
               ∷ Change avatar
             </button>
+            <MuteButton />
           </div>
           <div className="flex flex-wrap items-center gap-3 sm:gap-4">
             <label className="flex items-center gap-2">

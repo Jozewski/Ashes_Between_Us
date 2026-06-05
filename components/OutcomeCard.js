@@ -63,10 +63,14 @@ export default function OutcomeCard({ choice, onContinue }) {
 
       <button
         onClick={onContinue}
-        className="font-display text-lg xl:text-2xl tracking-[0.15em] text-[#1A1814] bg-[#4ECDC4] px-11 py-4 xl:px-14 xl:py-5 transition-all duration-200 hover:bg-[#F7C948] hover:scale-105 active:scale-100"
-        style={{ clipPath: "polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%)" }}
+        className="font-display text-xl xl:text-3xl tracking-[0.15em] text-[#1A1814] bg-[#4ECDC4] py-6 xl:py-8 transition-all duration-200 hover:bg-[#F7C948] hover:scale-105 active:scale-100"
+        style={{
+          clipPath: "polygon(14px 0%, 100% 0%, calc(100% - 14px) 100%, 0% 100%)",
+          paddingLeft: "5rem",
+          paddingRight: "5rem",
+        }}
       >
-        CONTINUE TIMELINE →
+        CONTINUE TIMELINE
       </button>
 
     </div>
