@@ -31,7 +31,8 @@ function handleNewGame(router) {
     window.sessionStorage.removeItem(SESSION_RUN_ID_KEY);
     window.sessionStorage.removeItem(SESSION_USERNAME_KEY);
   }
-  router.push("/game");
+  // Start fresh from the opening screen, not the avatar picker.
+  router.push("/");
 }
 
 export default function HistoryPage() {
