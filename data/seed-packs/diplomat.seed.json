@@ -1,0 +1,661 @@
+{
+  "packId": "diplomat-v3",
+  "version": "3.0.0",
+  "avatars": [
+    {
+      "avatarId": "diplomat",
+      "scenarios": [
+        {
+          "id": "diplomat-001",
+          "title": "The Salt Table",
+          "setting": "Six factions meet around a cafeteria table covered in salt because no one trusts shared water. Each leader brought a different rumor about who poisoned the northern wells. Your cup is the only one nobody has touched.",
+          "futureMsg": "Future-you says the first treaty was seasoned with fear. You did not need everyone to trust each other yet — only to trust the next sentence.",
+          "imageUrl": "/images/backgrounds/bunker.png",
+          "progressionBand": "early",
+          "weight": 3,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Drink from your cup first and invite testing.",
+              "outcome": "Your visible risk cracks the room open. The water is clean, and accusations lose some of their teeth.",
+              "hopeChange": 5,
+              "trustChange": 6,
+              "chaosChange": -4,
+              "humanityChange": 5
+            },
+            {
+              "id": "b",
+              "text": "Ban all rumors unless paired with evidence.",
+              "outcome": "The table grows colder but clearer. Leaders dislike discipline until it protects them from their own panic.",
+              "hopeChange": 3,
+              "trustChange": 5,
+              "chaosChange": -5,
+              "humanityChange": 3
+            },
+            {
+              "id": "c",
+              "text": "Let every leader accuse one rival without interruption.",
+              "outcome": "Old hatred floods the room, then exhausts itself. You learn valuable patterns, though tempers scorch the treaty draft.",
+              "hopeChange": 2,
+              "trustChange": 2,
+              "chaosChange": 5,
+              "humanityChange": 1
+            },
+            {
+              "id": "d",
+              "text": "Trade salt rights for shared well patrols.",
+              "outcome": "A practical bargain forms before friendship does. The patrols become the treaty’s first muscles.",
+              "hopeChange": 5,
+              "trustChange": 6,
+              "chaosChange": -3,
+              "humanityChange": 4
+            },
+            {
+              "id": "e",
+              "text": "Secretly identify the weakest faction and bargain around them.",
+              "outcome": "The deal moves faster without their objections. It also teaches the room that exclusion is efficient.",
+              "hopeChange": 3,
+              "trustChange": -5,
+              "chaosChange": -1,
+              "humanityChange": -6
+            },
+            {
+              "id": "f",
+              "text": "Postpone the summit until tempers cool.",
+              "outcome": "No one signs, but no one bleeds at the table. The poisoned wells keep spreading while politeness waits.",
+              "hopeChange": -2,
+              "trustChange": 1,
+              "chaosChange": -2,
+              "humanityChange": -2
+            }
+          ]
+        },
+        {
+          "id": "diplomat-002",
+          "title": "Flags in the Fog Market",
+          "setting": "A foggy market uses colored flags instead of spoken language after a massacre began with a mistranslated greeting. Today, a child flies two forbidden colors together, and armed traders reach for knives.",
+          "futureMsg": "Future-you remembers that translation is not finding the right word. It is building a room where the wrong word does not kill.",
+          "imageUrl": "/images/backgrounds/ruined-city.png",
+          "progressionBand": "early",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Stand between traders and ask the child what they meant.",
+              "outcome": "The forbidden pairing turns out to mean mourning in a distant dialect. The market learns its language is not the world.",
+              "hopeChange": 6,
+              "trustChange": 6,
+              "chaosChange": -5,
+              "humanityChange": 7
+            },
+            {
+              "id": "b",
+              "text": "Confiscate the flag before anyone can act.",
+              "outcome": "Violence is delayed, not resolved. The child’s meaning vanishes into your pocket.",
+              "hopeChange": 1,
+              "trustChange": 0,
+              "chaosChange": -2,
+              "humanityChange": -3
+            },
+            {
+              "id": "c",
+              "text": "Call for every faction to teach one color meaning.",
+              "outcome": "The market becomes a noisy lesson instead of a battlefield. A shared dictionary begins on cardboard scraps.",
+              "hopeChange": 7,
+              "trustChange": 7,
+              "chaosChange": -4,
+              "humanityChange": 7
+            },
+            {
+              "id": "d",
+              "text": "Punish the child publicly to satisfy protocol.",
+              "outcome": "Order snaps back into place. So does fear of ever inventing a better signal.",
+              "hopeChange": -3,
+              "trustChange": -2,
+              "chaosChange": -2,
+              "humanityChange": -8
+            },
+            {
+              "id": "e",
+              "text": "Invent a temporary white flag for ambiguity.",
+              "outcome": "When unsure, traders raise white and speak through mediators. The new habit saves lives immediately.",
+              "hopeChange": 5,
+              "trustChange": 6,
+              "chaosChange": -5,
+              "humanityChange": 6
+            },
+            {
+              "id": "f",
+              "text": "Use the confusion to negotiate exclusive market rights.",
+              "outcome": "You secure an advantage for your people while everyone is distracted. Peace arrives with a private invoice.",
+              "hopeChange": 3,
+              "trustChange": -4,
+              "chaosChange": -1,
+              "humanityChange": -5
+            }
+          ]
+        },
+        {
+          "id": "diplomat-003",
+          "title": "Wedding at the Broken Aqueduct",
+          "setting": "Two settlements plan a marriage alliance beneath an aqueduct that both claim. The bride’s family brings seeds; the groom’s family brings pipe valves. A third faction arrives with evidence both gifts were stolen.",
+          "futureMsg": "Future-you says the wedding could become a treaty, a theft trial, or a funeral. You were the hinge in the vows.",
+          "imageUrl": "/images/backgrounds/forest-safe-zone.png",
+          "progressionBand": "mid",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Pause the wedding and investigate the gifts openly.",
+              "outcome": "The ceremony survives because truth enters before vows. Stolen items are returned under a new water-sharing clause.",
+              "hopeChange": 5,
+              "trustChange": 6,
+              "chaosChange": -3,
+              "humanityChange": 6
+            },
+            {
+              "id": "b",
+              "text": "Let the wedding proceed and resolve theft later.",
+              "outcome": "The alliance forms under beautiful music and rotten evidence. Later accusations cut deeper because vows shielded them.",
+              "hopeChange": 4,
+              "trustChange": -2,
+              "chaosChange": 2,
+              "humanityChange": -4
+            },
+            {
+              "id": "c",
+              "text": "Invite the third faction into the marriage treaty.",
+              "outcome": "The scandal becomes a three-way compact. It is unwieldy, creative, and much harder to betray quietly.",
+              "hopeChange": 7,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 7
+            },
+            {
+              "id": "d",
+              "text": "Separate romance from resource negotiations.",
+              "outcome": "The couple marries privately while leaders argue pipes elsewhere. Love is spared, but politics loses a useful symbol.",
+              "hopeChange": 3,
+              "trustChange": 3,
+              "chaosChange": -2,
+              "humanityChange": 4
+            },
+            {
+              "id": "e",
+              "text": "Use the stolen gifts as leverage for your settlement.",
+              "outcome": "You extract concessions from all sides. Everyone notices your efficiency and your hunger.",
+              "hopeChange": 3,
+              "trustChange": -5,
+              "chaosChange": 1,
+              "humanityChange": -6
+            },
+            {
+              "id": "f",
+              "text": "Expose the thief during the vows.",
+              "outcome": "The dramatic reveal prevents a fraud and humiliates families in public. The aqueduct hears sobbing instead of songs.",
+              "hopeChange": 1,
+              "trustChange": 0,
+              "chaosChange": 5,
+              "humanityChange": -2
+            }
+          ]
+        },
+        {
+          "id": "diplomat-004",
+          "title": "The Hostage Banquet",
+          "setting": "A warlord invites you to dinner and seats hostages at every course: a farmer beside soup, a mechanic beside bread, a child beside dessert. Each concession you refuse costs someone food, warmth, or medicine.",
+          "futureMsg": "Future-you says the banquet taught you that negotiation under cruelty can preserve life without blessing the table.",
+          "imageUrl": "/images/backgrounds/bunker.png",
+          "progressionBand": "mid",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Name the hostage system aloud before bargaining.",
+              "outcome": "The room stiffens as performance becomes visible. The warlord loses some theater, and the hostages gain witnesses.",
+              "hopeChange": 5,
+              "trustChange": 4,
+              "chaosChange": -2,
+              "humanityChange": 6
+            },
+            {
+              "id": "b",
+              "text": "Trade minor concessions to feed every hostage tonight.",
+              "outcome": "No one goes hungry, and the warlord earns leverage for tomorrow. Mercy becomes a payment plan.",
+              "hopeChange": 4,
+              "trustChange": -1,
+              "chaosChange": -1,
+              "humanityChange": 3
+            },
+            {
+              "id": "c",
+              "text": "Refuse all terms and walk out.",
+              "outcome": "You keep your principles untouched. Behind you, plates are cleared from people who needed the compromise.",
+              "hopeChange": -3,
+              "trustChange": 1,
+              "chaosChange": -3,
+              "humanityChange": -6
+            },
+            {
+              "id": "d",
+              "text": "Secretly pass escape signals through toast wording.",
+              "outcome": "Two hostages understand and later flee. If the code is discovered, future dinners will be bloodier.",
+              "hopeChange": 5,
+              "trustChange": 2,
+              "chaosChange": 4,
+              "humanityChange": 5
+            },
+            {
+              "id": "e",
+              "text": "Offer yourself as the final hostage.",
+              "outcome": "The warlord accepts the prestige. Your people gain time, and your freedom becomes the bargaining chip.",
+              "hopeChange": 6,
+              "trustChange": 5,
+              "chaosChange": -2,
+              "humanityChange": 8
+            },
+            {
+              "id": "f",
+              "text": "Poison the warlord’s cup with sleeping draught.",
+              "outcome": "The room collapses into chaos and escape. The method works, but all future invitations come with knives first.",
+              "hopeChange": 4,
+              "trustChange": -3,
+              "chaosChange": 8,
+              "humanityChange": -3
+            }
+          ]
+        },
+        {
+          "id": "diplomat-005",
+          "title": "The Currency of Names",
+          "setting": "A river town trades only in true names, claiming coins can be stolen but identity cannot. Refugees need ferry passage, yet giving names may expose hidden families to bounty hunters listening from the reeds.",
+          "futureMsg": "Future-you warns that trust bought with identity can become a ledger for persecution.",
+          "imageUrl": "/images/skyscapes/aurora-lake-sunset.png",
+          "progressionBand": "any",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Negotiate a temporary anonymous passage token.",
+              "outcome": "The ferrymen grumble, then accept stamped clay as a bridge between safety and custom.",
+              "hopeChange": 5,
+              "trustChange": 6,
+              "chaosChange": -4,
+              "humanityChange": 6
+            },
+            {
+              "id": "b",
+              "text": "Give your own full name as bond for the refugees.",
+              "outcome": "The ferry opens, and your name travels ahead of you in ways you cannot control.",
+              "hopeChange": 5,
+              "trustChange": 4,
+              "chaosChange": 0,
+              "humanityChange": 7
+            },
+            {
+              "id": "c",
+              "text": "Expose the bounty hunters hiding near the reeds.",
+              "outcome": "The town turns on the listeners, and the refugee crossing becomes a public act of defiance.",
+              "hopeChange": 6,
+              "trustChange": 5,
+              "chaosChange": 4,
+              "humanityChange": 6
+            },
+            {
+              "id": "d",
+              "text": "Let each refugee choose whether to reveal themselves.",
+              "outcome": "Autonomy slows the crossing but preserves dignity. Not every fear receives the same answer.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": -3,
+              "humanityChange": 7
+            },
+            {
+              "id": "e",
+              "text": "Forge a list of false names for the ledger.",
+              "outcome": "The refugees cross safely, but the town’s sacred practice is bent by your lie.",
+              "hopeChange": 4,
+              "trustChange": -2,
+              "chaosChange": -1,
+              "humanityChange": -2
+            },
+            {
+              "id": "f",
+              "text": "Pay with supplies and refuse the name custom entirely.",
+              "outcome": "Practical trade succeeds for a few, then the ferrymen close the dock against insult.",
+              "hopeChange": 1,
+              "trustChange": -3,
+              "chaosChange": -1,
+              "humanityChange": -3
+            }
+          ]
+        },
+        {
+          "id": "diplomat-006",
+          "title": "Constitution by Candlelift",
+          "setting": "Three floors of a vertical settlement draft laws by raising candles in the open elevator shaft. Upper floors want defense spending; lower floors want sanitation; roof gardeners want seed rights. The lift jams between levels during the vote.",
+          "futureMsg": "Future-you says democracy failed first as a pulley problem. Fixing the shaft did not fix the settlement unless everyone could see the flame.",
+          "imageUrl": "/images/backgrounds/bunker.png",
+          "progressionBand": "mid",
+          "weight": 3,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Suspend the vote until the lift is repaired.",
+              "outcome": "Process is protected, and impatience boils. The final vote carries legitimacy because no floor was dimmed.",
+              "hopeChange": 3,
+              "trustChange": 6,
+              "chaosChange": -3,
+              "humanityChange": 5
+            },
+            {
+              "id": "b",
+              "text": "Move the assembly to the stairwell.",
+              "outcome": "The debate becomes cramped, loud, and strangely equal. Laws are written with knees aching together.",
+              "hopeChange": 5,
+              "trustChange": 6,
+              "chaosChange": -2,
+              "humanityChange": 6
+            },
+            {
+              "id": "c",
+              "text": "Let each floor ratify separately.",
+              "outcome": "Local priorities shine clearly, but the constitution becomes a patchwork of rival survival plans.",
+              "hopeChange": 2,
+              "trustChange": 2,
+              "chaosChange": 1,
+              "humanityChange": 0
+            },
+            {
+              "id": "d",
+              "text": "Trade your support to the floor most likely to ally with you.",
+              "outcome": "You gain a policy bloc and lose the moral center of the meeting.",
+              "hopeChange": 3,
+              "trustChange": -4,
+              "chaosChange": -1,
+              "humanityChange": -5
+            },
+            {
+              "id": "e",
+              "text": "Ask children to carry candle counts between floors.",
+              "outcome": "The youngest residents become trusted messengers. Adults behave better when the future is literally counting them.",
+              "hopeChange": 6,
+              "trustChange": 5,
+              "chaosChange": -3,
+              "humanityChange": 8
+            },
+            {
+              "id": "f",
+              "text": "Declare emergency law until repairs are complete.",
+              "outcome": "Decisions happen quickly. Emergency authority enjoys how easily it was invited in.",
+              "hopeChange": 1,
+              "trustChange": -5,
+              "chaosChange": -2,
+              "humanityChange": -6
+            }
+          ]
+        },
+        {
+          "id": "diplomat-007",
+          "title": "The Trial of the Radio Ghost",
+          "setting": "A voice on the radio has been impersonating dead leaders, urging settlements to break treaties. Captured equipment points toward an ally, but the voice also knows private words spoken at funerals.",
+          "futureMsg": "Future-you says grief made people easy to command. Your task was not proving the dead silent, but helping the living stop obeying ghosts.",
+          "imageUrl": "/images/backgrounds/radio-tower.png",
+          "progressionBand": "late",
+          "weight": 1,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Hold a public technical demonstration of the spoof.",
+              "outcome": "When people hear the trick recreated, the ghost loses authority. Some grief turns to anger at being used.",
+              "hopeChange": 5,
+              "trustChange": 6,
+              "chaosChange": -4,
+              "humanityChange": 5
+            },
+            {
+              "id": "b",
+              "text": "Confront the suspected ally in private first.",
+              "outcome": "You avoid public humiliation and learn their tower was hijacked. Trust deepens through restraint.",
+              "hopeChange": 4,
+              "trustChange": 6,
+              "chaosChange": -3,
+              "humanityChange": 5
+            },
+            {
+              "id": "c",
+              "text": "Broadcast a counter-message using your own dead mentor’s words.",
+              "outcome": "The emotional reversal works, but you become part of the same machinery of borrowed grief.",
+              "hopeChange": 4,
+              "trustChange": -2,
+              "chaosChange": 2,
+              "humanityChange": -5
+            },
+            {
+              "id": "d",
+              "text": "Cut all treaty channels for forty-eight hours.",
+              "outcome": "The ghost goes quiet, along with legitimate warnings. Silence protects and isolates.",
+              "hopeChange": -1,
+              "trustChange": 1,
+              "chaosChange": -2,
+              "humanityChange": -2
+            },
+            {
+              "id": "e",
+              "text": "Invite mourners to identify which phrases were stolen.",
+              "outcome": "Pain becomes evidence and community repair. The room weeps itself into resilience.",
+              "hopeChange": 5,
+              "trustChange": 7,
+              "chaosChange": -3,
+              "humanityChange": 8
+            },
+            {
+              "id": "f",
+              "text": "Frame a hostile faction for the spoof to unify allies.",
+              "outcome": "The lie produces quick unity and a future war with a convenient villain.",
+              "hopeChange": 3,
+              "trustChange": -6,
+              "chaosChange": 7,
+              "humanityChange": -7
+            }
+          ]
+        },
+        {
+          "id": "diplomat-008",
+          "title": "Neutral Road, Red Dust",
+          "setting": "A road declared neutral by all factions now carries red dust that sticks only to weapon barrels. Refugees beg to use it, merchants demand escort rights, and commanders want to test whether the dust can identify treaty violations.",
+          "futureMsg": "Future-you says neutrality is not an empty road. It is a road someone keeps sweeping even when everyone wants to march.",
+          "imageUrl": "/images/backgrounds/desert-highway.png",
+          "progressionBand": "any",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Create unarmed escort teams for refugees only.",
+              "outcome": "The road remains gentle for the vulnerable. Merchants accuse you of turning neutrality into charity.",
+              "hopeChange": 5,
+              "trustChange": 5,
+              "chaosChange": -4,
+              "humanityChange": 6
+            },
+            {
+              "id": "b",
+              "text": "Allow all traffic after checking barrels for dust.",
+              "outcome": "Movement resumes with visible inspections. The treaty gains teeth without drawing blood.",
+              "hopeChange": 4,
+              "trustChange": 6,
+              "chaosChange": -3,
+              "humanityChange": 4
+            },
+            {
+              "id": "c",
+              "text": "Weaponize the dust as evidence against rivals.",
+              "outcome": "Violators are exposed quickly. Neutrality becomes a surveillance tool everyone fears.",
+              "hopeChange": 3,
+              "trustChange": -2,
+              "chaosChange": -1,
+              "humanityChange": -3
+            },
+            {
+              "id": "d",
+              "text": "Close the road until a new council meets.",
+              "outcome": "No one fights there today. No one escapes along it either.",
+              "hopeChange": -2,
+              "trustChange": 1,
+              "chaosChange": -3,
+              "humanityChange": -3
+            },
+            {
+              "id": "e",
+              "text": "Invite children to repaint neutral markers along the road.",
+              "outcome": "The simple act makes commanders hesitate before posturing. Symbols work because small hands made them visible.",
+              "hopeChange": 6,
+              "trustChange": 5,
+              "chaosChange": -4,
+              "humanityChange": 7
+            },
+            {
+              "id": "f",
+              "text": "Sell escort permits to fund road maintenance.",
+              "outcome": "The road stays repaired and unequal. Safety begins to have a price window.",
+              "hopeChange": 3,
+              "trustChange": -3,
+              "chaosChange": -1,
+              "humanityChange": -4
+            }
+          ]
+        },
+        {
+          "id": "diplomat-009",
+          "title": "The Apology Vault",
+          "setting": "An old bank vault contains recorded apologies from leaders who died before making them public. Releasing the files could heal families or reopen feuds. One apology names your settlement as beneficiary of stolen medicine.",
+          "futureMsg": "Future-you says the past does not stay buried because it is old. It stays buried because someone profits from the ground staying flat.",
+          "imageUrl": "/images/backgrounds/bunker.png",
+          "progressionBand": "late",
+          "weight": 1,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Release all apologies without editing.",
+              "outcome": "The region erupts in grief, rage, and relief. Truth enters like weather: impossible to control and needed anyway.",
+              "hopeChange": 6,
+              "trustChange": 5,
+              "chaosChange": 5,
+              "humanityChange": 7
+            },
+            {
+              "id": "b",
+              "text": "Release only apologies with living witnesses present.",
+              "outcome": "Context cushions the blow. Some accuse you of filtering truth through convenience.",
+              "hopeChange": 4,
+              "trustChange": 6,
+              "chaosChange": -2,
+              "humanityChange": 5
+            },
+            {
+              "id": "c",
+              "text": "Privately return the stolen medicine equivalent first.",
+              "outcome": "You repair your own debt before confession. The later release lands with fewer knives pointed at you.",
+              "hopeChange": 5,
+              "trustChange": 5,
+              "chaosChange": -3,
+              "humanityChange": 7
+            },
+            {
+              "id": "d",
+              "text": "Seal the vault until after winter.",
+              "outcome": "You postpone turmoil to preserve fragile cooperation. The lie of omission keeps everyone warmer and less clean.",
+              "hopeChange": 1,
+              "trustChange": 0,
+              "chaosChange": -2,
+              "humanityChange": -4
+            },
+            {
+              "id": "e",
+              "text": "Use the apologies to negotiate reparations treaties.",
+              "outcome": "Pain becomes policy. The process is exhausting and more useful than silence.",
+              "hopeChange": 6,
+              "trustChange": 7,
+              "chaosChange": -1,
+              "humanityChange": 7
+            },
+            {
+              "id": "f",
+              "text": "Destroy the file implicating your settlement.",
+              "outcome": "Your people avoid immediate shame. The vault becomes a monument to the truth you chose to kill.",
+              "hopeChange": -2,
+              "trustChange": -6,
+              "chaosChange": -2,
+              "humanityChange": -10
+            }
+          ]
+        },
+        {
+          "id": "diplomat-010",
+          "title": "Midnight at the Six Fires",
+          "setting": "On the longest night, six camps light fires around a frozen lake, each waiting for someone else to cross first. The ice will hold until dawn. After that, the lake breaks and the season of raids begins again.",
+          "futureMsg": "Future-you says peace never arrived as one big banner. It came as footsteps across bad ice, one suspicious campfire at a time.",
+          "imageUrl": "/images/skyscapes/aurora-lake-sunset.png",
+          "progressionBand": "late",
+          "weight": 1,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Walk onto the ice alone carrying no weapon.",
+              "outcome": "Your silhouette makes the first crack in fear, not the lake. Two camps follow before dawn.",
+              "hopeChange": 6,
+              "trustChange": 6,
+              "chaosChange": -3,
+              "humanityChange": 7
+            },
+            {
+              "id": "b",
+              "text": "Send identical invitations to every fire.",
+              "outcome": "No one gets special language or secret promises. Equality makes the risk feel less like surrender.",
+              "hopeChange": 5,
+              "trustChange": 7,
+              "chaosChange": -4,
+              "humanityChange": 6
+            },
+            {
+              "id": "c",
+              "text": "Approach the most hostile camp first.",
+              "outcome": "The bold move impresses some and terrifies others. If the worst fire warms, the rest may thaw.",
+              "hopeChange": 5,
+              "trustChange": 4,
+              "chaosChange": 1,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Arrange prisoner exchanges before peace talks.",
+              "outcome": "Families reunite on the ice, and politics follows tears instead of demands.",
+              "hopeChange": 7,
+              "trustChange": 6,
+              "chaosChange": -3,
+              "humanityChange": 8
+            },
+            {
+              "id": "e",
+              "text": "Threaten to expose every faction’s winter weakness.",
+              "outcome": "The fires come to the table out of fear. The treaty holds like thin ice under heavy boots.",
+              "hopeChange": 3,
+              "trustChange": -4,
+              "chaosChange": -1,
+              "humanityChange": -6
+            },
+            {
+              "id": "f",
+              "text": "Wait for one camp to move and support the first brave step.",
+              "outcome": "You do not claim the moment, but you strengthen it. Leadership becomes accompaniment.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": -3,
+              "humanityChange": 6
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

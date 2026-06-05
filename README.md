@@ -1,116 +1,165 @@
-# Client
+# Ashes Between Us
 
-An apocalyptic butterfly-effect RPG. Your future self is trying to reach you. Every choice ripples forward.
+An apocalyptic butterfly-effect RPG. Your future self is trying to reach you across an unstable timeline. Choose an avatar, navigate a 10-turn run of branching moral scenarios, and watch how each decision reshapes who you become.
+
+Built with **Next.js 15 (App Router)**, **React 19**, **Prisma 6**, and **Neon serverless PostgreSQL**, with optional **OpenAI**-powered live scenario generation.
+
+---
+
+## Gameplay
+
+- Pick one of six avatars, each with a distinct trait, backstory, and starting stats.
+- Each turn presents a scenario with up to six choices.
+- Every choice shifts four stats — **hope**, **trust**, **chaos**, and **humanity** (0–100, clamped).
+- A run ends after **10 turns** (`GAME_TURN_LIMIT`), then redirects to the timeline history / ending screen.
+- The ending engine derives a final state, narrative, and score from your closing stats.
+- Each playthrough is scoped to a unique `runId`, so history and scenario selection never bleed across separate games.
 
 ---
 
 ## Tech Stack
 
-- Next.js App Router
-- Prisma + PostgreSQL (Neon)
-- Tailwind CSS v4
-- Google Fonts: Bebas Neue, Share Tech Mono, Barlow
+| Layer        | Technology |
+| ------------ | ---------- |
+| Framework    | Next.js 15 (App Router), React 19 |
+| Styling      | Tailwind CSS v4 |
+| ORM          | Prisma 6 with the Neon driver adapter |
+| Database     | Neon serverless PostgreSQL (WebSocket adapter) |
+| AI (optional)| OpenAI (`openai` SDK) for live scenario generation |
+| Modules      | ES Modules (`"type": "module"`) |
 
 ---
 
-## Planning Docs
+## Project Structure
 
-- [Project Roadmap](./PROJECT_ROADMAP.md)
-- [Frontend Execution Plan](./FRONTEND_EXECUTION_PLAN.md)
+```text
+app/
+  layout.js              Root layout
+  page.js                Landing page
+  game/page.js           Main game loop (avatar select → turns → redirect)
+  history/page.js        Timeline history + ending screen
+  api/
+    avatars/route.js         GET avatars (from DB)
+    scenarios/route.js       GET all scenarios
+    scenarios/generate/route.js   POST next scenario for a run
+    attempts/route.js        GET/POST attempt records
+    history/route.js         GET attempt history (scoped by runId)
+    profile/route.js         POST AI-generated player profile
+components/                UI components (ScenarioCard, ChoiceButton, StatsPanel, …)
+lib/
+  prisma.js                  Prisma client (Neon adapter)
+  scenarioGenerationService.js   Core scenario/attempt/avatar logic
+  aiScenarioService.js       OpenAI scenario generation
+  aiProfileService.js        OpenAI player-profile generation
+  endingEngine.js            Final state, narrative, and score
+  outcomeEngine.js           Stat normalization + future-state derivation
+  mockData.js                Avatars + INITIAL_STATS fallback data
+prisma/
+  schema.prisma              Avatar, Scenario, Choice, Attempt models
+  seed.js                    Purge + seed scenarios from data/seed-packs
+  seedAvatars.js             Seed avatars from mockData
+  bootstrap-neon-schema.js   Create/alter tables via Neon HTTP (when db push is blocked)
+data/
+  seed-packs/                Per-avatar scenario JSON (6 avatars × 10 scenarios × 6 choices)
+```
 
 ---
 
-## Branch Strategy
+## Data Model
 
-| Branch | Owner | Scope |
-|---|---|---|
-| `main` | Both | Clean, merged only |
-| `feature/frontend-game-ui` | Person 1 | All UI, components, pages |
-| `feature/backend-api-prisma` | Person 2 | Prisma, seed, API routes |
-
-**Do not push directly to main. Open a PR.**
+- **Avatar** — `id`, `name`, `trait`, `description`, `backstory`, `imageUrl`, `futureImageUrl`, `futureImageByState` (Json), `startingStats` (Json), `sortOrder`.
+- **Scenario** — `id`, `title`, `setting`, `futureMsg`, `imageUrl`, `consequences` (Json), with related `choices`.
+- **Choice** — `text`, `outcome`, `hopeChange`, `trustChange`, `chaosChange`, `humanityChange`, plus optional `requiredRole` / `roleBonus`.
+- **Attempt** — one saved decision: `runId`, `avatarId`, `scenarioId`, `choiceId`, the four stats after the choice, and `statsAfter` (Json). Indexed by `avatarId+createdAt`, `scenarioId`, and `runId`.
 
 ---
 
 ## Getting Started
 
-```bash
+### 1. Prerequisites
+
+- Node.js 18+
+- A Neon PostgreSQL database
+- (Optional) An OpenAI API key for live scenario/profile generation
+
+### 2. Install
+
+```powershell
 npm install
+```
+
+### 3. Environment
+
+Copy `.env.example` to `.env` and fill in your values:
+
+```env
+DATABASE_URL="postgresql://...neon.tech/neondb?sslmode=require"   # pooled
+DIRECT_URL="postgresql://...neon.tech/neondb?sslmode=require"     # non-pooled
+OPENAI_API_KEY=your_openai_api_key_here
+```
+
+Optional flags:
+
+- `ENABLE_LIVE_AI_SCENARIOS=true` — generate scenarios live via OpenAI instead of serving seeded ones.
+
+### 4. Set up the database schema
+
+`prisma db push` requires the non-pooled `DIRECT_URL` (port 5432). If that port is blocked on your network, bootstrap the schema over the Neon HTTP driver instead:
+
+```powershell
+npx prisma generate
+node --import dotenv/config prisma/bootstrap-neon-schema.js
+```
+
+Otherwise:
+
+```powershell
+npm run db:push
+```
+
+### 5. Seed data
+
+```powershell
+npm run db:seed:avatars   # seed the six avatars
+npm run db:seed           # purge + import scenarios from data/seed-packs
+```
+
+### 6. Run the dev server
+
+```powershell
 npm run dev
 ```
 
-App runs at `http://localhost:3000`.
-
-Frontend works immediately with mock data (`lib/mockData.js`). API routes return 501 stubs until the backend branch merges.
+Open http://localhost:3000.
 
 ---
 
-## File Structure
+## NPM Scripts
 
-```
-app/
-  page.js                  # Landing page
-  layout.js                # Root layout + fonts
-  globals.css              # Tailwind v4 + animations
-  game/page.js             # Main game screen
-  history/page.js          # Timeline history
-  api/
-    scenarios/route.js     # GET all scenarios (stub → real)
-    attempts/route.js      # POST save attempt (stub → real)
-    history/route.js       # GET attempt history (stub → real)
-
-components/
-  StatsPanel.js            # Hope / Trust / Chaos / Humanity bars
-  FutureMessageCard.js     # Warning from future self
-  ScenarioCard.js          # Scenario title, image, setting text
-  ChoiceButton.js          # Choice with stat preview tags
-  OutcomeCard.js           # Post-choice consequence + stat changes
-  TimelineHistory.js       # Full choice history list
-
-lib/
-  mockData.js              # Mock scenarios (remove after backend merge)
-  prisma.js                # Prisma singleton (used by Person 2)
-
-prisma/
-  schema.prisma            # Person 2 owns this
-  seed.js                  # Person 2 owns this
-
-public/
-  images/                  # Drop scenario backgrounds + portraits here
-```
+| Script | Description |
+| ------ | ----------- |
+| `npm run dev` | Start the Next.js dev server |
+| `npm run build` | Production build |
+| `npm run start` | Start the production server |
+| `npm run lint` | Run ESLint |
+| `npm run db:push` | Push the Prisma schema (needs `DIRECT_URL`) |
+| `npm run db:generate` | Regenerate the Prisma client |
+| `npm run db:seed` | Purge and reseed scenarios from `data/seed-packs` |
+| `npm run db:seed:avatars` | Seed avatars from `lib/mockData.js` |
+| `npm run db:studio` | Open Prisma Studio |
 
 ---
 
-## Connecting Frontend to Backend
+## Seeding Scenarios
 
-When Person 2's API routes are live, the frontend switches automatically. The game page tries `/api/scenarios` first and falls back to mock data on failure — so the UI never breaks during development.
+`data/seed-packs/` holds one JSON file per avatar. The seeder reads every `*.json` there (except `*.schema.json`), purges all existing `Scenario` and `Choice` rows, then imports fresh. Each pack provides exactly **6 choices per scenario**; `seed.js` prefixes IDs as `seed-{avatarId}-{scenarioId}`.
 
-Once the backend branch merges:
-1. Delete `lib/mockData.js` (or keep for testing)
-2. Person 2 replaces stub route files with real Prisma implementations
-3. Test the full flow: land → choose → save → history
+To replace content: drop new packs into `data/seed-packs/`, remove the old ones, and run `npm run db:seed`.
 
 ---
 
-## Image Prompts (for generation)
+## Notes & Gotchas
 
-Style: `cinematic apocalyptic RPG concept art, dramatic lighting, muted colors, warm hopeful light, no text, no logos`
-
-Backgrounds: ruined city, radio tower, underground bunker, forest safe zone, desert highway  
-Portraits: future-survivor, future-leader, future-broken, future-warlord  
-Icons: supply crate, cracked radio, timeline shard
-
-Place generated images in `public/images/` and reference via `scenario.imageUrl`.
-
----
-
-## Stats
-
-| Stat | Color | Meaning |
-|---|---|---|
-| Hope | Gold | Belief in a better future |
-| Trust | Teal | Strength of your alliances |
-| Chaos | Red | Instability in the timeline |
-| Humanity | Sage | Your moral compass |
-
-Stats are clamped 0–100 and updated after every choice.
+- **Prisma client lock:** `prisma generate` fails with `EPERM` while the dev server is running. Stop Node processes first, generate, then restart.
+- **Live AI is off by default.** Without `ENABLE_LIVE_AI_SCENARIOS=true`, scenarios are served from the seeded packs. The `/api/profile` endpoint still calls OpenAI and falls back to the stored avatar backstory if the key is missing or upstream fails.
+- **Never commit `.env`.** Rotate any credentials that were ever exposed.

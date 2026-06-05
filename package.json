@@ -10,6 +10,7 @@
     "lint": "next lint",
     "db:push": "prisma db push",
     "db:seed": "node prisma/seed.js",
+    "db:seed:avatars": "node prisma/seedAvatars.js",
     "db:studio": "prisma studio",
     "db:generate": "prisma generate"
   },

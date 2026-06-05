@@ -4,16 +4,40 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import StatsPanel from "@/components/StatsPanel";
 import FutureMessageCard from "@/components/FutureMessageCard";
 import ScenarioCard from "@/components/ScenarioCard";
 import ChoiceButton from "@/components/ChoiceButton";
 import OutcomeCard from "@/components/OutcomeCard";
-import { MOCK_SCENARIOS, INITIAL_STATS, AVATARS } from "@/lib/mockData";
+import { INITIAL_STATS } from "@/lib/mockData";
+import { deriveFutureStateFromStats } from "@/lib/outcomeEngine";
 
-const LOCAL_ATTEMPTS_KEY = "abu_local_attempts_v1";
 const LOCAL_AVATAR_KEY = "abu_avatar_v1";
 const SESSION_USERNAME_KEY = "abu_username_v1";
+const SESSION_RUN_ID_KEY = "abu_run_id_v1";
+const GAME_TURN_LIMIT = 10; // Game ends after 10 turns
+
+function createRunId() {
+  return `run-${Date.now()}-${Math.floor(Math.random() * 9000) + 1000}`;
+}
+
+function getOrCreateRunId() {
+  if (typeof window === "undefined") return null;
+  let runId = window.sessionStorage.getItem(SESSION_RUN_ID_KEY);
+  if (!runId) {
+    runId = createRunId();
+    window.sessionStorage.setItem(SESSION_RUN_ID_KEY, runId);
+  }
+  return runId;
+}
+
+function startNewRun() {
+  if (typeof window === "undefined") return null;
+  const runId = createRunId();
+  window.sessionStorage.setItem(SESSION_RUN_ID_KEY, runId);
+  return runId;
+}
 
 function didHardRefresh() {
   if (typeof window === "undefined") return false;
@@ -30,9 +54,9 @@ function didHardRefresh() {
 function clearGameStorage() {
   if (typeof window === "undefined") return;
 
-  window.localStorage.removeItem(LOCAL_ATTEMPTS_KEY);
   window.localStorage.removeItem(LOCAL_AVATAR_KEY);
   window.sessionStorage.removeItem(SESSION_USERNAME_KEY);
+  window.sessionStorage.removeItem(SESSION_RUN_ID_KEY);
 }
 
 // ─── helpers ───────────────────────────────────────────────────
@@ -47,33 +71,6 @@ function applyChoice(stats, choice) {
     chaos:    clamp(stats.chaos    + choice.chaosChange),
     humanity: clamp(stats.humanity + choice.humanityChange),
   };
-}
-
-function readLocalAttempts() {
-  if (typeof window === "undefined") return [];
-  try {
-    const raw = window.localStorage.getItem(LOCAL_ATTEMPTS_KEY);
-    if (!raw) return [];
-    const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? parsed : [];
-  } catch {
-    return [];
-  }
-}
-
-function writeLocalAttempts(attempts) {
-  if (typeof window === "undefined") return;
-  try {
-    window.localStorage.setItem(LOCAL_ATTEMPTS_KEY, JSON.stringify(attempts));
-  } catch {
-    // Ignore storage write failures (private mode, quota, etc.).
-  }
-}
-
-function saveAttemptLocally(attempt) {
-  const current = readLocalAttempts();
-  const next = [attempt, ...current].slice(0, 100);
-  writeLocalAttempts(next);
 }
 
 function applyRoleBonus(choice, avatarId) {
@@ -92,49 +89,83 @@ function applyRoleBonus(choice, avatarId) {
 
 // ─── page ──────────────────────────────────────────────────────
 export default function GamePage() {
-  const [scenarios, setScenarios]       = useState([]);
-  const [scenarioIndex, setScenarioIndex] = useState(0);
+  const router = useRouter();
+  const [scenario, setScenario] = useState(null);
+  const [turn, setTurn] = useState(1);
   const [stats, setStats]               = useState(INITIAL_STATS);
   const [selectedChoice, setSelectedChoice] = useState(null);
   const [selectedAvatarId, setSelectedAvatarId] = useState(null);
+  const [avatars, setAvatars] = useState([]);
   const [username, setUsername] = useState("");
-  const [saveMode, setSaveMode] = useState(null);
+  const [recentChoices, setRecentChoices] = useState([]);
   const [loading, setLoading]           = useState(true);
+  const [loadingScenario, setLoadingScenario] = useState(false);
+  const [loadError, setLoadError] = useState("");
 
-  const selectedAvatar = AVATARS.find((avatar) => avatar.id === selectedAvatarId) ?? null;
-
-  // Fetch from real API when backend is ready; falls back to mock data.
-  useEffect(() => {
-    async function load() {
-      try {
-        const res = await fetch("/api/scenarios");
-        if (!res.ok) throw new Error("API not ready");
-        const data = await res.json();
-        setScenarios(data);
-      } catch {
-        setScenarios(MOCK_SCENARIOS);
-      } finally {
-        setLoading(false);
-      }
-    }
-    load();
-  }, []);
+  const selectedAvatar = avatars.find((avatar) => avatar.id === selectedAvatarId) ?? null;
+  const futureState = deriveFutureStateFromStats(stats);
+  const futureImageUrl =
+    selectedAvatar?.futureImageByState?.[futureState] ??
+    selectedAvatar?.futureImageUrl ??
+    null;
 
   useEffect(() => {
     if (didHardRefresh()) {
       clearGameStorage();
     }
 
-    if (typeof window === "undefined") return;
-    const savedAvatarId = window.localStorage.getItem(LOCAL_AVATAR_KEY);
-    if (!savedAvatarId) return;
+    let cancelled = false;
 
-    const savedAvatar = AVATARS.find((avatar) => avatar.id === savedAvatarId);
-    if (!savedAvatar) return;
+    async function loadAvatars() {
+      try {
+        const res = await fetch("/api/avatars");
+        if (!res.ok) throw new Error("Failed to load avatars");
+        const data = await res.json();
+        if (cancelled) return;
 
-    setSelectedAvatarId(savedAvatarId);
-    setStats(savedAvatar.startingStats);
+        const list = Array.isArray(data) ? data : [];
+        setAvatars(list);
+
+        if (typeof window !== "undefined") {
+          const savedAvatarId = window.localStorage.getItem(LOCAL_AVATAR_KEY);
+          const savedAvatar = savedAvatarId
+            ? list.find((avatar) => avatar.id === savedAvatarId)
+            : null;
+
+          if (savedAvatar) {
+            setSelectedAvatarId(savedAvatar.id);
+            setStats(savedAvatar.startingStats);
+          }
+        }
+      } catch (error) {
+        if (!cancelled) {
+          setLoadError(error?.message || "Avatars are unavailable.");
+        }
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    }
+
+    loadAvatars();
+
+    return () => {
+      cancelled = true;
+    };
   }, []);
+
+  useEffect(() => {
+    if (!selectedAvatarId || scenario) return;
+
+    const avatar = avatars.find((entry) => entry.id === selectedAvatarId);
+    if (!avatar) return;
+
+    requestNextScenario({
+      avatarId: avatar.id,
+      currentStats: avatar.startingStats,
+      history: [],
+      turnToSet: 1,
+    });
+  }, [selectedAvatarId, scenario, avatars]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -150,18 +181,51 @@ export default function GamePage() {
     }
     window.sessionStorage.setItem(SESSION_USERNAME_KEY, username.trim());
   }, [username]);
+  const availableChoices = scenario?.choices?.slice(0, 6) ?? [];
 
-  const scenario = scenarios[scenarioIndex];
-  const availableChoices =
-    scenario?.choices?.filter((choice) => !choice.requiredRole || choice.requiredRole === selectedAvatarId) ?? [];
+  async function requestNextScenario({ avatarId, currentStats, history, turnToSet }) {
+    setLoadingScenario(true);
+    setLoadError("");
+
+    try {
+      const res = await fetch("/api/scenarios/generate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          avatarId,
+          stats: currentStats,
+          recentChoices: history,
+          runId: getOrCreateRunId(),
+        }),
+      });
+
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data?.error || "Failed to generate scenario");
+      }
+
+      setScenario(data);
+      setTurn(turnToSet);
+    } catch (error) {
+      setScenario(null);
+      setLoadError(error?.message || "Scenario generation is unavailable.");
+    } finally {
+      setLoadingScenario(false);
+    }
+  }
 
   function handleSelectAvatar(avatarId) {
-    const avatar = AVATARS.find((item) => item.id === avatarId);
+    const avatar = avatars.find((item) => item.id === avatarId);
     if (!avatar) return;
+
+    startNewRun();
     setSelectedChoice(null);
-    setScenarioIndex(0);
+    setRecentChoices([]);
+    setTurn(1);
+    setScenario(null);
     setSelectedAvatarId(avatar.id);
     setStats(avatar.startingStats);
+
     if (typeof window !== "undefined") {
       window.localStorage.setItem(LOCAL_AVATAR_KEY, avatar.id);
     }
@@ -169,25 +233,30 @@ export default function GamePage() {
 
   function handleChangeAvatar() {
     setSelectedChoice(null);
-    setScenarioIndex(0);
-    setSaveMode(null);
+    setScenario(null);
+    setTurn(1);
+    setRecentChoices([]);
     setStats(INITIAL_STATS);
     setSelectedAvatarId(null);
+    setLoadError("");
 
     if (typeof window !== "undefined") {
       window.localStorage.removeItem(LOCAL_AVATAR_KEY);
+      window.sessionStorage.removeItem(SESSION_RUN_ID_KEY);
     }
   }
 
   // ── handlers ──────────────────────────────────────────────────
   async function handleChoice(choice) {
+    if (!scenario || !selectedAvatar) return;
+
     const finalChoice = applyRoleBonus(choice, selectedAvatarId);
     const newStats = applyChoice(stats, finalChoice);
     setStats(newStats);
     setSelectedChoice(finalChoice);
 
     const attemptPayload = {
-      id: `local-${Date.now()}`,
+      username: username.trim() || null,
       avatarId: selectedAvatar?.id ?? null,
       avatarName: selectedAvatar?.name ?? null,
       scenarioId: scenario.id,
@@ -197,38 +266,53 @@ export default function GamePage() {
       outcome: finalChoice.outcome,
       ...newStats,
       createdAt: new Date().toISOString(),
+      statsAfter: newStats,
     };
 
-    // Save attempt — swallows error gracefully if API isn't up yet.
     try {
       const res = await fetch("/api/attempts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          runId: getOrCreateRunId(),
+          username: username.trim() || null,
           avatarId: selectedAvatar?.id ?? null,
+          avatarName: selectedAvatar?.name ?? null,
           scenarioId: scenario.id,
+          scenarioTitle: scenario.title,
           choiceId:   finalChoice.id,
+          choiceText: finalChoice.text,
           outcome:    finalChoice.outcome,
           ...newStats,
         }),
       });
 
-      if (!res.ok) throw new Error("API not ready");
-      setSaveMode("api");
-    } catch {
-      saveAttemptLocally(attemptPayload);
-      setSaveMode("local");
+      const savedAttempt = await res.json();
+      if (!res.ok) throw new Error(savedAttempt?.error || "Failed to save attempt");
+
+      setRecentChoices((current) => [savedAttempt, ...current].slice(0, 6));
+    } catch (error) {
+      setLoadError(error?.message || "Attempt save failed.");
     }
   }
 
-  function handleContinue() {
+  async function handleContinue() {
+    if (!selectedAvatar) return;
+
     setSelectedChoice(null);
-    if (scenarioIndex + 1 < scenarios.length) {
-      setScenarioIndex((i) => i + 1);
-    } else {
-      // No more scenarios — go to history / ending
-      window.location.href = "/history";
+
+    // Final decision reached — the timeline summary lives on /history.
+    if (turn >= GAME_TURN_LIMIT) {
+      router.push("/history");
+      return;
     }
+
+    await requestNextScenario({
+      avatarId: selectedAvatar.id,
+      currentStats: stats,
+      history: recentChoices,
+      turnToSet: turn + 1,
+    });
   }
 
   // ── render ────────────────────────────────────────────────────
@@ -238,19 +322,6 @@ export default function GamePage() {
         <p className="font-mono text-[10px] tracking-[0.3em] text-[#6B6558] uppercase animate-pulse">
           Scanning timeline…
         </p>
-      </div>
-    );
-  }
-
-  if (!scenario) {
-    return (
-      <div className="min-h-screen flex flex-col items-center justify-center gap-6 bg-[#1A1814]">
-        <p className="font-mono text-[10px] tracking-[0.3em] text-[#6B6558] uppercase">
-          No scenarios found
-        </p>
-        <Link href="/" className="font-display text-sm tracking-widest text-[#4ECDC4]">
-          ← Return
-        </Link>
       </div>
     );
   }
@@ -269,7 +340,7 @@ export default function GamePage() {
           </h1>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {AVATARS.map((avatar) => (
+            {avatars.map((avatar) => (
               <button
                 key={avatar.id}
                 onClick={() => handleSelectAvatar(avatar.id)}
@@ -325,6 +396,34 @@ export default function GamePage() {
     );
   }
 
+  if (!scenario) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center gap-6 bg-[#1A1814]">
+        <p className="font-mono text-[10px] tracking-[0.3em] text-[#6B6558] uppercase">
+          {loadingScenario ? "Generating scenario..." : loadError || "No scenarios found"}
+        </p>
+        {!loadingScenario && (
+          <button
+            onClick={() =>
+              requestNextScenario({
+                avatarId: selectedAvatar.id,
+                currentStats: stats,
+                history: recentChoices,
+                turnToSet: turn,
+              })
+            }
+            className="font-display text-sm tracking-widest text-[#1A1814] bg-[#4ECDC4] px-5 py-2 hover:bg-[#F7C948] transition-colors"
+          >
+            Retry generation
+          </button>
+        )}
+        <Link href="/" className="font-display text-sm tracking-widest text-[#4ECDC4]">
+          ← Return
+        </Link>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen flex flex-col bg-[#1A1814]"
       style={{ background: "radial-gradient(ellipse at 50% 100%, rgba(139,26,26,0.18) 0%, transparent 55%), #1A1814" }}>
@@ -345,6 +444,9 @@ export default function GamePage() {
             </Link>
             <span className="font-mono text-[9px] tracking-[0.2em] text-[#6B6558] uppercase">
               {selectedAvatar.name}
+            </span>
+            <span className="font-mono text-[9px] tracking-[0.2em] text-[#4ECDC4] uppercase">
+              Turn {turn} of {GAME_TURN_LIMIT}
             </span>
             <button
               onClick={handleChangeAvatar}
@@ -399,7 +501,7 @@ export default function GamePage() {
             <div className="xl:col-span-8 flex flex-col gap-6">
               <ScenarioCard
                 scenario={scenario}
-                scenarioIndex={scenarioIndex}
+                scenarioIndex={turn - 1}
                 imageHeightClass="h-[220px] sm:h-[280px] xl:h-[340px]"
               />
             </div>
@@ -423,9 +525,9 @@ export default function GamePage() {
 
               {/* History link */}
               <div className="pt-5 pb-4 mt-auto">
-                {saveMode === "local" && (
+                {loadError && (
                   <p className="font-mono text-[9px] tracking-[0.2em] text-[#6B6558] uppercase mb-3">
-                    Saving timeline locally until backend sync is available
+                    {loadError}
                   </p>
                 )}
                 <Link
@@ -437,11 +539,12 @@ export default function GamePage() {
               </div>
             </div>
 
+            {/* Regular future message card */}
             <div className="xl:col-span-12">
               <FutureMessageCard
                 message={scenario.futureMsg}
-                futureImageUrl={selectedAvatar.futureImageUrl}
-                futureLabel={`${selectedAvatar.name} ∷ Future Self`}
+                futureImageUrl={futureImageUrl}
+                futureLabel={`${selectedAvatar.name} ∷ Future Self (${futureState})`}
               />
             </div>
           </div>

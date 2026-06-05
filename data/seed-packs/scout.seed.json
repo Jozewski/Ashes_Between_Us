@@ -1,0 +1,661 @@
+{
+  "packId": "scout-v3",
+  "version": "3.0.0",
+  "avatars": [
+    {
+      "avatarId": "scout",
+      "scenarios": [
+        {
+          "id": "scout-001",
+          "title": "The Cartographer's Debt",
+          "setting": "Three days into the ash belt, you find the body of another scout slumped against a road sign, frozen mid-sketch. Her map is better than yours — it marks a water cache your own charts call a dead zone. Her satchel also holds a child's drawing and a name. Taking the map means survival. It also means deciding what you owe the dead.",
+          "futureMsg": "Future-you remembers this crossroads as the moment you learned that every map is written in someone else's footsteps. What you took here decided whether you walked the rest of the wastes as a thief or a steward.",
+          "imageUrl": "/images/backgrounds/ruined-city.png",
+          "progressionBand": "early",
+          "weight": 3,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Take the map and bury her with the drawing.",
+              "outcome": "You lose an hour of daylight digging in frozen ground, but you walk away with both the cache and your conscience intact.",
+              "hopeChange": 4,
+              "trustChange": 3,
+              "chaosChange": -2,
+              "humanityChange": 8
+            },
+            {
+              "id": "b",
+              "text": "Take only what you need and leave the rest with her.",
+              "outcome": "You copy the cache location into your own charts and leave her satchel undisturbed. A smaller gain, but you sleep easier.",
+              "hopeChange": 2,
+              "trustChange": 4,
+              "chaosChange": -1,
+              "humanityChange": 5
+            },
+            {
+              "id": "c",
+              "text": "Strip the body for everything useful and move on.",
+              "outcome": "You make excellent time and want for nothing. But you catch yourself avoiding your own reflection in still water for days.",
+              "hopeChange": 6,
+              "trustChange": -5,
+              "chaosChange": 4,
+              "humanityChange": -9
+            },
+            {
+              "id": "d",
+              "text": "Search the area for whoever the drawing belongs to.",
+              "outcome": "You burn precious supplies chasing a ghost. You never find the child — but a watching survivor remembers that you tried.",
+              "hopeChange": -3,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 6
+            },
+            {
+              "id": "e",
+              "text": "Leave everything untouched. The dead keep their own.",
+              "outcome": "You walk on with empty hands and a parched throat, betting your life on the route you already know.",
+              "hopeChange": -6,
+              "trustChange": 2,
+              "chaosChange": -3,
+              "humanityChange": 3
+            },
+            {
+              "id": "f",
+              "text": "Take the map, then radio its location to other travelers.",
+              "outcome": "You broadcast the cache to anyone listening. Strangers will live because of it — and predators now know exactly where the thirsty will gather.",
+              "hopeChange": 5,
+              "trustChange": 1,
+              "chaosChange": 9,
+              "humanityChange": 4
+            }
+          ]
+        },
+        {
+          "id": "scout-002",
+          "title": "What the Tower Saw",
+          "setting": "The old fire-watch tower still has working optics. From its platform you can see two convoys converging on the same valley town at dusk — one flying relief colors, one flying none. They cannot see each other yet. By dawn, only one will hold the town. You have a radio, a rifle, and the only god's-eye view for fifty miles.",
+          "futureMsg": "Future-you marks this dusk as the day you understood the weight of a high vantage. Knowing what's coming is its own kind of power — and refusing to use it is still a choice.",
+          "imageUrl": "/images/backgrounds/radio-tower.png",
+          "progressionBand": "mid",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Warn the relief convoy and guide their defense.",
+              "outcome": "Your overwatch turns a slaughter into a standoff. The town holds — and now both convoys know a sniper chose a side.",
+              "hopeChange": 8,
+              "trustChange": 5,
+              "chaosChange": 3,
+              "humanityChange": 6
+            },
+            {
+              "id": "b",
+              "text": "Warn both convoys and force a parley.",
+              "outcome": "You broadcast each force's position to the other. Caught without surprise, their leaders meet at the bridge. It is tense, ugly, and bloodless.",
+              "hopeChange": 5,
+              "trustChange": 8,
+              "chaosChange": -4,
+              "humanityChange": 7
+            },
+            {
+              "id": "c",
+              "text": "Stay silent and record everything for later.",
+              "outcome": "You log the entire engagement in cold detail. The intelligence is priceless. So was the help you withheld.",
+              "hopeChange": -4,
+              "trustChange": -2,
+              "chaosChange": 2,
+              "humanityChange": -7
+            },
+            {
+              "id": "d",
+              "text": "Fire warning shots to scatter the unmarked convoy.",
+              "outcome": "Your shots crack the dusk and the raiders scatter into the hills — straight toward an unwarned settlement you didn't account for.",
+              "hopeChange": 3,
+              "trustChange": -1,
+              "chaosChange": 10,
+              "humanityChange": -1
+            },
+            {
+              "id": "e",
+              "text": "Abandon the tower. This isn't your fight.",
+              "outcome": "You climb down and walk into the dark, leaving the valley to settle itself. You hear the gunfire start when you're two ridges away.",
+              "hopeChange": -5,
+              "trustChange": 0,
+              "chaosChange": 4,
+              "humanityChange": -4
+            },
+            {
+              "id": "f",
+              "text": "Sell the convoys' positions to the highest bidder.",
+              "outcome": "You raise both factions on a private channel and auction what you see. You leave richer in supplies and poorer in every way that lasts.",
+              "hopeChange": 2,
+              "trustChange": -9,
+              "chaosChange": 8,
+              "humanityChange": -10
+            }
+          ]
+        },
+        {
+          "id": "scout-003",
+          "title": "The Glass Orchard Trail",
+          "setting": "A greenhouse district has collapsed into a glittering maze of cracked panels and wild fruit trees. The shortest path to the safe zone runs through the glass, but every step sings underfoot and something large keeps circling outside the panes.",
+          "futureMsg": "Future-you remembers the orchard not for its fruit, but for the sound of patience. The path you chose decided whether the hungry followed you or the hunters did.",
+          "imageUrl": "/images/backgrounds/forest-safe-zone.png",
+          "progressionBand": "early",
+          "weight": 3,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Mark a slow silent route with strips of cloth.",
+              "outcome": "Your group moves like breath through the shards. The cloth trail later guides lost families without waking the thing in the grove.",
+              "hopeChange": 5,
+              "trustChange": 5,
+              "chaosChange": -4,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Break a loud decoy path away from the fruit trees.",
+              "outcome": "Glass crashes across the far rows and draws the circling shape away. You escape, but the orchard will never be quiet again.",
+              "hopeChange": 3,
+              "trustChange": -1,
+              "chaosChange": 7,
+              "humanityChange": -1
+            },
+            {
+              "id": "c",
+              "text": "Climb the steel trellis and map the whole maze.",
+              "outcome": "From above, the pattern is obvious. You find three exits and a buried rain tank, though your silhouette is seen from the road.",
+              "hopeChange": 6,
+              "trustChange": 3,
+              "chaosChange": 2,
+              "humanityChange": 2
+            },
+            {
+              "id": "d",
+              "text": "Harvest only the lowest fruit and leave immediately.",
+              "outcome": "You gain a little food without tempting fate. Others grumble that you left abundance behind, but no one bleeds tonight.",
+              "hopeChange": 2,
+              "trustChange": 1,
+              "chaosChange": -3,
+              "humanityChange": 1
+            },
+            {
+              "id": "e",
+              "text": "Set signal mirrors to warn future travelers.",
+              "outcome": "Your reflected code turns the ruined greenhouse into a beacon. Friendly scouts understand it; less friendly eyes may learn it too.",
+              "hopeChange": 4,
+              "trustChange": 4,
+              "chaosChange": 3,
+              "humanityChange": 5
+            },
+            {
+              "id": "f",
+              "text": "Burn the orchard edge to flush out the threat.",
+              "outcome": "The creature bolts, the fruit cooks on the branch, and smoke marks your location for miles. Survival tastes like ash.",
+              "hopeChange": -3,
+              "trustChange": -4,
+              "chaosChange": 12,
+              "humanityChange": -5
+            }
+          ]
+        },
+        {
+          "id": "scout-004",
+          "title": "Footprints That Walk Backward",
+          "setting": "After a night of aurora static, you wake to find fresh footprints entering camp from every direction and none leaving. Each print is your size. Some are wet with seawater, though the coast is two days away.",
+          "futureMsg": "Future-you says the wrong footprints were not a warning about enemies. They were a warning about which version of you had already passed this way.",
+          "imageUrl": "/images/skyscapes/aurora-winter-forest.png",
+          "progressionBand": "mid",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Measure every print before anyone steps outside.",
+              "outcome": "The pattern reveals a spiral route around camp. You lead everyone out between the loops and avoid a temporal sinkhole.",
+              "hopeChange": 7,
+              "trustChange": 3,
+              "chaosChange": -5,
+              "humanityChange": 2
+            },
+            {
+              "id": "b",
+              "text": "Follow the wet tracks toward the impossible coast.",
+              "outcome": "You find a drowned supply case from a future flood. Useful medicine rattles inside, along with a note in your handwriting.",
+              "hopeChange": 4,
+              "trustChange": 1,
+              "chaosChange": 5,
+              "humanityChange": 1
+            },
+            {
+              "id": "c",
+              "text": "Erase the prints and forbid anyone to discuss them.",
+              "outcome": "Panic is contained for a day, but secrets breed harder than fear. By evening, half the camp thinks you are hiding a curse.",
+              "hopeChange": -2,
+              "trustChange": -5,
+              "chaosChange": 1,
+              "humanityChange": -2
+            },
+            {
+              "id": "d",
+              "text": "Let the children make chalk circles around the tracks.",
+              "outcome": "The terror becomes a game and the camp breathes again. The circles also show one new footprint appearing after sunset.",
+              "hopeChange": 5,
+              "trustChange": 4,
+              "chaosChange": -2,
+              "humanityChange": 6
+            },
+            {
+              "id": "e",
+              "text": "Camp elsewhere and leave a warning cairn.",
+              "outcome": "You abandon a good site for uncertain ground. The cairn saves a later patrol, but your people curse the cold walk.",
+              "hopeChange": -1,
+              "trustChange": 2,
+              "chaosChange": -3,
+              "humanityChange": 2
+            },
+            {
+              "id": "f",
+              "text": "Step into the oldest print and wait.",
+              "outcome": "For six seconds you see three timelines stacked like glass. You return with perfect route knowledge and a nosebleed that will not stop.",
+              "hopeChange": 6,
+              "trustChange": -2,
+              "chaosChange": 8,
+              "humanityChange": -3
+            }
+          ]
+        },
+        {
+          "id": "scout-005",
+          "title": "The Moth Lantern Migration",
+          "setting": "Millions of pale moths drift over the desert highway at midnight, glowing faintly blue. They swarm around buried metal and avoid poisoned ground, turning the ruined road into a living map that will vanish by dawn.",
+          "futureMsg": "Future-you learned that not every compass points north. Some point toward mercy, some toward greed, and some toward the graves nobody marked.",
+          "imageUrl": "/images/backgrounds/desert-highway.png",
+          "progressionBand": "early",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Follow the densest glow to buried water pipes.",
+              "outcome": "The moths lead you to a service hatch with stale but drinkable water. You refill quietly and leave no trap behind.",
+              "hopeChange": 7,
+              "trustChange": 4,
+              "chaosChange": -4,
+              "humanityChange": 3
+            },
+            {
+              "id": "b",
+              "text": "Capture a jar of moths for later navigation.",
+              "outcome": "The jar works for one night, then the insects die dimly in your pack. Their light bought distance at a small moral cost.",
+              "hopeChange": 3,
+              "trustChange": 0,
+              "chaosChange": -1,
+              "humanityChange": -3
+            },
+            {
+              "id": "c",
+              "text": "Wake nearby travelers and share the migration route.",
+              "outcome": "A strange midnight caravan forms behind you. More lives are saved, and so many footsteps make hiding impossible.",
+              "hopeChange": 8,
+              "trustChange": 5,
+              "chaosChange": 5,
+              "humanityChange": 7
+            },
+            {
+              "id": "d",
+              "text": "Use the moths to locate a weapons cache instead.",
+              "outcome": "You uncover sealed ammunition beneath a toll booth. The find protects your group, but it changes how they look at problems.",
+              "hopeChange": 2,
+              "trustChange": -2,
+              "chaosChange": 6,
+              "humanityChange": -2
+            },
+            {
+              "id": "e",
+              "text": "Mark poisoned zones on the asphalt with ash.",
+              "outcome": "By sunrise the moths are gone, but your warning marks remain. Strangers later add their own signs beside yours.",
+              "hopeChange": 4,
+              "trustChange": 6,
+              "chaosChange": -3,
+              "humanityChange": 5
+            },
+            {
+              "id": "f",
+              "text": "Ignore the spectacle and keep your original route.",
+              "outcome": "You lose the chance at hidden supplies, yet avoid the ambush set for anyone following the glow too greedily.",
+              "hopeChange": -1,
+              "trustChange": 1,
+              "chaosChange": -5,
+              "humanityChange": 1
+            }
+          ]
+        },
+        {
+          "id": "scout-006",
+          "title": "The Town That Moved Overnight",
+          "setting": "A valley settlement that was west of the river yesterday now stands east of it, chimneys smoking as if nothing happened. Your map argues with your eyes. The gate guard waves at you by name though you have never been here.",
+          "futureMsg": "Future-you warns that the moved town was not asking to be solved. It was asking whether you could respect a place that survived by slipping sideways.",
+          "imageUrl": "/images/backgrounds/ruined-city.png",
+          "progressionBand": "mid",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Enter politely and pretend the map is wrong.",
+              "outcome": "The town elders reward your courtesy with supper and a bridge schedule. They share only what they believe you can carry safely.",
+              "hopeChange": 6,
+              "trustChange": 6,
+              "chaosChange": -2,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Demand to know how the settlement relocated.",
+              "outcome": "Your suspicion turns the gate cold. They answer with riddles, and by morning every trail behind you has changed.",
+              "hopeChange": -2,
+              "trustChange": -4,
+              "chaosChange": 3,
+              "humanityChange": -1
+            },
+            {
+              "id": "c",
+              "text": "Map both versions of the valley before approaching.",
+              "outcome": "You discover the town moves away from massacre sites. The knowledge is valuable and dangerous enough to keep hidden.",
+              "hopeChange": 5,
+              "trustChange": 2,
+              "chaosChange": -1,
+              "humanityChange": 2
+            },
+            {
+              "id": "d",
+              "text": "Warn them that other scouts will notice the anomaly.",
+              "outcome": "They listen, then recruit you to redraw their defensive perimeter. Trust forms around the truth instead of despite it.",
+              "hopeChange": 4,
+              "trustChange": 7,
+              "chaosChange": -3,
+              "humanityChange": 5
+            },
+            {
+              "id": "e",
+              "text": "Steal a street sign as proof.",
+              "outcome": "The sign becomes a bargaining trophy, but the town never opens its gate to you again. Proof costs belonging.",
+              "hopeChange": 1,
+              "trustChange": -6,
+              "chaosChange": 2,
+              "humanityChange": -5
+            },
+            {
+              "id": "f",
+              "text": "Leave supplies at the old town site and move on.",
+              "outcome": "You never learn the secret, but someone finds the offering where a door used to be. Gratitude travels by stranger roads.",
+              "hopeChange": 3,
+              "trustChange": 3,
+              "chaosChange": -2,
+              "humanityChange": 6
+            }
+          ]
+        },
+        {
+          "id": "scout-007",
+          "title": "Under the Singing Overpass",
+          "setting": "Wind through the cracked highway overpass produces a low chord that changes when people lie beneath it. A refugee column waits there, accusing one another of stealing insulin and route papers while the bridge hums like a judge.",
+          "futureMsg": "Future-you says the bridge never cared who was guilty. It cared who you became when the crowd begged you to make certainty out of noise.",
+          "imageUrl": "/images/backgrounds/desert-highway.png",
+          "progressionBand": "mid",
+          "weight": 3,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Separate witnesses and track the thief by boot dust.",
+              "outcome": "Patient observation finds the hidden papers inside a cooking pot. The insulin is already warming in a frightened child’s coat.",
+              "hopeChange": 4,
+              "trustChange": 7,
+              "chaosChange": -4,
+              "humanityChange": 5
+            },
+            {
+              "id": "b",
+              "text": "Use the bridge tone to pressure confessions.",
+              "outcome": "Several people crack, including two who are innocent. You recover the supplies, but fear replaces respect.",
+              "hopeChange": 1,
+              "trustChange": -4,
+              "chaosChange": 3,
+              "humanityChange": -4
+            },
+            {
+              "id": "c",
+              "text": "Escort the suspected family away before the mob turns.",
+              "outcome": "The family lives, and later one child admits where the route papers were hidden. Mercy costs time but prevents a lynching.",
+              "hopeChange": 2,
+              "trustChange": 5,
+              "chaosChange": -5,
+              "humanityChange": 8
+            },
+            {
+              "id": "d",
+              "text": "Trade your own maps for the missing papers.",
+              "outcome": "The accusation dissolves when nobody needs the stolen route. You become poorer in information and richer in allies.",
+              "hopeChange": 3,
+              "trustChange": 6,
+              "chaosChange": -2,
+              "humanityChange": 4
+            },
+            {
+              "id": "e",
+              "text": "Let the group vote on punishment.",
+              "outcome": "Order returns quickly, but the majority chooses exile before the evidence is complete. The bridge hums lower after they leave.",
+              "hopeChange": -3,
+              "trustChange": 1,
+              "chaosChange": 2,
+              "humanityChange": -7
+            },
+            {
+              "id": "f",
+              "text": "Create a false trail to draw the real thief out.",
+              "outcome": "Your bluff works, but it also teaches the column that you can lie beautifully. Trust comes back wearing armor.",
+              "hopeChange": 4,
+              "trustChange": -1,
+              "chaosChange": 1,
+              "humanityChange": -1
+            }
+          ]
+        },
+        {
+          "id": "scout-008",
+          "title": "The Library of Wind Maps",
+          "setting": "Inside a sand-packed university, weather maps hang from the ceiling and shift without hands. One map shows tomorrow’s dust storm, another shows a route through it, and a third is drawn in red ink over a settlement that has not called for help yet.",
+          "futureMsg": "Future-you remembers choosing which future deserved warning first. A scout can outrun weather, but not consequence.",
+          "imageUrl": "/images/backgrounds/bunker.png",
+          "progressionBand": "late",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Copy the safe route and race the storm alone.",
+              "outcome": "You reach shelter with intact lungs and perfect notes. Behind you, a settlement learns too late why the sky turned copper.",
+              "hopeChange": 1,
+              "trustChange": -4,
+              "chaosChange": 0,
+              "humanityChange": -6
+            },
+            {
+              "id": "b",
+              "text": "Broadcast the storm path to every local channel.",
+              "outcome": "Panic floods the airwaves, but so do evacuation plans. Disorder saves more people than silence would have.",
+              "hopeChange": 7,
+              "trustChange": 4,
+              "chaosChange": 6,
+              "humanityChange": 8
+            },
+            {
+              "id": "c",
+              "text": "Send a coded warning only to trusted contacts.",
+              "outcome": "Your network moves efficiently while outsiders guess at rumors. The survivors will ask who deserved the code.",
+              "hopeChange": 4,
+              "trustChange": 6,
+              "chaosChange": -2,
+              "humanityChange": -2
+            },
+            {
+              "id": "d",
+              "text": "Carry the red map to the threatened settlement.",
+              "outcome": "You arrive breathless and believed only because you came in person. The town empties just before the wall of sand arrives.",
+              "hopeChange": 8,
+              "trustChange": 7,
+              "chaosChange": -3,
+              "humanityChange": 7
+            },
+            {
+              "id": "e",
+              "text": "Preserve the whole archive instead of chasing one alert.",
+              "outcome": "The maps become a long-term miracle, but today’s storm takes what you could have saved now.",
+              "hopeChange": -4,
+              "trustChange": 5,
+              "chaosChange": 0,
+              "humanityChange": -5
+            },
+            {
+              "id": "f",
+              "text": "Destroy the red map so raiders cannot misuse it.",
+              "outcome": "The secret dies in your hands. So do the people whose danger it named.",
+              "hopeChange": -8,
+              "trustChange": -3,
+              "chaosChange": -2,
+              "humanityChange": -10
+            }
+          ]
+        },
+        {
+          "id": "scout-009",
+          "title": "The Dog With Three Collars",
+          "setting": "A scarred dog appears at dusk wearing three collars: one military, one handmade from ribbon, one stamped with the emblem of a raider pack. It refuses food but keeps looking back toward a drainage tunnel under the city.",
+          "futureMsg": "Future-you says the dog was a question with teeth: do you follow loyalty, suspicion, or hunger when they all point underground?",
+          "imageUrl": "/images/backgrounds/ruined-city.png",
+          "progressionBand": "any",
+          "weight": 3,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Follow the dog at a distance through the tunnel.",
+              "outcome": "It leads you to trapped civilians and then vanishes. Your caution keeps the rescue quiet until everyone is above ground.",
+              "hopeChange": 6,
+              "trustChange": 6,
+              "chaosChange": -4,
+              "humanityChange": 7
+            },
+            {
+              "id": "b",
+              "text": "Remove the raider collar before anyone sees it.",
+              "outcome": "The dog is accepted into camp, but you have hidden evidence of where it came from. That lie may bark later.",
+              "hopeChange": 3,
+              "trustChange": -2,
+              "chaosChange": -1,
+              "humanityChange": -1
+            },
+            {
+              "id": "c",
+              "text": "Track the raider scent back to its den.",
+              "outcome": "You discover an abandoned outpost full of stolen blankets and coded tags. The knowledge helps, but pursuit nearly costs you.",
+              "hopeChange": 4,
+              "trustChange": 1,
+              "chaosChange": 4,
+              "humanityChange": 0
+            },
+            {
+              "id": "d",
+              "text": "Use the dog as bait to lure whoever owns it.",
+              "outcome": "A frightened handler crawls out, not a raider. Your trap works and still feels ugly.",
+              "hopeChange": 1,
+              "trustChange": -3,
+              "chaosChange": 2,
+              "humanityChange": -5
+            },
+            {
+              "id": "e",
+              "text": "Feed the dog and let it choose where to stay.",
+              "outcome": "It sleeps outside your tent and alerts camp before a gas leak spreads. Trust sometimes begins without orders.",
+              "hopeChange": 5,
+              "trustChange": 4,
+              "chaosChange": -3,
+              "humanityChange": 6
+            },
+            {
+              "id": "f",
+              "text": "Drive it away to protect the group from tracking.",
+              "outcome": "No one gets followed tonight. No one hears the trapped people under the street, either.",
+              "hopeChange": -5,
+              "trustChange": 0,
+              "chaosChange": -2,
+              "humanityChange": -7
+            }
+          ]
+        },
+        {
+          "id": "scout-010",
+          "title": "Last Light on Needle Ridge",
+          "setting": "The only pass through Needle Ridge closes at sunset when freezing fog fills the stone needles. From the crest you can see fires in three directions: your camp, a stranger camp, and a place where no camp existed yesterday.",
+          "futureMsg": "Future-you whispers that the last light always shows more need than one person can answer. What matters is the rule you choose before darkness chooses for you.",
+          "imageUrl": "/images/skyscapes/aurora-mountain-storm.png",
+          "progressionBand": "late",
+          "weight": 1,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Guide your own camp through first.",
+              "outcome": "Your people survive the pass and call you faithful. The other fires fade behind the fog like unanswered prayers.",
+              "hopeChange": 3,
+              "trustChange": 6,
+              "chaosChange": -2,
+              "humanityChange": -4
+            },
+            {
+              "id": "b",
+              "text": "Signal all three camps to converge at the ridge.",
+              "outcome": "The crossing becomes crowded and chaotic, but shared ropes turn strangers into a winter caravan.",
+              "hopeChange": 8,
+              "trustChange": 5,
+              "chaosChange": 5,
+              "humanityChange": 7
+            },
+            {
+              "id": "c",
+              "text": "Investigate the impossible third fire alone.",
+              "outcome": "You find a future campsite with your name carved into a pole. The warning saves later lives but leaves tonight’s camp waiting.",
+              "hopeChange": 4,
+              "trustChange": -1,
+              "chaosChange": 3,
+              "humanityChange": 1
+            },
+            {
+              "id": "d",
+              "text": "Leave marked anchors and retreat until dawn.",
+              "outcome": "The conservative choice costs a freezing night, yet no one tumbles blind through the rocks. Patience earns respect.",
+              "hopeChange": 1,
+              "trustChange": 4,
+              "chaosChange": -5,
+              "humanityChange": 3
+            },
+            {
+              "id": "e",
+              "text": "Shoot flare colors for priority: wounded, children, supplies.",
+              "outcome": "The system is harsh but clear. Those most at risk move first, and resentment follows the order all the way down.",
+              "hopeChange": 5,
+              "trustChange": 2,
+              "chaosChange": -1,
+              "humanityChange": 2
+            },
+            {
+              "id": "f",
+              "text": "Cut the old rope bridge after your group crosses.",
+              "outcome": "No raiders can follow. Neither can anyone else. The ridge remembers what you refused to carry.",
+              "hopeChange": -2,
+              "trustChange": -7,
+              "chaosChange": -4,
+              "humanityChange": -9
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

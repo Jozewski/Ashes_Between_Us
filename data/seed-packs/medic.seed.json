@@ -1,0 +1,661 @@
+{
+  "packId": "medic-v3",
+  "version": "3.0.0",
+  "avatars": [
+    {
+      "avatarId": "medic",
+      "scenarios": [
+        {
+          "id": "medic-001",
+          "title": "The Fever Choir",
+          "setting": "In an abandoned chapel clinic, thirty patients hum the same tune whenever their fever spikes. The melody matches a numbers station broadcasting from the ruined tower, and the sickest child hums tomorrow’s date between breaths.",
+          "futureMsg": "Future-you remembers that the song was not madness. It was the body trying to translate danger before the mind could bear it.",
+          "imageUrl": "/images/backgrounds/bunker.png",
+          "progressionBand": "early",
+          "weight": 3,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Quarantine the singers and chart the melody.",
+              "outcome": "Patterns emerge without spreading panic. You identify the water source as the carrier, though families hate the locked doors.",
+              "hopeChange": 5,
+              "trustChange": 2,
+              "chaosChange": -5,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Treat the child first despite triage order.",
+              "outcome": "The child survives and gives you the missing number. Two adults decline while you work at the bedside.",
+              "hopeChange": 4,
+              "trustChange": -1,
+              "chaosChange": 1,
+              "humanityChange": 6
+            },
+            {
+              "id": "c",
+              "text": "Broadcast the tune to ask if anyone recognizes it.",
+              "outcome": "A distant clinic answers with treatment notes. The open signal also tells raiders where medicine is being used.",
+              "hopeChange": 6,
+              "trustChange": 4,
+              "chaosChange": 6,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Sedate every humming patient to stop the panic.",
+              "outcome": "The chapel grows quiet, but your notes go blind. Order returns at the cost of trust in your hands.",
+              "hopeChange": -2,
+              "trustChange": -5,
+              "chaosChange": -2,
+              "humanityChange": -5
+            },
+            {
+              "id": "e",
+              "text": "Test the chapel well before touching the patients.",
+              "outcome": "The water glows under reagent strips. Prevention saves more lives than heroics, and the cure begins below the floor.",
+              "hopeChange": 7,
+              "trustChange": 5,
+              "chaosChange": -6,
+              "humanityChange": 5
+            },
+            {
+              "id": "f",
+              "text": "Let a family carry one patient home.",
+              "outcome": "Compassion overrides containment. Their gratitude is immediate; the second wave begins three streets away.",
+              "hopeChange": 2,
+              "trustChange": 1,
+              "chaosChange": 10,
+              "humanityChange": -3
+            }
+          ]
+        },
+        {
+          "id": "medic-002",
+          "title": "The Red Inventory",
+          "setting": "Your medical ledger shows six red marks beside supplies you have not used yet. By morning, each mark corresponds to a patient who arrives bleeding, burned, or poisoned. Someone or something is editing your inventory before the wounds happen.",
+          "futureMsg": "Future-you says the red ledger tempted you to become a prophet. The timeline wanted a doctor instead.",
+          "imageUrl": "/images/backgrounds/bunker.png",
+          "progressionBand": "early",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Set aside every marked supply for the predicted injuries.",
+              "outcome": "Preparation saves the arrivals, but other patients notice shelves being reserved for ghosts.",
+              "hopeChange": 6,
+              "trustChange": 1,
+              "chaosChange": -3,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Use the supplies normally and refuse the omen.",
+              "outcome": "You treat the people already in front of you. When the predicted cases arrive, improvisation becomes your only medicine.",
+              "hopeChange": -1,
+              "trustChange": 3,
+              "chaosChange": 5,
+              "humanityChange": 2
+            },
+            {
+              "id": "c",
+              "text": "Ask your assistant to falsify the ledger overnight.",
+              "outcome": "The red marks stop appearing, and so does your warning. You win peace of mind by blinding tomorrow.",
+              "hopeChange": -3,
+              "trustChange": -2,
+              "chaosChange": -1,
+              "humanityChange": -4
+            },
+            {
+              "id": "d",
+              "text": "Invite the community to witness the ledger.",
+              "outcome": "Seeing the impossible together prevents rumors from becoming knives. It also makes everyone ask who gets saved first.",
+              "hopeChange": 3,
+              "trustChange": 6,
+              "chaosChange": 2,
+              "humanityChange": 5
+            },
+            {
+              "id": "e",
+              "text": "Trace who touched the book before each mark.",
+              "outcome": "You catch a sleepwalking patient writing future injuries in antiseptic. Treating their seizures changes the predictions.",
+              "hopeChange": 5,
+              "trustChange": 4,
+              "chaosChange": -4,
+              "humanityChange": 6
+            },
+            {
+              "id": "f",
+              "text": "Burn the ledger and practice by memory.",
+              "outcome": "The omen ends in smoke. So does the only record that could have revealed a pattern in the suffering.",
+              "hopeChange": -5,
+              "trustChange": -1,
+              "chaosChange": 0,
+              "humanityChange": -3
+            }
+          ]
+        },
+        {
+          "id": "medic-003",
+          "title": "The Mercy Engine",
+          "setting": "A pre-collapse hospital machine still powers one surgical bay, but it speaks through canned announcement tones and refuses to operate unless you answer ethical prompts. Outside, five patients wait and the battery gauge keeps falling.",
+          "futureMsg": "Future-you warns that the machine did not measure medical skill. It measured what you believed a life was worth when the plug was warm in your hand.",
+          "imageUrl": "/images/backgrounds/bunker.png",
+          "progressionBand": "mid",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Prioritize the patient most likely to survive.",
+              "outcome": "One clean success steadies the ward. The families of the others learn that odds, not love, ruled the bay.",
+              "hopeChange": 3,
+              "trustChange": 0,
+              "chaosChange": -2,
+              "humanityChange": -1
+            },
+            {
+              "id": "b",
+              "text": "Operate on the youngest patient first.",
+              "outcome": "The child lives, and the ward weeps with relief. An elder dies waiting with a smile nobody knows how to accept.",
+              "hopeChange": 6,
+              "trustChange": 1,
+              "chaosChange": 1,
+              "humanityChange": 3
+            },
+            {
+              "id": "c",
+              "text": "Run brief stabilizing care for all five.",
+              "outcome": "No one is fully healed, but everyone sees your hands refusing to choose too soon. The night becomes a marathon.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": -3,
+              "humanityChange": 7
+            },
+            {
+              "id": "d",
+              "text": "Let the patient families decide the order together.",
+              "outcome": "The vote hurts them, but it belongs to them. Shared grief becomes less poisonous than imposed mercy.",
+              "hopeChange": 2,
+              "trustChange": 6,
+              "chaosChange": -2,
+              "humanityChange": 6
+            },
+            {
+              "id": "e",
+              "text": "Override the machine and risk the battery surge.",
+              "outcome": "You save two at once before sparks kill the surgical light. After that, every stitch is done by lantern.",
+              "hopeChange": 5,
+              "trustChange": 2,
+              "chaosChange": 5,
+              "humanityChange": 2
+            },
+            {
+              "id": "f",
+              "text": "Save the battery for a later epidemic.",
+              "outcome": "You deny the room and preserve power for unknown need. The math is defensible, and the ghosts are personal.",
+              "hopeChange": -4,
+              "trustChange": -4,
+              "chaosChange": -4,
+              "humanityChange": -8
+            }
+          ]
+        },
+        {
+          "id": "medic-004",
+          "title": "Salt for the Sleepless",
+          "setting": "The bunker’s children have stopped sleeping, drawing the same ocean on every wall. Their pulse rates sync whenever the old desalination pipes clatter below the floor. The adults ask for sedatives; the drawings show a door you never built.",
+          "futureMsg": "Future-you remembers that exhaustion made cruelty sound practical. The cure was not rest. It was listening sideways.",
+          "imageUrl": "/images/backgrounds/bunker.png",
+          "progressionBand": "mid",
+          "weight": 3,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Follow the drawn door into the pipe crawlspace.",
+              "outcome": "You discover trapped brine gas leaking into the dormitory vents. The children sleep after the valves are sealed.",
+              "hopeChange": 8,
+              "trustChange": 5,
+              "chaosChange": -6,
+              "humanityChange": 7
+            },
+            {
+              "id": "b",
+              "text": "Ration mild sedatives and monitor every hour.",
+              "outcome": "The ward becomes calmer, though the hidden leak continues. You buy time instead of answers.",
+              "hopeChange": 1,
+              "trustChange": 2,
+              "chaosChange": -1,
+              "humanityChange": 0
+            },
+            {
+              "id": "c",
+              "text": "Move all children aboveground despite the cold.",
+              "outcome": "The fresh air breaks the sync, and frostbite becomes the new enemy. Parents forgive the discomfort when dreams return.",
+              "hopeChange": 5,
+              "trustChange": 4,
+              "chaosChange": -3,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Dismiss the drawings as stress behavior.",
+              "outcome": "Adults feel reassured until one child collapses during breakfast. The ocean on the wall looks less childish then.",
+              "hopeChange": -6,
+              "trustChange": -4,
+              "chaosChange": 4,
+              "humanityChange": -6
+            },
+            {
+              "id": "e",
+              "text": "Ask the children to guide a diagnostic map.",
+              "outcome": "They turn fear into instruction, marking warm walls and bad vents. The bunker learns to value its smallest witnesses.",
+              "hopeChange": 7,
+              "trustChange": 7,
+              "chaosChange": -4,
+              "humanityChange": 8
+            },
+            {
+              "id": "f",
+              "text": "Trade your sleeping pills to another ward for filters.",
+              "outcome": "The filters fix the leak later, but tonight the sleepless cry until dawn. You solve the system and wound the room.",
+              "hopeChange": 0,
+              "trustChange": -3,
+              "chaosChange": 0,
+              "humanityChange": -4
+            }
+          ]
+        },
+        {
+          "id": "medic-005",
+          "title": "The Antivenom Wedding",
+          "setting": "Two rival families arrive at your clinic with snakebite victims after a disastrous wedding hunt. You have enough antivenom for one full dose or two dangerous half doses. Each family claims the marriage treaty dies if their child does.",
+          "futureMsg": "Future-you says you did not choose between lovers. You chose whether medicine would become another family weapon.",
+          "imageUrl": "/images/backgrounds/forest-safe-zone.png",
+          "progressionBand": "any",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Split the antivenom and monitor both bodies closely.",
+              "outcome": "Both survive through a terrifying night of seizures and prayer. The treaty begins with everyone owing everyone.",
+              "hopeChange": 7,
+              "trustChange": 6,
+              "chaosChange": 1,
+              "humanityChange": 8
+            },
+            {
+              "id": "b",
+              "text": "Give the full dose to the worse bite.",
+              "outcome": "The medical choice is sound, but grief makes it look political. One family leaves with a coffin and a grudge.",
+              "hopeChange": 0,
+              "trustChange": -3,
+              "chaosChange": 3,
+              "humanityChange": 1
+            },
+            {
+              "id": "c",
+              "text": "Let the families decide who receives the full dose.",
+              "outcome": "They argue until the victims worsen. When they finally choose, the cost of delay is visible in every breath.",
+              "hopeChange": -2,
+              "trustChange": 1,
+              "chaosChange": 4,
+              "humanityChange": -2
+            },
+            {
+              "id": "d",
+              "text": "Attempt to synthesize more from expired samples.",
+              "outcome": "Your hands shake over cloudy vials. The new batch works imperfectly, saving both and poisoning you for a day.",
+              "hopeChange": 6,
+              "trustChange": 4,
+              "chaosChange": 3,
+              "humanityChange": 6
+            },
+            {
+              "id": "e",
+              "text": "Demand the treaty be signed before treatment.",
+              "outcome": "You force peace with a syringe as leverage. The wedding survives, but your clinic becomes a negotiation table with scalpels.",
+              "hopeChange": 2,
+              "trustChange": -5,
+              "chaosChange": -1,
+              "humanityChange": -4
+            },
+            {
+              "id": "f",
+              "text": "Send a runner to harvest venom while you stabilize both.",
+              "outcome": "The runner returns bitten too, but with enough material for a crude serum. Heroism multiplies the patient list.",
+              "hopeChange": 5,
+              "trustChange": 3,
+              "chaosChange": 5,
+              "humanityChange": 5
+            }
+          ]
+        },
+        {
+          "id": "medic-006",
+          "title": "The Borrowed Heartbeat",
+          "setting": "A scavenged monitor in the maternity room begins playing a heartbeat from a patient who has not arrived yet. The rhythm falters whenever you move the emergency cot away from the east wall.",
+          "futureMsg": "Future-you says the unborn future knocked softly that night. You almost mistook it for faulty wiring.",
+          "imageUrl": "/images/backgrounds/bunker.png",
+          "progressionBand": "late",
+          "weight": 1,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Prepare the east wall room for an emergency birth.",
+              "outcome": "Hours later, a mother staggers in under aurora rain. The room is ready before her fear has a name.",
+              "hopeChange": 8,
+              "trustChange": 5,
+              "chaosChange": -4,
+              "humanityChange": 9
+            },
+            {
+              "id": "b",
+              "text": "Search the east wall for hidden electrical faults.",
+              "outcome": "You find an illegal splice feeding the monitor from a sealed basement. The discovery prevents fire but delays birth prep.",
+              "hopeChange": 3,
+              "trustChange": 2,
+              "chaosChange": -2,
+              "humanityChange": 1
+            },
+            {
+              "id": "c",
+              "text": "Move the monitor to triage and ignore the rhythm.",
+              "outcome": "It becomes another machine among machines. When the mother arrives, you are caught between prophecy and paperwork.",
+              "hopeChange": -1,
+              "trustChange": 0,
+              "chaosChange": 3,
+              "humanityChange": -1
+            },
+            {
+              "id": "d",
+              "text": "Invite midwives from the settlement to stand by.",
+              "outcome": "The room fills with skilled hands and old songs. Shared readiness turns a crisis into a community memory.",
+              "hopeChange": 7,
+              "trustChange": 7,
+              "chaosChange": -5,
+              "humanityChange": 8
+            },
+            {
+              "id": "e",
+              "text": "Use the heartbeat to decide who deserves scarce antibiotics.",
+              "outcome": "A future patient becomes your invisible priority. Present patients feel the unfairness even without knowing why.",
+              "hopeChange": 1,
+              "trustChange": -4,
+              "chaosChange": 0,
+              "humanityChange": -5
+            },
+            {
+              "id": "f",
+              "text": "Record the signal for future study instead of acting.",
+              "outcome": "The file is fascinating. The child’s first breath is nearly lost because fascination moved slower than care.",
+              "hopeChange": -3,
+              "trustChange": -2,
+              "chaosChange": 2,
+              "humanityChange": -4
+            }
+          ]
+        },
+        {
+          "id": "medic-007",
+          "title": "Ash Lung Market",
+          "setting": "A traveling bazaar arrives selling black filters woven from pre-collapse fabric. They work better than yours, but the merchants price them by years of service owed after recovery. Your ward coughs gray into cloth rags.",
+          "futureMsg": "Future-you learned that a cure can still be a cage. Breathing is not freedom if every inhale is leased.",
+          "imageUrl": "/images/backgrounds/ruined-city.png",
+          "progressionBand": "mid",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Buy filters with medicine and refuse service contracts.",
+              "outcome": "The merchants accept less profit under pressure. Your ward breathes easier, and the bazaar warns others you are stubborn.",
+              "hopeChange": 6,
+              "trustChange": 4,
+              "chaosChange": -2,
+              "humanityChange": 5
+            },
+            {
+              "id": "b",
+              "text": "Sign contracts for the sickest patients.",
+              "outcome": "Lungs clear within hours. Chains arrive later in softer language: obligation, placement, repayment.",
+              "hopeChange": 4,
+              "trustChange": -3,
+              "chaosChange": -1,
+              "humanityChange": -6
+            },
+            {
+              "id": "c",
+              "text": "Expose the contract terms to the whole market.",
+              "outcome": "Anger spreads faster than ash. The merchants lower prices, but a riot nearly destroys their remaining filters.",
+              "hopeChange": 5,
+              "trustChange": 5,
+              "chaosChange": 7,
+              "humanityChange": 4
+            },
+            {
+              "id": "d",
+              "text": "Steal a sample and reverse-engineer it overnight.",
+              "outcome": "You crack the weave pattern and become a target. By morning, three clinics can make their own version.",
+              "hopeChange": 7,
+              "trustChange": 1,
+              "chaosChange": 4,
+              "humanityChange": 3
+            },
+            {
+              "id": "e",
+              "text": "Trade labor from healthy volunteers only.",
+              "outcome": "The bargain becomes collective rather than predatory. Some volunteers resent being lungs for the bedridden.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": -2,
+              "humanityChange": 4
+            },
+            {
+              "id": "f",
+              "text": "Turn the merchants away to avoid dependency.",
+              "outcome": "No contracts enter your clinic. Neither do the filters, and the coughing continues in principled darkness.",
+              "hopeChange": -5,
+              "trustChange": 1,
+              "chaosChange": -3,
+              "humanityChange": -7
+            }
+          ]
+        },
+        {
+          "id": "medic-008",
+          "title": "The Ward Beneath the Ice",
+          "setting": "A frozen subway station holds survivors in suspended hypothermia, alive but slowing. You can thaw them one by one, but the power cells needed are also heating your current clinic through the coldest week of the year.",
+          "futureMsg": "Future-you says the ice did not ask whether strangers mattered. It asked how far your circle could stretch before it snapped.",
+          "imageUrl": "/images/skyscapes/aurora-mountain-storm.png",
+          "progressionBand": "late",
+          "weight": 1,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Thaw only those with immediate medical roles.",
+              "outcome": "You gain nurses and a pharmacist who save your clinic later. The selection feels brutally useful.",
+              "hopeChange": 4,
+              "trustChange": 2,
+              "chaosChange": -2,
+              "humanityChange": -1
+            },
+            {
+              "id": "b",
+              "text": "Rotate power between the clinic and the frozen ward.",
+              "outcome": "Both groups suffer, but both endure. Shared hardship becomes the foundation of a larger settlement.",
+              "hopeChange": 7,
+              "trustChange": 6,
+              "chaosChange": -3,
+              "humanityChange": 8
+            },
+            {
+              "id": "c",
+              "text": "Leave the station sealed until spring.",
+              "outcome": "Your clinic stays warm and current patients live. The sealed faces under ice visit your dreams.",
+              "hopeChange": -2,
+              "trustChange": 0,
+              "chaosChange": -4,
+              "humanityChange": -6
+            },
+            {
+              "id": "d",
+              "text": "Ask the clinic patients to vote on the power sacrifice.",
+              "outcome": "The choice hurts less because it is shared. The majority chooses rotation after hearing the station names aloud.",
+              "hopeChange": 5,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 6
+            },
+            {
+              "id": "e",
+              "text": "Use risky chemical heat to free everyone quickly.",
+              "outcome": "The thaw is fast and chaotic. Most survive, though chemical burns fill every bed you just emptied.",
+              "hopeChange": 6,
+              "trustChange": 2,
+              "chaosChange": 7,
+              "humanityChange": 4
+            },
+            {
+              "id": "f",
+              "text": "Harvest supplies from the station without waking anyone.",
+              "outcome": "Your clinic grows stronger on stolen time. The sleepers remain preserved, unaware of what you took beside them.",
+              "hopeChange": 1,
+              "trustChange": -4,
+              "chaosChange": -2,
+              "humanityChange": -7
+            }
+          ]
+        },
+        {
+          "id": "medic-009",
+          "title": "The Mask That Chooses Voices",
+          "setting": "A child wearing an antique plague mask speaks with the voices of patients you lost, naming symptoms before they appear. The mask cannot be removed without causing seizures, and the camp wants either an oracle or an exorcism.",
+          "futureMsg": "Future-you warns that grief can wear a useful face. That does not make it holy, and it does not make it disposable.",
+          "imageUrl": "/images/backgrounds/ruined-city.png",
+          "progressionBand": "any",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Treat the mask as a neurological device, not a spirit.",
+              "outcome": "Careful scans find pressure needles under the lining. Removing them slowly saves the child and leaves the voices fading.",
+              "hopeChange": 6,
+              "trustChange": 4,
+              "chaosChange": -4,
+              "humanityChange": 7
+            },
+            {
+              "id": "b",
+              "text": "Use the voices to triage the whole camp first.",
+              "outcome": "The mask predicts three crises accurately. The child becomes exhausted while adults learn to depend on their suffering.",
+              "hopeChange": 5,
+              "trustChange": 1,
+              "chaosChange": -1,
+              "humanityChange": -5
+            },
+            {
+              "id": "c",
+              "text": "Let the camp’s ritual elder examine it beside you.",
+              "outcome": "Medicine and ritual share the room without surrendering authority. The child relaxes enough for real treatment.",
+              "hopeChange": 4,
+              "trustChange": 6,
+              "chaosChange": -3,
+              "humanityChange": 6
+            },
+            {
+              "id": "d",
+              "text": "Confiscate the mask by force.",
+              "outcome": "The seizures confirm everyone’s worst fears. You keep control and lose the child’s trust.",
+              "hopeChange": -3,
+              "trustChange": -5,
+              "chaosChange": 3,
+              "humanityChange": -6
+            },
+            {
+              "id": "e",
+              "text": "Record every voice for study before intervening.",
+              "outcome": "The archive may help future cases. Tonight, the child asks whether your curiosity is heavier than the mask.",
+              "hopeChange": 1,
+              "trustChange": -2,
+              "chaosChange": 1,
+              "humanityChange": -4
+            },
+            {
+              "id": "f",
+              "text": "Destroy the mask while the child is sedated.",
+              "outcome": "The voices stop. So does the warning that could have prevented a poisoning in the mess tent.",
+              "hopeChange": -4,
+              "trustChange": -1,
+              "chaosChange": 2,
+              "humanityChange": -3
+            }
+          ]
+        },
+        {
+          "id": "medic-010",
+          "title": "The Last Clean Needle",
+          "setting": "At dawn, a convoy brings a vaccine sample that must be diluted with your last sterile needle set. The same kit is needed for emergency surgery on your oldest mentor, whose hands taught you every stitch you know.",
+          "futureMsg": "Future-you says love made the room smaller. Duty made it unbearable. The person you saved shaped the healer you became.",
+          "imageUrl": "/images/backgrounds/bunker.png",
+          "progressionBand": "late",
+          "weight": 1,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Use the needle set for the vaccine dilution.",
+              "outcome": "Hundreds gain a chance at immunity. Your mentor dies knowing exactly why you chose as you did.",
+              "hopeChange": 6,
+              "trustChange": 4,
+              "chaosChange": -5,
+              "humanityChange": 1
+            },
+            {
+              "id": "b",
+              "text": "Operate on your mentor and delay the vaccine.",
+              "outcome": "Your teacher lives through the night. The outbreak outruns the vaccine by forty-eight hours.",
+              "hopeChange": -3,
+              "trustChange": -2,
+              "chaosChange": 6,
+              "humanityChange": -4
+            },
+            {
+              "id": "c",
+              "text": "Attempt surgery with sterilized improvised tools.",
+              "outcome": "It is ugly, brilliant, and dangerous. Your mentor survives scarred, while the vaccine remains viable.",
+              "hopeChange": 7,
+              "trustChange": 3,
+              "chaosChange": 5,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Ask your mentor to decide while conscious.",
+              "outcome": "Their answer is immediate: save the many. The clarity strengthens you and devastates you.",
+              "hopeChange": 5,
+              "trustChange": 6,
+              "chaosChange": -4,
+              "humanityChange": 6
+            },
+            {
+              "id": "e",
+              "text": "Split the kit between surgery and dilution.",
+              "outcome": "Both procedures are compromised but possible. The clinic holds its breath through every contaminated minute.",
+              "hopeChange": 3,
+              "trustChange": 1,
+              "chaosChange": 6,
+              "humanityChange": 2
+            },
+            {
+              "id": "f",
+              "text": "Trade the vaccine to another clinic for sterile tools.",
+              "outcome": "Both problems get solved late and imperfectly. The trade network grows, but so does the price of miracles.",
+              "hopeChange": 4,
+              "trustChange": 2,
+              "chaosChange": 3,
+              "humanityChange": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

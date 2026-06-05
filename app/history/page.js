@@ -5,63 +5,62 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import TimelineHistory from "@/components/TimelineHistory";
-import { AVATARS } from "@/lib/mockData";
+import { deriveFutureStateFromStats } from "@/lib/outcomeEngine";
+import {
+  generateEndingNarrative,
+  deriveEndingState,
+  calculateEndingScore,
+} from "@/lib/endingEngine";
 
-const LOCAL_ATTEMPTS_KEY = "abu_local_attempts_v1";
-
-const OUTCOME_IMAGE_BY_STATE = {
-  rebuilding: "/images/outcomes/ending-rebuilding-future.png",
-  balanced: "/images/outcomes/ending-balanced-future.png",
-  chaotic: "/images/outcomes/ending-chaotic-future.png",
-  broken: "/images/outcomes/ending-broken-future.png",
-};
-
-function readLocalAttempts() {
-  if (typeof window === "undefined") return [];
-  try {
-    const raw = window.localStorage.getItem(LOCAL_ATTEMPTS_KEY);
-    if (!raw) return [];
-    const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? parsed : [];
-  } catch {
-    return [];
-  }
-}
+const SESSION_USERNAME_KEY = "abu_username_v1";
+const SESSION_RUN_ID_KEY = "abu_run_id_v1";
 
 function getLatestAttempt(attempts) {
   return Array.isArray(attempts) && attempts.length > 0 ? attempts[0] : null;
 }
 
-function getAvatarById(avatarId) {
-  return AVATARS.find((avatar) => avatar.id === avatarId) ?? null;
-}
-
-function getOutcomeImage(attempt) {
-  if (!attempt) return OUTCOME_IMAGE_BY_STATE.balanced;
-
-  if ((attempt.chaos ?? 0) >= 60) return OUTCOME_IMAGE_BY_STATE.chaotic;
-  if ((attempt.hope ?? 0) >= 70 && (attempt.humanity ?? 0) >= 70) return OUTCOME_IMAGE_BY_STATE.rebuilding;
-  if ((attempt.hope ?? 0) < 40 || (attempt.humanity ?? 0) < 40) return OUTCOME_IMAGE_BY_STATE.broken;
-  return OUTCOME_IMAGE_BY_STATE.balanced;
-}
-
 export default function HistoryPage() {
   const [attempts, setAttempts] = useState([]);
+  const [avatars, setAvatars] = useState([]);
   const [source, setSource] = useState("api");
   const [loading, setLoading]   = useState(true);
+  const [playerProfile, setPlayerProfile] = useState(null);
+  const [loadError, setLoadError] = useState("");
+
+  useEffect(() => {
+    async function loadAvatars() {
+      try {
+        const res = await fetch("/api/avatars");
+        if (!res.ok) return;
+        const data = await res.json();
+        setAvatars(Array.isArray(data) ? data : []);
+      } catch {
+        setAvatars([]);
+      }
+    }
+    loadAvatars();
+  }, []);
 
   useEffect(() => {
     async function load() {
       try {
-        const res = await fetch("/api/history");
-        if (!res.ok) throw new Error("API not ready");
+        const runId =
+          typeof window !== "undefined"
+            ? window.sessionStorage.getItem(SESSION_RUN_ID_KEY)
+            : null;
+        const url = runId
+          ? `/api/history?runId=${encodeURIComponent(runId)}`
+          : "/api/history";
+        const res = await fetch(url);
+        if (!res.ok) throw new Error("Failed to load timeline history");
         const data = await res.json();
         setAttempts(Array.isArray(data) ? data : []);
         setSource("api");
-      } catch {
-        const localAttempts = readLocalAttempts();
-        setAttempts(localAttempts);
-        setSource(localAttempts.length > 0 ? "local" : "none");
+        setLoadError("");
+      } catch (error) {
+        setAttempts([]);
+        setSource("none");
+        setLoadError(error?.message ?? "Timeline history is unavailable.");
       } finally {
         setLoading(false);
       }
@@ -69,9 +68,82 @@ export default function HistoryPage() {
     load();
   }, []);
 
+  useEffect(() => {
+    const latestAttempt = getLatestAttempt(attempts);
+    if (!latestAttempt?.avatarId) {
+      setPlayerProfile(null);
+      return;
+    }
+
+    async function loadProfile() {
+      const username =
+        typeof window !== "undefined"
+          ? window.sessionStorage.getItem(SESSION_USERNAME_KEY) ?? ""
+          : "";
+
+      try {
+        const res = await fetch("/api/profile", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            avatarId: latestAttempt.avatarId,
+            stats: {
+              hope: latestAttempt.hope,
+              trust: latestAttempt.trust,
+              chaos: latestAttempt.chaos,
+              humanity: latestAttempt.humanity,
+            },
+            username,
+            recentChoices: attempts.slice(0, 6),
+          }),
+        });
+
+        if (!res.ok) throw new Error("Profile API unavailable");
+        const data = await res.json();
+        setPlayerProfile(data);
+      } catch {
+        setPlayerProfile(null);
+      }
+    }
+
+    loadProfile();
+  }, [attempts]);
+
   const latestAttempt = getLatestAttempt(attempts);
-  const latestAvatar = getAvatarById(latestAttempt?.avatarId);
-  const outcomeImage = getOutcomeImage(latestAttempt);
+  const latestAvatar =
+    avatars.find((avatar) => avatar.id === latestAttempt?.avatarId) ?? null;
+
+  const finalStatValues = latestAttempt
+    ? {
+        hope: latestAttempt.hope,
+        trust: latestAttempt.trust,
+        chaos: latestAttempt.chaos,
+        humanity: latestAttempt.humanity,
+      }
+    : null;
+
+  const endingNarrative =
+    latestAttempt && latestAvatar
+      ? generateEndingNarrative(finalStatValues, latestAttempt.avatarId)
+      : null;
+  const endingState = finalStatValues
+    ? deriveEndingState(finalStatValues)
+    : deriveFutureStateFromStats(latestAttempt ?? {});
+  const endingScore = finalStatValues ? calculateEndingScore(finalStatValues) : null;
+
+  const futureImageUrl =
+    latestAvatar?.futureImageByState?.[endingState] ??
+    latestAvatar?.futureImageUrl ??
+    null;
+
+  const finalStats = latestAttempt
+    ? [
+        { label: "Hope", value: latestAttempt.hope, color: "#F7C948" },
+        { label: "Trust", value: latestAttempt.trust, color: "#4ECDC4" },
+        { label: "Chaos", value: latestAttempt.chaos, color: "#8B1A1A" },
+        { label: "Humanity", value: latestAttempt.humanity, color: "#A8C4A2" },
+      ]
+    : null;
 
   return (
     <div
@@ -109,7 +181,7 @@ export default function HistoryPage() {
         }}
       >
         <div className="grid gap-8 lg:grid-cols-3 items-stretch">
-          <aside className="flex flex-col gap-4 h-full">
+          <aside className="flex flex-col gap-4 h-full justify-between">
             <div>
               <p className="font-mono text-[10px] tracking-[0.3em] text-[#6B6558] uppercase mb-2">
                 Backstory archive
@@ -118,16 +190,47 @@ export default function HistoryPage() {
                 className="font-display tracking-wide text-[#F0EAD6] mb-4"
                 style={{ fontSize: "clamp(30px, 4vw, 44px)" }}
               >
-                WHY YOU WERE HERE
+                {playerProfile?.profileTitle ?? "WHY YOU WERE HERE"}
               </h1>
+            </div>
+
+            {latestAvatar && (
+              <div className="relative w-full aspect-[3/4] overflow-hidden border border-white/10 bg-black/20">
+                <Image
+                  src={latestAvatar.imageUrl}
+                  alt={latestAvatar.name}
+                  fill
+                  sizes="(max-width: 1280px) 100vw, 360px"
+                  className="object-contain object-center p-2"
+                />
+                <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
+                  <p className="font-mono text-[9px] tracking-[0.25em] text-[#4ECDC4] uppercase">
+                    {latestAvatar.trait}
+                  </p>
+                  <p className="font-display text-xl text-[#F0EAD6] tracking-wide leading-none">
+                    {latestAvatar.name}
+                  </p>
+                </div>
+              </div>
+            )}
+
+            <div className="p-4 border border-white/10 bg-white/3">
+              <p className="font-mono text-[9px] tracking-[0.25em] text-[#4ECDC4] uppercase mb-2">
+                Bio
+              </p>
+              <p className="text-sm text-[#6B6558] leading-relaxed">
+                {playerProfile?.bio ?? "Play through a few branches to generate a custom player bio from your timeline choices."}
+              </p>
             </div>
 
             <div className="p-4 border border-white/10 bg-white/3">
               <p className="font-mono text-[9px] tracking-[0.25em] text-[#4ECDC4] uppercase mb-2">
-                Placeholder section
+                Backstory
               </p>
               <p className="text-sm text-[#6B6558] leading-relaxed">
-                This panel can later hold the avatar bio, the player’s background choices, faction alignment, or a run summary.
+                {playerProfile?.backstory ??
+                  latestAvatar?.backstory ??
+                  "Your backstory will be populated by the AI profile engine using avatar context, stat trajectory, and recent choices."}
               </p>
             </div>
 
@@ -136,9 +239,13 @@ export default function HistoryPage() {
                 Future notes
               </p>
               <ul className="space-y-2 text-sm text-[#6B6558] leading-relaxed list-disc pl-4">
-                <li>Character backstory and role selection notes</li>
-                <li>Faction relationships or origin details</li>
-                <li>Session goals, warnings, or narrative flags</li>
+                {(playerProfile?.futureNotes ?? [
+                  "Finish one full scenario chain to seed the profile system.",
+                  "Your stat direction will shape this panel dynamically.",
+                  "Future warnings become more specific with more choices.",
+                ]).map((note) => (
+                  <li key={note}>{note}</li>
+                ))}
               </ul>
             </div>
           </aside>
@@ -154,9 +261,9 @@ export default function HistoryPage() {
               YOUR CHOICES
             </h2>
 
-            {!loading && source === "local" && (
+            {!loading && source === "none" && loadError && (
               <p className="font-mono text-[9px] tracking-[0.2em] text-[#6B6558] uppercase mb-4">
-                Showing locally saved timeline records
+                {loadError}
               </p>
             )}
 
@@ -171,30 +278,39 @@ export default function HistoryPage() {
             </div>
           </section>
 
-          <aside className="flex flex-col gap-4 h-full">
-            <div className="p-4 border border-white/10 bg-white/3 flex-1 flex flex-col justify-between">
+          <aside className="flex flex-col gap-4 h-full justify-between">
+            {endingNarrative && (
+              <div className="p-4 border border-[#4ECDC4]/30 bg-[#4ECDC4]/5">
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="text-3xl leading-none">{endingNarrative.icon}</span>
+                  <div>
+                    <p className="font-display text-xl text-[#F0EAD6] tracking-wide leading-none">
+                      {endingNarrative.title}
+                    </p>
+                    <p className="font-mono text-[9px] tracking-[0.2em] text-[#6B6558] uppercase mt-1">
+                      {endingState}
+                      {endingScore !== null ? ` ∷ Score ${endingScore}` : ""}
+                    </p>
+                  </div>
+                </div>
+                <p className="text-sm text-[#D4C5A0] font-light leading-relaxed">
+                  {endingNarrative.narrative}
+                </p>
+              </div>
+            )}
+
+            <div className="p-4 border border-white/10 bg-white/3">
               <p className="font-mono text-[9px] tracking-[0.25em] text-[#4ECDC4] uppercase mb-2">
                 Future self
               </p>
               {latestAvatar ? (
-                <div className="flex items-center gap-3">
-                  <div className="relative w-16 h-16 shrink-0 overflow-hidden border border-white/10">
-                    <Image
-                      src={latestAvatar.futureImageUrl}
-                      alt={latestAvatar.name}
-                      fill
-                      sizes="64px"
-                      className="object-cover"
-                    />
-                  </div>
-                  <div>
-                    <p className="font-display text-[#F0EAD6] tracking-wide">
-                      {latestAvatar.name}
-                    </p>
-                    <p className="font-mono text-[9px] tracking-[0.2em] text-[#6B6558] uppercase">
-                      {latestAvatar.trait}
-                    </p>
-                  </div>
+                <div>
+                  <p className="font-display text-[#F0EAD6] tracking-wide text-lg leading-none">
+                    {latestAvatar.name}
+                  </p>
+                  <p className="font-mono text-[9px] tracking-[0.2em] text-[#6B6558] uppercase mt-1">
+                    {latestAvatar.trait} ∷ {endingState}
+                  </p>
                 </div>
               ) : (
                 <p className="text-sm text-[#6B6558] leading-relaxed">
@@ -203,22 +319,57 @@ export default function HistoryPage() {
               )}
             </div>
 
+            {finalStats && (
+              <div className="p-4 border border-white/10 bg-white/3">
+                <p className="font-mono text-[9px] tracking-[0.2em] text-[#6B6558] uppercase mb-3">
+                  Final stats
+                </p>
+                <div className="grid grid-cols-2 gap-3">
+                  {finalStats.map(({ label, value, color }) => (
+                    <div key={label}>
+                      <p className="font-mono text-[8px] tracking-[0.15em] text-[#6B6558] uppercase mb-1">
+                        {label}
+                      </p>
+                      <div
+                        className="relative h-1.5 bg-[rgba(255,255,255,0.05)] mb-1"
+                        style={{ borderRadius: "1px" }}
+                      >
+                        <div
+                          className="h-full transition-all duration-300"
+                          style={{
+                            width: `${value}%`,
+                            backgroundColor: color,
+                            boxShadow: `0 0 8px ${color}`,
+                          }}
+                        />
+                      </div>
+                      <p
+                        className="font-display text-lg tracking-wide"
+                        style={{ color }}
+                      >
+                        {value}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
             <div className="p-4 border border-white/10 bg-white/3 flex-1 flex flex-col">
               <p className="font-mono text-[9px] tracking-[0.25em] text-[#4ECDC4] uppercase mb-2">
-                Result image
+                Future state
               </p>
-              <div className="relative w-full aspect-[4/3] overflow-hidden border border-white/10 mb-3">
-                <Image
-                  src={outcomeImage}
-                  alt="Timeline outcome"
-                  fill
-                  sizes="(max-width: 1280px) 100vw, 360px"
-                  className="object-cover"
-                />
+              <div className="relative w-full flex-1 min-h-[260px] overflow-hidden border border-white/10">
+                {futureImageUrl && (
+                  <Image
+                    src={futureImageUrl}
+                    alt={`Future state: ${endingState}`}
+                    fill
+                    sizes="(max-width: 1280px) 100vw, 360px"
+                    className="object-cover"
+                  />
+                )}
               </div>
-              <p className="text-sm text-[#6B6558] leading-relaxed">
-                This area can show the current outcome art for the selected timeline branch, ending state, or future-self result.
-              </p>
             </div>
 
             <div className="p-4 border border-white/10 bg-white/3">

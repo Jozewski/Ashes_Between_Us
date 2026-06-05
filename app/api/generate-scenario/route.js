@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { generateScenario } from "@/lib/scenarioGenerationService";
 
+export const runtime = "nodejs";
+
 export async function POST(req) {
   let body;
 
@@ -39,7 +41,12 @@ export async function POST(req) {
     return NextResponse.json(scenario, { status: 201 });
   } catch (error) {
     const message = error?.message ?? "Failed to generate scenario.";
-    const status = message === "OPENAI_API_KEY is missing" ? 500 : 502;
+    const status =
+      message === "OPENAI_API_KEY is missing"
+        ? 500
+        : message.startsWith("No seeded scenarios found")
+          ? 500
+          : 502;
     console.error("[generate-scenario]", message);
     return NextResponse.json({ error: message }, { status });
   }
