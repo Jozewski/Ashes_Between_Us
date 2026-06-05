@@ -419,6 +419,25 @@ export default function HistoryPage() {
                 </p>
               )}
             </div>
+
+            {/* ── Restart CTA ── */}
+            <div className="p-5 border border-[#4ECDC4]/30 bg-[#4ECDC4]/5 flex flex-col gap-3">
+              <p className="font-mono text-[9px] tracking-[0.25em] text-[#4ECDC4] uppercase">
+                Timeline complete
+              </p>
+              <button
+                onClick={() => handleNewGame(router)}
+                className="w-full font-display text-sm tracking-[0.12em] text-[#1A1814] bg-[#4ECDC4] px-4 py-3 transition-all duration-200 hover:bg-[#F7C948] active:scale-95"
+                style={{ clipPath: "polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%)" }}
+              >
+                ↺ NEW TIMELINE
+              </button>
+              <Link href="/game" className="block">
+                <button className="w-full font-mono text-[9px] tracking-[0.15em] text-[#6B6558] border border-white/10 px-4 py-2 transition-colors duration-200 hover:text-[#4ECDC4] hover:border-[#4ECDC4]/40">
+                  CONTINUE CURRENT RUN
+                </button>
+              </Link>
+            </div>
           </aside>
         </div>
       </div>
