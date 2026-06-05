@@ -4,6 +4,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import TimelineHistory from "@/components/TimelineHistory";
 import MuteButton from "@/components/MuteButton";
 import { useMusic } from "@/components/MusicProvider";
@@ -22,7 +23,19 @@ function getLatestAttempt(attempts) {
   return Array.isArray(attempts) && attempts.length > 0 ? attempts[0] : null;
 }
 
+const LOCAL_AVATAR_KEY = "abu_avatar_v1";
+
+function handleNewGame(router) {
+  if (typeof window !== "undefined") {
+    window.localStorage.removeItem(LOCAL_AVATAR_KEY);
+    window.sessionStorage.removeItem(SESSION_RUN_ID_KEY);
+    window.sessionStorage.removeItem(SESSION_USERNAME_KEY);
+  }
+  router.push("/game");
+}
+
 export default function HistoryPage() {
+  const router = useRouter();
   const { playMusic } = useMusic();
   const [attempts, setAttempts] = useState([]);
   const [avatars, setAvatars] = useState([]);
@@ -181,6 +194,12 @@ export default function HistoryPage() {
             >
               ← Continue timeline
             </Link>
+            <button
+              onClick={() => handleNewGame(router)}
+              className="font-mono text-[9px] tracking-[0.25em] text-[#1A1814] bg-[#4ECDC4] px-4 py-2 uppercase hover:bg-[#F7C948] transition-colors"
+            >
+              ↺ New game
+            </button>
           </div>
         </div>
       </header>
