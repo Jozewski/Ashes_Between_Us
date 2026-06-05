@@ -1,5 +1,6 @@
 // app/page.js
 import StartTransmissionButton from "@/components/StartTransmissionButton";
+import MuteButton from "@/components/MuteButton";
 
 export const metadata = {
   title: "Ashes Between Us",
@@ -9,6 +10,11 @@ export const metadata = {
 export default function LandingPage() {
   return (
     <main className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 py-20 overflow-hidden bg-[#1A1814]">
+
+      {/* Sound on/off toggle */}
+      <div className="absolute top-5 right-5 z-20">
+        <MuteButton />
+      </div>
 
       {/* Scanline overlay */}
       <div
