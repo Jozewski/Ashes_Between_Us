@@ -158,8 +158,3 @@ To replace content: drop new packs into `data/seed-packs/`, remove the old ones,
 
 ---
 
-## Notes & Gotchas
-
-- **Prisma client lock:** `prisma generate` fails with `EPERM` while the dev server is running. Stop Node processes first, generate, then restart.
-- **Live AI is off by default.** Without `ENABLE_LIVE_AI_SCENARIOS=true`, scenarios are served from the seeded packs. The `/api/profile` endpoint still calls OpenAI and falls back to the stored avatar backstory if the key is missing or upstream fails.
-- **Never commit `.env`.** Rotate any credentials that were ever exposed.

@@ -554,6 +554,7 @@ export default function GamePage() {
             <div className="xl:col-span-12">
               <FutureMessageCard
                 message={scenario.futureMsg}
+                daysAhead={365 + (turn - 1) * 7}
                 futureImageUrl={futureImageUrl}
                 futureLabel={`${selectedAvatar.name} ∷ Future Self (${futureState})`}
               />
