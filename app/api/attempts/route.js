@@ -63,6 +63,18 @@ export async function POST(req) {
     );
   }
 
+  console.log("[attempts] request payload", {
+    avatarId: body.avatarId,
+    scenarioId: body.scenarioId,
+    choiceId: body.choiceId,
+    runId: typeof body.runId === "string" ? body.runId : null,
+    hasStats:
+      body.hope !== undefined &&
+      body.trust !== undefined &&
+      body.chaos !== undefined &&
+      body.humanity !== undefined,
+  });
+
   try {
     const attempt = await saveAttempt(body);
     return NextResponse.json(attempt, { status: 201 });

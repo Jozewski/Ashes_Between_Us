@@ -100,7 +100,10 @@ OPENAI_API_KEY=your_openai_api_key_here
 
 Optional flags:
 
-- `ENABLE_LIVE_AI_SCENARIOS=true` — generate scenarios live via OpenAI instead of serving seeded ones.
+- `ENABLE_LIVE_AI_SCENARIOS=false` — force seeded/fallback scenarios even when `OPENAI_API_KEY` is set.
+- `OPENAI_SCENARIO_MODEL=gpt-4o-mini` — low-latency scenario generation model.
+- `OPENAI_SCENARIO_TIMEOUT_MS=20000` — maximum wait for live scenario generation before fallback content is returned.
+- `ALLOW_SEEDED_SCENARIO_FALLBACK=true` — allow seed-pack scenarios when live AI fails. By default, AI mode skips seeded scenarios and uses generated fallback content instead.
 
 ### 4. Set up the database schema
 
@@ -158,3 +161,8 @@ To replace content: drop new packs into `data/seed-packs/`, remove the old ones,
 
 ---
 
+## Notes & Gotchas
+
+- **Prisma client lock:** `prisma generate` fails with `EPERM` while the dev server is running. Stop Node processes first, generate, then restart.
+- **Live AI is AI-first when configured.** With `OPENAI_API_KEY` set, `/api/scenarios/generate` attempts live OpenAI generation first, saves the generated scenario and choices, then falls back to local generated content if generation fails or exceeds `OPENAI_SCENARIO_TIMEOUT_MS`. Seed-pack scenarios are skipped in AI mode unless `ALLOW_SEEDED_SCENARIO_FALLBACK=true`. Set `ENABLE_LIVE_AI_SCENARIOS=false` to force seeded/fallback scenarios. The `/api/profile` endpoint still calls OpenAI and falls back to the stored avatar backstory if the key is missing or upstream fails.
+- **Never commit `.env`.** Rotate any credentials that were ever exposed.
