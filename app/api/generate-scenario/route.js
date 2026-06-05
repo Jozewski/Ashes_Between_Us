@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { generateScenario } from "@/lib/scenarioGenerationService";
 
 export const runtime = "nodejs";
+export const maxDuration = 30;
 
 export async function POST(req) {
   let body;
@@ -29,6 +30,15 @@ export async function POST(req) {
     );
   }
 
+  console.log("[generate-scenario] request payload", {
+    avatarId: body.avatarId,
+    runId: typeof body.runId === "string" ? body.runId : null,
+    hasCurrentStats: Boolean(body.currentStats),
+    recentChoiceCount: Array.isArray(body.recentChoices)
+      ? body.recentChoices.length
+      : 0,
+  });
+
   try {
     const scenario = await generateScenario({
       avatarId: body.avatarId,
@@ -36,18 +46,18 @@ export async function POST(req) {
       recentChoices: Array.isArray(body.recentChoices)
         ? body.recentChoices
         : [],
+      runId: typeof body.runId === "string" ? body.runId : null,
     });
 
     return NextResponse.json(scenario, { status: 201 });
   } catch (error) {
     const message = error?.message ?? "Failed to generate scenario.";
-    const status =
-      message === "OPENAI_API_KEY is missing"
-        ? 500
-        : message.startsWith("No seeded scenarios found")
-          ? 500
-          : 502;
-    console.error("[generate-scenario]", message);
+    const status = message.startsWith("No seeded scenarios found") ? 500 : 502;
+    console.error("[generate-scenario] route failure", {
+      message,
+      avatarId: body.avatarId,
+      runId: typeof body.runId === "string" ? body.runId : null,
+    });
     return NextResponse.json({ error: message }, { status });
   }
 }
