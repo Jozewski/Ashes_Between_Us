@@ -1,0 +1,661 @@
+{
+  "packId": "scavenger-v3",
+  "version": "3.0.0",
+  "avatars": [
+    {
+      "avatarId": "scavenger",
+      "scenarios": [
+        {
+          "id": "scavenger-001",
+          "title": "The Museum of Broken Weather",
+          "setting": "A natural history museum still has climate exhibits running on backup power. One diorama rains real water every hour, another snows chemical frost, and the gift shop safe clicks open whenever thunder plays.",
+          "futureMsg": "Future-you says the old world displayed disaster behind glass. You had to decide what to steal from the exhibit and what to learn from it.",
+          "imageUrl": "/images/backgrounds/ruined-city.png",
+          "progressionBand": "early",
+          "weight": 3,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Harvest water from the rain diorama carefully.",
+              "outcome": "You fill canteens without damaging the pumps. The museum keeps raining for whoever finds it next.",
+              "hopeChange": 6,
+              "trustChange": 4,
+              "chaosChange": -4,
+              "humanityChange": 5
+            },
+            {
+              "id": "b",
+              "text": "Crack the thunder safe during the storm cycle.",
+              "outcome": "Inside are batteries, maps, and donation coins. You take the useful pieces and leave the pennies for the dead.",
+              "hopeChange": 5,
+              "trustChange": 1,
+              "chaosChange": 1,
+              "humanityChange": 0
+            },
+            {
+              "id": "c",
+              "text": "Strip the exhibit motors for parts.",
+              "outcome": "Your pack grows valuable and the dioramas die. Knowledge becomes scrap in your hands.",
+              "hopeChange": 3,
+              "trustChange": -2,
+              "chaosChange": -2,
+              "humanityChange": -5
+            },
+            {
+              "id": "d",
+              "text": "Turn the museum into a public cache.",
+              "outcome": "You organize labels for supplies using old exhibit cards. Strangers understand the system and add to it later.",
+              "hopeChange": 7,
+              "trustChange": 6,
+              "chaosChange": -4,
+              "humanityChange": 6
+            },
+            {
+              "id": "e",
+              "text": "Sell fake weather tickets at the entrance.",
+              "outcome": "Desperate people pay to see rain and learn they can drink it only if they brought trade. Profit tastes stale.",
+              "hopeChange": 2,
+              "trustChange": -6,
+              "chaosChange": 1,
+              "humanityChange": -7
+            },
+            {
+              "id": "f",
+              "text": "Leave a warning about the chemical snow.",
+              "outcome": "A charcoal sign saves children from touching the frost. It costs nothing but the time to care.",
+              "hopeChange": 3,
+              "trustChange": 5,
+              "chaosChange": -3,
+              "humanityChange": 7
+            }
+          ]
+        },
+        {
+          "id": "scavenger-002",
+          "title": "The Vending Machine Oracle",
+          "setting": "In a subway mezzanine, a cracked vending machine dispenses whatever item someone needs most, but only after taking something emotionally valuable. The coin slot smells like warm metal and old birthdays.",
+          "futureMsg": "Future-you warns that not every bargain with the ruins looks like greed. Sometimes need wears your mother’s ring.",
+          "imageUrl": "/images/backgrounds/bunker.png",
+          "progressionBand": "early",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Offer a keepsake and ask for medicine.",
+              "outcome": "The machine gives antibiotics and keeps the memory token. The patient lives; nostalgia comes back with a missing tooth.",
+              "hopeChange": 5,
+              "trustChange": 1,
+              "chaosChange": 0,
+              "humanityChange": 3
+            },
+            {
+              "id": "b",
+              "text": "Trade a stranger’s trinket without asking.",
+              "outcome": "The machine accepts it and dispenses filters. The stranger’s grief finds you before gratitude does.",
+              "hopeChange": 3,
+              "trustChange": -5,
+              "chaosChange": 1,
+              "humanityChange": -6
+            },
+            {
+              "id": "c",
+              "text": "Jam the slot and raid the machine manually.",
+              "outcome": "You get canned food, wires, and a shower of sparks. The oracle goes dark for everyone after you.",
+              "hopeChange": 4,
+              "trustChange": -2,
+              "chaosChange": 4,
+              "humanityChange": -5
+            },
+            {
+              "id": "d",
+              "text": "Create a community rule for voluntary trades only.",
+              "outcome": "The machine becomes strange but fair. People mourn what they offer and respect what others receive.",
+              "hopeChange": 5,
+              "trustChange": 6,
+              "chaosChange": -3,
+              "humanityChange": 6
+            },
+            {
+              "id": "e",
+              "text": "Feed it worthless coins until it stops responding.",
+              "outcome": "Nothing is lost except time and the chance to ask honestly. The machine waits like a disappointed god.",
+              "hopeChange": -2,
+              "trustChange": 0,
+              "chaosChange": -1,
+              "humanityChange": -1
+            },
+            {
+              "id": "f",
+              "text": "Map what items appear for different kinds of grief.",
+              "outcome": "Your notes become powerful and unsettling. Knowing need too precisely can turn people into inventories.",
+              "hopeChange": 4,
+              "trustChange": 1,
+              "chaosChange": 0,
+              "humanityChange": -2
+            }
+          ]
+        },
+        {
+          "id": "scavenger-003",
+          "title": "Cargo Drone Graveyard",
+          "setting": "Hundreds of delivery drones hang dead in a pine forest, tangled in branches like metal fruit. Their cargo pods contain medicine, toys, surveillance drives, and one active beacon still calling headquarters into an empty sky.",
+          "futureMsg": "Future-you says salvage is choosing which ghosts get useful again.",
+          "imageUrl": "/images/backgrounds/forest-safe-zone.png",
+          "progressionBand": "mid",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Disable the beacon before opening cargo.",
+              "outcome": "You avoid attracting whatever still listens. The forest stays quiet while you inventory the sky’s leftovers.",
+              "hopeChange": 4,
+              "trustChange": 4,
+              "chaosChange": -5,
+              "humanityChange": 3
+            },
+            {
+              "id": "b",
+              "text": "Open medicine pods first and mark the rest.",
+              "outcome": "Health beats curiosity. You save lives while leaving tempting secrets swinging overhead.",
+              "hopeChange": 6,
+              "trustChange": 3,
+              "chaosChange": -3,
+              "humanityChange": 6
+            },
+            {
+              "id": "c",
+              "text": "Harvest surveillance drives for blackmail data.",
+              "outcome": "The drives reveal caches and crimes. They also turn every conversation into potential leverage.",
+              "hopeChange": 3,
+              "trustChange": -4,
+              "chaosChange": 2,
+              "humanityChange": -5
+            },
+            {
+              "id": "d",
+              "text": "Invite nearby camps to claim tagged personal packages.",
+              "outcome": "Joy and grief arrive under the branches. Shared distribution makes enemies speak softly for once.",
+              "hopeChange": 7,
+              "trustChange": 6,
+              "chaosChange": -2,
+              "humanityChange": 8
+            },
+            {
+              "id": "e",
+              "text": "Repair three drones for your private courier route.",
+              "outcome": "You gain mobility no rival can match. Suspicion follows the buzzing shadows.",
+              "hopeChange": 5,
+              "trustChange": -2,
+              "chaosChange": 1,
+              "humanityChange": -1
+            },
+            {
+              "id": "f",
+              "text": "Set the drones as explosive perimeter alarms.",
+              "outcome": "The forest becomes a deadly warning net. Useful cargo becomes shrapnel waiting for a footstep.",
+              "hopeChange": 2,
+              "trustChange": -1,
+              "chaosChange": 0,
+              "humanityChange": -5
+            }
+          ]
+        },
+        {
+          "id": "scavenger-004",
+          "title": "The Arcade That Still Takes Quarters",
+          "setting": "A buried arcade hums under a collapsed mall. Every machine works, powered by a generator hidden behind a prize wall. The high-score table displays names of people who will enter tomorrow unless you change their route.",
+          "futureMsg": "Future-you says the ruins sometimes make prophecy look like play. You had to decide whether to spend the last coin on warning or winning.",
+          "imageUrl": "/images/backgrounds/ruined-city.png",
+          "progressionBand": "any",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Use the machines to identify tomorrow’s visitors.",
+              "outcome": "The names become a rescue list. You warn strangers before the mall shifts again.",
+              "hopeChange": 5,
+              "trustChange": 5,
+              "chaosChange": -3,
+              "humanityChange": 6
+            },
+            {
+              "id": "b",
+              "text": "Strip the generator for settlement power.",
+              "outcome": "Lights return at home. The arcade prophecy dies with one last electronic sigh.",
+              "hopeChange": 4,
+              "trustChange": 0,
+              "chaosChange": -2,
+              "humanityChange": -3
+            },
+            {
+              "id": "c",
+              "text": "Leave coins and instructions for future players.",
+              "outcome": "The arcade becomes a weird communication hub. Not everyone understands the rules before disaster does.",
+              "hopeChange": 5,
+              "trustChange": 4,
+              "chaosChange": 1,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Play until your own name appears.",
+              "outcome": "You learn a personal danger and lose hours needed elsewhere. Obsession feeds on blinking lights.",
+              "hopeChange": 2,
+              "trustChange": -1,
+              "chaosChange": 3,
+              "humanityChange": -2
+            },
+            {
+              "id": "e",
+              "text": "Invite kids to salvage joystick parts.",
+              "outcome": "They turn fear into craft and build radio controls. The place becomes less haunted when laughter enters.",
+              "hopeChange": 6,
+              "trustChange": 5,
+              "chaosChange": -3,
+              "humanityChange": 7
+            },
+            {
+              "id": "f",
+              "text": "Sell access to the prophecy machines.",
+              "outcome": "People pay dearly for hints about tomorrow. The rich learn first; the poor wait outside the mall.",
+              "hopeChange": 3,
+              "trustChange": -6,
+              "chaosChange": 2,
+              "humanityChange": -7
+            }
+          ]
+        },
+        {
+          "id": "scavenger-005",
+          "title": "Underpass of Borrowed Shoes",
+          "setting": "An underpass camp trades in shoes taken from abandoned cars. A pair that fits you perfectly has a route stitched inside the tongue, but the cobbler says every pair belongs to someone who may still be walking home.",
+          "futureMsg": "Future-you says good boots can carry you farther or deeper into debt. Look at the soles before you call something abandoned.",
+          "imageUrl": "/images/backgrounds/desert-highway.png",
+          "progressionBand": "early",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Pay fairly and ask the cobbler about the route.",
+              "outcome": "The stitched path leads to a dry culvert cache. Respect opens more doors than lockpicks today.",
+              "hopeChange": 5,
+              "trustChange": 5,
+              "chaosChange": -3,
+              "humanityChange": 5
+            },
+            {
+              "id": "b",
+              "text": "Steal the perfect pair while the camp sleeps.",
+              "outcome": "Your feet stop bleeding. The camp’s children search for the missing shoes in the morning.",
+              "hopeChange": 3,
+              "trustChange": -5,
+              "chaosChange": 2,
+              "humanityChange": -7
+            },
+            {
+              "id": "c",
+              "text": "Repair your old boots using scraps instead.",
+              "outcome": "You move slower but owe no one. The cobbler approves and teaches you a knot that saves your ankle later.",
+              "hopeChange": 2,
+              "trustChange": 4,
+              "chaosChange": -2,
+              "humanityChange": 4
+            },
+            {
+              "id": "d",
+              "text": "Trace the original owner through license tags.",
+              "outcome": "You find a limping courier who thought the shoes lost forever. The route becomes a shared secret.",
+              "hopeChange": 4,
+              "trustChange": 6,
+              "chaosChange": -2,
+              "humanityChange": 7
+            },
+            {
+              "id": "e",
+              "text": "Trade the route information for camp-wide shoe repairs.",
+              "outcome": "Everyone walks better, and your personal advantage disappears into collective motion.",
+              "hopeChange": 5,
+              "trustChange": 6,
+              "chaosChange": -3,
+              "humanityChange": 6
+            },
+            {
+              "id": "f",
+              "text": "Mark unsafe shoe pairs with chalk warnings.",
+              "outcome": "You prevent injuries without owning anything. The cobbler lets you sleep under the warmest tarp.",
+              "hopeChange": 3,
+              "trustChange": 4,
+              "chaosChange": -3,
+              "humanityChange": 5
+            }
+          ]
+        },
+        {
+          "id": "scavenger-006",
+          "title": "The Black Market of Gentle Things",
+          "setting": "In a tunnel lit by jar candles, traders auction not weapons but lullabies, recipes, clean jokes, and recordings of rain. Your settlement needs morale badly, but one vendor is selling memories stolen from sleeping people.",
+          "futureMsg": "Future-you says the apocalypse did not make softness worthless. It made softness expensive enough to become a crime.",
+          "imageUrl": "/images/backgrounds/bunker.png",
+          "progressionBand": "mid",
+          "weight": 3,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Buy shared songs and refuse stolen memories.",
+              "outcome": "The settlement sings badly and honestly. The memory thief loses one customer and gains one enemy.",
+              "hopeChange": 6,
+              "trustChange": 4,
+              "chaosChange": -2,
+              "humanityChange": 7
+            },
+            {
+              "id": "b",
+              "text": "Purchase a stolen rain memory for the children.",
+              "outcome": "They sleep peacefully for the first time in weeks. Somewhere, someone wakes missing the sound of weather.",
+              "hopeChange": 5,
+              "trustChange": -3,
+              "chaosChange": -1,
+              "humanityChange": -6
+            },
+            {
+              "id": "c",
+              "text": "Expose the memory vendor during the auction.",
+              "outcome": "The market erupts, then turns its candles on the thief. Justice is messy but necessary.",
+              "hopeChange": 5,
+              "trustChange": 5,
+              "chaosChange": 5,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Trade scavenged batteries for public story nights.",
+              "outcome": "Entertainment becomes communal instead of private stock. Hope multiplies when nobody can own the punchline.",
+              "hopeChange": 7,
+              "trustChange": 6,
+              "chaosChange": -3,
+              "humanityChange": 7
+            },
+            {
+              "id": "e",
+              "text": "Steal the vendor’s recording device.",
+              "outcome": "The theft ends the memory trade tonight. It also proves you fight exploitation with familiar tools.",
+              "hopeChange": 3,
+              "trustChange": -1,
+              "chaosChange": 2,
+              "humanityChange": -2
+            },
+            {
+              "id": "f",
+              "text": "Ignore gentle goods and buy practical filters.",
+              "outcome": "Your settlement breathes easier and stays emotionally starved. Survival remains functional and thin.",
+              "hopeChange": 2,
+              "trustChange": 1,
+              "chaosChange": -2,
+              "humanityChange": -3
+            }
+          ]
+        },
+        {
+          "id": "scavenger-007",
+          "title": "Rooftop Beehives of the Old Hotel",
+          "setting": "An abandoned hotel roof hosts thriving beehives around solar panels. Honey could feed children, wax could seal water filters, and the panels could power a radio. The bees swarm anyone carrying metal weapons.",
+          "futureMsg": "Future-you says some treasure guards itself better than any lock. Approach like a guest or leave stung by your own hunger.",
+          "imageUrl": "/images/backgrounds/forest-safe-zone.png",
+          "progressionBand": "any",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Remove weapons and approach with smoke and patience.",
+              "outcome": "The bees tolerate you, barely. Honey, wax, and panels remain available for future careful harvests.",
+              "hopeChange": 6,
+              "trustChange": 4,
+              "chaosChange": -4,
+              "humanityChange": 6
+            },
+            {
+              "id": "b",
+              "text": "Harvest all honey before another crew finds it.",
+              "outcome": "The haul is sweet and excessive. The weakened hives may not survive winter.",
+              "hopeChange": 4,
+              "trustChange": -2,
+              "chaosChange": -1,
+              "humanityChange": -5
+            },
+            {
+              "id": "c",
+              "text": "Trade hive access to a neighboring baker.",
+              "outcome": "Bread returns to the settlement with honey crust. The roof becomes a partnership instead of a secret stash.",
+              "hopeChange": 7,
+              "trustChange": 6,
+              "chaosChange": -3,
+              "humanityChange": 7
+            },
+            {
+              "id": "d",
+              "text": "Strip the solar panels and abandon the hives.",
+              "outcome": "The radio gets power. The rooftop ecology collapses in your rearview.",
+              "hopeChange": 3,
+              "trustChange": -1,
+              "chaosChange": -2,
+              "humanityChange": -6
+            },
+            {
+              "id": "e",
+              "text": "Train children as beekeeping apprentices.",
+              "outcome": "Small hands learn calm around living danger. The hotel becomes less ruin and more school.",
+              "hopeChange": 6,
+              "trustChange": 5,
+              "chaosChange": -3,
+              "humanityChange": 8
+            },
+            {
+              "id": "f",
+              "text": "Set decoy honey jars to catch thieves.",
+              "outcome": "You protect the resource and create paranoia on the roof. Sweetness comes with tripwires.",
+              "hopeChange": 3,
+              "trustChange": -2,
+              "chaosChange": 1,
+              "humanityChange": -2
+            }
+          ]
+        },
+        {
+          "id": "scavenger-008",
+          "title": "The Sunken Train Pantry",
+          "setting": "A commuter train lies half-submerged in floodwater beneath the avenue. Its pantry car is sealed, but opening it will drain contaminated water into the tunnels where another settlement has begun mushroom farming.",
+          "futureMsg": "Future-you says hunger makes every sealed door look personal. Water remembers where you send it.",
+          "imageUrl": "/images/backgrounds/ruined-city.png",
+          "progressionBand": "mid",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Build a temporary dam before opening the pantry.",
+              "outcome": "The work is miserable and effective. Food comes out without poisoning the mushroom tunnels.",
+              "hopeChange": 6,
+              "trustChange": 5,
+              "chaosChange": -4,
+              "humanityChange": 6
+            },
+            {
+              "id": "b",
+              "text": "Open the pantry quickly and haul what you can.",
+              "outcome": "You recover crates before the flood shifts. Downstream farmers later find their crop glowing wrong.",
+              "hopeChange": 4,
+              "trustChange": -4,
+              "chaosChange": 5,
+              "humanityChange": -7
+            },
+            {
+              "id": "c",
+              "text": "Warn the mushroom settlement and ask for help.",
+              "outcome": "They arrive angry and skilled. Together you make the salvage safer and split the food.",
+              "hopeChange": 6,
+              "trustChange": 6,
+              "chaosChange": -3,
+              "humanityChange": 7
+            },
+            {
+              "id": "d",
+              "text": "Leave the train untouched until you have better tools.",
+              "outcome": "No one is harmed today, and no one is fed by the pantry. Caution stretches stomachs thin.",
+              "hopeChange": -2,
+              "trustChange": 1,
+              "chaosChange": -3,
+              "humanityChange": 1
+            },
+            {
+              "id": "e",
+              "text": "Trade the train location for a share of future crops.",
+              "outcome": "You avoid the risk and profit from information. The farmers decide whether that feels fair.",
+              "hopeChange": 3,
+              "trustChange": 0,
+              "chaosChange": -1,
+              "humanityChange": -1
+            },
+            {
+              "id": "f",
+              "text": "Use contaminated water as a weapon against tunnel raiders.",
+              "outcome": "The raiders withdraw from poisoned routes. The tunnels become less livable for everyone else too.",
+              "hopeChange": 1,
+              "trustChange": -3,
+              "chaosChange": 4,
+              "humanityChange": -8
+            }
+          ]
+        },
+        {
+          "id": "scavenger-009",
+          "title": "The Locksmith’s Alphabet",
+          "setting": "A dead locksmith’s notebook lists symbols for doors that should never be opened, doors that must be opened together, and doors that open only for lies. You find the same symbols carved into six apartments above a flooded street.",
+          "futureMsg": "Future-you says a lock is a story told in metal. You had to decide whether you were reading or interrupting.",
+          "imageUrl": "/images/backgrounds/ruined-city.png",
+          "progressionBand": "late",
+          "weight": 1,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Open only the doors marked safe and catalog the rest.",
+              "outcome": "You find medicine, canned peaches, and no ghosts. Discipline leaves mysteries intact.",
+              "hopeChange": 4,
+              "trustChange": 4,
+              "chaosChange": -4,
+              "humanityChange": 3
+            },
+            {
+              "id": "b",
+              "text": "Open all six apartments before rivals arrive.",
+              "outcome": "The haul is enormous until one lie-door traps your voice for an hour. Greed has strange acoustics.",
+              "hopeChange": 5,
+              "trustChange": -2,
+              "chaosChange": 6,
+              "humanityChange": -3
+            },
+            {
+              "id": "c",
+              "text": "Ask former tenants to identify the symbols.",
+              "outcome": "Memory unlocks what tools cannot. The apartments become inheritances instead of loot boxes.",
+              "hopeChange": 5,
+              "trustChange": 6,
+              "chaosChange": -3,
+              "humanityChange": 7
+            },
+            {
+              "id": "d",
+              "text": "Sell copies of the alphabet to other scavengers.",
+              "outcome": "The code spreads and so do accidents. Knowledge without warnings becomes another hazard.",
+              "hopeChange": 3,
+              "trustChange": -1,
+              "chaosChange": 5,
+              "humanityChange": -2
+            },
+            {
+              "id": "e",
+              "text": "Seal the never-open doors with extra warnings.",
+              "outcome": "You leave value behind to protect strangers from curiosity. The notebook feels lighter afterward.",
+              "hopeChange": 2,
+              "trustChange": 4,
+              "chaosChange": -5,
+              "humanityChange": 5
+            },
+            {
+              "id": "f",
+              "text": "Test the lie-door by speaking a harmless falsehood.",
+              "outcome": "It opens onto a room full of ration stamps and one recording laughing at you. The trick works and stains the method.",
+              "hopeChange": 4,
+              "trustChange": 0,
+              "chaosChange": 2,
+              "humanityChange": -1
+            }
+          ]
+        },
+        {
+          "id": "scavenger-010",
+          "title": "The Price of a Rumor Bird",
+          "setting": "A trader arrives with a mechanical bird that repeats rumors only after eating scraps of gold. It claims a hidden reservoir lies beneath the old theater, but its last owner vanished after feeding it wedding rings.",
+          "futureMsg": "Future-you says rumors are tools with appetites. Feed one carefully or it learns to nest in your decisions.",
+          "imageUrl": "/images/backgrounds/ruined-city.png",
+          "progressionBand": "late",
+          "weight": 1,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Pay once and verify the reservoir quietly.",
+              "outcome": "The bird tells enough truth to find water. Keeping the discovery calm prevents a stampede.",
+              "hopeChange": 6,
+              "trustChange": 4,
+              "chaosChange": -4,
+              "humanityChange": 5
+            },
+            {
+              "id": "b",
+              "text": "Refuse the bird and investigate the theater yourself.",
+              "outcome": "You lose time and keep your gold. The reservoir is real, but so is the trapdoor nobody warned you about.",
+              "hopeChange": 2,
+              "trustChange": 2,
+              "chaosChange": 1,
+              "humanityChange": 2
+            },
+            {
+              "id": "c",
+              "text": "Buy the bird and make its rumors public property.",
+              "outcome": "Everyone hears every claim together. Panic is harder to sell when gossip has witnesses.",
+              "hopeChange": 5,
+              "trustChange": 6,
+              "chaosChange": 2,
+              "humanityChange": 6
+            },
+            {
+              "id": "d",
+              "text": "Steal the bird from the trader.",
+              "outcome": "You gain a rumor machine and a vendetta. The bird repeats your theft in the trader’s voice.",
+              "hopeChange": 3,
+              "trustChange": -5,
+              "chaosChange": 4,
+              "humanityChange": -6
+            },
+            {
+              "id": "e",
+              "text": "Feed it false gold to test its honesty.",
+              "outcome": "The bird shrieks nonsense and reveals a hidden reset key. Your suspicion saves you from expensive obedience.",
+              "hopeChange": 4,
+              "trustChange": 1,
+              "chaosChange": -1,
+              "humanityChange": 1
+            },
+            {
+              "id": "f",
+              "text": "Trade the bird for guaranteed water shares.",
+              "outcome": "You avoid the trap of ownership, but someone else decides which rumors become policy.",
+              "hopeChange": 3,
+              "trustChange": 2,
+              "chaosChange": -2,
+              "humanityChange": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

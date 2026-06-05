@@ -16,6 +16,17 @@
 import { NextResponse } from "next/server";
 import { getAttemptHistory } from "@/lib/scenarioGenerationService";
 
-export async function GET() {
-  return NextResponse.json(getAttemptHistory());
+export const runtime = "nodejs";
+
+export async function GET(req) {
+  try {
+    const runId = new URL(req.url).searchParams.get("runId") || undefined;
+    const attempts = await getAttemptHistory(runId);
+    return NextResponse.json(attempts);
+  } catch (error) {
+    return NextResponse.json(
+      { error: error?.message ?? "Failed to fetch timeline history." },
+      { status: 500 },
+    );
+  }
 }

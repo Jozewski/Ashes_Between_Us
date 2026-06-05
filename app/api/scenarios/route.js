@@ -20,6 +20,16 @@
 import { NextResponse } from "next/server";
 import { getAllScenarios } from "@/lib/scenarioGenerationService";
 
+export const runtime = "nodejs";
+
 export async function GET() {
-  return NextResponse.json(getAllScenarios());
+  try {
+    const scenarios = await getAllScenarios();
+    return NextResponse.json(scenarios);
+  } catch (error) {
+    return NextResponse.json(
+      { error: error?.message ?? "Failed to fetch scenarios." },
+      { status: 500 },
+    );
+  }
 }

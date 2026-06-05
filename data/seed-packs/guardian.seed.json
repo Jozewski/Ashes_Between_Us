@@ -1,0 +1,661 @@
+{
+  "packId": "guardian-v3",
+  "version": "3.0.0",
+  "avatars": [
+    {
+      "avatarId": "guardian",
+      "scenarios": [
+        {
+          "id": "guardian-001",
+          "title": "The Gate With No Hinges",
+          "setting": "Your settlement’s main gate has warped shut after a heat storm, trapping guards outside with a raider scout approaching under a white cloth. Inside, frightened families beg you to keep the gate sealed no matter who knocks.",
+          "futureMsg": "Future-you says the gate was not the test. The test was whether protection meant closing every door or standing in the doorway yourself.",
+          "imageUrl": "/images/backgrounds/forest-safe-zone.png",
+          "progressionBand": "early",
+          "weight": 3,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Stand outside the sealed gate and meet the scout alone.",
+              "outcome": "You become the settlement’s living hinge. The scout retreats after a hard conversation, and everyone sees the cost of courage.",
+              "hopeChange": 5,
+              "trustChange": 6,
+              "chaosChange": -3,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Order archers to wound the scout before they speak.",
+              "outcome": "The threat ends quickly. The white cloth becomes meaningless in the valley from that day forward.",
+              "hopeChange": 1,
+              "trustChange": -3,
+              "chaosChange": 4,
+              "humanityChange": -5
+            },
+            {
+              "id": "c",
+              "text": "Break the gate open to retrieve your guards.",
+              "outcome": "Your people cheer the rescue and fear the opening. Repairs take all night under tense watch.",
+              "hopeChange": 4,
+              "trustChange": 4,
+              "chaosChange": 3,
+              "humanityChange": 3
+            },
+            {
+              "id": "d",
+              "text": "Keep the gate sealed and sacrifice the outside guards.",
+              "outcome": "The settlement stays untouched. The empty guard posts teach a lesson no speech can soften.",
+              "hopeChange": -4,
+              "trustChange": -6,
+              "chaosChange": -4,
+              "humanityChange": -10
+            },
+            {
+              "id": "e",
+              "text": "Signal a neutral meeting at the side ditch.",
+              "outcome": "The scout speaks from low ground while your guards return slowly. Dignity survives because protocol holds.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": -4,
+              "humanityChange": 5
+            },
+            {
+              "id": "f",
+              "text": "Let the scout inside blindfolded for questioning.",
+              "outcome": "You gain information and terrify half the settlement. Trust in you rises or falls depending on who is watching.",
+              "hopeChange": 3,
+              "trustChange": 0,
+              "chaosChange": 2,
+              "humanityChange": 1
+            }
+          ]
+        },
+        {
+          "id": "guardian-002",
+          "title": "Orchard Mines in Spring",
+          "setting": "Children discover old pressure mines beneath a blooming orchard just as a starving crowd gathers outside the fence. The fruit is almost ripe. One wrong step can turn spring into shrapnel.",
+          "futureMsg": "Future-you remembers petals falling like snow over metal teeth. Protection that only guards fruit is just another kind of hunger.",
+          "imageUrl": "/images/backgrounds/forest-safe-zone.png",
+          "progressionBand": "early",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Clear one safe lane before allowing harvest.",
+              "outcome": "Work is slow and terrifying, but everyone eats from a marked path. Order saves limbs and patience.",
+              "hopeChange": 6,
+              "trustChange": 5,
+              "chaosChange": -5,
+              "humanityChange": 6
+            },
+            {
+              "id": "b",
+              "text": "Keep outsiders away until your settlement harvests first.",
+              "outcome": "Your stores fill while the fence becomes a symbol of cruelty. Hungry people return at night with tools.",
+              "hopeChange": 3,
+              "trustChange": -5,
+              "chaosChange": 5,
+              "humanityChange": -7
+            },
+            {
+              "id": "c",
+              "text": "Recruit the starving crowd into mine-clearing teams.",
+              "outcome": "Shared danger creates ownership, though one volunteer loses a foot. The orchard becomes everyone’s wound and everyone’s bread.",
+              "hopeChange": 5,
+              "trustChange": 6,
+              "chaosChange": 3,
+              "humanityChange": 4
+            },
+            {
+              "id": "d",
+              "text": "Burn the orchard to detonate the mines safely.",
+              "outcome": "Explosions bloom harmlessly after evacuation. The fruit is gone, but no child will step on a hidden war.",
+              "hopeChange": -2,
+              "trustChange": 1,
+              "chaosChange": -6,
+              "humanityChange": 2
+            },
+            {
+              "id": "e",
+              "text": "Use prisoners to clear the field.",
+              "outcome": "The mines are found quickly under guard. The orchard survives, and so does the ugliness of forced courage.",
+              "hopeChange": 1,
+              "trustChange": -4,
+              "chaosChange": -1,
+              "humanityChange": -8
+            },
+            {
+              "id": "f",
+              "text": "Teach children mine signs and postpone harvest.",
+              "outcome": "Hunger worsens, but knowledge spreads. The smallest hands become safer because adults trusted them with truth.",
+              "hopeChange": 2,
+              "trustChange": 5,
+              "chaosChange": -4,
+              "humanityChange": 7
+            }
+          ]
+        },
+        {
+          "id": "guardian-003",
+          "title": "The Bell That Calls Wolves",
+          "setting": "A school bell still hangs over the courtyard. Ringing it summons defenders from the walls, but it also draws a pack of mutated wolves that learned the sound means panic and meat. Smoke rises beyond the east ridge.",
+          "futureMsg": "Future-you says alarms are promises. Break them too often and people stop running toward danger for one another.",
+          "imageUrl": "/images/backgrounds/ruined-city.png",
+          "progressionBand": "mid",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ring the bell and form a disciplined shield line.",
+              "outcome": "Defenders arrive before the wolves do. The pack tests the line and withdraws, leaving everyone shaking but alive.",
+              "hopeChange": 6,
+              "trustChange": 6,
+              "chaosChange": -2,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Send silent runners instead of ringing the bell.",
+              "outcome": "The response is slower but unseen. You save the ridge party without teaching the wolves a new feast time.",
+              "hopeChange": 4,
+              "trustChange": 3,
+              "chaosChange": -4,
+              "humanityChange": 3
+            },
+            {
+              "id": "c",
+              "text": "Ring the bell as bait and ambush the wolves.",
+              "outcome": "The trap kills three beasts and injures two defenders. Victory smells like blood and wet fur.",
+              "hopeChange": 3,
+              "trustChange": 1,
+              "chaosChange": 5,
+              "humanityChange": -1
+            },
+            {
+              "id": "d",
+              "text": "Ignore the smoke to preserve the alarm system.",
+              "outcome": "The bell remains sacred and useless to the people beyond the ridge. Distance becomes your excuse.",
+              "hopeChange": -5,
+              "trustChange": 0,
+              "chaosChange": -3,
+              "humanityChange": -6
+            },
+            {
+              "id": "e",
+              "text": "Replace the bell code with flag signals.",
+              "outcome": "Confusion dominates the first drill, then the system improves. The wolves lose their cue and your people gain a language.",
+              "hopeChange": 5,
+              "trustChange": 5,
+              "chaosChange": -5,
+              "humanityChange": 5
+            },
+            {
+              "id": "f",
+              "text": "Ring the bell constantly to desensitize the pack.",
+              "outcome": "The wolves stop coming. So do tired neighbors who no longer know when danger is real.",
+              "hopeChange": -1,
+              "trustChange": -4,
+              "chaosChange": 1,
+              "humanityChange": -3
+            }
+          ]
+        },
+        {
+          "id": "guardian-004",
+          "title": "Trial by Barricade",
+          "setting": "A captured raider claims their warband is forcing children to carry explosives. Your council wants execution before sunset. Outside, refugees pound at the barricade demanding protection from the same raiders.",
+          "futureMsg": "Future-you says justice under siege is still justice, or it becomes camouflage for fear.",
+          "imageUrl": "/images/backgrounds/ruined-city.png",
+          "progressionBand": "mid",
+          "weight": 3,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Hold a public trial despite the emergency.",
+              "outcome": "The process is tense but visible. Refugees see a settlement that still believes fear needs evidence.",
+              "hopeChange": 4,
+              "trustChange": 6,
+              "chaosChange": -3,
+              "humanityChange": 7
+            },
+            {
+              "id": "b",
+              "text": "Execute the raider and prepare for assault.",
+              "outcome": "The council feels safer for an hour. Information dies with the prisoner, and the children remain unseen.",
+              "hopeChange": 1,
+              "trustChange": -2,
+              "chaosChange": 2,
+              "humanityChange": -7
+            },
+            {
+              "id": "c",
+              "text": "Offer the raider protection for rescue details.",
+              "outcome": "They give a route and a password. Some call it mercy; others call it bargaining with monsters.",
+              "hopeChange": 5,
+              "trustChange": 2,
+              "chaosChange": -1,
+              "humanityChange": 4
+            },
+            {
+              "id": "d",
+              "text": "Trade the raider back for the child carriers.",
+              "outcome": "The exchange saves six children and releases one dangerous adult. The moral ledger refuses to balance.",
+              "hopeChange": 6,
+              "trustChange": 1,
+              "chaosChange": 4,
+              "humanityChange": 5
+            },
+            {
+              "id": "e",
+              "text": "Let refugees decide the prisoner’s fate.",
+              "outcome": "Vengeance wins the vote. Your settlement learns crowd pain can sound like law.",
+              "hopeChange": -2,
+              "trustChange": -3,
+              "chaosChange": 4,
+              "humanityChange": -8
+            },
+            {
+              "id": "f",
+              "text": "Fake the execution and use the raider as bait.",
+              "outcome": "The deception draws the warband out. It also teaches your own council that your public words may be theater.",
+              "hopeChange": 3,
+              "trustChange": -4,
+              "chaosChange": 5,
+              "humanityChange": -2
+            }
+          ]
+        },
+        {
+          "id": "guardian-005",
+          "title": "The Lantern Patrol",
+          "setting": "Every night patrol carries one lantern. Tonight, six lanterns appear outside the wall, each burning with a different color. One belongs to a patrol that never returned, and one is lit with blue flame no one recognizes.",
+          "futureMsg": "Future-you says you wanted the colors to tell you who deserved rescue. Colors only show where courage must start.",
+          "imageUrl": "/images/skyscapes/aurora-coastal-beacon.png",
+          "progressionBand": "any",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Follow the missing patrol’s old lantern first.",
+              "outcome": "You recover two survivors from a drainage ditch. The blue flame drifts closer while you are gone.",
+              "hopeChange": 5,
+              "trustChange": 5,
+              "chaosChange": 1,
+              "humanityChange": 6
+            },
+            {
+              "id": "b",
+              "text": "Investigate the blue flame with a full squad.",
+              "outcome": "The strange light is a lure over a sinkhole. Because you brought rope, curiosity does not become a funeral.",
+              "hopeChange": 4,
+              "trustChange": 4,
+              "chaosChange": -2,
+              "humanityChange": 3
+            },
+            {
+              "id": "c",
+              "text": "Shoot out all unknown lanterns from the wall.",
+              "outcome": "Ambush signals vanish, along with one survivor’s desperate beacon. The dark feels obedient and accusing.",
+              "hopeChange": -3,
+              "trustChange": -1,
+              "chaosChange": -4,
+              "humanityChange": -6
+            },
+            {
+              "id": "d",
+              "text": "Send coded flashes asking each lantern to answer.",
+              "outcome": "Two answer correctly, one answers with an enemy code, and one flickers in a child’s rhythm. The night becomes readable.",
+              "hopeChange": 6,
+              "trustChange": 6,
+              "chaosChange": -4,
+              "humanityChange": 5
+            },
+            {
+              "id": "e",
+              "text": "Forbid rescue until morning.",
+              "outcome": "No one risks the dark. By dawn, the cold has made some decisions permanent.",
+              "hopeChange": -5,
+              "trustChange": 1,
+              "chaosChange": -5,
+              "humanityChange": -7
+            },
+            {
+              "id": "f",
+              "text": "Open a small postern and draw the lights inward.",
+              "outcome": "The gamble brings survivors to safety and an enemy scout into your kill zone. Control returns at high tension.",
+              "hopeChange": 4,
+              "trustChange": 2,
+              "chaosChange": 4,
+              "humanityChange": 2
+            }
+          ]
+        },
+        {
+          "id": "guardian-006",
+          "title": "The Arena of Canned Thunder",
+          "setting": "Two settlements settle disputes in an old sports arena using nonlethal duels and thunderous drums. Your ally asks you to fight as their champion, but the losing side must surrender winter fuel.",
+          "futureMsg": "Future-you remembers that you won the fight before realizing the rules were the wound.",
+          "imageUrl": "/images/backgrounds/ruined-city.png",
+          "progressionBand": "mid",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Fight and win under the arena rules.",
+              "outcome": "Your ally gets fuel, and the crowd roars for bloodless violence. Peace remains a performance with bruises.",
+              "hopeChange": 3,
+              "trustChange": 3,
+              "chaosChange": -1,
+              "humanityChange": -1
+            },
+            {
+              "id": "b",
+              "text": "Refuse the duel and challenge the fuel rule publicly.",
+              "outcome": "The arena boos, then argues. By sunset, old champions admit the games have become hunger with applause.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": 1,
+              "humanityChange": 5
+            },
+            {
+              "id": "c",
+              "text": "Throw the match to prevent your ally from hoarding fuel.",
+              "outcome": "The betrayal averts scarcity for another settlement and damages every oath you carry.",
+              "hopeChange": 1,
+              "trustChange": -6,
+              "chaosChange": -2,
+              "humanityChange": -2
+            },
+            {
+              "id": "d",
+              "text": "Offer to guard a shared fuel convoy instead.",
+              "outcome": "The practical alternative embarrasses the arena leaders. Work replaces spectacle, at least this season.",
+              "hopeChange": 6,
+              "trustChange": 6,
+              "chaosChange": -4,
+              "humanityChange": 6
+            },
+            {
+              "id": "e",
+              "text": "Expose that the drums hide illegal shock devices.",
+              "outcome": "The arena erupts when the cheat is revealed. Reform begins after a frightening hour of chairs and smoke.",
+              "hopeChange": 5,
+              "trustChange": 4,
+              "chaosChange": 6,
+              "humanityChange": 4
+            },
+            {
+              "id": "f",
+              "text": "Recruit the champions into a regional defense league.",
+              "outcome": "Warriors who once fought each other learn formation drills. Competition becomes preparation instead of policy.",
+              "hopeChange": 7,
+              "trustChange": 5,
+              "chaosChange": -3,
+              "humanityChange": 5
+            }
+          ]
+        },
+        {
+          "id": "guardian-007",
+          "title": "The White Flag Convoy",
+          "setting": "A convoy approaches under white sheets tied to antennas, carrying wounded enemies and stolen grain. Your scouts confirm they are being chased by something worse. The gate can hold against either threat, not both.",
+          "futureMsg": "Future-you says a white flag is not innocence. It is a request to be judged after the shooting stops.",
+          "imageUrl": "/images/backgrounds/desert-highway.png",
+          "progressionBand": "late",
+          "weight": 1,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Admit the wounded after disarming the convoy.",
+              "outcome": "The gate groans but holds. Former enemies bleed on your floor and later testify about the larger threat.",
+              "hopeChange": 5,
+              "trustChange": 3,
+              "chaosChange": 2,
+              "humanityChange": 6
+            },
+            {
+              "id": "b",
+              "text": "Refuse entry and prepare for the pursuers.",
+              "outcome": "Your walls stay organized, and the convoy is overtaken outside. The larger threat arrives well fed on fear.",
+              "hopeChange": -3,
+              "trustChange": 0,
+              "chaosChange": 1,
+              "humanityChange": -7
+            },
+            {
+              "id": "c",
+              "text": "Open a temporary triage camp beyond the wall.",
+              "outcome": "Compassion stays outside the main gate. It works until the pursuers force a faster decision.",
+              "hopeChange": 4,
+              "trustChange": 4,
+              "chaosChange": 4,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Demand the stolen grain as price of shelter.",
+              "outcome": "The settlement eats, the convoy survives, and mercy looks exactly like taxation.",
+              "hopeChange": 3,
+              "trustChange": -3,
+              "chaosChange": 1,
+              "humanityChange": -3
+            },
+            {
+              "id": "e",
+              "text": "Send warriors to escort them away from your gate.",
+              "outcome": "You avoid immediate overload and earn reluctant gratitude. Your fighters meet the pursuing force in open ground.",
+              "hopeChange": 2,
+              "trustChange": 2,
+              "chaosChange": 5,
+              "humanityChange": 2
+            },
+            {
+              "id": "f",
+              "text": "Broadcast the threat warning to every settlement nearby.",
+              "outcome": "Neighbors arrive armed and suspicious. The threat is met by a coalition that nearly collapses at the gate.",
+              "hopeChange": 7,
+              "trustChange": 6,
+              "chaosChange": 6,
+              "humanityChange": 6
+            }
+          ]
+        },
+        {
+          "id": "guardian-008",
+          "title": "Winter Names on the Wall",
+          "setting": "During the coldest week, citizens carve names into the inner wall: people they believe deserve food priority. Anonymous names begin appearing for exiles, prisoners, and enemies who once spared children.",
+          "futureMsg": "Future-you says scarcity made lists feel like truth. The wall revealed that memory could be rationed too.",
+          "imageUrl": "/images/backgrounds/bunker.png",
+          "progressionBand": "late",
+          "weight": 1,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Create transparent ration rules before more names appear.",
+              "outcome": "The carving slows as procedure replaces rumor. Nobody loves the rules, but everyone can read them.",
+              "hopeChange": 4,
+              "trustChange": 6,
+              "chaosChange": -4,
+              "humanityChange": 5
+            },
+            {
+              "id": "b",
+              "text": "Erase enemy names from the wall.",
+              "outcome": "The wall becomes simpler and meaner. People learn which memories are permitted.",
+              "hopeChange": -2,
+              "trustChange": -3,
+              "chaosChange": -2,
+              "humanityChange": -6
+            },
+            {
+              "id": "c",
+              "text": "Hold a testimony night for every disputed name.",
+              "outcome": "The hall fills with uncomfortable stories. Some enemies become human enough to feed, and some heroes lose shine.",
+              "hopeChange": 5,
+              "trustChange": 7,
+              "chaosChange": -1,
+              "humanityChange": 8
+            },
+            {
+              "id": "d",
+              "text": "Guard the pantry and ignore the wall entirely.",
+              "outcome": "Food distribution stays orderly while resentment scratches elsewhere. Control does not erase hunger’s imagination.",
+              "hopeChange": 0,
+              "trustChange": 1,
+              "chaosChange": -2,
+              "humanityChange": -1
+            },
+            {
+              "id": "e",
+              "text": "Add your own name last as a pledge.",
+              "outcome": "The gesture calms some and enrages those who need guarantees over symbolism. Leadership becomes visible and vulnerable.",
+              "hopeChange": 3,
+              "trustChange": 4,
+              "chaosChange": -1,
+              "humanityChange": 4
+            },
+            {
+              "id": "f",
+              "text": "Let families trade ration priority among themselves.",
+              "outcome": "Agency returns, along with pressure on the weakest to sell their place. Freedom can become another market.",
+              "hopeChange": 2,
+              "trustChange": -2,
+              "chaosChange": 1,
+              "humanityChange": -4
+            }
+          ]
+        },
+        {
+          "id": "guardian-009",
+          "title": "The Quiet Mutiny",
+          "setting": "Your night watch refuses orders after learning the council hid extra ammunition beneath the nursery floor. They do not raise weapons. They simply sit down at every stairwell and stop guarding anyone.",
+          "futureMsg": "Future-you says mutiny without violence is still a message. How you answered decided whether command remained service or became ownership.",
+          "imageUrl": "/images/backgrounds/bunker.png",
+          "progressionBand": "late",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Sit with the watch and demand the council explain.",
+              "outcome": "The standoff becomes a hearing instead of a coup. The ammunition moves to public inventory by dawn.",
+              "hopeChange": 5,
+              "trustChange": 7,
+              "chaosChange": -4,
+              "humanityChange": 6
+            },
+            {
+              "id": "b",
+              "text": "Arrest the ringleaders before enemies notice.",
+              "outcome": "Guard rotations resume quickly. Loyalty returns wearing a bruise.",
+              "hopeChange": 1,
+              "trustChange": -5,
+              "chaosChange": -1,
+              "humanityChange": -6
+            },
+            {
+              "id": "c",
+              "text": "Open the hidden cache and redistribute ammo openly.",
+              "outcome": "Transparency shocks the council and steadies the watch. New protocols form under angry fluorescent light.",
+              "hopeChange": 4,
+              "trustChange": 6,
+              "chaosChange": -3,
+              "humanityChange": 4
+            },
+            {
+              "id": "d",
+              "text": "Pretend to side with the watch while securing the cache.",
+              "outcome": "You prevent theft and lose moral altitude. Everyone suspects a different version of you afterward.",
+              "hopeChange": 2,
+              "trustChange": -4,
+              "chaosChange": 0,
+              "humanityChange": -3
+            },
+            {
+              "id": "e",
+              "text": "Invite civilians to train with the watch.",
+              "outcome": "Security stops being a closed priesthood. The first drills are messy, but the settlement grows teeth together.",
+              "hopeChange": 6,
+              "trustChange": 6,
+              "chaosChange": -2,
+              "humanityChange": 7
+            },
+            {
+              "id": "f",
+              "text": "Move the nursery away from strategic stores.",
+              "outcome": "The practical fix avoids blame and protects children. It also leaves the deeper secrecy unresolved.",
+              "hopeChange": 2,
+              "trustChange": 2,
+              "chaosChange": -2,
+              "humanityChange": 1
+            }
+          ]
+        },
+        {
+          "id": "guardian-010",
+          "title": "Last Stand at Mercy Road",
+          "setting": "A canyon road called Mercy is the only route for evacuees before a firestorm. Raiders block the exit with shields made from road signs painted with names of people your settlement failed to save.",
+          "futureMsg": "Future-you says the last stand was not about dying well. It was about deciding whether the road would remember mercy or revenge.",
+          "imageUrl": "/images/backgrounds/desert-highway.png",
+          "progressionBand": "late",
+          "weight": 1,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Lead a shield push to break the blockade.",
+              "outcome": "The evacuees escape behind your advance. The road is opened by force and paid for in scars.",
+              "hopeChange": 5,
+              "trustChange": 4,
+              "chaosChange": 6,
+              "humanityChange": 3
+            },
+            {
+              "id": "b",
+              "text": "Call the raiders by the names on their shields.",
+              "outcome": "The charge falters when grief is spoken accurately. Negotiation opens a narrow lane through old guilt.",
+              "hopeChange": 6,
+              "trustChange": 5,
+              "chaosChange": -3,
+              "humanityChange": 7
+            },
+            {
+              "id": "c",
+              "text": "Send decoys into the smoke while evacuees crawl the culvert.",
+              "outcome": "Most civilians pass unseen. Your decoy squad returns fewer than it left.",
+              "hopeChange": 4,
+              "trustChange": 2,
+              "chaosChange": 4,
+              "humanityChange": 2
+            },
+            {
+              "id": "d",
+              "text": "Offer yourself as hostage for the road.",
+              "outcome": "The raiders accept the symbol and release the column. Your people survive while your future narrows to chains.",
+              "hopeChange": 6,
+              "trustChange": 7,
+              "chaosChange": -5,
+              "humanityChange": 9
+            },
+            {
+              "id": "e",
+              "text": "Collapse the canyon wall above the blockade.",
+              "outcome": "The road clears under rubble and dust, burying raiders and maybe the chance to answer for the names.",
+              "hopeChange": 3,
+              "trustChange": -1,
+              "chaosChange": 2,
+              "humanityChange": -5
+            },
+            {
+              "id": "f",
+              "text": "Retreat and defend only your own evacuees.",
+              "outcome": "Your group lives. The wider column burns behind a choice that will never stop arriving.",
+              "hopeChange": -4,
+              "trustChange": -4,
+              "chaosChange": -2,
+              "humanityChange": -9
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

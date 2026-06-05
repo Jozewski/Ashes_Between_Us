@@ -1,0 +1,661 @@
+{
+  "packId": "engineer-v3",
+  "version": "3.0.0",
+  "avatars": [
+    {
+      "avatarId": "engineer",
+      "scenarios": [
+        {
+          "id": "engineer-001",
+          "title": "The Substation That Dreamed in Birds",
+          "setting": "A dead substation wakes whenever a flock lands on the wires, blinking power through the district in wingbeat pulses. The pattern could restart the water pumps or fry every battery your settlement owns.",
+          "futureMsg": "Future-you says the grid was not broken; it was improvising. The danger was assuming old machines wanted old answers.",
+          "imageUrl": "/images/backgrounds/radio-tower.png",
+          "progressionBand": "early",
+          "weight": 3,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Build a pulse buffer from scavenged capacitors.",
+              "outcome": "The pumps cough awake in safe bursts. The settlement drinks, and you gain a new respect for winged engineers.",
+              "hopeChange": 7,
+              "trustChange": 5,
+              "chaosChange": -5,
+              "humanityChange": 3
+            },
+            {
+              "id": "b",
+              "text": "Scare the birds away and stabilize the silence.",
+              "outcome": "The surges stop, but so does the only power source. Safety arrives empty-handed.",
+              "hopeChange": -2,
+              "trustChange": 1,
+              "chaosChange": -3,
+              "humanityChange": -1
+            },
+            {
+              "id": "c",
+              "text": "Wire the pulses directly into the battery bank.",
+              "outcome": "For one glorious hour, everything charges. Then two batteries explode and the night smells of acid.",
+              "hopeChange": 4,
+              "trustChange": -2,
+              "chaosChange": 9,
+              "humanityChange": -3
+            },
+            {
+              "id": "d",
+              "text": "Map the bird pattern before touching the station.",
+              "outcome": "Patience reveals a repeating voltage code. You can use it later, though the thirsty wait longer today.",
+              "hopeChange": 3,
+              "trustChange": 3,
+              "chaosChange": -2,
+              "humanityChange": 1
+            },
+            {
+              "id": "e",
+              "text": "Invite settlement apprentices to help build the buffer.",
+              "outcome": "The work slows, but knowledge spreads. Next time, the grid will not depend only on your hands.",
+              "hopeChange": 6,
+              "trustChange": 7,
+              "chaosChange": -3,
+              "humanityChange": 5
+            },
+            {
+              "id": "f",
+              "text": "Claim the substation as engineer-controlled infrastructure.",
+              "outcome": "Repairs proceed efficiently under your authority. People drink, then whisper about who owns the switch.",
+              "hopeChange": 4,
+              "trustChange": -4,
+              "chaosChange": -2,
+              "humanityChange": -4
+            }
+          ]
+        },
+        {
+          "id": "engineer-002",
+          "title": "Raincatcher With Teeth",
+          "setting": "A rooftop raincatcher assembled by children works too well, pulling clouds toward the settlement with a tower of foil and prayer flags. The cisterns overflow while nearby farms dry under a ring of clear sky.",
+          "futureMsg": "Future-you warns that every miracle has a watershed. Water hoarded by physics is still hoarded water.",
+          "imageUrl": "/images/backgrounds/forest-safe-zone.png",
+          "progressionBand": "early",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Recalibrate the array to share rainfall outward.",
+              "outcome": "The settlement loses abundance but gains grateful neighbors. Weather becomes diplomacy written in droplets.",
+              "hopeChange": 6,
+              "trustChange": 6,
+              "chaosChange": -4,
+              "humanityChange": 6
+            },
+            {
+              "id": "b",
+              "text": "Keep the settings secret until your cisterns fill.",
+              "outcome": "Your reserves boom. The farms beyond the ring turn brittle, and their envoys stop smiling.",
+              "hopeChange": 4,
+              "trustChange": -5,
+              "chaosChange": 2,
+              "humanityChange": -6
+            },
+            {
+              "id": "c",
+              "text": "Dismantle the array before it destabilizes the valley.",
+              "outcome": "The skies normalize, and your own people resent the lost miracle. Caution tastes dry.",
+              "hopeChange": -3,
+              "trustChange": 1,
+              "chaosChange": -5,
+              "humanityChange": 1
+            },
+            {
+              "id": "d",
+              "text": "Teach the children how the system really works.",
+              "outcome": "They redesign it with better balance than your first plan. Pride becomes renewable power.",
+              "hopeChange": 7,
+              "trustChange": 5,
+              "chaosChange": -3,
+              "humanityChange": 7
+            },
+            {
+              "id": "e",
+              "text": "Use excess water to create a public bathhouse.",
+              "outcome": "Morale rises with steam and laughter. Neighboring farms see the vapor and demand explanation.",
+              "hopeChange": 8,
+              "trustChange": 2,
+              "chaosChange": 3,
+              "humanityChange": 4
+            },
+            {
+              "id": "f",
+              "text": "Sell rainfall slots to surrounding settlements.",
+              "outcome": "A market forms around clouds. It funds repairs and turns weather into class conflict.",
+              "hopeChange": 3,
+              "trustChange": -3,
+              "chaosChange": 4,
+              "humanityChange": -4
+            }
+          ]
+        },
+        {
+          "id": "engineer-003",
+          "title": "The Bridge Made of Buses",
+          "setting": "A flood has swallowed the old bridge, but a chain of abandoned buses can be welded into a crossing before the river rises again. Every bus contains personal belongings from evacuation day, and one still holds locked passengers.",
+          "futureMsg": "Future-you says a bridge is never just metal over water. It is a promise about who gets carried across.",
+          "imageUrl": "/images/backgrounds/ruined-city.png",
+          "progressionBand": "mid",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Cut open the locked bus before construction.",
+              "outcome": "You find two survivors in stasis, weak but alive. The bridge takes longer, and the saved passengers become witnesses to your priorities.",
+              "hopeChange": 6,
+              "trustChange": 5,
+              "chaosChange": 1,
+              "humanityChange": 8
+            },
+            {
+              "id": "b",
+              "text": "Weld first and search the buses after crossing.",
+              "outcome": "The bridge holds. The locked bus sinks overnight with answers and perhaps lives inside.",
+              "hopeChange": 1,
+              "trustChange": -2,
+              "chaosChange": -2,
+              "humanityChange": -7
+            },
+            {
+              "id": "c",
+              "text": "Inventory belongings and build a memorial into the railing.",
+              "outcome": "The crossing becomes a public place of grief rather than salvage. Work slows, but hands return steadier.",
+              "hopeChange": 4,
+              "trustChange": 6,
+              "chaosChange": -3,
+              "humanityChange": 6
+            },
+            {
+              "id": "d",
+              "text": "Strip every bus for maximum structural strength.",
+              "outcome": "The bridge is excellent and anonymous. People cross safely over erased histories.",
+              "hopeChange": 3,
+              "trustChange": 1,
+              "chaosChange": -4,
+              "humanityChange": -3
+            },
+            {
+              "id": "e",
+              "text": "Let families remove possessions before welding.",
+              "outcome": "Chaos fills the worksite with tears and delays. When the bridge opens, it belongs to everyone.",
+              "hopeChange": 5,
+              "trustChange": 5,
+              "chaosChange": 4,
+              "humanityChange": 7
+            },
+            {
+              "id": "f",
+              "text": "Rig the buses to detach if raiders pursue.",
+              "outcome": "Defense is built into the crossing. So is the possibility of stranding someone who needs escape.",
+              "hopeChange": 2,
+              "trustChange": -1,
+              "chaosChange": 0,
+              "humanityChange": -2
+            }
+          ]
+        },
+        {
+          "id": "engineer-004",
+          "title": "The Elevator City",
+          "setting": "A high-rise community survives by operating one freight elevator between gardens, dormitories, and a roof beacon. The counterweight cable is fraying. You can repair it, replace it, or redesign the building around its failure.",
+          "futureMsg": "Future-you remembers the elevator because everyone called it a machine until it stopped. Then they admitted it was a spine.",
+          "imageUrl": "/images/backgrounds/ruined-city.png",
+          "progressionBand": "mid",
+          "weight": 3,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Repair the cable for another month of use.",
+              "outcome": "The city keeps moving while you search for parts. Temporary salvation buys time and complacency.",
+              "hopeChange": 4,
+              "trustChange": 3,
+              "chaosChange": -2,
+              "humanityChange": 1
+            },
+            {
+              "id": "b",
+              "text": "Shut down the elevator and build stair winches.",
+              "outcome": "Life gets harder immediately, but dependence weakens. The building learns to stand without a single point of failure.",
+              "hopeChange": 3,
+              "trustChange": 5,
+              "chaosChange": -4,
+              "humanityChange": 4
+            },
+            {
+              "id": "c",
+              "text": "Replace the cable using materials from the roof beacon.",
+              "outcome": "Movement is saved; long-range visibility is lost. The tower breathes and goes silent to the horizon.",
+              "hopeChange": 2,
+              "trustChange": 0,
+              "chaosChange": -1,
+              "humanityChange": -2
+            },
+            {
+              "id": "d",
+              "text": "Evacuate upper floors before attempting repair.",
+              "outcome": "The cautious disruption angers residents until the cable snaps during testing. Empty floors answer the accusation.",
+              "hopeChange": 5,
+              "trustChange": 4,
+              "chaosChange": -5,
+              "humanityChange": 3
+            },
+            {
+              "id": "e",
+              "text": "Train a resident crew before touching the machinery.",
+              "outcome": "Repairs slow down, but the knowledge stays after you leave. The elevator becomes less mysterious and more beloved.",
+              "hopeChange": 6,
+              "trustChange": 7,
+              "chaosChange": -3,
+              "humanityChange": 6
+            },
+            {
+              "id": "f",
+              "text": "Convert the elevator shaft into a defensive drop trap.",
+              "outcome": "The building becomes nearly impossible to breach. It also stops being a city and starts becoming a bunker.",
+              "hopeChange": 1,
+              "trustChange": -3,
+              "chaosChange": -1,
+              "humanityChange": -5
+            }
+          ]
+        },
+        {
+          "id": "engineer-005",
+          "title": "Signal Under the Dam",
+          "setting": "An old hydroelectric dam transmits a repeating knock through its maintenance pipes. The turbines are dry, yet the rhythm answers questions tapped in Morse. Below the spillway, pressure gauges twitch toward impossible values.",
+          "futureMsg": "Future-you says the dam was not haunted by water. It was haunted by choices still upstream.",
+          "imageUrl": "/images/backgrounds/radio-tower.png",
+          "progressionBand": "late",
+          "weight": 1,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Answer the pipe code and ask what pressure is coming.",
+              "outcome": "The knocks reveal a hidden floodgate schedule. You save the valley by trusting a conversation with steel.",
+              "hopeChange": 8,
+              "trustChange": 4,
+              "chaosChange": -6,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Evacuate immediately without decoding anything.",
+              "outcome": "People survive, but the dam remains a mystery that may repeat. Fear moves faster than engineering.",
+              "hopeChange": 4,
+              "trustChange": 2,
+              "chaosChange": -1,
+              "humanityChange": 1
+            },
+            {
+              "id": "c",
+              "text": "Force the floodgates open manually.",
+              "outcome": "The release prevents catastrophe and destroys downstream crops. Correct pressure, wrong mercy.",
+              "hopeChange": 2,
+              "trustChange": -1,
+              "chaosChange": 6,
+              "humanityChange": -3
+            },
+            {
+              "id": "d",
+              "text": "Bring local elders to interpret old maintenance lore.",
+              "outcome": "Their stories identify a forgotten inspection route. The repair becomes a bridge between memory and tools.",
+              "hopeChange": 6,
+              "trustChange": 6,
+              "chaosChange": -4,
+              "humanityChange": 6
+            },
+            {
+              "id": "e",
+              "text": "Seal the pipe system to stop the signal.",
+              "outcome": "The knocking ends. So does your last warning before the gauges climb red.",
+              "hopeChange": -5,
+              "trustChange": -2,
+              "chaosChange": 4,
+              "humanityChange": -5
+            },
+            {
+              "id": "f",
+              "text": "Use the signal to power a coded regional alarm.",
+              "outcome": "The dam becomes a messenger as well as a machine. Panic spreads, but so does preparation.",
+              "hopeChange": 6,
+              "trustChange": 4,
+              "chaosChange": 5,
+              "humanityChange": 5
+            }
+          ]
+        },
+        {
+          "id": "engineer-006",
+          "title": "The Garden of Spare Parts",
+          "setting": "A commune grows vegetables around piles of sorted components, claiming machines sprout better when buried beside beans. Then a crop of copper vines begins conducting low voltage through the soil, lighting roots like city streets.",
+          "futureMsg": "Future-you says rebuilding was never cleanly divided between nature and invention. The question was whether you could design with the living, not over it.",
+          "imageUrl": "/images/backgrounds/forest-safe-zone.png",
+          "progressionBand": "any",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Study the copper vines before harvesting anything.",
+              "outcome": "You discover a bioelectric irrigation pattern. The commune gains food and power without killing the source.",
+              "hopeChange": 7,
+              "trustChange": 5,
+              "chaosChange": -4,
+              "humanityChange": 7
+            },
+            {
+              "id": "b",
+              "text": "Strip the vines for wire immediately.",
+              "outcome": "You repair radios quickly and destroy the phenomenon. The field looks ordinary by morning and poorer forever.",
+              "hopeChange": 2,
+              "trustChange": -2,
+              "chaosChange": -1,
+              "humanityChange": -6
+            },
+            {
+              "id": "c",
+              "text": "Fence the garden as a protected research site.",
+              "outcome": "Preservation succeeds, but residents resent losing access to their own beans. Science needs consent.",
+              "hopeChange": 3,
+              "trustChange": -1,
+              "chaosChange": -3,
+              "humanityChange": 0
+            },
+            {
+              "id": "d",
+              "text": "Invite farmers to co-design the experiment.",
+              "outcome": "Their practical wisdom prevents your fanciest mistake. The harvest becomes a shared invention.",
+              "hopeChange": 6,
+              "trustChange": 7,
+              "chaosChange": -5,
+              "humanityChange": 8
+            },
+            {
+              "id": "e",
+              "text": "Run settlement lighting through the root network.",
+              "outcome": "Evening glows beautifully, but overdrawn roots blacken near the square. Wonder has a load limit.",
+              "hopeChange": 5,
+              "trustChange": 2,
+              "chaosChange": 3,
+              "humanityChange": 2
+            },
+            {
+              "id": "f",
+              "text": "Trade cuttings to neighbors before you understand them.",
+              "outcome": "Hope spreads with the vines. So do unpredictable surges in three unprepared gardens.",
+              "hopeChange": 5,
+              "trustChange": 3,
+              "chaosChange": 7,
+              "humanityChange": 3
+            }
+          ]
+        },
+        {
+          "id": "engineer-007",
+          "title": "Battery Choir",
+          "setting": "A storage room of mismatched batteries emits harmony when arranged by voltage. The chord calms people nearby and extends charge life, but one dissonant cell whispers names whenever you stand alone.",
+          "futureMsg": "Future-you warns that efficiency can sound holy when everyone is desperate for order. Listen, but do not worship the system.",
+          "imageUrl": "/images/backgrounds/bunker.png",
+          "progressionBand": "mid",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Remove the whispering cell and catalog the effect.",
+              "outcome": "The harmony remains safer and weaker. You choose understandable power over uncanny abundance.",
+              "hopeChange": 4,
+              "trustChange": 3,
+              "chaosChange": -3,
+              "humanityChange": 2
+            },
+            {
+              "id": "b",
+              "text": "Build a public charging shrine around the choir.",
+              "outcome": "People gather, breathe, and leave with working lamps. Reverence grows faster than maintenance training.",
+              "hopeChange": 7,
+              "trustChange": 4,
+              "chaosChange": -1,
+              "humanityChange": 3
+            },
+            {
+              "id": "c",
+              "text": "Use the whispering cell to predict sabotage.",
+              "outcome": "The names it speaks reveal one real threat and two false suspicions. Accuracy arrives mixed with poison.",
+              "hopeChange": 3,
+              "trustChange": -2,
+              "chaosChange": 4,
+              "humanityChange": -3
+            },
+            {
+              "id": "d",
+              "text": "Dismantle the room and distribute batteries normally.",
+              "outcome": "Mystery ends, and so does the extended charge. The settlement grumbles, but no one kneels to a battery rack.",
+              "hopeChange": -1,
+              "trustChange": 2,
+              "chaosChange": -4,
+              "humanityChange": 1
+            },
+            {
+              "id": "e",
+              "text": "Teach children safe handling through the chord pattern.",
+              "outcome": "A generation learns electricity by sound and care. The room becomes a classroom before it becomes a legend.",
+              "hopeChange": 6,
+              "trustChange": 6,
+              "chaosChange": -3,
+              "humanityChange": 7
+            },
+            {
+              "id": "f",
+              "text": "Overload the choir to power the radio tower.",
+              "outcome": "Your message reaches three valleys. The battery room burns like a cathedral struck by lightning.",
+              "hopeChange": 4,
+              "trustChange": -1,
+              "chaosChange": 9,
+              "humanityChange": -2
+            }
+          ]
+        },
+        {
+          "id": "engineer-008",
+          "title": "The Clockwork Orchard Gate",
+          "setting": "An orchard settlement has a gate operated by a pre-collapse clock mechanism. It opens only at prime-numbered minutes, trapping workers outside during raids and locking raiders inside at inconvenient miracles.",
+          "futureMsg": "Future-you says not every flaw should be flattened. Some machines defend through strangeness, if people know how to dance with them.",
+          "imageUrl": "/images/backgrounds/forest-safe-zone.png",
+          "progressionBand": "any",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Rebuild the clock to a predictable schedule.",
+              "outcome": "Workers relax and raiders adapt. Reliability helps daily life while weakening accidental defense.",
+              "hopeChange": 3,
+              "trustChange": 5,
+              "chaosChange": -2,
+              "humanityChange": 2
+            },
+            {
+              "id": "b",
+              "text": "Preserve the prime pattern and train everyone in it.",
+              "outcome": "The gate stays strange, but the people become fluent. Complexity turns from trap into tactic.",
+              "hopeChange": 5,
+              "trustChange": 6,
+              "chaosChange": -4,
+              "humanityChange": 5
+            },
+            {
+              "id": "c",
+              "text": "Install a manual override for emergencies.",
+              "outcome": "The first crisis proves its worth. The second proves someone copied the override key.",
+              "hopeChange": 4,
+              "trustChange": 2,
+              "chaosChange": 2,
+              "humanityChange": 1
+            },
+            {
+              "id": "d",
+              "text": "Replace the mechanism with a heavy barricade.",
+              "outcome": "No timing puzzles remain. Neither does the elegant defense that kept the orchard alive this long.",
+              "hopeChange": 1,
+              "trustChange": 1,
+              "chaosChange": -3,
+              "humanityChange": -1
+            },
+            {
+              "id": "e",
+              "text": "Use the mechanism to lure raiders into timed captivity.",
+              "outcome": "The trap works brilliantly once. Survivors argue whether clever defense is still humane when cages close.",
+              "hopeChange": 3,
+              "trustChange": -1,
+              "chaosChange": -1,
+              "humanityChange": -3
+            },
+            {
+              "id": "f",
+              "text": "Let orchard kids paint the schedule as wall art.",
+              "outcome": "Prime minutes become a village game. Safety improves because everyone, not just guards, understands the gate.",
+              "hopeChange": 6,
+              "trustChange": 7,
+              "chaosChange": -4,
+              "humanityChange": 7
+            }
+          ]
+        },
+        {
+          "id": "engineer-009",
+          "title": "The Furnace That Wants Stories",
+          "setting": "A ceramic furnace in a rail depot burns without fuel whenever someone tells it a true memory. It could fire bricks for housing or consume the settlement’s most private grief one confession at a time.",
+          "futureMsg": "Future-you says rebuilding with memory is dangerous. Buildings remember what paid for their walls.",
+          "imageUrl": "/images/backgrounds/ruined-city.png",
+          "progressionBand": "late",
+          "weight": 1,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Ask for voluntary memories and keep them anonymous.",
+              "outcome": "Bricks pile up slowly, each one earned without coercion. The homes feel warm in ways no blueprint explains.",
+              "hopeChange": 7,
+              "trustChange": 6,
+              "chaosChange": -3,
+              "humanityChange": 8
+            },
+            {
+              "id": "b",
+              "text": "Require one memory from every adult for housing priority.",
+              "outcome": "Construction booms. Resentment hardens inside the mortar.",
+              "hopeChange": 5,
+              "trustChange": -5,
+              "chaosChange": -1,
+              "humanityChange": -6
+            },
+            {
+              "id": "c",
+              "text": "Feed the furnace your own worst memory first.",
+              "outcome": "The first bricks glow steady, and others volunteer after seeing your cost. Leadership leaves you hollow but honest.",
+              "hopeChange": 6,
+              "trustChange": 5,
+              "chaosChange": -2,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Shut the furnace down and build with rubble instead.",
+              "outcome": "No one owes pain to a machine. The houses are colder, slower, and morally easier to enter.",
+              "hopeChange": 1,
+              "trustChange": 3,
+              "chaosChange": -2,
+              "humanityChange": 2
+            },
+            {
+              "id": "e",
+              "text": "Record the stories before burning them.",
+              "outcome": "The archive preserves what the furnace would eat. Some donors feel honored; others feel exposed twice.",
+              "hopeChange": 4,
+              "trustChange": 1,
+              "chaosChange": 0,
+              "humanityChange": 3
+            },
+            {
+              "id": "f",
+              "text": "Trade fired bricks to other towns without explaining the fuel.",
+              "outcome": "Your settlement profits from mystery. Elsewhere, people sleep inside walls made from unnamed sorrow.",
+              "hopeChange": 3,
+              "trustChange": -4,
+              "chaosChange": 2,
+              "humanityChange": -5
+            }
+          ]
+        },
+        {
+          "id": "engineer-010",
+          "title": "Night Launch at the Weather Balloon Yard",
+          "setting": "Behind a school, dozens of weather balloons survive in sealed crates. With radios attached, they could map radiation plumes, carry messages, or draw raider fire into the open. Helium is limited and the wind is impatient.",
+          "futureMsg": "Future-you remembers the sky filling with small moons. What you lifted into the air came back as a future you could not quite predict.",
+          "imageUrl": "/images/skyscapes/aurora-lake-sunset.png",
+          "progressionBand": "late",
+          "weight": 1,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Launch sensor balloons to map radiation.",
+              "outcome": "The glowing tracks save travel routes for months. Some sensors drift into forbidden zones and reveal things people fear.",
+              "hopeChange": 7,
+              "trustChange": 4,
+              "chaosChange": -5,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Send message balloons over blocked borders.",
+              "outcome": "Three towns answer within a week. A fourth is raiders pretending to be lonely.",
+              "hopeChange": 6,
+              "trustChange": 5,
+              "chaosChange": 3,
+              "humanityChange": 6
+            },
+            {
+              "id": "c",
+              "text": "Use decoy balloons to expose hidden gun nests.",
+              "outcome": "The trick works, and bullets find silk instead of people. It also turns the schoolyard into a battlefield symbol.",
+              "hopeChange": 3,
+              "trustChange": 1,
+              "chaosChange": 5,
+              "humanityChange": 1
+            },
+            {
+              "id": "d",
+              "text": "Save the helium until a true emergency.",
+              "outcome": "Nothing beautiful rises tonight. The future may thank you; morale does not.",
+              "hopeChange": -2,
+              "trustChange": 1,
+              "chaosChange": -3,
+              "humanityChange": 0
+            },
+            {
+              "id": "e",
+              "text": "Let children paint the balloons before launch.",
+              "outcome": "The mission becomes hope people can watch ascend. The art makes the balloons easier for enemies to track.",
+              "hopeChange": 8,
+              "trustChange": 4,
+              "chaosChange": 4,
+              "humanityChange": 7
+            },
+            {
+              "id": "f",
+              "text": "Sell balloon launches as paid courier service.",
+              "outcome": "The system funds batteries and medicine. Messages from the poor stay grounded.",
+              "hopeChange": 3,
+              "trustChange": -3,
+              "chaosChange": -1,
+              "humanityChange": -4
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

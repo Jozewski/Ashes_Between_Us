@@ -23,8 +23,18 @@ import {
   getAttemptHistory,
 } from "@/lib/scenarioGenerationService";
 
+export const runtime = "nodejs";
+
 export async function GET() {
-  return NextResponse.json(getAttemptHistory());
+  try {
+    const attempts = await getAttemptHistory();
+    return NextResponse.json(attempts);
+  } catch (error) {
+    return NextResponse.json(
+      { error: error?.message ?? "Failed to fetch attempts." },
+      { status: 500 },
+    );
+  }
 }
 
 export async function POST(req) {
@@ -53,6 +63,13 @@ export async function POST(req) {
     );
   }
 
-  const attempt = await saveAttempt(body);
-  return NextResponse.json(attempt, { status: 201 });
+  try {
+    const attempt = await saveAttempt(body);
+    return NextResponse.json(attempt, { status: 201 });
+  } catch (error) {
+    return NextResponse.json(
+      { error: error?.message ?? "Failed to save attempt." },
+      { status: 500 },
+    );
+  }
 }

@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { saveAttempt } from "@/lib/scenarioGenerationService";
 
+export const runtime = "nodejs";
+
 export async function POST(req) {
   let body;
 

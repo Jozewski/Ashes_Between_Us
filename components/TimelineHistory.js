@@ -7,6 +7,33 @@ const STAT_META = {
   humanity: { label: "Humanity", color: "#A8C4A2" },
 };
 
+function formatTimestampUtc(isoString) {
+  const date = new Date(isoString);
+  if (Number.isNaN(date.getTime())) return "Unknown time";
+
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  const month = months[date.getUTCMonth()];
+  const day = String(date.getUTCDate()).padStart(2, "0");
+  const hour = String(date.getUTCHours()).padStart(2, "0");
+  const minute = String(date.getUTCMinutes()).padStart(2, "0");
+
+  return `${month} ${day}, ${hour}:${minute} UTC`;
+}
+
 export default function TimelineHistory({ attempts }) {
   if (!attempts || attempts.length === 0) {
     return (
@@ -34,12 +61,7 @@ export default function TimelineHistory({ attempts }) {
           <div className="pb-8 pt-4 flex-1">
             <p className="font-mono text-[9px] tracking-[0.25em] text-[#6B6558] uppercase mb-1">
               Decision {String(i + 1).padStart(2, "0")} ∷{" "}
-              {new Date(attempt.createdAt).toLocaleDateString("en-US", {
-                month: "short",
-                day: "numeric",
-                hour: "2-digit",
-                minute: "2-digit",
-              })}
+              {formatTimestampUtc(attempt.createdAt)}
             </p>
 
             <h3 className="font-display text-lg tracking-wide text-[#F0EAD6] mb-1">

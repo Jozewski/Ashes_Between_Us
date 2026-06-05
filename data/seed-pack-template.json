@@ -1,0 +1,141 @@
+{
+  "packId": "scout-v2",
+  "version": "2.0.0",
+  "avatars": [
+    {
+      "avatarId": "scout",
+      "scenarios": [
+        {
+          "id": "scout-001",
+          "title": "The Cartographer's Debt",
+          "setting": "Three days into the ash belt, you find the body of another scout slumped against a road sign, frozen mid-sketch. Her map is better than yours — it marks a water cache your own charts call a dead zone. Her satchel also holds a child's drawing and a name. Taking the map means survival. It also means deciding what you owe the dead.",
+          "futureMsg": "Future-you remembers this crossroads as the moment you learned that every map is written in someone else's footsteps. What you took here decided whether you walked the rest of the wastes as a thief or a steward.",
+          "imageUrl": "/images/backgrounds/ruined-city.png",
+          "progressionBand": "early",
+          "weight": 3,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Take the map and bury her with the drawing.",
+              "outcome": "You lose an hour of daylight digging in frozen ground, but you walk away with both the cache and your conscience intact.",
+              "hopeChange": 4,
+              "trustChange": 3,
+              "chaosChange": -2,
+              "humanityChange": 8
+            },
+            {
+              "id": "b",
+              "text": "Take only what you need and leave the rest with her.",
+              "outcome": "You copy the cache location into your own charts and leave her satchel undisturbed. A smaller gain, but you sleep easier.",
+              "hopeChange": 2,
+              "trustChange": 4,
+              "chaosChange": -1,
+              "humanityChange": 5
+            },
+            {
+              "id": "c",
+              "text": "Strip the body for everything useful and move on.",
+              "outcome": "You make excellent time and want for nothing. But you catch yourself avoiding your own reflection in still water for days.",
+              "hopeChange": 6,
+              "trustChange": -5,
+              "chaosChange": 4,
+              "humanityChange": -9
+            },
+            {
+              "id": "d",
+              "text": "Search the area for whoever the drawing belongs to.",
+              "outcome": "You burn precious supplies chasing a ghost. You never find the child — but a watching survivor remembers that you tried.",
+              "hopeChange": -3,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 6
+            },
+            {
+              "id": "e",
+              "text": "Leave everything untouched. The dead keep their own.",
+              "outcome": "You walk on with empty hands and a parched throat, betting your life on the route you already know.",
+              "hopeChange": -6,
+              "trustChange": 2,
+              "chaosChange": -3,
+              "humanityChange": 3
+            },
+            {
+              "id": "f",
+              "text": "Take the map, then radio its location to other travelers.",
+              "outcome": "You broadcast the cache to anyone listening. Strangers will live because of it — and predators now know exactly where the thirsty will gather.",
+              "hopeChange": 5,
+              "trustChange": 1,
+              "chaosChange": 9,
+              "humanityChange": 4
+            }
+          ]
+        },
+        {
+          "id": "scout-002",
+          "title": "What the Tower Saw",
+          "setting": "The old fire-watch tower still has working optics. From its platform you can see two convoys converging on the same valley town at dusk — one flying relief colors, one flying none. They cannot see each other yet. By dawn, only one will hold the town. You have a radio, a rifle, and the only god's-eye view for fifty miles.",
+          "futureMsg": "Future-you marks this dusk as the day you understood the weight of a high vantage. Knowing what's coming is its own kind of power — and refusing to use it is still a choice.",
+          "imageUrl": "/images/backgrounds/radio-tower.png",
+          "progressionBand": "mid",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Warn the relief convoy and guide their defense.",
+              "outcome": "Your overwatch turns a slaughter into a standoff. The town holds — and now both convoys know a sniper chose a side.",
+              "hopeChange": 8,
+              "trustChange": 5,
+              "chaosChange": 3,
+              "humanityChange": 6
+            },
+            {
+              "id": "b",
+              "text": "Warn both convoys and force a parley.",
+              "outcome": "You broadcast each force's position to the other. Caught without surprise, their leaders meet at the bridge. It is tense, ugly, and bloodless.",
+              "hopeChange": 5,
+              "trustChange": 8,
+              "chaosChange": -4,
+              "humanityChange": 7
+            },
+            {
+              "id": "c",
+              "text": "Stay silent and record everything for later.",
+              "outcome": "You log the entire engagement in cold detail. The intelligence is priceless. So was the help you withheld.",
+              "hopeChange": -4,
+              "trustChange": -2,
+              "chaosChange": 2,
+              "humanityChange": -7
+            },
+            {
+              "id": "d",
+              "text": "Fire warning shots to scatter the unmarked convoy.",
+              "outcome": "Your shots crack the dusk and the raiders scatter into the hills — straight toward an unwarned settlement you didn't account for.",
+              "hopeChange": 3,
+              "trustChange": -1,
+              "chaosChange": 10,
+              "humanityChange": -1
+            },
+            {
+              "id": "e",
+              "text": "Abandon the tower. This isn't your fight.",
+              "outcome": "You climb down and walk into the dark, leaving the valley to settle itself. You hear the gunfire start when you're two ridges away.",
+              "hopeChange": -5,
+              "trustChange": 0,
+              "chaosChange": 4,
+              "humanityChange": -4
+            },
+            {
+              "id": "f",
+              "text": "Sell the convoys' positions to the highest bidder.",
+              "outcome": "You raise both factions on a private channel and auction what you see. You leave richer in supplies and poorer in every way that lasts.",
+              "hopeChange": 2,
+              "trustChange": -9,
+              "chaosChange": 8,
+              "humanityChange": -10
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

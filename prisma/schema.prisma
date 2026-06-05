@@ -1,0 +1,85 @@
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Avatar {
+  id                String   @id
+  name              String
+  trait             String
+  description       String
+  backstory         String
+  imageUrl          String
+  futureImageUrl    String
+  futureImageByState Json
+  startingStats     Json
+  sortOrder         Int      @default(0)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@index([sortOrder])
+}
+
+model Scenario {
+  id                String   @id
+  title             String
+  setting           String
+  message           String?
+  futureMsg         String
+  futureSelfMessage String?
+  imageUrl          String
+  consequences      Json?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  choices           Choice[]
+
+  @@index([createdAt])
+}
+
+model Choice {
+  id            String   @id
+  scenarioId    String
+  scenario      Scenario @relation(fields: [scenarioId], references: [id], onDelete: Cascade)
+  text          String
+  outcome       String
+  hopeChange    Int
+  trustChange   Int
+  chaosChange   Int
+  humanityChange Int
+  requiredRole  String?
+  roleBonus     Json?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([scenarioId])
+}
+
+model Attempt {
+  id            String   @id
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  runId         String?
+  username      String?
+  avatarId      String
+  avatarName    String?
+  scenarioId    String
+  scenarioTitle String?
+  choiceId      String
+  choiceText    String?
+  outcome       String?
+  hope          Int
+  trust         Int
+  chaos         Int
+  humanity      Int
+  statsAfter    Json?
+
+  @@index([avatarId, createdAt])
+  @@index([scenarioId])
+  @@index([runId])
+}
