@@ -30,7 +30,7 @@ export default function ChoiceButton({ choice, index, onClick, disabled }) {
     <button
       onClick={() => onClick(choice)}
       disabled={disabled}
-      className="group w-full text-left flex items-start gap-4 px-5 py-4 transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed relative overflow-hidden"
+      className="group w-full text-left flex items-start gap-3.5 px-4 py-3.5 sm:px-5 sm:py-4 transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed relative overflow-hidden"
       style={{
         background: "rgba(255,255,255,0.02)",
         border: "1px solid rgba(255,255,255,0.08)",
@@ -50,13 +50,13 @@ export default function ChoiceButton({ choice, index, onClick, disabled }) {
       />
 
       {/* Key letter */}
-      <span className="font-display text-xl text-[#C84B11] flex-shrink-0 leading-none pt-[2px]">
+      <span className="font-display text-2xl text-[#C84B11] flex-shrink-0 leading-none pt-[1px]">
         {letter}
       </span>
 
       {/* Text + stat tags */}
       <div className="flex flex-col gap-2">
-        <p className="text-sm text-[#D4C9A8] leading-snug">{choice.text}</p>
+        <p className="text-base text-[#D4C9A8] leading-snug">{choice.text}</p>
         <div className="flex flex-wrap gap-2">
           {choice.hopeChange !== 0     && <StatTag label="HOPE"     value={choice.hopeChange} />}
           {choice.trustChange !== 0    && <StatTag label="TRUST"    value={choice.trustChange} />}
