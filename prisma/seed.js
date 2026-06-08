@@ -1,6 +1,8 @@
 import "dotenv/config";
+import { access } from "node:fs/promises";
 import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
+import { getSeedScenarioImage } from "../lib/imageAssetCatalog.js";
 import { MOCK_SCENARIOS } from "../lib/mockData.js";
 import { prisma } from "../lib/prisma.js";
 
@@ -21,6 +23,22 @@ function ensureString(value, label) {
   }
 
   return value.trim();
+}
+
+async function ensurePublicImageExists(imageUrl, label) {
+  const normalized = ensureString(imageUrl, label);
+  if (!normalized.startsWith("/images/")) {
+    throw new Error(`Invalid ${label}: expected a /images/... public path.`);
+  }
+
+  const filePath = path.join(process.cwd(), "public", normalized.replace(/^\//, ""));
+  try {
+    await access(filePath);
+  } catch {
+    throw new Error(`Missing ${label}: ${normalized} does not exist at ${filePath}.`);
+  }
+
+  return normalized;
 }
 
 function normalizeSeedChoice(choice, index, scenarioId) {
@@ -45,7 +63,7 @@ function normalizeSeedChoice(choice, index, scenarioId) {
   };
 }
 
-function normalizeSeedScenario({ scenario, avatarId, packId }) {
+async function normalizeSeedScenario({ scenario, avatarId, packId, scenarioIndex }) {
   const scenarioIdCore = sanitizeId(scenario?.id || scenario?.title);
   if (!scenarioIdCore) {
     throw new Error(`Scenario id/title missing in pack ${packId} for avatar ${avatarId}.`);
@@ -53,7 +71,7 @@ function normalizeSeedScenario({ scenario, avatarId, packId }) {
 
   const scenarioId = `seed-${avatarId}-${scenarioIdCore}`;
   const choices = Array.isArray(scenario?.choices) ? scenario.choices : [];
-  if (choices.length < 6) {
+  if (choices.length !== 6) {
     throw new Error(`${scenarioId} requires exactly 6 choices (A-F).`);
   }
 
@@ -77,7 +95,10 @@ function normalizeSeedScenario({ scenario, avatarId, packId }) {
       scenario.futureSelfMessage.trim()
         ? scenario.futureSelfMessage.trim()
         : ensureString(scenario?.futureMsg, `futureMsg for ${scenarioId}`),
-    imageUrl: ensureString(scenario?.imageUrl, `imageUrl for ${scenarioId}`),
+    imageUrl: await ensurePublicImageExists(
+      getSeedScenarioImage({ avatarId, scenarioIndex }) ?? scenario?.imageUrl,
+      `imageUrl for ${scenarioId}`,
+    ),
     consequences: {
       ...(scenario?.consequences && typeof scenario.consequences === "object"
         ? scenario.consequences
@@ -88,6 +109,7 @@ function normalizeSeedScenario({ scenario, avatarId, packId }) {
         avatarId,
         progressionBand,
         weight: Number(scenario?.weight ?? 1),
+        sourceImageUrl: scenario?.imageUrl ?? null,
       },
     },
     choices: choices.slice(0, 6).map((choice, index) =>
@@ -188,11 +210,12 @@ async function seedScenariosFromSeedPacks() {
         ? avatarEntry.scenarios
         : [];
 
-      for (const scenario of scenarios) {
-        const normalized = normalizeSeedScenario({
+      for (const [scenarioIndex, scenario] of scenarios.entries()) {
+        const normalized = await normalizeSeedScenario({
           scenario,
           avatarId,
           packId,
+          scenarioIndex,
         });
         await upsertScenarioWithChoices(normalized);
         imported += 1;

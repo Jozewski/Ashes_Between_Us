@@ -140,7 +140,7 @@
           "title": "The Mercy Engine",
           "setting": "A pre-collapse hospital machine still powers one surgical bay, but it speaks through canned announcement tones and refuses to operate unless you answer ethical prompts. Outside, five patients wait and the battery gauge keeps falling.",
           "futureMsg": "Future-you warns that the machine did not measure medical skill. It measured what you believed a life was worth when the plug was warm in your hand.",
-          "imageUrl": "/images/skyscapes/aurora-winter-forest.png",
+          "imageUrl": "/images/backgrounds/limited-evacuation-convoy.png",
           "progressionBand": "mid",
           "weight": 2,
           "choices": [
@@ -270,7 +270,7 @@
           "title": "The Antivenom Wedding",
           "setting": "Two rival families arrive at your clinic with snakebite victims after a disastrous wedding hunt. You have enough antivenom for one full dose or two dangerous half doses. Each family claims the marriage treaty dies if their child does.",
           "futureMsg": "Future-you says you did not choose between lovers. You chose whether medicine would become another family weapon.",
-          "imageUrl": "/images/skyscapes/aurora-coastal-beacon.png",
+          "imageUrl": "/images/backgrounds/refugee-border-crossing.png",
           "progressionBand": "any",
           "weight": 2,
           "choices": [
@@ -335,7 +335,7 @@
           "title": "The Borrowed Heartbeat",
           "setting": "A scavenged monitor in the maternity room begins playing a heartbeat from a patient who has not arrived yet. The rhythm falters whenever you move the emergency cot away from the east wall.",
           "futureMsg": "Future-you says the unborn future knocked softly that night. You almost mistook it for faulty wiring.",
-          "imageUrl": "/images/outcomes/ending-broken-future.png",
+          "imageUrl": "/images/endings/ending-broken-future.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [
@@ -465,7 +465,7 @@
           "title": "The Ward Beneath the Ice",
           "setting": "A frozen subway station holds survivors in suspended hypothermia, alive but slowing. You can thaw them one by one, but the power cells needed are also heating your current clinic through the coldest week of the year.",
           "futureMsg": "Future-you says the ice did not ask whether strangers mattered. It asked how far your circle could stretch before it snapped.",
-          "imageUrl": "/images/outcomes/ending-rebuilding-future.png",
+          "imageUrl": "/images/endings/ending-rebuilding-future.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [
@@ -530,7 +530,7 @@
           "title": "The Mask That Chooses Voices",
           "setting": "A child wearing an antique plague mask speaks with the voices of patients you lost, naming symptoms before they appear. The mask cannot be removed without causing seizures, and the camp wants either an oracle or an exorcism.",
           "futureMsg": "Future-you warns that grief can wear a useful face. That does not make it holy, and it does not make it disposable.",
-          "imageUrl": "/images/skyscapes/aurora-lake-sunset.png",
+          "imageUrl": "/images/backgrounds/contested-resource-hearing.png",
           "progressionBand": "any",
           "weight": 2,
           "choices": [
@@ -595,7 +595,7 @@
           "title": "The Last Clean Needle",
           "setting": "At dawn, a convoy brings a vaccine sample that must be diluted with your last sterile needle set. The same kit is needed for emergency surgery on your oldest mentor, whose hands taught you every stitch you know.",
           "futureMsg": "Future-you says love made the room smaller. Duty made it unbearable. The person you saved shaped the healer you became.",
-          "imageUrl": "/images/outcomes/ending-balanced-future.png",
+          "imageUrl": "/images/endings/ending-balanced-future.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [

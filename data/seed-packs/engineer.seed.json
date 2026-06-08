@@ -205,7 +205,7 @@
           "title": "The Elevator City",
           "setting": "A high-rise community survives by operating one freight elevator between gardens, dormitories, and a roof beacon. The counterweight cable is fraying. You can repair it, replace it, or redesign the building around its failure.",
           "futureMsg": "Future-you remembers the elevator because everyone called it a machine until it stopped. Then they admitted it was a spine.",
-          "imageUrl": "/images/skyscapes/aurora-mountain-storm.png",
+          "imageUrl": "/images/backgrounds/weather-hidden-loyalties.png",
           "progressionBand": "mid",
           "weight": 3,
           "choices": [
@@ -270,7 +270,7 @@
           "title": "Signal Under the Dam",
           "setting": "An old hydroelectric dam transmits a repeating knock through its maintenance pipes. The turbines are dry, yet the rhythm answers questions tapped in Morse. Below the spillway, pressure gauges twitch toward impossible values.",
           "futureMsg": "Future-you says the dam was not haunted by water. It was haunted by choices still upstream.",
-          "imageUrl": "/images/outcomes/ending-balanced-future.png",
+          "imageUrl": "/images/endings/ending-balanced-future.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [
@@ -335,7 +335,7 @@
           "title": "The Garden of Spare Parts",
           "setting": "A commune grows vegetables around piles of sorted components, claiming machines sprout better when buried beside beans. Then a crop of copper vines begins conducting low voltage through the soil, lighting roots like city streets.",
           "futureMsg": "Future-you says rebuilding was never cleanly divided between nature and invention. The question was whether you could design with the living, not over it.",
-          "imageUrl": "/images/skyscapes/aurora-coastal-beacon.png",
+          "imageUrl": "/images/backgrounds/refugee-border-crossing.png",
           "progressionBand": "any",
           "weight": 2,
           "choices": [
@@ -400,7 +400,7 @@
           "title": "Battery Choir",
           "setting": "A storage room of mismatched batteries emits harmony when arranged by voltage. The chord calms people nearby and extends charge life, but one dissonant cell whispers names whenever you stand alone.",
           "futureMsg": "Future-you warns that efficiency can sound holy when everyone is desperate for order. Listen, but do not worship the system.",
-          "imageUrl": "/images/skyscapes/aurora-winter-forest.png",
+          "imageUrl": "/images/backgrounds/limited-evacuation-convoy.png",
           "progressionBand": "mid",
           "weight": 2,
           "choices": [
@@ -465,7 +465,7 @@
           "title": "The Clockwork Orchard Gate",
           "setting": "An orchard settlement has a gate operated by a pre-collapse clock mechanism. It opens only at prime-numbered minutes, trapping workers outside during raids and locking raiders inside at inconvenient miracles.",
           "futureMsg": "Future-you says not every flaw should be flattened. Some machines defend through strangeness, if people know how to dance with them.",
-          "imageUrl": "/images/skyscapes/aurora-lake-sunset.png",
+          "imageUrl": "/images/backgrounds/contested-resource-hearing.png",
           "progressionBand": "any",
           "weight": 2,
           "choices": [
@@ -530,7 +530,7 @@
           "title": "The Furnace That Wants Stories",
           "setting": "A ceramic furnace in a rail depot burns without fuel whenever someone tells it a true memory. It could fire bricks for housing or consume the settlement’s most private grief one confession at a time.",
           "futureMsg": "Future-you says rebuilding with memory is dangerous. Buildings remember what paid for their walls.",
-          "imageUrl": "/images/outcomes/ending-chaotic-future.png",
+          "imageUrl": "/images/endings/ending-chaotic-future.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [
@@ -595,7 +595,7 @@
           "title": "Night Launch at the Weather Balloon Yard",
           "setting": "Behind a school, dozens of weather balloons survive in sealed crates. With radios attached, they could map radiation plumes, carry messages, or draw raider fire into the open. Helium is limited and the wind is impatient.",
           "futureMsg": "Future-you remembers the sky filling with small moons. What you lifted into the air came back as a future you could not quite predict.",
-          "imageUrl": "/images/outcomes/ending-broken-future.png",
+          "imageUrl": "/images/endings/ending-broken-future.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [

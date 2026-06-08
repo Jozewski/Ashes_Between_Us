@@ -205,7 +205,7 @@
           "title": "Footprints That Walk Backward",
           "setting": "After a night of aurora static, you wake to find fresh footprints entering camp from every direction and none leaving. Each print is your size. Some are wet with seawater, though the coast is two days away.",
           "futureMsg": "Future-you says the wrong footprints were not a warning about enemies. They were a warning about which version of you had already passed this way.",
-          "imageUrl": "/images/skyscapes/aurora-mountain-storm.png",
+          "imageUrl": "/images/backgrounds/weather-hidden-loyalties.png",
           "progressionBand": "mid",
           "weight": 2,
           "choices": [
@@ -335,7 +335,7 @@
           "title": "The Town That Moved Overnight",
           "setting": "A valley settlement that was west of the river yesterday now stands east of it, chimneys smoking as if nothing happened. Your map argues with your eyes. The gate guard waves at you by name though you have never been here.",
           "futureMsg": "Future-you warns that the moved town was not asking to be solved. It was asking whether you could respect a place that survived by slipping sideways.",
-          "imageUrl": "/images/skyscapes/aurora-winter-forest.png",
+          "imageUrl": "/images/backgrounds/limited-evacuation-convoy.png",
           "progressionBand": "mid",
           "weight": 2,
           "choices": [
@@ -465,7 +465,7 @@
           "title": "The Library of Wind Maps",
           "setting": "Inside a sand-packed university, weather maps hang from the ceiling and shift without hands. One map shows tomorrow’s dust storm, another shows a route through it, and a third is drawn in red ink over a settlement that has not called for help yet.",
           "futureMsg": "Future-you remembers choosing which future deserved warning first. A scout can outrun weather, but not consequence.",
-          "imageUrl": "/images/outcomes/ending-balanced-future.png",
+          "imageUrl": "/images/endings/ending-balanced-future.png",
           "progressionBand": "late",
           "weight": 2,
           "choices": [
@@ -530,7 +530,7 @@
           "title": "The Dog With Three Collars",
           "setting": "A scarred dog appears at dusk wearing three collars: one military, one handmade from ribbon, one stamped with the emblem of a raider pack. It refuses food but keeps looking back toward a drainage tunnel under the city.",
           "futureMsg": "Future-you says the dog was a question with teeth: do you follow loyalty, suspicion, or hunger when they all point underground?",
-          "imageUrl": "/images/skyscapes/aurora-coastal-beacon.png",
+          "imageUrl": "/images/backgrounds/refugee-border-crossing.png",
           "progressionBand": "any",
           "weight": 3,
           "choices": [
@@ -595,7 +595,7 @@
           "title": "Last Light on Needle Ridge",
           "setting": "The only pass through Needle Ridge closes at sunset when freezing fog fills the stone needles. From the crest you can see fires in three directions: your camp, a stranger camp, and a place where no camp existed yesterday.",
           "futureMsg": "Future-you whispers that the last light always shows more need than one person can answer. What matters is the rule you choose before darkness chooses for you.",
-          "imageUrl": "/images/outcomes/ending-chaotic-future.png",
+          "imageUrl": "/images/endings/ending-chaotic-future.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [

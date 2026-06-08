@@ -205,7 +205,7 @@
           "title": "The Arcade That Still Takes Quarters",
           "setting": "A buried arcade hums under a collapsed mall. Every machine works, powered by a generator hidden behind a prize wall. The high-score table displays names of people who will enter tomorrow unless you change their route.",
           "futureMsg": "Future-you says the ruins sometimes make prophecy look like play. You had to decide whether to spend the last coin on warning or winning.",
-          "imageUrl": "/images/skyscapes/aurora-lake-sunset.png",
+          "imageUrl": "/images/backgrounds/contested-resource-hearing.png",
           "progressionBand": "any",
           "weight": 2,
           "choices": [
@@ -400,7 +400,7 @@
           "title": "Rooftop Beehives of the Old Hotel",
           "setting": "An abandoned hotel roof hosts thriving beehives around solar panels. Honey could feed children, wax could seal water filters, and the panels could power a radio. The bees swarm anyone carrying metal weapons.",
           "futureMsg": "Future-you says some treasure guards itself better than any lock. Approach like a guest or leave stung by your own hunger.",
-          "imageUrl": "/images/skyscapes/aurora-coastal-beacon.png",
+          "imageUrl": "/images/backgrounds/refugee-border-crossing.png",
           "progressionBand": "any",
           "weight": 2,
           "choices": [
@@ -465,7 +465,7 @@
           "title": "The Sunken Train Pantry",
           "setting": "A commuter train lies half-submerged in floodwater beneath the avenue. Its pantry car is sealed, but opening it will drain contaminated water into the tunnels where another settlement has begun mushroom farming.",
           "futureMsg": "Future-you says hunger makes every sealed door look personal. Water remembers where you send it.",
-          "imageUrl": "/images/skyscapes/aurora-mountain-storm.png",
+          "imageUrl": "/images/backgrounds/weather-hidden-loyalties.png",
           "progressionBand": "mid",
           "weight": 2,
           "choices": [
@@ -530,7 +530,7 @@
           "title": "The Locksmith’s Alphabet",
           "setting": "A dead locksmith’s notebook lists symbols for doors that should never be opened, doors that must be opened together, and doors that open only for lies. You find the same symbols carved into six apartments above a flooded street.",
           "futureMsg": "Future-you says a lock is a story told in metal. You had to decide whether you were reading or interrupting.",
-          "imageUrl": "/images/outcomes/ending-rebuilding-future.png",
+          "imageUrl": "/images/endings/ending-rebuilding-future.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [
@@ -595,7 +595,7 @@
           "title": "The Price of a Rumor Bird",
           "setting": "A trader arrives with a mechanical bird that repeats rumors only after eating scraps of gold. It claims a hidden reservoir lies beneath the old theater, but its last owner vanished after feeding it wedding rings.",
           "futureMsg": "Future-you says rumors are tools with appetites. Feed one carefully or it learns to nest in your decisions.",
-          "imageUrl": "/images/outcomes/ending-balanced-future.png",
+          "imageUrl": "/images/endings/ending-balanced-future.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [
