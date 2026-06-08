@@ -270,7 +270,7 @@
           "title": "The Currency of Names",
           "setting": "A river town trades only in true names, claiming coins can be stolen but identity cannot. Refugees need ferry passage, yet giving names may expose hidden families to bounty hunters listening from the reeds.",
           "futureMsg": "Future-you warns that trust bought with identity can become a ledger for persecution.",
-          "imageUrl": "/images/skyscapes/aurora-lake-sunset.png",
+          "imageUrl": "/images/backgrounds/contested-resource-hearing.png",
           "progressionBand": "any",
           "weight": 2,
           "choices": [
@@ -335,7 +335,7 @@
           "title": "Constitution by Candlelift",
           "setting": "Three floors of a vertical settlement draft laws by raising candles in the open elevator shaft. Upper floors want defense spending; lower floors want sanitation; roof gardeners want seed rights. The lift jams between levels during the vote.",
           "futureMsg": "Future-you says democracy failed first as a pulley problem. Fixing the shaft did not fix the settlement unless everyone could see the flame.",
-          "imageUrl": "/images/skyscapes/aurora-mountain-storm.png",
+          "imageUrl": "/images/backgrounds/weather-hidden-loyalties.png",
           "progressionBand": "mid",
           "weight": 3,
           "choices": [
@@ -400,7 +400,7 @@
           "title": "The Trial of the Radio Ghost",
           "setting": "A voice on the radio has been impersonating dead leaders, urging settlements to break treaties. Captured equipment points toward an ally, but the voice also knows private words spoken at funerals.",
           "futureMsg": "Future-you says grief made people easy to command. Your task was not proving the dead silent, but helping the living stop obeying ghosts.",
-          "imageUrl": "/images/outcomes/ending-rebuilding-future.png",
+          "imageUrl": "/images/endings/ending-rebuilding-future.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [
@@ -465,7 +465,7 @@
           "title": "Neutral Road, Red Dust",
           "setting": "A road declared neutral by all factions now carries red dust that sticks only to weapon barrels. Refugees beg to use it, merchants demand escort rights, and commanders want to test whether the dust can identify treaty violations.",
           "futureMsg": "Future-you says neutrality is not an empty road. It is a road someone keeps sweeping even when everyone wants to march.",
-          "imageUrl": "/images/skyscapes/aurora-coastal-beacon.png",
+          "imageUrl": "/images/backgrounds/refugee-border-crossing.png",
           "progressionBand": "any",
           "weight": 2,
           "choices": [
@@ -530,7 +530,7 @@
           "title": "The Apology Vault",
           "setting": "An old bank vault contains recorded apologies from leaders who died before making them public. Releasing the files could heal families or reopen feuds. One apology names your settlement as beneficiary of stolen medicine.",
           "futureMsg": "Future-you says the past does not stay buried because it is old. It stays buried because someone profits from the ground staying flat.",
-          "imageUrl": "/images/outcomes/ending-balanced-future.png",
+          "imageUrl": "/images/endings/ending-balanced-future.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [
@@ -595,7 +595,7 @@
           "title": "Midnight at the Six Fires",
           "setting": "On the longest night, six camps light fires around a frozen lake, each waiting for someone else to cross first. The ice will hold until dawn. After that, the lake breaks and the season of raids begins again.",
           "futureMsg": "Future-you says peace never arrived as one big banner. It came as footsteps across bad ice, one suspicious campfire at a time.",
-          "imageUrl": "/images/outcomes/ending-chaotic-future.png",
+          "imageUrl": "/images/endings/ending-chaotic-future.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [

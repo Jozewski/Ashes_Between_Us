@@ -9,12 +9,20 @@ export const metadata = {
 
 export default function LandingPage() {
   return (
-    <main className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 py-20 overflow-hidden bg-[#1A1814]">
+    <main
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#1A1814] bg-cover bg-center bg-no-repeat px-6 py-20 text-center"
+      style={{
+        backgroundImage: "url('/images/ui/title-screen-background.png')",
+      }}
+    >
 
       {/* Sound on/off toggle */}
       <div className="absolute top-5 right-5 z-20">
         <MuteButton />
       </div>
+
+      {/* Readability overlay */}
+      <div className="pointer-events-none absolute inset-0 z-0 bg-black/65" />
 
       {/* Scanline overlay */}
       <div

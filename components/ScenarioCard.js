@@ -1,4 +1,5 @@
 // components/ScenarioCard.js
+import Image from "next/image";
 
 export default function ScenarioCard({ scenario, scenarioIndex, imageHeightClass = "h-[220px]" }) {
   return (
@@ -19,16 +20,24 @@ export default function ScenarioCard({ scenario, scenarioIndex, imageHeightClass
 
       {/* Scene image */}
       <div
-        className={`w-full relative overflow-hidden flex items-center justify-center ${imageHeightClass}`}
+        className={`w-full relative overflow-hidden flex items-center justify-center bg-[#120F0C] ${imageHeightClass}`}
         style={{
-          background:
-            scenario.imageUrl
-              ? `linear-gradient(to bottom, transparent 40%, #1A1814 100%), url(${scenario.imageUrl}) center/cover`
-              : "linear-gradient(135deg, #2A2218 0%, #1C2830 50%, #221A1A 100%)",
           border: "1px solid rgba(255,255,255,0.06)",
         }}
       >
-        {!scenario.imageUrl && (
+        {scenario.imageUrl ? (
+          <>
+            <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-[#1A1814]/45" />
+            <Image
+              src={scenario.imageUrl}
+              alt={scenario.title}
+              fill
+              sizes="(max-width: 1280px) 100vw, 960px"
+              className="relative z-10 object-cover object-top"
+              priority={scenarioIndex === 0}
+            />
+          </>
+        ) : (
           <span className="font-mono text-[10px] tracking-[0.2em] text-white/20">
             [ scenario background image ]
           </span>

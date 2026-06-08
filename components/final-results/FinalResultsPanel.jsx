@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import TimelineHistory from "@/components/TimelineHistory";
+import { getEndingSymbolItems } from "@/lib/endingEngine";
 
 export default function FinalResultsPanel({
   attempts,
@@ -24,6 +25,7 @@ export default function FinalResultsPanel({
     latestAttempt?.outcome ??
     playerProfile?.backstory ??
     "";
+  const symbolicItems = getEndingSymbolItems(endingState);
 
   return (
     <div className="grid min-w-0 gap-4 sm:gap-5 xl:grid-cols-[minmax(280px,0.9fr)_minmax(360px,1.25fr)_minmax(280px,0.95fr)]">
@@ -167,6 +169,35 @@ export default function FinalResultsPanel({
                     latestAttempt?.choiceText ??
                     "Your future state is shaped by the choices recorded in this run."}
                 </p>
+              </div>
+              <div>
+                <p className="mb-3 font-mono text-[9px] tracking-[0.25em] text-[#6B6558] uppercase">
+                  Timeline relics
+                </p>
+                <div className="grid grid-cols-3 gap-2.5">
+                  {symbolicItems.map((item) => (
+                    <div
+                      key={`${endingState}-${item.name}`}
+                      className="min-w-0 border border-white/10 bg-black/20 p-2"
+                    >
+                      <div className="relative mx-auto mb-2 aspect-square w-full max-w-[76px]">
+                        <Image
+                          src={item.imageUrl}
+                          alt={`${item.name}: ${item.meaning}`}
+                          fill
+                          sizes="76px"
+                          className="object-contain"
+                        />
+                      </div>
+                      <p className="truncate text-center font-mono text-[8px] tracking-[0.12em] text-[#D4C9A8] uppercase">
+                        {item.name}
+                      </p>
+                      <p className="mt-1 text-center font-mono text-[7px] tracking-[0.1em] text-[#6B6558] uppercase">
+                        {item.meaning}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <button
