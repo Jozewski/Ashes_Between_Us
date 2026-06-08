@@ -13,11 +13,11 @@ export default function MuteButton({ className = "" }) {
       aria-pressed={muted}
       aria-label={muted ? "Unmute sound" : "Mute sound"}
       title={muted ? "Unmute sound" : "Mute sound"}
-      className={`font-mono text-[9px] tracking-[0.2em] uppercase transition-colors ${
-        muted ? "text-[#8B1A1A]" : "text-[#6B6558] hover:text-[#4ECDC4]"
+      className={`inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-black/45 font-mono text-lg leading-none backdrop-blur transition-colors hover:border-[#4ECDC4]/45 hover:bg-black/65 ${
+        muted ? "text-[#C84B11]" : "text-[#4ECDC4]"
       } ${className}`}
     >
-      {muted ? "♪ Sound off" : "♪ Sound on"}
+      <span aria-hidden="true">♪</span>
     </button>
   );
 }

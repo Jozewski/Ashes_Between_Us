@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "test": "vitest",
     "db:push": "prisma db push",
     "db:seed": "node prisma/seed.js",
     "db:seed:avatars": "node prisma/seedAvatars.js",
@@ -32,6 +33,7 @@
     "@tailwindcss/postcss": "^4.0.0",
     "eslint": "^9.0.0",
     "eslint-config-next": "^15.0.0",
-    "tailwindcss": "^4.0.0"
+    "tailwindcss": "^4.0.0",
+    "vitest": "^4.1.8"
   }
 }
