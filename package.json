@@ -9,6 +9,8 @@
     "start": "next start",
     "lint": "next lint",
     "test": "vitest",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
     "db:push": "prisma db push",
     "db:seed": "node prisma/seed.js",
     "db:seed:avatars": "node prisma/seedAvatars.js",
@@ -30,6 +32,7 @@
     "ws": "^8.18.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.60.0",
     "@tailwindcss/postcss": "^4.0.0",
     "eslint": "^9.0.0",
     "eslint-config-next": "^15.0.0",

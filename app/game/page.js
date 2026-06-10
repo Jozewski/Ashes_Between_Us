@@ -536,23 +536,24 @@ export default function GamePage() {
       ) : (
         /* Scenario + choices view */
         <div
-          className="flex-1 w-full max-w-[1480px] mx-auto py-6 pb-10 sm:py-8"
+          className="flex-1 w-full max-w-[1920px] mx-auto py-6 pb-10 sm:py-8 xl:pt-5 xl:pb-7"
           style={{
-            paddingLeft: "clamp(16px, 4vw, 72px)",
-            paddingRight: "clamp(16px, 4vw, 72px)",
+            paddingLeft: "clamp(16px, 2vw, 40px)",
+            paddingRight: "clamp(16px, 2vw, 40px)",
             paddingBottom: "max(40px, env(safe-area-inset-bottom))",
           }}
         >
-          <div className="grid gap-5 xl:grid-cols-12">
-            <div className="xl:col-span-8 flex flex-col gap-4">
+          <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_minmax(540px,0.82fr)] xl:items-stretch">
+            <div className="flex min-h-0 flex-col">
               <ScenarioCard
                 scenario={scenario}
                 scenarioIndex={turn - 1}
-                imageHeightClass="h-[220px] sm:h-[280px] xl:h-[340px]"
+                imageHeightClass="h-[220px] sm:h-[280px] xl:min-h-[250px] xl:h-auto xl:flex-1"
+                bodyClassName="xl:h-[clamp(340px,34vh,420px)]"
               />
             </div>
 
-            <div className="xl:col-span-4 flex flex-col">
+            <div className="flex flex-col">
               <div>
                 <p className="font-mono text-[9px] tracking-[0.3em] text-[#6B6558] uppercase mb-3">
                   Choose your action
@@ -570,7 +571,7 @@ export default function GamePage() {
               </div>
 
               {/* History link */}
-              <div className="pt-5 pb-4 mt-auto">
+              <div className="pt-5 pb-4 xl:hidden">
                 {loadError && (
                   <p className="font-mono text-[9px] tracking-[0.2em] text-[#6B6558] uppercase mb-3">
                     {loadError}
@@ -586,13 +587,28 @@ export default function GamePage() {
             </div>
 
             {/* Regular future message card */}
-            <div className="xl:col-span-12">
+            <div className="xl:col-span-2">
               <FutureMessageCard
                 message={scenario.futureMsg}
                 daysAhead={365 + (turn - 1) * 7}
                 futureImageUrl={futureImageUrl}
-                futureLabel={`${selectedAvatar.name} ∷ Future Self (${futureState})`}
+                futureLabel={`${selectedAvatar.name} - Future Self (${futureState})`}
               />
+            </div>
+
+            {/* History link */}
+            <div className="hidden xl:block xl:col-span-2 pb-4">
+              {loadError && (
+                <p className="font-mono text-[9px] tracking-[0.2em] text-[#6B6558] uppercase mb-3">
+                  {loadError}
+                </p>
+              )}
+              <Link
+                href="/history"
+                className="font-mono text-[9px] tracking-[0.25em] text-[#6B6558] uppercase hover:text-[#4ECDC4] transition-colors"
+              >
+                ∷ View timeline history
+              </Link>
             </div>
           </div>
         </div>
