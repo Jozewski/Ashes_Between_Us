@@ -1,6 +1,6 @@
 {
-  "packId": "guardian-v3",
-  "version": "3.0.0",
+  "packId": "guardian-v4",
+  "version": "4.0.0",
   "avatars": [
     {
       "avatarId": "guardian",
@@ -10,7 +10,7 @@
           "title": "The Gate With No Hinges",
           "setting": "Your settlement’s main gate has warped shut after a heat storm, trapping guards outside with a raider scout approaching under a white cloth. Inside, frightened families beg you to keep the gate sealed no matter who knocks.",
           "futureMsg": "Future-you says the gate was not the test. The test was whether protection meant closing every door or standing in the doorway yourself.",
-          "imageUrl": "/images/backgrounds/bunker.png",
+          "imageUrl": "/images/scenarios/guardian/avatar-guardian-refugee-border-crossing.png",
           "progressionBand": "early",
           "weight": 3,
           "choices": [
@@ -68,6 +68,15 @@
               "chaosChange": 2,
               "humanityChange": 1
             }
+          ],
+          "imageKeywords": [
+            "refugee border crossing",
+            "refugee border",
+            "border crossing",
+            "refugees",
+            "checkpoint",
+            "guards",
+            "crossing"
           ]
         },
         {
@@ -75,7 +84,7 @@
           "title": "Orchard Mines in Spring",
           "setting": "Children discover old pressure mines beneath a blooming orchard just as a starving crowd gathers outside the fence. The fruit is almost ripe. One wrong step can turn spring into shrapnel.",
           "futureMsg": "Future-you remembers petals falling like snow over metal teeth. Protection that only guards fruit is just another kind of hunger.",
-          "imageUrl": "/images/backgrounds/ruined-city.png",
+          "imageUrl": "/images/scenarios/guardian/avatar-guardian-barricade-under-siege.png",
           "progressionBand": "early",
           "weight": 2,
           "choices": [
@@ -133,6 +142,13 @@
               "chaosChange": -4,
               "humanityChange": 7
             }
+          ],
+          "imageKeywords": [
+            "barricade under siege",
+            "barricade",
+            "siege",
+            "under siege",
+            "gate attack"
           ]
         },
         {
@@ -140,7 +156,7 @@
           "title": "The Bell That Calls Wolves",
           "setting": "A school bell still hangs over the courtyard. Ringing it summons defenders from the walls, but it also draws a pack of mutated wolves that learned the sound means panic and meat. Smoke rises beyond the east ridge.",
           "futureMsg": "Future-you says alarms are promises. Break them too often and people stop running toward danger for one another.",
-          "imageUrl": "/images/backgrounds/weather-hidden-loyalties.png",
+          "imageUrl": "/images/scenarios/guardian/avatar-guardian-night-watch-breach.png",
           "progressionBand": "mid",
           "weight": 2,
           "choices": [
@@ -198,6 +214,12 @@
               "chaosChange": 1,
               "humanityChange": -3
             }
+          ],
+          "imageKeywords": [
+            "night watch breach",
+            "night watch",
+            "breach",
+            "perimeter breach"
           ]
         },
         {
@@ -205,7 +227,7 @@
           "title": "Trial by Barricade",
           "setting": "A captured raider claims their warband is forcing children to carry explosives. Your council wants execution before sunset. Outside, refugees pound at the barricade demanding protection from the same raiders.",
           "futureMsg": "Future-you says justice under siege is still justice, or it becomes camouflage for fear.",
-          "imageUrl": "/images/backgrounds/limited-evacuation-convoy.png",
+          "imageUrl": "/images/scenarios/guardian/avatar-guardian-public-reckoning-ritual.png",
           "progressionBand": "mid",
           "weight": 3,
           "choices": [
@@ -263,6 +285,15 @@
               "chaosChange": 5,
               "humanityChange": -2
             }
+          ],
+          "imageKeywords": [
+            "public reckoning ritual",
+            "public reckoning",
+            "ritual",
+            "trial",
+            "oath ceremony",
+            "public punishment",
+            "reckoning"
           ]
         },
         {
@@ -270,7 +301,7 @@
           "title": "The Lantern Patrol",
           "setting": "Every night patrol carries one lantern. Tonight, six lanterns appear outside the wall, each burning with a different color. One belongs to a patrol that never returned, and one is lit with blue flame no one recognizes.",
           "futureMsg": "Future-you says you wanted the colors to tell you who deserved rescue. Colors only show where courage must start.",
-          "imageUrl": "/images/backgrounds/contested-resource-hearing.png",
+          "imageUrl": "/images/scenarios/guardian/avatar-guardian-shelter-defense-line.png",
           "progressionBand": "any",
           "weight": 2,
           "choices": [
@@ -328,6 +359,12 @@
               "chaosChange": 4,
               "humanityChange": 2
             }
+          ],
+          "imageKeywords": [
+            "shelter defense line",
+            "defense line",
+            "shelter defense",
+            "perimeter"
           ]
         },
         {
@@ -335,7 +372,7 @@
           "title": "The Arena of Canned Thunder",
           "setting": "Two settlements settle disputes in an old sports arena using nonlethal duels and thunderous drums. Your ally asks you to fight as their champion, but the losing side must surrender winter fuel.",
           "futureMsg": "Future-you remembers that you won the fight before realizing the rules were the wound.",
-          "imageUrl": "/images/backgrounds/radio-tower.png",
+          "imageUrl": "/images/scenarios/guardian/avatar-guardian-convoy-escort-mission.png",
           "progressionBand": "mid",
           "weight": 2,
           "choices": [
@@ -393,6 +430,12 @@
               "chaosChange": -3,
               "humanityChange": 5
             }
+          ],
+          "imageKeywords": [
+            "convoy escort mission",
+            "convoy escort",
+            "escort mission",
+            "escort"
           ]
         },
         {
@@ -400,7 +443,7 @@
           "title": "The White Flag Convoy",
           "setting": "A convoy approaches under white sheets tied to antennas, carrying wounded enemies and stolen grain. Your scouts confirm they are being chased by something worse. The gate can hold against either threat, not both.",
           "futureMsg": "Future-you says a white flag is not innocence. It is a request to be judged after the shooting stops.",
-          "imageUrl": "/images/endings/ending-chaotic-future.png",
+          "imageUrl": "/images/scenarios/guardian/avatar-guardian-limited-evacuation-convoy.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [
@@ -458,6 +501,15 @@
               "chaosChange": 6,
               "humanityChange": 6
             }
+          ],
+          "imageKeywords": [
+            "limited evacuation convoy",
+            "limited evacuation",
+            "evacuation convoy",
+            "convoy",
+            "too few seats",
+            "fuel carriers",
+            "transport"
           ]
         },
         {
@@ -465,7 +517,7 @@
           "title": "Winter Names on the Wall",
           "setting": "During the coldest week, citizens carve names into the inner wall: people they believe deserve food priority. Anonymous names begin appearing for exiles, prisoners, and enemies who once spared children.",
           "futureMsg": "Future-you says scarcity made lists feel like truth. The wall revealed that memory could be rationed too.",
-          "imageUrl": "/images/endings/ending-broken-future.png",
+          "imageUrl": "/images/scenarios/guardian/avatar-guardian-weather-hidden-loyalties.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [
@@ -523,6 +575,15 @@
               "chaosChange": 1,
               "humanityChange": -4
             }
+          ],
+          "imageKeywords": [
+            "weather hidden loyalties",
+            "weather disaster",
+            "hidden loyalties",
+            "storm",
+            "mountain storm",
+            "flash flood",
+            "forced shelter"
           ]
         },
         {
@@ -530,7 +591,7 @@
           "title": "The Quiet Mutiny",
           "setting": "Your night watch refuses orders after learning the council hid extra ammunition beneath the nursery floor. They do not raise weapons. They simply sit down at every stairwell and stop guarding anyone.",
           "futureMsg": "Future-you says mutiny without violence is still a message. How you answered decided whether command remained service or became ownership.",
-          "imageUrl": "/images/endings/ending-rebuilding-future.png",
+          "imageUrl": "/images/scenarios/guardian/avatar-guardian-last-safe-passage.png",
           "progressionBand": "late",
           "weight": 2,
           "choices": [
@@ -588,6 +649,11 @@
               "chaosChange": -2,
               "humanityChange": 1
             }
+          ],
+          "imageKeywords": [
+            "last safe passage",
+            "safe passage",
+            "escape route"
           ]
         },
         {
@@ -595,7 +661,7 @@
           "title": "Last Stand at Mercy Road",
           "setting": "A canyon road called Mercy is the only route for evacuees before a firestorm. Raiders block the exit with shields made from road signs painted with names of people your settlement failed to save.",
           "futureMsg": "Future-you says the last stand was not about dying well. It was about deciding whether the road would remember mercy or revenge.",
-          "imageUrl": "/images/endings/ending-balanced-future.png",
+          "imageUrl": "/images/scenarios/guardian/avatar-guardian-failed-rescue-witnesses.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [
@@ -653,6 +719,738 @@
               "chaosChange": -2,
               "humanityChange": -9
             }
+          ],
+          "imageKeywords": [
+            "failed rescue witnesses",
+            "failed rescue",
+            "rescue witnesses",
+            "collapsed rescue",
+            "witnesses",
+            "overpass rescue",
+            "rescue scene"
+          ]
+        },
+        {
+          "id": "guardian-011",
+          "title": "The Gate Tax",
+          "setting": "A caravan offers medicine if you let them charge every person leaving your settlement a gate tax. Families inside need the drugs; families outside call it a ransom with uniforms.",
+          "futureMsg": "The gate was built to stop violence. That day it nearly learned to sell permission.",
+          "imageUrl": "/images/backgrounds/refugee-border-crossing.png",
+          "progressionBand": "early",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Announce the gate ledger threat and open a guarded path.",
+              "outcome": "waiting caravan move under watch instead of rumor. The risk is visible, controlled, and still frightening.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": 1,
+              "humanityChange": 5
+            },
+            {
+              "id": "b",
+              "text": "Verify the gate ledger before changing the perimeter.",
+              "outcome": "The watch grumbles, but evidence prevents a panic order from becoming policy.",
+              "hopeChange": 1,
+              "trustChange": 5,
+              "chaosChange": -5,
+              "humanityChange": 1
+            },
+            {
+              "id": "c",
+              "text": "Put the waiting caravan inside the security briefing.",
+              "outcome": "The room gets angry and more honest. Orders land better after people hear the stakes.",
+              "hopeChange": 2,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Lock down the gate ledger zone immediately.",
+              "outcome": "The threat is contained. So are innocent people who now know safety can feel like a cage.",
+              "hopeChange": 3,
+              "trustChange": -5,
+              "chaosChange": -1,
+              "humanityChange": -4
+            },
+            {
+              "id": "e",
+              "text": "Use the gate ledger as leverage for obedience.",
+              "outcome": "Discipline sharpens quickly. Trust dulls just as fast, especially among those with nothing to trade.",
+              "hopeChange": 4,
+              "trustChange": -7,
+              "chaosChange": 1,
+              "humanityChange": -6
+            },
+            {
+              "id": "f",
+              "text": "Hold position until the waiting caravan choose a spokesperson.",
+              "outcome": "The delay lowers panic and raises danger. At least the next order has a name behind it.",
+              "hopeChange": -3,
+              "trustChange": 3,
+              "chaosChange": -3,
+              "humanityChange": 2
+            }
+          ],
+          "imageKeywords": [
+            "refugee border crossing",
+            "refugee border",
+            "border crossing",
+            "refugees",
+            "checkpoint",
+            "guards",
+            "crossing"
+          ]
+        },
+        {
+          "id": "guardian-012",
+          "title": "Children of the Barricade",
+          "setting": "Children have turned a barricade gap into a shortcut for passing bread to outsiders. Your patrol finds the tunnel just as armed smugglers begin following the same route.",
+          "futureMsg": "The tunnel was small because kindness found it first. Fear only arrived later with wider shoulders.",
+          "imageUrl": "/images/backgrounds/bunker.png",
+          "progressionBand": "early",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Announce the bread tunnel threat and open a guarded path.",
+              "outcome": "barricade children move under watch instead of rumor. The risk is visible, controlled, and still frightening.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": 1,
+              "humanityChange": 5
+            },
+            {
+              "id": "b",
+              "text": "Verify the bread tunnel before changing the perimeter.",
+              "outcome": "The watch grumbles, but evidence prevents a panic order from becoming policy.",
+              "hopeChange": 1,
+              "trustChange": 5,
+              "chaosChange": -5,
+              "humanityChange": 1
+            },
+            {
+              "id": "c",
+              "text": "Put the barricade children inside the security briefing.",
+              "outcome": "The room gets angry and more honest. Orders land better after people hear the stakes.",
+              "hopeChange": 2,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Lock down the bread tunnel zone immediately.",
+              "outcome": "The threat is contained. So are innocent people who now know safety can feel like a cage.",
+              "hopeChange": 3,
+              "trustChange": -5,
+              "chaosChange": -1,
+              "humanityChange": -4
+            },
+            {
+              "id": "e",
+              "text": "Use the bread tunnel as leverage for obedience.",
+              "outcome": "Discipline sharpens quickly. Trust dulls just as fast, especially among those with nothing to trade.",
+              "hopeChange": 4,
+              "trustChange": -7,
+              "chaosChange": 1,
+              "humanityChange": -6
+            },
+            {
+              "id": "f",
+              "text": "Hold position until the barricade children choose a spokesperson.",
+              "outcome": "The delay lowers panic and raises danger. At least the next order has a name behind it.",
+              "hopeChange": -3,
+              "trustChange": 3,
+              "chaosChange": -3,
+              "humanityChange": 2
+            }
+          ],
+          "imageKeywords": [
+            "bunker"
+          ]
+        },
+        {
+          "id": "guardian-013",
+          "title": "The Prisoner Bell",
+          "setting": "A captured raider offers to ring the alarm bell before an attack only he can predict. Letting him near the tower may save lives, or hand him the loudest lie in camp.",
+          "futureMsg": "You learned the difference between trusting a person and using their chance to become trustworthy.",
+          "imageUrl": "/images/backgrounds/radio-tower.png",
+          "progressionBand": "mid",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Announce the alarm bell threat and open a guarded path.",
+              "outcome": "captured raider move under watch instead of rumor. The risk is visible, controlled, and still frightening.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": 1,
+              "humanityChange": 5
+            },
+            {
+              "id": "b",
+              "text": "Verify the alarm bell before changing the perimeter.",
+              "outcome": "The watch grumbles, but evidence prevents a panic order from becoming policy.",
+              "hopeChange": 1,
+              "trustChange": 5,
+              "chaosChange": -5,
+              "humanityChange": 1
+            },
+            {
+              "id": "c",
+              "text": "Put the captured raider inside the security briefing.",
+              "outcome": "The room gets angry and more honest. Orders land better after people hear the stakes.",
+              "hopeChange": 2,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Lock down the alarm bell zone immediately.",
+              "outcome": "The threat is contained. So are innocent people who now know safety can feel like a cage.",
+              "hopeChange": 3,
+              "trustChange": -5,
+              "chaosChange": -1,
+              "humanityChange": -4
+            },
+            {
+              "id": "e",
+              "text": "Use the alarm bell as leverage for obedience.",
+              "outcome": "Discipline sharpens quickly. Trust dulls just as fast, especially among those with nothing to trade.",
+              "hopeChange": 4,
+              "trustChange": -7,
+              "chaosChange": 1,
+              "humanityChange": -6
+            },
+            {
+              "id": "f",
+              "text": "Hold position until the captured raider choose a spokesperson.",
+              "outcome": "The delay lowers panic and raises danger. At least the next order has a name behind it.",
+              "hopeChange": -3,
+              "trustChange": 3,
+              "chaosChange": -3,
+              "humanityChange": 2
+            }
+          ],
+          "imageKeywords": [
+            "radio tower"
+          ]
+        },
+        {
+          "id": "guardian-014",
+          "title": "White Chalk Perimeter",
+          "setting": "Someone redraws your perimeter in white chalk each night, always wider, always accurate. Tonight the new line includes three enemy wounded and excludes your own west gardens.",
+          "futureMsg": "A boundary is a story people agree to defend. The chalk asked who got written into yours.",
+          "imageUrl": "/images/backgrounds/weather-hidden-loyalties.png",
+          "progressionBand": "mid",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Announce the chalk line threat and open a guarded path.",
+              "outcome": "west gardens move under watch instead of rumor. The risk is visible, controlled, and still frightening.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": 1,
+              "humanityChange": 5
+            },
+            {
+              "id": "b",
+              "text": "Verify the chalk line before changing the perimeter.",
+              "outcome": "The watch grumbles, but evidence prevents a panic order from becoming policy.",
+              "hopeChange": 1,
+              "trustChange": 5,
+              "chaosChange": -5,
+              "humanityChange": 1
+            },
+            {
+              "id": "c",
+              "text": "Put the west gardens inside the security briefing.",
+              "outcome": "The room gets angry and more honest. Orders land better after people hear the stakes.",
+              "hopeChange": 2,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Lock down the chalk line zone immediately.",
+              "outcome": "The threat is contained. So are innocent people who now know safety can feel like a cage.",
+              "hopeChange": 3,
+              "trustChange": -5,
+              "chaosChange": -1,
+              "humanityChange": -4
+            },
+            {
+              "id": "e",
+              "text": "Use the chalk line as leverage for obedience.",
+              "outcome": "Discipline sharpens quickly. Trust dulls just as fast, especially among those with nothing to trade.",
+              "hopeChange": 4,
+              "trustChange": -7,
+              "chaosChange": 1,
+              "humanityChange": -6
+            },
+            {
+              "id": "f",
+              "text": "Hold position until the west gardens choose a spokesperson.",
+              "outcome": "The delay lowers panic and raises danger. At least the next order has a name behind it.",
+              "hopeChange": -3,
+              "trustChange": 3,
+              "chaosChange": -3,
+              "humanityChange": 2
+            }
+          ],
+          "imageKeywords": [
+            "weather hidden loyalties",
+            "weather disaster",
+            "hidden loyalties",
+            "storm",
+            "mountain storm",
+            "flash flood",
+            "forced shelter"
+          ]
+        },
+        {
+          "id": "guardian-015",
+          "title": "The Armor Lottery",
+          "setting": "There are seven armor plates for twenty volunteers escorting a food run. The loudest fighters demand priority, while the quietest volunteer knows the route through sniper alleys.",
+          "futureMsg": "Armor did not make anyone brave. It made visible who the settlement expected to return.",
+          "imageUrl": "/images/backgrounds/limited-evacuation-convoy.png",
+          "progressionBand": "mid",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Announce the armor plates threat and open a guarded path.",
+              "outcome": "escort volunteers move under watch instead of rumor. The risk is visible, controlled, and still frightening.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": 1,
+              "humanityChange": 5
+            },
+            {
+              "id": "b",
+              "text": "Verify the armor plates before changing the perimeter.",
+              "outcome": "The watch grumbles, but evidence prevents a panic order from becoming policy.",
+              "hopeChange": 1,
+              "trustChange": 5,
+              "chaosChange": -5,
+              "humanityChange": 1
+            },
+            {
+              "id": "c",
+              "text": "Put the escort volunteers inside the security briefing.",
+              "outcome": "The room gets angry and more honest. Orders land better after people hear the stakes.",
+              "hopeChange": 2,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Lock down the armor plates zone immediately.",
+              "outcome": "The threat is contained. So are innocent people who now know safety can feel like a cage.",
+              "hopeChange": 3,
+              "trustChange": -5,
+              "chaosChange": -1,
+              "humanityChange": -4
+            },
+            {
+              "id": "e",
+              "text": "Use the armor plates as leverage for obedience.",
+              "outcome": "Discipline sharpens quickly. Trust dulls just as fast, especially among those with nothing to trade.",
+              "hopeChange": 4,
+              "trustChange": -7,
+              "chaosChange": 1,
+              "humanityChange": -6
+            },
+            {
+              "id": "f",
+              "text": "Hold position until the escort volunteers choose a spokesperson.",
+              "outcome": "The delay lowers panic and raises danger. At least the next order has a name behind it.",
+              "hopeChange": -3,
+              "trustChange": 3,
+              "chaosChange": -3,
+              "humanityChange": 2
+            }
+          ],
+          "imageKeywords": [
+            "limited evacuation convoy",
+            "limited evacuation",
+            "evacuation convoy",
+            "convoy",
+            "too few seats",
+            "fuel carriers",
+            "transport"
+          ]
+        },
+        {
+          "id": "guardian-016",
+          "title": "The Siren That Attracts Help",
+          "setting": "A repaired siren draws allies and raiders with the same clean note. The infirmary wants it sounded for medical escort; the watch wants it dismantled before sunset.",
+          "futureMsg": "The siren made need audible. What answered it depended on whether fear got the first vote.",
+          "imageUrl": "/images/backgrounds/failed-rescue-witnesses.png",
+          "progressionBand": "late",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Announce the warning siren threat and open a guarded path.",
+              "outcome": "infirmary watch move under watch instead of rumor. The risk is visible, controlled, and still frightening.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": 1,
+              "humanityChange": 5
+            },
+            {
+              "id": "b",
+              "text": "Verify the warning siren before changing the perimeter.",
+              "outcome": "The watch grumbles, but evidence prevents a panic order from becoming policy.",
+              "hopeChange": 1,
+              "trustChange": 5,
+              "chaosChange": -5,
+              "humanityChange": 1
+            },
+            {
+              "id": "c",
+              "text": "Put the infirmary watch inside the security briefing.",
+              "outcome": "The room gets angry and more honest. Orders land better after people hear the stakes.",
+              "hopeChange": 2,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Lock down the warning siren zone immediately.",
+              "outcome": "The threat is contained. So are innocent people who now know safety can feel like a cage.",
+              "hopeChange": 3,
+              "trustChange": -5,
+              "chaosChange": -1,
+              "humanityChange": -4
+            },
+            {
+              "id": "e",
+              "text": "Use the warning siren as leverage for obedience.",
+              "outcome": "Discipline sharpens quickly. Trust dulls just as fast, especially among those with nothing to trade.",
+              "hopeChange": 4,
+              "trustChange": -7,
+              "chaosChange": 1,
+              "humanityChange": -6
+            },
+            {
+              "id": "f",
+              "text": "Hold position until the infirmary watch choose a spokesperson.",
+              "outcome": "The delay lowers panic and raises danger. At least the next order has a name behind it.",
+              "hopeChange": -3,
+              "trustChange": 3,
+              "chaosChange": -3,
+              "humanityChange": 2
+            }
+          ],
+          "imageKeywords": [
+            "failed rescue witnesses",
+            "failed rescue",
+            "rescue witnesses",
+            "collapsed rescue",
+            "witnesses",
+            "overpass rescue",
+            "rescue scene"
+          ]
+        },
+        {
+          "id": "guardian-017",
+          "title": "Mercy Road Curfew",
+          "setting": "A curfew keeps Mercy Road safe after dusk until a column of refugees arrives minutes late, carrying proof of a larger threat behind them. Opening the road breaks the rule that kept everyone calm.",
+          "futureMsg": "Curfew was a shield until the people outside became real. Then it became a question with a lock on it.",
+          "imageUrl": "/images/backgrounds/desert-highway.png",
+          "progressionBand": "late",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Announce the curfew gate threat and open a guarded path.",
+              "outcome": "late refugees move under watch instead of rumor. The risk is visible, controlled, and still frightening.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": 1,
+              "humanityChange": 5
+            },
+            {
+              "id": "b",
+              "text": "Verify the curfew gate before changing the perimeter.",
+              "outcome": "The watch grumbles, but evidence prevents a panic order from becoming policy.",
+              "hopeChange": 1,
+              "trustChange": 5,
+              "chaosChange": -5,
+              "humanityChange": 1
+            },
+            {
+              "id": "c",
+              "text": "Put the late refugees inside the security briefing.",
+              "outcome": "The room gets angry and more honest. Orders land better after people hear the stakes.",
+              "hopeChange": 2,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Lock down the curfew gate zone immediately.",
+              "outcome": "The threat is contained. So are innocent people who now know safety can feel like a cage.",
+              "hopeChange": 3,
+              "trustChange": -5,
+              "chaosChange": -1,
+              "humanityChange": -4
+            },
+            {
+              "id": "e",
+              "text": "Use the curfew gate as leverage for obedience.",
+              "outcome": "Discipline sharpens quickly. Trust dulls just as fast, especially among those with nothing to trade.",
+              "hopeChange": 4,
+              "trustChange": -7,
+              "chaosChange": 1,
+              "humanityChange": -6
+            },
+            {
+              "id": "f",
+              "text": "Hold position until the late refugees choose a spokesperson.",
+              "outcome": "The delay lowers panic and raises danger. At least the next order has a name behind it.",
+              "hopeChange": -3,
+              "trustChange": 3,
+              "chaosChange": -3,
+              "humanityChange": 2
+            }
+          ],
+          "imageKeywords": [
+            "desert highway"
+          ]
+        },
+        {
+          "id": "guardian-018",
+          "title": "The Mutiny of Locked Doors",
+          "setting": "Your own guards lock the armory and demand a public vote before returning weapons. They claim you have become too willing to spend lives for order.",
+          "futureMsg": "Discipline cracked because people still believed rules should answer back. That was not failure yet.",
+          "imageUrl": "/images/backgrounds/shelter-leadership-vote.png",
+          "progressionBand": "late",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Announce the locked armory threat and open a guarded path.",
+              "outcome": "mutinous guards move under watch instead of rumor. The risk is visible, controlled, and still frightening.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": 1,
+              "humanityChange": 5
+            },
+            {
+              "id": "b",
+              "text": "Verify the locked armory before changing the perimeter.",
+              "outcome": "The watch grumbles, but evidence prevents a panic order from becoming policy.",
+              "hopeChange": 1,
+              "trustChange": 5,
+              "chaosChange": -5,
+              "humanityChange": 1
+            },
+            {
+              "id": "c",
+              "text": "Put the mutinous guards inside the security briefing.",
+              "outcome": "The room gets angry and more honest. Orders land better after people hear the stakes.",
+              "hopeChange": 2,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Lock down the locked armory zone immediately.",
+              "outcome": "The threat is contained. So are innocent people who now know safety can feel like a cage.",
+              "hopeChange": 3,
+              "trustChange": -5,
+              "chaosChange": -1,
+              "humanityChange": -4
+            },
+            {
+              "id": "e",
+              "text": "Use the locked armory as leverage for obedience.",
+              "outcome": "Discipline sharpens quickly. Trust dulls just as fast, especially among those with nothing to trade.",
+              "hopeChange": 4,
+              "trustChange": -7,
+              "chaosChange": 1,
+              "humanityChange": -6
+            },
+            {
+              "id": "f",
+              "text": "Hold position until the mutinous guards choose a spokesperson.",
+              "outcome": "The delay lowers panic and raises danger. At least the next order has a name behind it.",
+              "hopeChange": -3,
+              "trustChange": 3,
+              "chaosChange": -3,
+              "humanityChange": 2
+            }
+          ],
+          "imageKeywords": [
+            "shelter leadership vote",
+            "shelter vote",
+            "leadership vote",
+            "vote",
+            "council",
+            "ballots",
+            "governance"
+          ]
+        },
+        {
+          "id": "guardian-019",
+          "title": "The Lantern Hostages",
+          "setting": "Raiders hang lanterns from captured scouts and dare you to shoot the lights out. Each lantern may mark a person, a trap, or both.",
+          "futureMsg": "At that distance every light looked tactical. The memory that stayed was how hard you fought to see people first.",
+          "imageUrl": "/images/backgrounds/misinformation-radio-room.png",
+          "progressionBand": "any",
+          "weight": 1,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Announce the hostage lanterns threat and open a guarded path.",
+              "outcome": "captured scouts move under watch instead of rumor. The risk is visible, controlled, and still frightening.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": 1,
+              "humanityChange": 5
+            },
+            {
+              "id": "b",
+              "text": "Verify the hostage lanterns before changing the perimeter.",
+              "outcome": "The watch grumbles, but evidence prevents a panic order from becoming policy.",
+              "hopeChange": 1,
+              "trustChange": 5,
+              "chaosChange": -5,
+              "humanityChange": 1
+            },
+            {
+              "id": "c",
+              "text": "Put the captured scouts inside the security briefing.",
+              "outcome": "The room gets angry and more honest. Orders land better after people hear the stakes.",
+              "hopeChange": 2,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Lock down the hostage lanterns zone immediately.",
+              "outcome": "The threat is contained. So are innocent people who now know safety can feel like a cage.",
+              "hopeChange": 3,
+              "trustChange": -5,
+              "chaosChange": -1,
+              "humanityChange": -4
+            },
+            {
+              "id": "e",
+              "text": "Use the hostage lanterns as leverage for obedience.",
+              "outcome": "Discipline sharpens quickly. Trust dulls just as fast, especially among those with nothing to trade.",
+              "hopeChange": 4,
+              "trustChange": -7,
+              "chaosChange": 1,
+              "humanityChange": -6
+            },
+            {
+              "id": "f",
+              "text": "Hold position until the captured scouts choose a spokesperson.",
+              "outcome": "The delay lowers panic and raises danger. At least the next order has a name behind it.",
+              "hopeChange": -3,
+              "trustChange": 3,
+              "chaosChange": -3,
+              "humanityChange": 2
+            }
+          ],
+          "imageKeywords": [
+            "misinformation radio room",
+            "misinformation",
+            "radio room",
+            "radio",
+            "broadcast",
+            "signal",
+            "false warning",
+            "accused broadcaster"
+          ]
+        },
+        {
+          "id": "guardian-020",
+          "title": "Oath Day at the Wall",
+          "setting": "New arrivals must swear the wall oath before receiving shelter. A wounded enemy medic refuses the words but offers to treat your sick if allowed through unbound.",
+          "futureMsg": "An oath can guard a home or become a hunger test. You decided what the wall was allowed to demand.",
+          "imageUrl": "/images/backgrounds/public-reckoning-ritual.png",
+          "progressionBand": "any",
+          "weight": 1,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Announce the wall oath threat and open a guarded path.",
+              "outcome": "new arrivals move under watch instead of rumor. The risk is visible, controlled, and still frightening.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": 1,
+              "humanityChange": 5
+            },
+            {
+              "id": "b",
+              "text": "Verify the wall oath before changing the perimeter.",
+              "outcome": "The watch grumbles, but evidence prevents a panic order from becoming policy.",
+              "hopeChange": 1,
+              "trustChange": 5,
+              "chaosChange": -5,
+              "humanityChange": 1
+            },
+            {
+              "id": "c",
+              "text": "Put the new arrivals inside the security briefing.",
+              "outcome": "The room gets angry and more honest. Orders land better after people hear the stakes.",
+              "hopeChange": 2,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Lock down the wall oath zone immediately.",
+              "outcome": "The threat is contained. So are innocent people who now know safety can feel like a cage.",
+              "hopeChange": 3,
+              "trustChange": -5,
+              "chaosChange": -1,
+              "humanityChange": -4
+            },
+            {
+              "id": "e",
+              "text": "Use the wall oath as leverage for obedience.",
+              "outcome": "Discipline sharpens quickly. Trust dulls just as fast, especially among those with nothing to trade.",
+              "hopeChange": 4,
+              "trustChange": -7,
+              "chaosChange": 1,
+              "humanityChange": -6
+            },
+            {
+              "id": "f",
+              "text": "Hold position until the new arrivals choose a spokesperson.",
+              "outcome": "The delay lowers panic and raises danger. At least the next order has a name behind it.",
+              "hopeChange": -3,
+              "trustChange": 3,
+              "chaosChange": -3,
+              "humanityChange": 2
+            }
+          ],
+          "imageKeywords": [
+            "public reckoning ritual",
+            "public reckoning",
+            "ritual",
+            "trial",
+            "oath ceremony",
+            "public punishment",
+            "reckoning"
           ]
         }
       ]

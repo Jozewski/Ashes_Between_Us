@@ -1,6 +1,6 @@
 {
-  "packId": "scout-v3",
-  "version": "3.0.0",
+  "packId": "scout-v4",
+  "version": "4.0.0",
   "avatars": [
     {
       "avatarId": "scout",
@@ -10,7 +10,7 @@
           "title": "The Cartographer's Debt",
           "setting": "Three days into the ash belt, you find the body of another scout slumped against a road sign, frozen mid-sketch. Her map is better than yours — it marks a water cache your own charts call a dead zone. Her satchel also holds a child's drawing and a name. Taking the map means survival. It also means deciding what you owe the dead.",
           "futureMsg": "Future-you remembers this crossroads as the moment you learned that every map is written in someone else's footsteps. What you took here decided whether you walked the rest of the wastes as a thief or a steward.",
-          "imageUrl": "/images/backgrounds/bunker.png",
+          "imageUrl": "/images/scenarios/scout/avatar-scout-the-cartographers-debt.png",
           "progressionBand": "early",
           "weight": 3,
           "choices": [
@@ -68,6 +68,14 @@
               "chaosChange": 9,
               "humanityChange": 4
             }
+          ],
+          "imageKeywords": [
+            "the cartographers debt",
+            "cartographer",
+            "maps",
+            "lost maps",
+            "route debt",
+            "map room"
           ]
         },
         {
@@ -75,7 +83,7 @@
           "title": "What the Tower Saw",
           "setting": "The old fire-watch tower still has working optics. From its platform you can see two convoys converging on the same valley town at dusk — one flying relief colors, one flying none. They cannot see each other yet. By dawn, only one will hold the town. You have a radio, a rifle, and the only god's-eye view for fifty miles.",
           "futureMsg": "Future-you marks this dusk as the day you understood the weight of a high vantage. Knowing what's coming is its own kind of power — and refusing to use it is still a choice.",
-          "imageUrl": "/images/backgrounds/forest-safe-zone.png",
+          "imageUrl": "/images/scenarios/scout/avatar-scout-mountain-observation-point.png",
           "progressionBand": "mid",
           "weight": 2,
           "choices": [
@@ -133,6 +141,14 @@
               "chaosChange": 8,
               "humanityChange": -10
             }
+          ],
+          "imageKeywords": [
+            "mountain observation point",
+            "mountain observation",
+            "observation point",
+            "lookout",
+            "high vantage",
+            "watch ridge"
           ]
         },
         {
@@ -140,7 +156,7 @@
           "title": "The Glass Orchard Trail",
           "setting": "A greenhouse district has collapsed into a glittering maze of cracked panels and wild fruit trees. The shortest path to the safe zone runs through the glass, but every step sings underfoot and something large keeps circling outside the panes.",
           "futureMsg": "Future-you remembers the orchard not for its fruit, but for the sound of patience. The path you chose decided whether the hungry followed you or the hunters did.",
-          "imageUrl": "/images/backgrounds/ruined-city.png",
+          "imageUrl": "/images/scenarios/scout/avatar-scout-hidden-convoy-route.png",
           "progressionBand": "early",
           "weight": 3,
           "choices": [
@@ -198,6 +214,13 @@
               "chaosChange": 12,
               "humanityChange": -5
             }
+          ],
+          "imageKeywords": [
+            "hidden convoy route",
+            "hidden route",
+            "convoy route",
+            "secret path",
+            "unmarked road"
           ]
         },
         {
@@ -205,7 +228,7 @@
           "title": "Footprints That Walk Backward",
           "setting": "After a night of aurora static, you wake to find fresh footprints entering camp from every direction and none leaving. Each print is your size. Some are wet with seawater, though the coast is two days away.",
           "futureMsg": "Future-you says the wrong footprints were not a warning about enemies. They were a warning about which version of you had already passed this way.",
-          "imageUrl": "/images/backgrounds/weather-hidden-loyalties.png",
+          "imageUrl": "/images/scenarios/scout/avatar-scout-weather-hidden-loyalties.png",
           "progressionBand": "mid",
           "weight": 2,
           "choices": [
@@ -263,6 +286,15 @@
               "chaosChange": 8,
               "humanityChange": -3
             }
+          ],
+          "imageKeywords": [
+            "weather hidden loyalties",
+            "weather disaster",
+            "hidden loyalties",
+            "storm",
+            "mountain storm",
+            "flash flood",
+            "forced shelter"
           ]
         },
         {
@@ -270,7 +302,7 @@
           "title": "The Moth Lantern Migration",
           "setting": "Millions of pale moths drift over the desert highway at midnight, glowing faintly blue. They swarm around buried metal and avoid poisoned ground, turning the ruined road into a living map that will vanish by dawn.",
           "futureMsg": "Future-you learned that not every compass points north. Some point toward mercy, some toward greed, and some toward the graves nobody marked.",
-          "imageUrl": "/images/backgrounds/desert-highway.png",
+          "imageUrl": "/images/scenarios/scout/avatar-scout-radio-signal-echo.png",
           "progressionBand": "early",
           "weight": 2,
           "choices": [
@@ -328,6 +360,12 @@
               "chaosChange": -5,
               "humanityChange": 1
             }
+          ],
+          "imageKeywords": [
+            "radio signal echo",
+            "signal echo",
+            "radio signal",
+            "triangulation"
           ]
         },
         {
@@ -335,7 +373,7 @@
           "title": "The Town That Moved Overnight",
           "setting": "A valley settlement that was west of the river yesterday now stands east of it, chimneys smoking as if nothing happened. Your map argues with your eyes. The gate guard waves at you by name though you have never been here.",
           "futureMsg": "Future-you warns that the moved town was not asking to be solved. It was asking whether you could respect a place that survived by slipping sideways.",
-          "imageUrl": "/images/backgrounds/limited-evacuation-convoy.png",
+          "imageUrl": "/images/scenarios/scout/avatar-scout-abandoned-watch-post.png",
           "progressionBand": "mid",
           "weight": 2,
           "choices": [
@@ -393,6 +431,12 @@
               "chaosChange": -2,
               "humanityChange": 6
             }
+          ],
+          "imageKeywords": [
+            "abandoned watch post",
+            "watch post",
+            "lookout post",
+            "observation tower"
           ]
         },
         {
@@ -400,7 +444,7 @@
           "title": "Under the Singing Overpass",
           "setting": "Wind through the cracked highway overpass produces a low chord that changes when people lie beneath it. A refugee column waits there, accusing one another of stealing insulin and route papers while the bridge hums like a judge.",
           "futureMsg": "Future-you says the bridge never cared who was guilty. It cared who you became when the crowd begged you to make certainty out of noise.",
-          "imageUrl": "/images/backgrounds/radio-tower.png",
+          "imageUrl": "/images/scenarios/scout/avatar-scout-failed-rescue-witnesses.png",
           "progressionBand": "mid",
           "weight": 3,
           "choices": [
@@ -458,6 +502,15 @@
               "chaosChange": 1,
               "humanityChange": -1
             }
+          ],
+          "imageKeywords": [
+            "failed rescue witnesses",
+            "failed rescue",
+            "rescue witnesses",
+            "collapsed rescue",
+            "witnesses",
+            "overpass rescue",
+            "rescue scene"
           ]
         },
         {
@@ -465,7 +518,7 @@
           "title": "The Library of Wind Maps",
           "setting": "Inside a sand-packed university, weather maps hang from the ceiling and shift without hands. One map shows tomorrow’s dust storm, another shows a route through it, and a third is drawn in red ink over a settlement that has not called for help yet.",
           "futureMsg": "Future-you remembers choosing which future deserved warning first. A scout can outrun weather, but not consequence.",
-          "imageUrl": "/images/endings/ending-balanced-future.png",
+          "imageUrl": "/images/scenarios/scout/avatar-scout-misinformation-radio-room.png",
           "progressionBand": "late",
           "weight": 2,
           "choices": [
@@ -523,6 +576,16 @@
               "chaosChange": -2,
               "humanityChange": -10
             }
+          ],
+          "imageKeywords": [
+            "misinformation radio room",
+            "misinformation",
+            "radio room",
+            "radio",
+            "broadcast",
+            "signal",
+            "false warning",
+            "accused broadcaster"
           ]
         },
         {
@@ -530,7 +593,7 @@
           "title": "The Dog With Three Collars",
           "setting": "A scarred dog appears at dusk wearing three collars: one military, one handmade from ribbon, one stamped with the emblem of a raider pack. It refuses food but keeps looking back toward a drainage tunnel under the city.",
           "futureMsg": "Future-you says the dog was a question with teeth: do you follow loyalty, suspicion, or hunger when they all point underground?",
-          "imageUrl": "/images/backgrounds/refugee-border-crossing.png",
+          "imageUrl": "/images/scenarios/scout/avatar-scout-refugee-border-crossing.png",
           "progressionBand": "any",
           "weight": 3,
           "choices": [
@@ -588,6 +651,15 @@
               "chaosChange": -2,
               "humanityChange": -7
             }
+          ],
+          "imageKeywords": [
+            "refugee border crossing",
+            "refugee border",
+            "border crossing",
+            "refugees",
+            "checkpoint",
+            "guards",
+            "crossing"
           ]
         },
         {
@@ -595,7 +667,7 @@
           "title": "Last Light on Needle Ridge",
           "setting": "The only pass through Needle Ridge closes at sunset when freezing fog fills the stone needles. From the crest you can see fires in three directions: your camp, a stranger camp, and a place where no camp existed yesterday.",
           "futureMsg": "Future-you whispers that the last light always shows more need than one person can answer. What matters is the rule you choose before darkness chooses for you.",
-          "imageUrl": "/images/endings/ending-chaotic-future.png",
+          "imageUrl": "/images/scenarios/scout/avatar-scout-limited-evacuation-convoy.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [
@@ -653,6 +725,744 @@
               "chaosChange": -4,
               "humanityChange": -9
             }
+          ],
+          "imageKeywords": [
+            "limited evacuation convoy",
+            "limited evacuation",
+            "evacuation convoy",
+            "convoy",
+            "too few seats",
+            "fuel carriers",
+            "transport"
+          ]
+        },
+        {
+          "id": "scout-011",
+          "title": "The Surveyor's Bell",
+          "setting": "At first light, a bell rings from a transit tunnel your maps mark as flooded. Inside, chalk arrows point toward three exits: one smells of rain, one of smoke, one of medicine. A trapped survey crew is marking time by sound because their lamps are dying.",
+          "futureMsg": "I still hear that bell when a route looks simple. The right path was not the quiet one; it was the one whose danger you could name.",
+          "imageUrl": "/images/backgrounds/failed-rescue-witnesses.png",
+          "progressionBand": "early",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Mark the safest route around the tunnel bell.",
+              "outcome": "Your detour costs daylight, but survey crew cross with fewer surprises and more faith in your eye.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": -3,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Watch the tunnel bell from cover before moving anyone.",
+              "outcome": "Patience reveals the hidden pattern. Some call it delay; the survivors call it arriving whole.",
+              "hopeChange": 2,
+              "trustChange": 4,
+              "chaosChange": -5,
+              "humanityChange": 1
+            },
+            {
+              "id": "c",
+              "text": "Teach the survey crew to read the trail themselves.",
+              "outcome": "The route becomes slower and less dependent on you. That is exactly why it lasts.",
+              "hopeChange": 3,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Cut straight through and leave warning marks behind.",
+              "outcome": "You beat the weather and frighten everyone following. The trail works, but it feels like a dare.",
+              "hopeChange": 6,
+              "trustChange": -3,
+              "chaosChange": 5,
+              "humanityChange": -2
+            },
+            {
+              "id": "e",
+              "text": "Hide the tunnel bell location for your own camp first.",
+              "outcome": "Your people gain the advantage. Others find only cold ash where a warning could have been.",
+              "hopeChange": 3,
+              "trustChange": -5,
+              "chaosChange": 2,
+              "humanityChange": -6
+            },
+            {
+              "id": "f",
+              "text": "Refuse the crossing until the survey crew reduce the risk.",
+              "outcome": "The pause saves lives from a bad rush. It also strands the desperate within sight of shelter.",
+              "hopeChange": -3,
+              "trustChange": 2,
+              "chaosChange": -4,
+              "humanityChange": 2
+            }
+          ],
+          "imageKeywords": [
+            "failed rescue witnesses",
+            "failed rescue",
+            "rescue witnesses",
+            "collapsed rescue",
+            "witnesses",
+            "overpass rescue",
+            "rescue scene"
+          ]
+        },
+        {
+          "id": "scout-012",
+          "title": "Blue Thread Across the Flats",
+          "setting": "A child-run messenger line stretches blue thread across the salt flats to mark safe footsteps. A dust wall is rolling in, and the thread now leads toward a stranded trader wagon accused of selling poisoned flour.",
+          "futureMsg": "You learned that landmarks can lie without meaning to. The thread mattered less than who would be blamed when it snapped.",
+          "imageUrl": "/images/backgrounds/threatened-fog-market.png",
+          "progressionBand": "early",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Mark the safest route around the blue thread.",
+              "outcome": "Your detour costs daylight, but child messengers cross with fewer surprises and more faith in your eye.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": -3,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Watch the blue thread from cover before moving anyone.",
+              "outcome": "Patience reveals the hidden pattern. Some call it delay; the survivors call it arriving whole.",
+              "hopeChange": 2,
+              "trustChange": 4,
+              "chaosChange": -5,
+              "humanityChange": 1
+            },
+            {
+              "id": "c",
+              "text": "Teach the child messengers to read the trail themselves.",
+              "outcome": "The route becomes slower and less dependent on you. That is exactly why it lasts.",
+              "hopeChange": 3,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Cut straight through and leave warning marks behind.",
+              "outcome": "You beat the weather and frighten everyone following. The trail works, but it feels like a dare.",
+              "hopeChange": 6,
+              "trustChange": -3,
+              "chaosChange": 5,
+              "humanityChange": -2
+            },
+            {
+              "id": "e",
+              "text": "Hide the blue thread location for your own camp first.",
+              "outcome": "Your people gain the advantage. Others find only cold ash where a warning could have been.",
+              "hopeChange": 3,
+              "trustChange": -5,
+              "chaosChange": 2,
+              "humanityChange": -6
+            },
+            {
+              "id": "f",
+              "text": "Refuse the crossing until the child messengers reduce the risk.",
+              "outcome": "The pause saves lives from a bad rush. It also strands the desperate within sight of shelter.",
+              "hopeChange": -3,
+              "trustChange": 2,
+              "chaosChange": -4,
+              "humanityChange": 2
+            }
+          ],
+          "imageKeywords": [
+            "threatened fog market",
+            "fog market",
+            "threatened market",
+            "market",
+            "barter market",
+            "black market",
+            "traders"
+          ]
+        },
+        {
+          "id": "scout-013",
+          "title": "The Wrong Smoke",
+          "setting": "Three smoke columns rise beyond the ridge: green for food, black for attack, white for surrender. Your lens shows someone swapped the signal cloths during the night, and two settlements are already marching toward the wrong meanings.",
+          "futureMsg": "The future did not remember the smoke. It remembered whether you corrected the lie before anyone could profit from it.",
+          "imageUrl": "/images/backgrounds/misinformation-radio-room.png",
+          "progressionBand": "mid",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Mark the safest route around the signal cloths.",
+              "outcome": "Your detour costs daylight, but ridge settlements cross with fewer surprises and more faith in your eye.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": -3,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Watch the signal cloths from cover before moving anyone.",
+              "outcome": "Patience reveals the hidden pattern. Some call it delay; the survivors call it arriving whole.",
+              "hopeChange": 2,
+              "trustChange": 4,
+              "chaosChange": -5,
+              "humanityChange": 1
+            },
+            {
+              "id": "c",
+              "text": "Teach the ridge settlements to read the trail themselves.",
+              "outcome": "The route becomes slower and less dependent on you. That is exactly why it lasts.",
+              "hopeChange": 3,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Cut straight through and leave warning marks behind.",
+              "outcome": "You beat the weather and frighten everyone following. The trail works, but it feels like a dare.",
+              "hopeChange": 6,
+              "trustChange": -3,
+              "chaosChange": 5,
+              "humanityChange": -2
+            },
+            {
+              "id": "e",
+              "text": "Hide the signal cloths location for your own camp first.",
+              "outcome": "Your people gain the advantage. Others find only cold ash where a warning could have been.",
+              "hopeChange": 3,
+              "trustChange": -5,
+              "chaosChange": 2,
+              "humanityChange": -6
+            },
+            {
+              "id": "f",
+              "text": "Refuse the crossing until the ridge settlements reduce the risk.",
+              "outcome": "The pause saves lives from a bad rush. It also strands the desperate within sight of shelter.",
+              "hopeChange": -3,
+              "trustChange": 2,
+              "chaosChange": -4,
+              "humanityChange": 2
+            }
+          ],
+          "imageKeywords": [
+            "misinformation radio room",
+            "misinformation",
+            "radio room",
+            "radio",
+            "broadcast",
+            "signal",
+            "false warning",
+            "accused broadcaster"
+          ]
+        },
+        {
+          "id": "scout-014",
+          "title": "Mile Marker 0",
+          "setting": "A highway marker hammered into a schoolyard claims every road begins there. Pilgrims follow it; raiders tax it; your compass refuses to settle while standing near it. Beneath the asphalt, old evacuation arrows point in a different direction.",
+          "futureMsg": "That schoolyard taught you that authority can be nailed into the ground. Pulling it up was easy. Replacing it honestly was the hard part.",
+          "imageUrl": "/images/backgrounds/refugee-border-crossing.png",
+          "progressionBand": "mid",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Mark the safest route around the mile marker.",
+              "outcome": "Your detour costs daylight, but road pilgrims cross with fewer surprises and more faith in your eye.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": -3,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Watch the mile marker from cover before moving anyone.",
+              "outcome": "Patience reveals the hidden pattern. Some call it delay; the survivors call it arriving whole.",
+              "hopeChange": 2,
+              "trustChange": 4,
+              "chaosChange": -5,
+              "humanityChange": 1
+            },
+            {
+              "id": "c",
+              "text": "Teach the road pilgrims to read the trail themselves.",
+              "outcome": "The route becomes slower and less dependent on you. That is exactly why it lasts.",
+              "hopeChange": 3,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Cut straight through and leave warning marks behind.",
+              "outcome": "You beat the weather and frighten everyone following. The trail works, but it feels like a dare.",
+              "hopeChange": 6,
+              "trustChange": -3,
+              "chaosChange": 5,
+              "humanityChange": -2
+            },
+            {
+              "id": "e",
+              "text": "Hide the mile marker location for your own camp first.",
+              "outcome": "Your people gain the advantage. Others find only cold ash where a warning could have been.",
+              "hopeChange": 3,
+              "trustChange": -5,
+              "chaosChange": 2,
+              "humanityChange": -6
+            },
+            {
+              "id": "f",
+              "text": "Refuse the crossing until the road pilgrims reduce the risk.",
+              "outcome": "The pause saves lives from a bad rush. It also strands the desperate within sight of shelter.",
+              "hopeChange": -3,
+              "trustChange": 2,
+              "chaosChange": -4,
+              "humanityChange": 2
+            }
+          ],
+          "imageKeywords": [
+            "refugee border crossing",
+            "refugee border",
+            "border crossing",
+            "refugees",
+            "checkpoint",
+            "guards",
+            "crossing"
+          ]
+        },
+        {
+          "id": "scout-015",
+          "title": "The Quarry Echo Vote",
+          "setting": "A quarry camp votes by shouting into the pit and counting echoes. Tonight the echoes repeat words no one said, including coordinates to a valley cache. Half the camp calls it prophecy; the other half hears a trap.",
+          "futureMsg": "You were never deciding whether echoes were real. You were deciding whether fear got to count as evidence.",
+          "imageUrl": "/images/backgrounds/shelter-leadership-vote.png",
+          "progressionBand": "mid",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Mark the safest route around the echo pit.",
+              "outcome": "Your detour costs daylight, but quarry camp cross with fewer surprises and more faith in your eye.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": -3,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Watch the echo pit from cover before moving anyone.",
+              "outcome": "Patience reveals the hidden pattern. Some call it delay; the survivors call it arriving whole.",
+              "hopeChange": 2,
+              "trustChange": 4,
+              "chaosChange": -5,
+              "humanityChange": 1
+            },
+            {
+              "id": "c",
+              "text": "Teach the quarry camp to read the trail themselves.",
+              "outcome": "The route becomes slower and less dependent on you. That is exactly why it lasts.",
+              "hopeChange": 3,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Cut straight through and leave warning marks behind.",
+              "outcome": "You beat the weather and frighten everyone following. The trail works, but it feels like a dare.",
+              "hopeChange": 6,
+              "trustChange": -3,
+              "chaosChange": 5,
+              "humanityChange": -2
+            },
+            {
+              "id": "e",
+              "text": "Hide the echo pit location for your own camp first.",
+              "outcome": "Your people gain the advantage. Others find only cold ash where a warning could have been.",
+              "hopeChange": 3,
+              "trustChange": -5,
+              "chaosChange": 2,
+              "humanityChange": -6
+            },
+            {
+              "id": "f",
+              "text": "Refuse the crossing until the quarry camp reduce the risk.",
+              "outcome": "The pause saves lives from a bad rush. It also strands the desperate within sight of shelter.",
+              "hopeChange": -3,
+              "trustChange": 2,
+              "chaosChange": -4,
+              "humanityChange": 2
+            }
+          ],
+          "imageKeywords": [
+            "shelter leadership vote",
+            "shelter vote",
+            "leadership vote",
+            "vote",
+            "council",
+            "ballots",
+            "governance"
+          ]
+        },
+        {
+          "id": "scout-016",
+          "title": "The Orchard With No Shadows",
+          "setting": "An abandoned orchard casts no shadows at noon, making it perfect cover for crossing patrol lines. The fruit is edible, but every trunk bears a carved initial from people who vanished after using the route.",
+          "futureMsg": "I remember the bright ground and the missing shade. Some shortcuts advertise safety because danger has learned patience.",
+          "imageUrl": "/images/backgrounds/weather-hidden-loyalties.png",
+          "progressionBand": "late",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Mark the safest route around the shadowless orchard.",
+              "outcome": "Your detour costs daylight, but crossing party cross with fewer surprises and more faith in your eye.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": -3,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Watch the shadowless orchard from cover before moving anyone.",
+              "outcome": "Patience reveals the hidden pattern. Some call it delay; the survivors call it arriving whole.",
+              "hopeChange": 2,
+              "trustChange": 4,
+              "chaosChange": -5,
+              "humanityChange": 1
+            },
+            {
+              "id": "c",
+              "text": "Teach the crossing party to read the trail themselves.",
+              "outcome": "The route becomes slower and less dependent on you. That is exactly why it lasts.",
+              "hopeChange": 3,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Cut straight through and leave warning marks behind.",
+              "outcome": "You beat the weather and frighten everyone following. The trail works, but it feels like a dare.",
+              "hopeChange": 6,
+              "trustChange": -3,
+              "chaosChange": 5,
+              "humanityChange": -2
+            },
+            {
+              "id": "e",
+              "text": "Hide the shadowless orchard location for your own camp first.",
+              "outcome": "Your people gain the advantage. Others find only cold ash where a warning could have been.",
+              "hopeChange": 3,
+              "trustChange": -5,
+              "chaosChange": 2,
+              "humanityChange": -6
+            },
+            {
+              "id": "f",
+              "text": "Refuse the crossing until the crossing party reduce the risk.",
+              "outcome": "The pause saves lives from a bad rush. It also strands the desperate within sight of shelter.",
+              "hopeChange": -3,
+              "trustChange": 2,
+              "chaosChange": -4,
+              "humanityChange": 2
+            }
+          ],
+          "imageKeywords": [
+            "weather hidden loyalties",
+            "weather disaster",
+            "hidden loyalties",
+            "storm",
+            "mountain storm",
+            "flash flood",
+            "forced shelter"
+          ]
+        },
+        {
+          "id": "scout-017",
+          "title": "The Flood Map Auction",
+          "setting": "A ferryman auctions a pre-collapse flood map while families wait on a bridge that may not survive the thaw. Your own map contradicts his in three places, and a militia bidder has already noticed your hesitation.",
+          "futureMsg": "The map you did not buy still shaped the river. Truth has a current; so does silence.",
+          "imageUrl": "/images/backgrounds/contested-resource-hearing.png",
+          "progressionBand": "late",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Mark the safest route around the flood map.",
+              "outcome": "Your detour costs daylight, but bridge families cross with fewer surprises and more faith in your eye.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": -3,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Watch the flood map from cover before moving anyone.",
+              "outcome": "Patience reveals the hidden pattern. Some call it delay; the survivors call it arriving whole.",
+              "hopeChange": 2,
+              "trustChange": 4,
+              "chaosChange": -5,
+              "humanityChange": 1
+            },
+            {
+              "id": "c",
+              "text": "Teach the bridge families to read the trail themselves.",
+              "outcome": "The route becomes slower and less dependent on you. That is exactly why it lasts.",
+              "hopeChange": 3,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Cut straight through and leave warning marks behind.",
+              "outcome": "You beat the weather and frighten everyone following. The trail works, but it feels like a dare.",
+              "hopeChange": 6,
+              "trustChange": -3,
+              "chaosChange": 5,
+              "humanityChange": -2
+            },
+            {
+              "id": "e",
+              "text": "Hide the flood map location for your own camp first.",
+              "outcome": "Your people gain the advantage. Others find only cold ash where a warning could have been.",
+              "hopeChange": 3,
+              "trustChange": -5,
+              "chaosChange": 2,
+              "humanityChange": -6
+            },
+            {
+              "id": "f",
+              "text": "Refuse the crossing until the bridge families reduce the risk.",
+              "outcome": "The pause saves lives from a bad rush. It also strands the desperate within sight of shelter.",
+              "hopeChange": -3,
+              "trustChange": 2,
+              "chaosChange": -4,
+              "humanityChange": 2
+            }
+          ],
+          "imageKeywords": [
+            "contested resource hearing",
+            "resource hearing",
+            "public hearing",
+            "ration hearing",
+            "water rights hearing",
+            "resource dispute",
+            "council hearing"
+          ]
+        },
+        {
+          "id": "scout-018",
+          "title": "The Lantern Code Mutiny",
+          "setting": "Your night route relies on lantern flashes from a watch post. Tonight the code changes mid-message: first warning you back, then begging you forward. Someone inside the post is fighting over which future reaches you.",
+          "futureMsg": "That ridge was where you stopped treating signals like orders. A message can be true and still come from a terrified hand.",
+          "imageUrl": "/images/backgrounds/radio-tower.png",
+          "progressionBand": "late",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Mark the safest route around the lantern code.",
+              "outcome": "Your detour costs daylight, but watch post cross with fewer surprises and more faith in your eye.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": -3,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Watch the lantern code from cover before moving anyone.",
+              "outcome": "Patience reveals the hidden pattern. Some call it delay; the survivors call it arriving whole.",
+              "hopeChange": 2,
+              "trustChange": 4,
+              "chaosChange": -5,
+              "humanityChange": 1
+            },
+            {
+              "id": "c",
+              "text": "Teach the watch post to read the trail themselves.",
+              "outcome": "The route becomes slower and less dependent on you. That is exactly why it lasts.",
+              "hopeChange": 3,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Cut straight through and leave warning marks behind.",
+              "outcome": "You beat the weather and frighten everyone following. The trail works, but it feels like a dare.",
+              "hopeChange": 6,
+              "trustChange": -3,
+              "chaosChange": 5,
+              "humanityChange": -2
+            },
+            {
+              "id": "e",
+              "text": "Hide the lantern code location for your own camp first.",
+              "outcome": "Your people gain the advantage. Others find only cold ash where a warning could have been.",
+              "hopeChange": 3,
+              "trustChange": -5,
+              "chaosChange": 2,
+              "humanityChange": -6
+            },
+            {
+              "id": "f",
+              "text": "Refuse the crossing until the watch post reduce the risk.",
+              "outcome": "The pause saves lives from a bad rush. It also strands the desperate within sight of shelter.",
+              "hopeChange": -3,
+              "trustChange": 2,
+              "chaosChange": -4,
+              "humanityChange": 2
+            }
+          ],
+          "imageKeywords": [
+            "radio tower"
+          ]
+        },
+        {
+          "id": "scout-019",
+          "title": "The Hollow Train Compass",
+          "setting": "A derailed commuter train has become a compass: every metal handle points toward a hidden depot when touched. Refugees shelter inside the cars, afraid the discovery will turn their roof into a battlefield.",
+          "futureMsg": "You found direction inside a wreck and had to decide who owned it: the people under its roof, or everyone still lost outside.",
+          "imageUrl": "/images/backgrounds/limited-evacuation-convoy.png",
+          "progressionBand": "any",
+          "weight": 1,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Mark the safest route around the train compass.",
+              "outcome": "Your detour costs daylight, but rail refugees cross with fewer surprises and more faith in your eye.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": -3,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Watch the train compass from cover before moving anyone.",
+              "outcome": "Patience reveals the hidden pattern. Some call it delay; the survivors call it arriving whole.",
+              "hopeChange": 2,
+              "trustChange": 4,
+              "chaosChange": -5,
+              "humanityChange": 1
+            },
+            {
+              "id": "c",
+              "text": "Teach the rail refugees to read the trail themselves.",
+              "outcome": "The route becomes slower and less dependent on you. That is exactly why it lasts.",
+              "hopeChange": 3,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Cut straight through and leave warning marks behind.",
+              "outcome": "You beat the weather and frighten everyone following. The trail works, but it feels like a dare.",
+              "hopeChange": 6,
+              "trustChange": -3,
+              "chaosChange": 5,
+              "humanityChange": -2
+            },
+            {
+              "id": "e",
+              "text": "Hide the train compass location for your own camp first.",
+              "outcome": "Your people gain the advantage. Others find only cold ash where a warning could have been.",
+              "hopeChange": 3,
+              "trustChange": -5,
+              "chaosChange": 2,
+              "humanityChange": -6
+            },
+            {
+              "id": "f",
+              "text": "Refuse the crossing until the rail refugees reduce the risk.",
+              "outcome": "The pause saves lives from a bad rush. It also strands the desperate within sight of shelter.",
+              "hopeChange": -3,
+              "trustChange": 2,
+              "chaosChange": -4,
+              "humanityChange": 2
+            }
+          ],
+          "imageKeywords": [
+            "limited evacuation convoy",
+            "limited evacuation",
+            "evacuation convoy",
+            "convoy",
+            "too few seats",
+            "fuel carriers",
+            "transport"
+          ]
+        },
+        {
+          "id": "scout-020",
+          "title": "Red Snow at the Pass",
+          "setting": "Snow falling on the pass turns red where footsteps will break through ice. The omen is useful until a wounded stranger crawls across every safe mark, erasing the route behind them while begging for help.",
+          "futureMsg": "The pass did not ask whether mercy was efficient. It only showed what your footprints cost after you made them.",
+          "imageUrl": "/images/backgrounds/desert-highway.png",
+          "progressionBand": "any",
+          "weight": 1,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Mark the safest route around the red snow.",
+              "outcome": "Your detour costs daylight, but pass survivors cross with fewer surprises and more faith in your eye.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": -3,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Watch the red snow from cover before moving anyone.",
+              "outcome": "Patience reveals the hidden pattern. Some call it delay; the survivors call it arriving whole.",
+              "hopeChange": 2,
+              "trustChange": 4,
+              "chaosChange": -5,
+              "humanityChange": 1
+            },
+            {
+              "id": "c",
+              "text": "Teach the pass survivors to read the trail themselves.",
+              "outcome": "The route becomes slower and less dependent on you. That is exactly why it lasts.",
+              "hopeChange": 3,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Cut straight through and leave warning marks behind.",
+              "outcome": "You beat the weather and frighten everyone following. The trail works, but it feels like a dare.",
+              "hopeChange": 6,
+              "trustChange": -3,
+              "chaosChange": 5,
+              "humanityChange": -2
+            },
+            {
+              "id": "e",
+              "text": "Hide the red snow location for your own camp first.",
+              "outcome": "Your people gain the advantage. Others find only cold ash where a warning could have been.",
+              "hopeChange": 3,
+              "trustChange": -5,
+              "chaosChange": 2,
+              "humanityChange": -6
+            },
+            {
+              "id": "f",
+              "text": "Refuse the crossing until the pass survivors reduce the risk.",
+              "outcome": "The pause saves lives from a bad rush. It also strands the desperate within sight of shelter.",
+              "hopeChange": -3,
+              "trustChange": 2,
+              "chaosChange": -4,
+              "humanityChange": 2
+            }
+          ],
+          "imageKeywords": [
+            "desert highway"
           ]
         }
       ]

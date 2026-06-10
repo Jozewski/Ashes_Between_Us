@@ -1,6 +1,6 @@
 {
-  "packId": "diplomat-v3",
-  "version": "3.0.0",
+  "packId": "diplomat-v4",
+  "version": "4.0.0",
   "avatars": [
     {
       "avatarId": "diplomat",
@@ -10,7 +10,7 @@
           "title": "The Salt Table",
           "setting": "Six factions meet around a cafeteria table covered in salt because no one trusts shared water. Each leader brought a different rumor about who poisoned the northern wells. Your cup is the only one nobody has touched.",
           "futureMsg": "Future-you says the first treaty was seasoned with fear. You did not need everyone to trust each other yet — only to trust the next sentence.",
-          "imageUrl": "/images/backgrounds/ruined-city.png",
+          "imageUrl": "/images/scenarios/diplomat/avatar-diplomat-disputed-water-rights.png",
           "progressionBand": "early",
           "weight": 3,
           "choices": [
@@ -68,6 +68,11 @@
               "chaosChange": -2,
               "humanityChange": -2
             }
+          ],
+          "imageKeywords": [
+            "disputed water rights",
+            "water rights",
+            "water dispute"
           ]
         },
         {
@@ -75,7 +80,7 @@
           "title": "Flags in the Fog Market",
           "setting": "A foggy market uses colored flags instead of spoken language after a massacre began with a mistranslated greeting. Today, a child flies two forbidden colors together, and armed traders reach for knives.",
           "futureMsg": "Future-you remembers that translation is not finding the right word. It is building a room where the wrong word does not kill.",
-          "imageUrl": "/images/backgrounds/desert-highway.png",
+          "imageUrl": "/images/scenarios/diplomat/avatar-diplomat-unclear-salvage-claim.png",
           "progressionBand": "early",
           "weight": 2,
           "choices": [
@@ -133,6 +138,15 @@
               "chaosChange": -1,
               "humanityChange": -5
             }
+          ],
+          "imageKeywords": [
+            "unclear salvage claim",
+            "salvage claim",
+            "unclear claim",
+            "salvage yard",
+            "resource claim",
+            "scrap",
+            "ownership dispute"
           ]
         },
         {
@@ -140,7 +154,7 @@
           "title": "Wedding at the Broken Aqueduct",
           "setting": "Two settlements plan a marriage alliance beneath an aqueduct that both claim. The bride’s family brings seeds; the groom’s family brings pipe valves. A third faction arrives with evidence both gifts were stolen.",
           "futureMsg": "Future-you says the wedding could become a treaty, a theft trial, or a funeral. You were the hinge in the vows.",
-          "imageUrl": "/images/backgrounds/radio-tower.png",
+          "imageUrl": "/images/scenarios/diplomat/avatar-diplomat-border-treaty-negotiation.png",
           "progressionBand": "mid",
           "weight": 2,
           "choices": [
@@ -198,6 +212,12 @@
               "chaosChange": 5,
               "humanityChange": -2
             }
+          ],
+          "imageKeywords": [
+            "border treaty negotiation",
+            "border treaty",
+            "treaty negotiation",
+            "negotiation"
           ]
         },
         {
@@ -205,7 +225,7 @@
           "title": "The Hostage Banquet",
           "setting": "A warlord invites you to dinner and seats hostages at every course: a farmer beside soup, a mechanic beside bread, a child beside dessert. Each concession you refuse costs someone food, warmth, or medicine.",
           "futureMsg": "Future-you says the banquet taught you that negotiation under cruelty can preserve life without blessing the table.",
-          "imageUrl": "/images/backgrounds/forest-safe-zone.png",
+          "imageUrl": "/images/scenarios/diplomat/avatar-diplomat-council-of-rivals.png",
           "progressionBand": "mid",
           "weight": 2,
           "choices": [
@@ -263,6 +283,11 @@
               "chaosChange": 8,
               "humanityChange": -3
             }
+          ],
+          "imageKeywords": [
+            "council of rivals",
+            "rival council",
+            "council"
           ]
         },
         {
@@ -270,7 +295,7 @@
           "title": "The Currency of Names",
           "setting": "A river town trades only in true names, claiming coins can be stolen but identity cannot. Refugees need ferry passage, yet giving names may expose hidden families to bounty hunters listening from the reeds.",
           "futureMsg": "Future-you warns that trust bought with identity can become a ledger for persecution.",
-          "imageUrl": "/images/backgrounds/contested-resource-hearing.png",
+          "imageUrl": "/images/scenarios/diplomat/avatar-diplomat-contested-resource-hearing.png",
           "progressionBand": "any",
           "weight": 2,
           "choices": [
@@ -328,6 +353,15 @@
               "chaosChange": -1,
               "humanityChange": -3
             }
+          ],
+          "imageKeywords": [
+            "contested resource hearing",
+            "resource hearing",
+            "public hearing",
+            "ration hearing",
+            "water rights hearing",
+            "resource dispute",
+            "council hearing"
           ]
         },
         {
@@ -335,7 +369,7 @@
           "title": "Constitution by Candlelift",
           "setting": "Three floors of a vertical settlement draft laws by raising candles in the open elevator shaft. Upper floors want defense spending; lower floors want sanitation; roof gardeners want seed rights. The lift jams between levels during the vote.",
           "futureMsg": "Future-you says democracy failed first as a pulley problem. Fixing the shaft did not fix the settlement unless everyone could see the flame.",
-          "imageUrl": "/images/backgrounds/weather-hidden-loyalties.png",
+          "imageUrl": "/images/scenarios/diplomat/avatar-diplomat-shelter-leadership-vote.png",
           "progressionBand": "mid",
           "weight": 3,
           "choices": [
@@ -393,6 +427,15 @@
               "chaosChange": -2,
               "humanityChange": -6
             }
+          ],
+          "imageKeywords": [
+            "shelter leadership vote",
+            "shelter vote",
+            "leadership vote",
+            "vote",
+            "council",
+            "ballots",
+            "governance"
           ]
         },
         {
@@ -400,7 +443,7 @@
           "title": "The Trial of the Radio Ghost",
           "setting": "A voice on the radio has been impersonating dead leaders, urging settlements to break treaties. Captured equipment points toward an ally, but the voice also knows private words spoken at funerals.",
           "futureMsg": "Future-you says grief made people easy to command. Your task was not proving the dead silent, but helping the living stop obeying ghosts.",
-          "imageUrl": "/images/endings/ending-rebuilding-future.png",
+          "imageUrl": "/images/scenarios/diplomat/avatar-diplomat-misinformation-radio-room.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [
@@ -458,6 +501,16 @@
               "chaosChange": 7,
               "humanityChange": -7
             }
+          ],
+          "imageKeywords": [
+            "misinformation radio room",
+            "misinformation",
+            "radio room",
+            "radio",
+            "broadcast",
+            "signal",
+            "false warning",
+            "accused broadcaster"
           ]
         },
         {
@@ -465,7 +518,7 @@
           "title": "Neutral Road, Red Dust",
           "setting": "A road declared neutral by all factions now carries red dust that sticks only to weapon barrels. Refugees beg to use it, merchants demand escort rights, and commanders want to test whether the dust can identify treaty violations.",
           "futureMsg": "Future-you says neutrality is not an empty road. It is a road someone keeps sweeping even when everyone wants to march.",
-          "imageUrl": "/images/backgrounds/refugee-border-crossing.png",
+          "imageUrl": "/images/scenarios/diplomat/avatar-diplomat-the-last-neutral-ground.png",
           "progressionBand": "any",
           "weight": 2,
           "choices": [
@@ -523,6 +576,12 @@
               "chaosChange": -1,
               "humanityChange": -4
             }
+          ],
+          "imageKeywords": [
+            "the last neutral ground",
+            "last neutral ground",
+            "neutral ground",
+            "neutral zone"
           ]
         },
         {
@@ -530,7 +589,7 @@
           "title": "The Apology Vault",
           "setting": "An old bank vault contains recorded apologies from leaders who died before making them public. Releasing the files could heal families or reopen feuds. One apology names your settlement as beneficiary of stolen medicine.",
           "futureMsg": "Future-you says the past does not stay buried because it is old. It stays buried because someone profits from the ground staying flat.",
-          "imageUrl": "/images/endings/ending-balanced-future.png",
+          "imageUrl": "/images/scenarios/diplomat/avatar-diplomat-public-reckoning-ritual.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [
@@ -588,6 +647,15 @@
               "chaosChange": -2,
               "humanityChange": -10
             }
+          ],
+          "imageKeywords": [
+            "public reckoning ritual",
+            "public reckoning",
+            "ritual",
+            "trial",
+            "oath ceremony",
+            "public punishment",
+            "reckoning"
           ]
         },
         {
@@ -595,7 +663,7 @@
           "title": "Midnight at the Six Fires",
           "setting": "On the longest night, six camps light fires around a frozen lake, each waiting for someone else to cross first. The ice will hold until dawn. After that, the lake breaks and the season of raids begins again.",
           "futureMsg": "Future-you says peace never arrived as one big banner. It came as footsteps across bad ice, one suspicious campfire at a time.",
-          "imageUrl": "/images/endings/ending-chaotic-future.png",
+          "imageUrl": "/images/scenarios/diplomat/avatar-diplomat-shared-harvest-accord.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [
@@ -653,6 +721,747 @@
               "chaosChange": -3,
               "humanityChange": 6
             }
+          ],
+          "imageKeywords": [
+            "shared harvest accord",
+            "shared harvest",
+            "harvest accord",
+            "accord"
+          ]
+        },
+        {
+          "id": "diplomat-011",
+          "title": "The Orchard Armistice",
+          "setting": "Two settlements agree to meet in an orchard where every tree is claimed by a different family. A single fallen apple starts an argument over theft, hunger, and who gets to define harvest.",
+          "futureMsg": "Peace did not fail over an apple. It failed or held over whether anyone made small dignity negotiable.",
+          "imageUrl": "/images/backgrounds/threatened-fog-market.png",
+          "progressionBand": "early",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Read the fallen apple terms aloud before negotiations start.",
+              "outcome": "rival families lose the comfort of private meanings. The table becomes tense enough to be useful.",
+              "hopeChange": 3,
+              "trustChange": 6,
+              "chaosChange": 1,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Verify the fallen apple claim through neutral witnesses.",
+              "outcome": "The process irritates every faction equally. That is the first fair thing they have shared today.",
+              "hopeChange": 2,
+              "trustChange": 5,
+              "chaosChange": -4,
+              "humanityChange": 2
+            },
+            {
+              "id": "c",
+              "text": "Give the rival families seats at the table, not petitions.",
+              "outcome": "The room becomes harder to manage and harder to dismiss. The agreement grows teeth.",
+              "hopeChange": 3,
+              "trustChange": 8,
+              "chaosChange": -1,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Force a deadline around the fallen apple.",
+              "outcome": "The deadline produces signatures. It also leaves bruises under the ink.",
+              "hopeChange": 5,
+              "trustChange": -4,
+              "chaosChange": 3,
+              "humanityChange": -2
+            },
+            {
+              "id": "e",
+              "text": "Trade the fallen apple concession for a private guarantee.",
+              "outcome": "You secure one fragile promise by making another person wonder what was sold out of sight.",
+              "hopeChange": 4,
+              "trustChange": -6,
+              "chaosChange": 1,
+              "humanityChange": -4
+            },
+            {
+              "id": "f",
+              "text": "Suspend talks until the rival families admit the real grievance.",
+              "outcome": "The pause nearly breaks the meeting. Then someone finally says the unsayable thing.",
+              "hopeChange": -2,
+              "trustChange": 4,
+              "chaosChange": -3,
+              "humanityChange": 3
+            }
+          ],
+          "imageKeywords": [
+            "threatened fog market",
+            "fog market",
+            "threatened market",
+            "market",
+            "barter market",
+            "black market",
+            "traders"
+          ]
+        },
+        {
+          "id": "diplomat-012",
+          "title": "The Unburied Treaty",
+          "setting": "A treaty cache is found in a mass grave, signed by leaders everyone now praises as innocent. Publishing it could end a border feud or turn mourning into prosecution.",
+          "futureMsg": "The dead had already testified. Your task was deciding whether the living could hear them without becoming an audience for revenge.",
+          "imageUrl": "/images/backgrounds/failed-rescue-witnesses.png",
+          "progressionBand": "early",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Read the treaty cache terms aloud before negotiations start.",
+              "outcome": "border mourners lose the comfort of private meanings. The table becomes tense enough to be useful.",
+              "hopeChange": 3,
+              "trustChange": 6,
+              "chaosChange": 1,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Verify the treaty cache claim through neutral witnesses.",
+              "outcome": "The process irritates every faction equally. That is the first fair thing they have shared today.",
+              "hopeChange": 2,
+              "trustChange": 5,
+              "chaosChange": -4,
+              "humanityChange": 2
+            },
+            {
+              "id": "c",
+              "text": "Give the border mourners seats at the table, not petitions.",
+              "outcome": "The room becomes harder to manage and harder to dismiss. The agreement grows teeth.",
+              "hopeChange": 3,
+              "trustChange": 8,
+              "chaosChange": -1,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Force a deadline around the treaty cache.",
+              "outcome": "The deadline produces signatures. It also leaves bruises under the ink.",
+              "hopeChange": 5,
+              "trustChange": -4,
+              "chaosChange": 3,
+              "humanityChange": -2
+            },
+            {
+              "id": "e",
+              "text": "Trade the treaty cache concession for a private guarantee.",
+              "outcome": "You secure one fragile promise by making another person wonder what was sold out of sight.",
+              "hopeChange": 4,
+              "trustChange": -6,
+              "chaosChange": 1,
+              "humanityChange": -4
+            },
+            {
+              "id": "f",
+              "text": "Suspend talks until the border mourners admit the real grievance.",
+              "outcome": "The pause nearly breaks the meeting. Then someone finally says the unsayable thing.",
+              "hopeChange": -2,
+              "trustChange": 4,
+              "chaosChange": -3,
+              "humanityChange": 3
+            }
+          ],
+          "imageKeywords": [
+            "failed rescue witnesses",
+            "failed rescue",
+            "rescue witnesses",
+            "collapsed rescue",
+            "witnesses",
+            "overpass rescue",
+            "rescue scene"
+          ]
+        },
+        {
+          "id": "diplomat-013",
+          "title": "Embassy of the Ferry Rope",
+          "setting": "A ferry rope across the river is now treated as an embassy line. Refugees cling to the south bank while armed towns argue that pulling the rope first admits guilt.",
+          "futureMsg": "The rope was thin, but it held every excuse people used to stay separate.",
+          "imageUrl": "/images/backgrounds/refugee-border-crossing.png",
+          "progressionBand": "mid",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Read the ferry rope terms aloud before negotiations start.",
+              "outcome": "river towns lose the comfort of private meanings. The table becomes tense enough to be useful.",
+              "hopeChange": 3,
+              "trustChange": 6,
+              "chaosChange": 1,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Verify the ferry rope claim through neutral witnesses.",
+              "outcome": "The process irritates every faction equally. That is the first fair thing they have shared today.",
+              "hopeChange": 2,
+              "trustChange": 5,
+              "chaosChange": -4,
+              "humanityChange": 2
+            },
+            {
+              "id": "c",
+              "text": "Give the river towns seats at the table, not petitions.",
+              "outcome": "The room becomes harder to manage and harder to dismiss. The agreement grows teeth.",
+              "hopeChange": 3,
+              "trustChange": 8,
+              "chaosChange": -1,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Force a deadline around the ferry rope.",
+              "outcome": "The deadline produces signatures. It also leaves bruises under the ink.",
+              "hopeChange": 5,
+              "trustChange": -4,
+              "chaosChange": 3,
+              "humanityChange": -2
+            },
+            {
+              "id": "e",
+              "text": "Trade the ferry rope concession for a private guarantee.",
+              "outcome": "You secure one fragile promise by making another person wonder what was sold out of sight.",
+              "hopeChange": 4,
+              "trustChange": -6,
+              "chaosChange": 1,
+              "humanityChange": -4
+            },
+            {
+              "id": "f",
+              "text": "Suspend talks until the river towns admit the real grievance.",
+              "outcome": "The pause nearly breaks the meeting. Then someone finally says the unsayable thing.",
+              "hopeChange": -2,
+              "trustChange": 4,
+              "chaosChange": -3,
+              "humanityChange": 3
+            }
+          ],
+          "imageKeywords": [
+            "refugee border crossing",
+            "refugee border",
+            "border crossing",
+            "refugees",
+            "checkpoint",
+            "guards",
+            "crossing"
+          ]
+        },
+        {
+          "id": "diplomat-014",
+          "title": "The Bread Seal",
+          "setting": "A baker's stamp has become the only trusted mark on ration loaves. Three factions demand equal use of it; the baker refuses to let her dead daughter's initials become propaganda.",
+          "futureMsg": "Symbols outlive the people who made them. You had to protect the hand behind the seal, not just the bread beneath it.",
+          "imageUrl": "/images/backgrounds/limited-evacuation-convoy.png",
+          "progressionBand": "mid",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Read the bread seal terms aloud before negotiations start.",
+              "outcome": "ration factions lose the comfort of private meanings. The table becomes tense enough to be useful.",
+              "hopeChange": 3,
+              "trustChange": 6,
+              "chaosChange": 1,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Verify the bread seal claim through neutral witnesses.",
+              "outcome": "The process irritates every faction equally. That is the first fair thing they have shared today.",
+              "hopeChange": 2,
+              "trustChange": 5,
+              "chaosChange": -4,
+              "humanityChange": 2
+            },
+            {
+              "id": "c",
+              "text": "Give the ration factions seats at the table, not petitions.",
+              "outcome": "The room becomes harder to manage and harder to dismiss. The agreement grows teeth.",
+              "hopeChange": 3,
+              "trustChange": 8,
+              "chaosChange": -1,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Force a deadline around the bread seal.",
+              "outcome": "The deadline produces signatures. It also leaves bruises under the ink.",
+              "hopeChange": 5,
+              "trustChange": -4,
+              "chaosChange": 3,
+              "humanityChange": -2
+            },
+            {
+              "id": "e",
+              "text": "Trade the bread seal concession for a private guarantee.",
+              "outcome": "You secure one fragile promise by making another person wonder what was sold out of sight.",
+              "hopeChange": 4,
+              "trustChange": -6,
+              "chaosChange": 1,
+              "humanityChange": -4
+            },
+            {
+              "id": "f",
+              "text": "Suspend talks until the ration factions admit the real grievance.",
+              "outcome": "The pause nearly breaks the meeting. Then someone finally says the unsayable thing.",
+              "hopeChange": -2,
+              "trustChange": 4,
+              "chaosChange": -3,
+              "humanityChange": 3
+            }
+          ],
+          "imageKeywords": [
+            "limited evacuation convoy",
+            "limited evacuation",
+            "evacuation convoy",
+            "convoy",
+            "too few seats",
+            "fuel carriers",
+            "transport"
+          ]
+        },
+        {
+          "id": "diplomat-015",
+          "title": "The Trial Without Accusers",
+          "setting": "A sabotage trial begins with no accusers willing to stand in public. Everyone knows who benefits from silence, and everyone also knows witnesses have disappeared before.",
+          "futureMsg": "Justice without witnesses is theater with sharper chairs. You decided whether fear got to sit as judge.",
+          "imageUrl": "/images/backgrounds/public-reckoning-ritual.png",
+          "progressionBand": "mid",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Read the empty witness bench terms aloud before negotiations start.",
+              "outcome": "sabotage court lose the comfort of private meanings. The table becomes tense enough to be useful.",
+              "hopeChange": 3,
+              "trustChange": 6,
+              "chaosChange": 1,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Verify the empty witness bench claim through neutral witnesses.",
+              "outcome": "The process irritates every faction equally. That is the first fair thing they have shared today.",
+              "hopeChange": 2,
+              "trustChange": 5,
+              "chaosChange": -4,
+              "humanityChange": 2
+            },
+            {
+              "id": "c",
+              "text": "Give the sabotage court seats at the table, not petitions.",
+              "outcome": "The room becomes harder to manage and harder to dismiss. The agreement grows teeth.",
+              "hopeChange": 3,
+              "trustChange": 8,
+              "chaosChange": -1,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Force a deadline around the empty witness bench.",
+              "outcome": "The deadline produces signatures. It also leaves bruises under the ink.",
+              "hopeChange": 5,
+              "trustChange": -4,
+              "chaosChange": 3,
+              "humanityChange": -2
+            },
+            {
+              "id": "e",
+              "text": "Trade the empty witness bench concession for a private guarantee.",
+              "outcome": "You secure one fragile promise by making another person wonder what was sold out of sight.",
+              "hopeChange": 4,
+              "trustChange": -6,
+              "chaosChange": 1,
+              "humanityChange": -4
+            },
+            {
+              "id": "f",
+              "text": "Suspend talks until the sabotage court admit the real grievance.",
+              "outcome": "The pause nearly breaks the meeting. Then someone finally says the unsayable thing.",
+              "hopeChange": -2,
+              "trustChange": 4,
+              "chaosChange": -3,
+              "humanityChange": 3
+            }
+          ],
+          "imageKeywords": [
+            "public reckoning ritual",
+            "public reckoning",
+            "ritual",
+            "trial",
+            "oath ceremony",
+            "public punishment",
+            "reckoning"
+          ]
+        },
+        {
+          "id": "diplomat-016",
+          "title": "Radio Free Winter",
+          "setting": "A neutral radio hour lets camps trade winter warnings until one caller names a secret fuel depot on air. The depot's owners demand you reveal the caller or lose broadcast access.",
+          "futureMsg": "Neutrality was not silence. It was choosing which pressure could touch the microphone.",
+          "imageUrl": "/images/backgrounds/radio-tower.png",
+          "progressionBand": "late",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Read the radio hour terms aloud before negotiations start.",
+              "outcome": "winter camps lose the comfort of private meanings. The table becomes tense enough to be useful.",
+              "hopeChange": 3,
+              "trustChange": 6,
+              "chaosChange": 1,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Verify the radio hour claim through neutral witnesses.",
+              "outcome": "The process irritates every faction equally. That is the first fair thing they have shared today.",
+              "hopeChange": 2,
+              "trustChange": 5,
+              "chaosChange": -4,
+              "humanityChange": 2
+            },
+            {
+              "id": "c",
+              "text": "Give the winter camps seats at the table, not petitions.",
+              "outcome": "The room becomes harder to manage and harder to dismiss. The agreement grows teeth.",
+              "hopeChange": 3,
+              "trustChange": 8,
+              "chaosChange": -1,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Force a deadline around the radio hour.",
+              "outcome": "The deadline produces signatures. It also leaves bruises under the ink.",
+              "hopeChange": 5,
+              "trustChange": -4,
+              "chaosChange": 3,
+              "humanityChange": -2
+            },
+            {
+              "id": "e",
+              "text": "Trade the radio hour concession for a private guarantee.",
+              "outcome": "You secure one fragile promise by making another person wonder what was sold out of sight.",
+              "hopeChange": 4,
+              "trustChange": -6,
+              "chaosChange": 1,
+              "humanityChange": -4
+            },
+            {
+              "id": "f",
+              "text": "Suspend talks until the winter camps admit the real grievance.",
+              "outcome": "The pause nearly breaks the meeting. Then someone finally says the unsayable thing.",
+              "hopeChange": -2,
+              "trustChange": 4,
+              "chaosChange": -3,
+              "humanityChange": 3
+            }
+          ],
+          "imageKeywords": [
+            "radio tower"
+          ]
+        },
+        {
+          "id": "diplomat-017",
+          "title": "The Salt Bride's Refusal",
+          "setting": "A marriage pact would merge two salt claims and stop a feud, but the intended bride publicly refuses at the signing table. Both clans look to you to preserve peace without preserving the bargain.",
+          "futureMsg": "You could have saved the treaty by sacrificing the person it was written on. You knew exactly what that would cost.",
+          "imageUrl": "/images/backgrounds/contested-resource-hearing.png",
+          "progressionBand": "late",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Read the signing table terms aloud before negotiations start.",
+              "outcome": "salt clans lose the comfort of private meanings. The table becomes tense enough to be useful.",
+              "hopeChange": 3,
+              "trustChange": 6,
+              "chaosChange": 1,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Verify the signing table claim through neutral witnesses.",
+              "outcome": "The process irritates every faction equally. That is the first fair thing they have shared today.",
+              "hopeChange": 2,
+              "trustChange": 5,
+              "chaosChange": -4,
+              "humanityChange": 2
+            },
+            {
+              "id": "c",
+              "text": "Give the salt clans seats at the table, not petitions.",
+              "outcome": "The room becomes harder to manage and harder to dismiss. The agreement grows teeth.",
+              "hopeChange": 3,
+              "trustChange": 8,
+              "chaosChange": -1,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Force a deadline around the signing table.",
+              "outcome": "The deadline produces signatures. It also leaves bruises under the ink.",
+              "hopeChange": 5,
+              "trustChange": -4,
+              "chaosChange": 3,
+              "humanityChange": -2
+            },
+            {
+              "id": "e",
+              "text": "Trade the signing table concession for a private guarantee.",
+              "outcome": "You secure one fragile promise by making another person wonder what was sold out of sight.",
+              "hopeChange": 4,
+              "trustChange": -6,
+              "chaosChange": 1,
+              "humanityChange": -4
+            },
+            {
+              "id": "f",
+              "text": "Suspend talks until the salt clans admit the real grievance.",
+              "outcome": "The pause nearly breaks the meeting. Then someone finally says the unsayable thing.",
+              "hopeChange": -2,
+              "trustChange": 4,
+              "chaosChange": -3,
+              "humanityChange": 3
+            }
+          ],
+          "imageKeywords": [
+            "contested resource hearing",
+            "resource hearing",
+            "public hearing",
+            "ration hearing",
+            "water rights hearing",
+            "resource dispute",
+            "council hearing"
+          ]
+        },
+        {
+          "id": "diplomat-018",
+          "title": "The Black Flag Invitation",
+          "setting": "A black-flag camp asks to attend council under truce, bringing maps of a raider corridor. Survivors they harmed demand the flag be barred before it stains the hall.",
+          "futureMsg": "Inviting an enemy is not forgiveness. Refusing them is not justice. That was the knife-edge you had to name aloud.",
+          "imageUrl": "/images/backgrounds/shelter-leadership-vote.png",
+          "progressionBand": "late",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Read the black flag terms aloud before negotiations start.",
+              "outcome": "council hall lose the comfort of private meanings. The table becomes tense enough to be useful.",
+              "hopeChange": 3,
+              "trustChange": 6,
+              "chaosChange": 1,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Verify the black flag claim through neutral witnesses.",
+              "outcome": "The process irritates every faction equally. That is the first fair thing they have shared today.",
+              "hopeChange": 2,
+              "trustChange": 5,
+              "chaosChange": -4,
+              "humanityChange": 2
+            },
+            {
+              "id": "c",
+              "text": "Give the council hall seats at the table, not petitions.",
+              "outcome": "The room becomes harder to manage and harder to dismiss. The agreement grows teeth.",
+              "hopeChange": 3,
+              "trustChange": 8,
+              "chaosChange": -1,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Force a deadline around the black flag.",
+              "outcome": "The deadline produces signatures. It also leaves bruises under the ink.",
+              "hopeChange": 5,
+              "trustChange": -4,
+              "chaosChange": 3,
+              "humanityChange": -2
+            },
+            {
+              "id": "e",
+              "text": "Trade the black flag concession for a private guarantee.",
+              "outcome": "You secure one fragile promise by making another person wonder what was sold out of sight.",
+              "hopeChange": 4,
+              "trustChange": -6,
+              "chaosChange": 1,
+              "humanityChange": -4
+            },
+            {
+              "id": "f",
+              "text": "Suspend talks until the council hall admit the real grievance.",
+              "outcome": "The pause nearly breaks the meeting. Then someone finally says the unsayable thing.",
+              "hopeChange": -2,
+              "trustChange": 4,
+              "chaosChange": -3,
+              "humanityChange": 3
+            }
+          ],
+          "imageKeywords": [
+            "shelter leadership vote",
+            "shelter vote",
+            "leadership vote",
+            "vote",
+            "council",
+            "ballots",
+            "governance"
+          ]
+        },
+        {
+          "id": "diplomat-019",
+          "title": "Currency of Rain",
+          "setting": "A drought council proposes water tokens backed by future rainfall. Farmers call it fraud; guards call it order; children are already trading tokens like toys.",
+          "futureMsg": "A promise can feed a market before it fills a cup. You had to decide when hope became counterfeit.",
+          "imageUrl": "/images/backgrounds/weather-hidden-loyalties.png",
+          "progressionBand": "any",
+          "weight": 1,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Read the water tokens terms aloud before negotiations start.",
+              "outcome": "drought council lose the comfort of private meanings. The table becomes tense enough to be useful.",
+              "hopeChange": 3,
+              "trustChange": 6,
+              "chaosChange": 1,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Verify the water tokens claim through neutral witnesses.",
+              "outcome": "The process irritates every faction equally. That is the first fair thing they have shared today.",
+              "hopeChange": 2,
+              "trustChange": 5,
+              "chaosChange": -4,
+              "humanityChange": 2
+            },
+            {
+              "id": "c",
+              "text": "Give the drought council seats at the table, not petitions.",
+              "outcome": "The room becomes harder to manage and harder to dismiss. The agreement grows teeth.",
+              "hopeChange": 3,
+              "trustChange": 8,
+              "chaosChange": -1,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Force a deadline around the water tokens.",
+              "outcome": "The deadline produces signatures. It also leaves bruises under the ink.",
+              "hopeChange": 5,
+              "trustChange": -4,
+              "chaosChange": 3,
+              "humanityChange": -2
+            },
+            {
+              "id": "e",
+              "text": "Trade the water tokens concession for a private guarantee.",
+              "outcome": "You secure one fragile promise by making another person wonder what was sold out of sight.",
+              "hopeChange": 4,
+              "trustChange": -6,
+              "chaosChange": 1,
+              "humanityChange": -4
+            },
+            {
+              "id": "f",
+              "text": "Suspend talks until the drought council admit the real grievance.",
+              "outcome": "The pause nearly breaks the meeting. Then someone finally says the unsayable thing.",
+              "hopeChange": -2,
+              "trustChange": 4,
+              "chaosChange": -3,
+              "humanityChange": 3
+            }
+          ],
+          "imageKeywords": [
+            "weather hidden loyalties",
+            "weather disaster",
+            "hidden loyalties",
+            "storm",
+            "mountain storm",
+            "flash flood",
+            "forced shelter"
+          ]
+        },
+        {
+          "id": "diplomat-020",
+          "title": "The Last Interpreter",
+          "setting": "The only interpreter between two refugee groups is accused of changing one word: surrender into shelter. Both groups are armed, exhausted, and watching your mouth for proof language can still be trusted.",
+          "futureMsg": "One word stood between a gate and a grave. You learned that translation is not neutral when everyone is bleeding.",
+          "imageUrl": "/images/backgrounds/misinformation-radio-room.png",
+          "progressionBand": "any",
+          "weight": 1,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Read the interpreter's slate terms aloud before negotiations start.",
+              "outcome": "refugee groups lose the comfort of private meanings. The table becomes tense enough to be useful.",
+              "hopeChange": 3,
+              "trustChange": 6,
+              "chaosChange": 1,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Verify the interpreter's slate claim through neutral witnesses.",
+              "outcome": "The process irritates every faction equally. That is the first fair thing they have shared today.",
+              "hopeChange": 2,
+              "trustChange": 5,
+              "chaosChange": -4,
+              "humanityChange": 2
+            },
+            {
+              "id": "c",
+              "text": "Give the refugee groups seats at the table, not petitions.",
+              "outcome": "The room becomes harder to manage and harder to dismiss. The agreement grows teeth.",
+              "hopeChange": 3,
+              "trustChange": 8,
+              "chaosChange": -1,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Force a deadline around the interpreter's slate.",
+              "outcome": "The deadline produces signatures. It also leaves bruises under the ink.",
+              "hopeChange": 5,
+              "trustChange": -4,
+              "chaosChange": 3,
+              "humanityChange": -2
+            },
+            {
+              "id": "e",
+              "text": "Trade the interpreter's slate concession for a private guarantee.",
+              "outcome": "You secure one fragile promise by making another person wonder what was sold out of sight.",
+              "hopeChange": 4,
+              "trustChange": -6,
+              "chaosChange": 1,
+              "humanityChange": -4
+            },
+            {
+              "id": "f",
+              "text": "Suspend talks until the refugee groups admit the real grievance.",
+              "outcome": "The pause nearly breaks the meeting. Then someone finally says the unsayable thing.",
+              "hopeChange": -2,
+              "trustChange": 4,
+              "chaosChange": -3,
+              "humanityChange": 3
+            }
+          ],
+          "imageKeywords": [
+            "misinformation radio room",
+            "misinformation",
+            "radio room",
+            "radio",
+            "broadcast",
+            "signal",
+            "false warning",
+            "accused broadcaster"
           ]
         }
       ]

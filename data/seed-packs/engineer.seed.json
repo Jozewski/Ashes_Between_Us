@@ -1,6 +1,6 @@
 {
-  "packId": "engineer-v3",
-  "version": "3.0.0",
+  "packId": "engineer-v4",
+  "version": "4.0.0",
   "avatars": [
     {
       "avatarId": "engineer",
@@ -10,7 +10,7 @@
           "title": "The Substation That Dreamed in Birds",
           "setting": "A dead substation wakes whenever a flock lands on the wires, blinking power through the district in wingbeat pulses. The pattern could restart the water pumps or fry every battery your settlement owns.",
           "futureMsg": "Future-you says the grid was not broken; it was improvising. The danger was assuming old machines wanted old answers.",
-          "imageUrl": "/images/backgrounds/desert-highway.png",
+          "imageUrl": "/images/scenarios/engineer/avatar-engineer-last-working-generator.png",
           "progressionBand": "early",
           "weight": 3,
           "choices": [
@@ -68,6 +68,11 @@
               "chaosChange": -2,
               "humanityChange": -4
             }
+          ],
+          "imageKeywords": [
+            "last working generator",
+            "generator",
+            "power failure"
           ]
         },
         {
@@ -75,7 +80,7 @@
           "title": "Raincatcher With Teeth",
           "setting": "A rooftop raincatcher assembled by children works too well, pulling clouds toward the settlement with a tower of foil and prayer flags. The cisterns overflow while nearby farms dry under a ring of clear sky.",
           "futureMsg": "Future-you warns that every miracle has a watershed. Water hoarded by physics is still hoarded water.",
-          "imageUrl": "/images/backgrounds/bunker.png",
+          "imageUrl": "/images/scenarios/engineer/avatar-engineer-failing-water-grid.png",
           "progressionBand": "early",
           "weight": 2,
           "choices": [
@@ -133,6 +138,11 @@
               "chaosChange": 4,
               "humanityChange": -4
             }
+          ],
+          "imageKeywords": [
+            "failing water grid",
+            "water grid",
+            "water system"
           ]
         },
         {
@@ -140,7 +150,7 @@
           "title": "The Bridge Made of Buses",
           "setting": "A flood has swallowed the old bridge, but a chain of abandoned buses can be welded into a crossing before the river rises again. Every bus contains personal belongings from evacuation day, and one still holds locked passengers.",
           "futureMsg": "Future-you says a bridge is never just metal over water. It is a promise about who gets carried across.",
-          "imageUrl": "/images/backgrounds/forest-safe-zone.png",
+          "imageUrl": "/images/scenarios/engineer/avatar-engineer-bridge-restoration-project.png",
           "progressionBand": "mid",
           "weight": 2,
           "choices": [
@@ -198,6 +208,12 @@
               "chaosChange": 0,
               "humanityChange": -2
             }
+          ],
+          "imageKeywords": [
+            "bridge restoration project",
+            "bridge restoration",
+            "bridge repair",
+            "restoration project"
           ]
         },
         {
@@ -205,7 +221,7 @@
           "title": "The Elevator City",
           "setting": "A high-rise community survives by operating one freight elevator between gardens, dormitories, and a roof beacon. The counterweight cable is fraying. You can repair it, replace it, or redesign the building around its failure.",
           "futureMsg": "Future-you remembers the elevator because everyone called it a machine until it stopped. Then they admitted it was a spine.",
-          "imageUrl": "/images/backgrounds/weather-hidden-loyalties.png",
+          "imageUrl": "/images/scenarios/engineer/avatar-engineer-shelter-leadership-vote.png",
           "progressionBand": "mid",
           "weight": 3,
           "choices": [
@@ -263,6 +279,15 @@
               "chaosChange": -1,
               "humanityChange": -5
             }
+          ],
+          "imageKeywords": [
+            "shelter leadership vote",
+            "shelter vote",
+            "leadership vote",
+            "vote",
+            "council",
+            "ballots",
+            "governance"
           ]
         },
         {
@@ -270,7 +295,7 @@
           "title": "Signal Under the Dam",
           "setting": "An old hydroelectric dam transmits a repeating knock through its maintenance pipes. The turbines are dry, yet the rhythm answers questions tapped in Morse. Below the spillway, pressure gauges twitch toward impossible values.",
           "futureMsg": "Future-you says the dam was not haunted by water. It was haunted by choices still upstream.",
-          "imageUrl": "/images/endings/ending-balanced-future.png",
+          "imageUrl": "/images/scenarios/engineer/avatar-engineer-sabotaged-infrastructure-repair.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [
@@ -328,6 +353,15 @@
               "chaosChange": 5,
               "humanityChange": 5
             }
+          ],
+          "imageKeywords": [
+            "sabotaged infrastructure repair",
+            "sabotaged infrastructure",
+            "infrastructure repair",
+            "repair site",
+            "aqueduct repair",
+            "floodgate repair",
+            "damaged machinery"
           ]
         },
         {
@@ -335,7 +369,7 @@
           "title": "The Garden of Spare Parts",
           "setting": "A commune grows vegetables around piles of sorted components, claiming machines sprout better when buried beside beans. Then a crop of copper vines begins conducting low voltage through the soil, lighting roots like city streets.",
           "futureMsg": "Future-you says rebuilding was never cleanly divided between nature and invention. The question was whether you could design with the living, not over it.",
-          "imageUrl": "/images/backgrounds/refugee-border-crossing.png",
+          "imageUrl": "/images/scenarios/engineer/avatar-engineer-unclear-salvage-claim.png",
           "progressionBand": "any",
           "weight": 2,
           "choices": [
@@ -393,6 +427,15 @@
               "chaosChange": 7,
               "humanityChange": 3
             }
+          ],
+          "imageKeywords": [
+            "unclear salvage claim",
+            "salvage claim",
+            "unclear claim",
+            "salvage yard",
+            "resource claim",
+            "scrap",
+            "ownership dispute"
           ]
         },
         {
@@ -400,7 +443,7 @@
           "title": "Battery Choir",
           "setting": "A storage room of mismatched batteries emits harmony when arranged by voltage. The chord calms people nearby and extends charge life, but one dissonant cell whispers names whenever you stand alone.",
           "futureMsg": "Future-you warns that efficiency can sound holy when everyone is desperate for order. Listen, but do not worship the system.",
-          "imageUrl": "/images/backgrounds/limited-evacuation-convoy.png",
+          "imageUrl": "/images/scenarios/engineer/avatar-engineer-damaged-solar-array.png",
           "progressionBand": "mid",
           "weight": 2,
           "choices": [
@@ -458,6 +501,11 @@
               "chaosChange": 9,
               "humanityChange": -2
             }
+          ],
+          "imageKeywords": [
+            "damaged solar array",
+            "solar array",
+            "solar panels"
           ]
         },
         {
@@ -465,7 +513,7 @@
           "title": "The Clockwork Orchard Gate",
           "setting": "An orchard settlement has a gate operated by a pre-collapse clock mechanism. It opens only at prime-numbered minutes, trapping workers outside during raids and locking raiders inside at inconvenient miracles.",
           "futureMsg": "Future-you says not every flaw should be flattened. Some machines defend through strangeness, if people know how to dance with them.",
-          "imageUrl": "/images/backgrounds/contested-resource-hearing.png",
+          "imageUrl": "/images/scenarios/engineer/avatar-engineer-contested-resource-hearing.png",
           "progressionBand": "any",
           "weight": 2,
           "choices": [
@@ -523,6 +571,15 @@
               "chaosChange": -4,
               "humanityChange": 7
             }
+          ],
+          "imageKeywords": [
+            "contested resource hearing",
+            "resource hearing",
+            "public hearing",
+            "ration hearing",
+            "water rights hearing",
+            "resource dispute",
+            "council hearing"
           ]
         },
         {
@@ -530,7 +587,7 @@
           "title": "The Furnace That Wants Stories",
           "setting": "A ceramic furnace in a rail depot burns without fuel whenever someone tells it a true memory. It could fire bricks for housing or consume the settlement’s most private grief one confession at a time.",
           "futureMsg": "Future-you says rebuilding with memory is dangerous. Buildings remember what paid for their walls.",
-          "imageUrl": "/images/endings/ending-chaotic-future.png",
+          "imageUrl": "/images/scenarios/engineer/avatar-engineer-reactor-cooling-failure.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [
@@ -588,6 +645,12 @@
               "chaosChange": 2,
               "humanityChange": -5
             }
+          ],
+          "imageKeywords": [
+            "reactor cooling failure",
+            "reactor cooling",
+            "cooling failure",
+            "reactor"
           ]
         },
         {
@@ -595,7 +658,7 @@
           "title": "Night Launch at the Weather Balloon Yard",
           "setting": "Behind a school, dozens of weather balloons survive in sealed crates. With radios attached, they could map radiation plumes, carry messages, or draw raider fire into the open. Helium is limited and the wind is impatient.",
           "futureMsg": "Future-you remembers the sky filling with small moons. What you lifted into the air came back as a future you could not quite predict.",
-          "imageUrl": "/images/endings/ending-broken-future.png",
+          "imageUrl": "/images/scenarios/engineer/avatar-engineer-misinformation-radio-room.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [
@@ -653,6 +716,745 @@
               "chaosChange": -1,
               "humanityChange": -4
             }
+          ],
+          "imageKeywords": [
+            "misinformation radio room",
+            "misinformation",
+            "radio room",
+            "radio",
+            "broadcast",
+            "signal",
+            "false warning",
+            "accused broadcaster"
+          ]
+        },
+        {
+          "id": "engineer-011",
+          "title": "The Semaphore Pump",
+          "setting": "The water pump runs only when children on the roof wave colored panels in the correct sequence. A storm is bending the mast, and neighboring camps accuse you of teaching the children a private code.",
+          "futureMsg": "The pump was never just machinery. It was labor, trust, and small arms held up against weather.",
+          "imageUrl": "/images/backgrounds/radio-tower.png",
+          "progressionBand": "early",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Publish the semaphore panels failure path before repairs begin.",
+              "outcome": "roof children understand the danger and stop treating the machine like magic. Work starts with fewer lies.",
+              "hopeChange": 3,
+              "trustChange": 6,
+              "chaosChange": -1,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Instrument the semaphore panels and wait for clean readings.",
+              "outcome": "The gauges give you a better answer than instinct. The cost is another hour of thirsty anger.",
+              "hopeChange": 2,
+              "trustChange": 4,
+              "chaosChange": -5,
+              "humanityChange": 1
+            },
+            {
+              "id": "c",
+              "text": "Train the roof children on the repair while you work.",
+              "outcome": "The fix takes longer, but the next failure will have more than one pair of hands.",
+              "hopeChange": 4,
+              "trustChange": 7,
+              "chaosChange": -3,
+              "humanityChange": 4
+            },
+            {
+              "id": "d",
+              "text": "Bypass the semaphore panels safeguards and restore service.",
+              "outcome": "Power returns fast enough to feel miraculous. The warning lights keep blinking after everyone cheers.",
+              "hopeChange": 7,
+              "trustChange": -4,
+              "chaosChange": 6,
+              "humanityChange": -2
+            },
+            {
+              "id": "e",
+              "text": "Route the semaphore panels output to your settlement first.",
+              "outcome": "Your grid stabilizes. Neighboring camps read the meters and understand the insult perfectly.",
+              "hopeChange": 5,
+              "trustChange": -6,
+              "chaosChange": 1,
+              "humanityChange": -5
+            },
+            {
+              "id": "f",
+              "text": "Shut the system down until the roof children agree on priority.",
+              "outcome": "The blackout prevents a worse failure. It also makes every argument louder in the dark.",
+              "hopeChange": -4,
+              "trustChange": 3,
+              "chaosChange": -4,
+              "humanityChange": 1
+            }
+          ],
+          "imageKeywords": [
+            "radio tower"
+          ]
+        },
+        {
+          "id": "engineer-012",
+          "title": "The Bridge That Counts Weight",
+          "setting": "A repaired bridge flashes numbers under each traveler, predicting whether the next crossing will hold. When it marks an elder as too heavy and an ammunition cart as safe, the line goes silent.",
+          "futureMsg": "The bridge measured force, not worth. People needed you to prove the difference before the numbers became law.",
+          "imageUrl": "/images/backgrounds/failed-rescue-witnesses.png",
+          "progressionBand": "early",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Publish the weight display failure path before repairs begin.",
+              "outcome": "bridge line understand the danger and stop treating the machine like magic. Work starts with fewer lies.",
+              "hopeChange": 3,
+              "trustChange": 6,
+              "chaosChange": -1,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Instrument the weight display and wait for clean readings.",
+              "outcome": "The gauges give you a better answer than instinct. The cost is another hour of thirsty anger.",
+              "hopeChange": 2,
+              "trustChange": 4,
+              "chaosChange": -5,
+              "humanityChange": 1
+            },
+            {
+              "id": "c",
+              "text": "Train the bridge line on the repair while you work.",
+              "outcome": "The fix takes longer, but the next failure will have more than one pair of hands.",
+              "hopeChange": 4,
+              "trustChange": 7,
+              "chaosChange": -3,
+              "humanityChange": 4
+            },
+            {
+              "id": "d",
+              "text": "Bypass the weight display safeguards and restore service.",
+              "outcome": "Power returns fast enough to feel miraculous. The warning lights keep blinking after everyone cheers.",
+              "hopeChange": 7,
+              "trustChange": -4,
+              "chaosChange": 6,
+              "humanityChange": -2
+            },
+            {
+              "id": "e",
+              "text": "Route the weight display output to your settlement first.",
+              "outcome": "Your grid stabilizes. Neighboring camps read the meters and understand the insult perfectly.",
+              "hopeChange": 5,
+              "trustChange": -6,
+              "chaosChange": 1,
+              "humanityChange": -5
+            },
+            {
+              "id": "f",
+              "text": "Shut the system down until the bridge line agree on priority.",
+              "outcome": "The blackout prevents a worse failure. It also makes every argument louder in the dark.",
+              "hopeChange": -4,
+              "trustChange": 3,
+              "chaosChange": -4,
+              "humanityChange": 1
+            }
+          ],
+          "imageKeywords": [
+            "failed rescue witnesses",
+            "failed rescue",
+            "rescue witnesses",
+            "collapsed rescue",
+            "witnesses",
+            "overpass rescue",
+            "rescue scene"
+          ]
+        },
+        {
+          "id": "engineer-013",
+          "title": "The Solar Choir Strike",
+          "setting": "Your solar array hums in harmonics that make workers nauseous unless they sing counter-notes. The crew threatens to stop maintenance unless you admit the machine is hurting them.",
+          "futureMsg": "A system can be efficient and still cruel to the bodies keeping it alive. The hum told you where the design had lied.",
+          "imageUrl": "/images/backgrounds/sabotaged-infrastructure-repair.png",
+          "progressionBand": "mid",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Publish the solar array failure path before repairs begin.",
+              "outcome": "maintenance crew understand the danger and stop treating the machine like magic. Work starts with fewer lies.",
+              "hopeChange": 3,
+              "trustChange": 6,
+              "chaosChange": -1,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Instrument the solar array and wait for clean readings.",
+              "outcome": "The gauges give you a better answer than instinct. The cost is another hour of thirsty anger.",
+              "hopeChange": 2,
+              "trustChange": 4,
+              "chaosChange": -5,
+              "humanityChange": 1
+            },
+            {
+              "id": "c",
+              "text": "Train the maintenance crew on the repair while you work.",
+              "outcome": "The fix takes longer, but the next failure will have more than one pair of hands.",
+              "hopeChange": 4,
+              "trustChange": 7,
+              "chaosChange": -3,
+              "humanityChange": 4
+            },
+            {
+              "id": "d",
+              "text": "Bypass the solar array safeguards and restore service.",
+              "outcome": "Power returns fast enough to feel miraculous. The warning lights keep blinking after everyone cheers.",
+              "hopeChange": 7,
+              "trustChange": -4,
+              "chaosChange": 6,
+              "humanityChange": -2
+            },
+            {
+              "id": "e",
+              "text": "Route the solar array output to your settlement first.",
+              "outcome": "Your grid stabilizes. Neighboring camps read the meters and understand the insult perfectly.",
+              "hopeChange": 5,
+              "trustChange": -6,
+              "chaosChange": 1,
+              "humanityChange": -5
+            },
+            {
+              "id": "f",
+              "text": "Shut the system down until the maintenance crew agree on priority.",
+              "outcome": "The blackout prevents a worse failure. It also makes every argument louder in the dark.",
+              "hopeChange": -4,
+              "trustChange": 3,
+              "chaosChange": -4,
+              "humanityChange": 1
+            }
+          ],
+          "imageKeywords": [
+            "sabotaged infrastructure repair",
+            "sabotaged infrastructure",
+            "infrastructure repair",
+            "repair site",
+            "aqueduct repair",
+            "floodgate repair",
+            "damaged machinery"
+          ]
+        },
+        {
+          "id": "engineer-014",
+          "title": "Floodgate 9",
+          "setting": "Floodgate 9 is jammed half-open, sparing one settlement from drought while drowning another's seed vault. The control wheel turns only when both town seals are pressed into its rusted faceplate.",
+          "futureMsg": "Water made the argument honest: nobody could be saved by pretending the other valley was imaginary.",
+          "imageUrl": "/images/backgrounds/contested-resource-hearing.png",
+          "progressionBand": "mid",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Publish the control wheel failure path before repairs begin.",
+              "outcome": "river towns understand the danger and stop treating the machine like magic. Work starts with fewer lies.",
+              "hopeChange": 3,
+              "trustChange": 6,
+              "chaosChange": -1,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Instrument the control wheel and wait for clean readings.",
+              "outcome": "The gauges give you a better answer than instinct. The cost is another hour of thirsty anger.",
+              "hopeChange": 2,
+              "trustChange": 4,
+              "chaosChange": -5,
+              "humanityChange": 1
+            },
+            {
+              "id": "c",
+              "text": "Train the river towns on the repair while you work.",
+              "outcome": "The fix takes longer, but the next failure will have more than one pair of hands.",
+              "hopeChange": 4,
+              "trustChange": 7,
+              "chaosChange": -3,
+              "humanityChange": 4
+            },
+            {
+              "id": "d",
+              "text": "Bypass the control wheel safeguards and restore service.",
+              "outcome": "Power returns fast enough to feel miraculous. The warning lights keep blinking after everyone cheers.",
+              "hopeChange": 7,
+              "trustChange": -4,
+              "chaosChange": 6,
+              "humanityChange": -2
+            },
+            {
+              "id": "e",
+              "text": "Route the control wheel output to your settlement first.",
+              "outcome": "Your grid stabilizes. Neighboring camps read the meters and understand the insult perfectly.",
+              "hopeChange": 5,
+              "trustChange": -6,
+              "chaosChange": 1,
+              "humanityChange": -5
+            },
+            {
+              "id": "f",
+              "text": "Shut the system down until the river towns agree on priority.",
+              "outcome": "The blackout prevents a worse failure. It also makes every argument louder in the dark.",
+              "hopeChange": -4,
+              "trustChange": 3,
+              "chaosChange": -4,
+              "humanityChange": 1
+            }
+          ],
+          "imageKeywords": [
+            "contested resource hearing",
+            "resource hearing",
+            "public hearing",
+            "ration hearing",
+            "water rights hearing",
+            "resource dispute",
+            "council hearing"
+          ]
+        },
+        {
+          "id": "engineer-015",
+          "title": "The Elevator Oath",
+          "setting": "An apartment tower elevator still runs on a battery you cannot replace. The top floors shelter elders; the basement stores medicine; the middle floors want equal turns before the cable frays.",
+          "futureMsg": "Vertical distance became politics that day. You were not fixing an elevator; you were deciding whose stairs counted.",
+          "imageUrl": "/images/backgrounds/bunker.png",
+          "progressionBand": "mid",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Publish the elevator battery failure path before repairs begin.",
+              "outcome": "tower residents understand the danger and stop treating the machine like magic. Work starts with fewer lies.",
+              "hopeChange": 3,
+              "trustChange": 6,
+              "chaosChange": -1,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Instrument the elevator battery and wait for clean readings.",
+              "outcome": "The gauges give you a better answer than instinct. The cost is another hour of thirsty anger.",
+              "hopeChange": 2,
+              "trustChange": 4,
+              "chaosChange": -5,
+              "humanityChange": 1
+            },
+            {
+              "id": "c",
+              "text": "Train the tower residents on the repair while you work.",
+              "outcome": "The fix takes longer, but the next failure will have more than one pair of hands.",
+              "hopeChange": 4,
+              "trustChange": 7,
+              "chaosChange": -3,
+              "humanityChange": 4
+            },
+            {
+              "id": "d",
+              "text": "Bypass the elevator battery safeguards and restore service.",
+              "outcome": "Power returns fast enough to feel miraculous. The warning lights keep blinking after everyone cheers.",
+              "hopeChange": 7,
+              "trustChange": -4,
+              "chaosChange": 6,
+              "humanityChange": -2
+            },
+            {
+              "id": "e",
+              "text": "Route the elevator battery output to your settlement first.",
+              "outcome": "Your grid stabilizes. Neighboring camps read the meters and understand the insult perfectly.",
+              "hopeChange": 5,
+              "trustChange": -6,
+              "chaosChange": 1,
+              "humanityChange": -5
+            },
+            {
+              "id": "f",
+              "text": "Shut the system down until the tower residents agree on priority.",
+              "outcome": "The blackout prevents a worse failure. It also makes every argument louder in the dark.",
+              "hopeChange": -4,
+              "trustChange": 3,
+              "chaosChange": -4,
+              "humanityChange": 1
+            }
+          ],
+          "imageKeywords": [
+            "bunker"
+          ]
+        },
+        {
+          "id": "engineer-016",
+          "title": "The Mill That Grinds Bullets",
+          "setting": "An old grain mill can be tuned to grind wheat or cast ammunition, but not both before winter. Farmers and guards arrive with ledgers proving they are each already losing.",
+          "futureMsg": "The mill did not choose bread or bullets. People did, then blamed the gears because iron cannot object.",
+          "imageUrl": "/images/backgrounds/threatened-fog-market.png",
+          "progressionBand": "late",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Publish the grain mill failure path before repairs begin.",
+              "outcome": "farmers and guards understand the danger and stop treating the machine like magic. Work starts with fewer lies.",
+              "hopeChange": 3,
+              "trustChange": 6,
+              "chaosChange": -1,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Instrument the grain mill and wait for clean readings.",
+              "outcome": "The gauges give you a better answer than instinct. The cost is another hour of thirsty anger.",
+              "hopeChange": 2,
+              "trustChange": 4,
+              "chaosChange": -5,
+              "humanityChange": 1
+            },
+            {
+              "id": "c",
+              "text": "Train the farmers and guards on the repair while you work.",
+              "outcome": "The fix takes longer, but the next failure will have more than one pair of hands.",
+              "hopeChange": 4,
+              "trustChange": 7,
+              "chaosChange": -3,
+              "humanityChange": 4
+            },
+            {
+              "id": "d",
+              "text": "Bypass the grain mill safeguards and restore service.",
+              "outcome": "Power returns fast enough to feel miraculous. The warning lights keep blinking after everyone cheers.",
+              "hopeChange": 7,
+              "trustChange": -4,
+              "chaosChange": 6,
+              "humanityChange": -2
+            },
+            {
+              "id": "e",
+              "text": "Route the grain mill output to your settlement first.",
+              "outcome": "Your grid stabilizes. Neighboring camps read the meters and understand the insult perfectly.",
+              "hopeChange": 5,
+              "trustChange": -6,
+              "chaosChange": 1,
+              "humanityChange": -5
+            },
+            {
+              "id": "f",
+              "text": "Shut the system down until the farmers and guards agree on priority.",
+              "outcome": "The blackout prevents a worse failure. It also makes every argument louder in the dark.",
+              "hopeChange": -4,
+              "trustChange": 3,
+              "chaosChange": -4,
+              "humanityChange": 1
+            }
+          ],
+          "imageKeywords": [
+            "threatened fog market",
+            "fog market",
+            "threatened market",
+            "market",
+            "barter market",
+            "black market",
+            "traders"
+          ]
+        },
+        {
+          "id": "engineer-017",
+          "title": "The Reactor's Apology",
+          "setting": "A research reactor emits a harmless blue glow spelling maintenance errors made decades ago. The display reveals a shortcut that could restore power, and a burial chamber under the coolant pool.",
+          "futureMsg": "The reactor apologized in light because nobody living had signed the mistake. You still had to answer it.",
+          "imageUrl": "/images/backgrounds/public-reckoning-ritual.png",
+          "progressionBand": "late",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Publish the coolant display failure path before repairs begin.",
+              "outcome": "reactor crew understand the danger and stop treating the machine like magic. Work starts with fewer lies.",
+              "hopeChange": 3,
+              "trustChange": 6,
+              "chaosChange": -1,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Instrument the coolant display and wait for clean readings.",
+              "outcome": "The gauges give you a better answer than instinct. The cost is another hour of thirsty anger.",
+              "hopeChange": 2,
+              "trustChange": 4,
+              "chaosChange": -5,
+              "humanityChange": 1
+            },
+            {
+              "id": "c",
+              "text": "Train the reactor crew on the repair while you work.",
+              "outcome": "The fix takes longer, but the next failure will have more than one pair of hands.",
+              "hopeChange": 4,
+              "trustChange": 7,
+              "chaosChange": -3,
+              "humanityChange": 4
+            },
+            {
+              "id": "d",
+              "text": "Bypass the coolant display safeguards and restore service.",
+              "outcome": "Power returns fast enough to feel miraculous. The warning lights keep blinking after everyone cheers.",
+              "hopeChange": 7,
+              "trustChange": -4,
+              "chaosChange": 6,
+              "humanityChange": -2
+            },
+            {
+              "id": "e",
+              "text": "Route the coolant display output to your settlement first.",
+              "outcome": "Your grid stabilizes. Neighboring camps read the meters and understand the insult perfectly.",
+              "hopeChange": 5,
+              "trustChange": -6,
+              "chaosChange": 1,
+              "humanityChange": -5
+            },
+            {
+              "id": "f",
+              "text": "Shut the system down until the reactor crew agree on priority.",
+              "outcome": "The blackout prevents a worse failure. It also makes every argument louder in the dark.",
+              "hopeChange": -4,
+              "trustChange": 3,
+              "chaosChange": -4,
+              "humanityChange": 1
+            }
+          ],
+          "imageKeywords": [
+            "public reckoning ritual",
+            "public reckoning",
+            "ritual",
+            "trial",
+            "oath ceremony",
+            "public punishment",
+            "reckoning"
+          ]
+        },
+        {
+          "id": "engineer-018",
+          "title": "The Battery Court",
+          "setting": "Every camp sends one battery to your charging court. A hidden cell is draining the others overnight, and accusing the wrong envoy could collapse the only power-sharing agreement left.",
+          "futureMsg": "Electricity made diplomacy visible: charge in, charge out, theft measured in volts instead of rumors.",
+          "imageUrl": "/images/backgrounds/shelter-leadership-vote.png",
+          "progressionBand": "late",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Publish the charging court failure path before repairs begin.",
+              "outcome": "camp envoys understand the danger and stop treating the machine like magic. Work starts with fewer lies.",
+              "hopeChange": 3,
+              "trustChange": 6,
+              "chaosChange": -1,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Instrument the charging court and wait for clean readings.",
+              "outcome": "The gauges give you a better answer than instinct. The cost is another hour of thirsty anger.",
+              "hopeChange": 2,
+              "trustChange": 4,
+              "chaosChange": -5,
+              "humanityChange": 1
+            },
+            {
+              "id": "c",
+              "text": "Train the camp envoys on the repair while you work.",
+              "outcome": "The fix takes longer, but the next failure will have more than one pair of hands.",
+              "hopeChange": 4,
+              "trustChange": 7,
+              "chaosChange": -3,
+              "humanityChange": 4
+            },
+            {
+              "id": "d",
+              "text": "Bypass the charging court safeguards and restore service.",
+              "outcome": "Power returns fast enough to feel miraculous. The warning lights keep blinking after everyone cheers.",
+              "hopeChange": 7,
+              "trustChange": -4,
+              "chaosChange": 6,
+              "humanityChange": -2
+            },
+            {
+              "id": "e",
+              "text": "Route the charging court output to your settlement first.",
+              "outcome": "Your grid stabilizes. Neighboring camps read the meters and understand the insult perfectly.",
+              "hopeChange": 5,
+              "trustChange": -6,
+              "chaosChange": 1,
+              "humanityChange": -5
+            },
+            {
+              "id": "f",
+              "text": "Shut the system down until the camp envoys agree on priority.",
+              "outcome": "The blackout prevents a worse failure. It also makes every argument louder in the dark.",
+              "hopeChange": -4,
+              "trustChange": 3,
+              "chaosChange": -4,
+              "humanityChange": 1
+            }
+          ],
+          "imageKeywords": [
+            "shelter leadership vote",
+            "shelter vote",
+            "leadership vote",
+            "vote",
+            "council",
+            "ballots",
+            "governance"
+          ]
+        },
+        {
+          "id": "engineer-019",
+          "title": "The Crane Above Mercy Road",
+          "setting": "A construction crane can lift a collapsed clinic wall or swing a barricade across the road before raiders arrive. The operator will obey whoever climbs the ladder first.",
+          "futureMsg": "Height offered control, not wisdom. From the crane, every need looked small until you named it.",
+          "imageUrl": "/images/backgrounds/quarantine-triage-dispute.png",
+          "progressionBand": "any",
+          "weight": 1,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Publish the tower crane failure path before repairs begin.",
+              "outcome": "clinic crew understand the danger and stop treating the machine like magic. Work starts with fewer lies.",
+              "hopeChange": 3,
+              "trustChange": 6,
+              "chaosChange": -1,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Instrument the tower crane and wait for clean readings.",
+              "outcome": "The gauges give you a better answer than instinct. The cost is another hour of thirsty anger.",
+              "hopeChange": 2,
+              "trustChange": 4,
+              "chaosChange": -5,
+              "humanityChange": 1
+            },
+            {
+              "id": "c",
+              "text": "Train the clinic crew on the repair while you work.",
+              "outcome": "The fix takes longer, but the next failure will have more than one pair of hands.",
+              "hopeChange": 4,
+              "trustChange": 7,
+              "chaosChange": -3,
+              "humanityChange": 4
+            },
+            {
+              "id": "d",
+              "text": "Bypass the tower crane safeguards and restore service.",
+              "outcome": "Power returns fast enough to feel miraculous. The warning lights keep blinking after everyone cheers.",
+              "hopeChange": 7,
+              "trustChange": -4,
+              "chaosChange": 6,
+              "humanityChange": -2
+            },
+            {
+              "id": "e",
+              "text": "Route the tower crane output to your settlement first.",
+              "outcome": "Your grid stabilizes. Neighboring camps read the meters and understand the insult perfectly.",
+              "hopeChange": 5,
+              "trustChange": -6,
+              "chaosChange": 1,
+              "humanityChange": -5
+            },
+            {
+              "id": "f",
+              "text": "Shut the system down until the clinic crew agree on priority.",
+              "outcome": "The blackout prevents a worse failure. It also makes every argument louder in the dark.",
+              "hopeChange": -4,
+              "trustChange": 3,
+              "chaosChange": -4,
+              "humanityChange": 1
+            }
+          ],
+          "imageKeywords": [
+            "quarantine triage dispute",
+            "quarantine",
+            "triage",
+            "clinic",
+            "medical dispute",
+            "infection",
+            "medicine",
+            "ward"
+          ]
+        },
+        {
+          "id": "engineer-020",
+          "title": "The Pipe Organ Alarm",
+          "setting": "A church pipe organ wired into the pressure grid can warn of leaks by chord. Tonight it plays a funeral note under the refugee quarter while the main cistern reads normal.",
+          "futureMsg": "The old instrument knew the system was grieving before the gauges did. You had to decide whether to trust music over numbers.",
+          "imageUrl": "/images/backgrounds/refugee-border-crossing.png",
+          "progressionBand": "any",
+          "weight": 1,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Publish the pipe organ failure path before repairs begin.",
+              "outcome": "refugee quarter understand the danger and stop treating the machine like magic. Work starts with fewer lies.",
+              "hopeChange": 3,
+              "trustChange": 6,
+              "chaosChange": -1,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Instrument the pipe organ and wait for clean readings.",
+              "outcome": "The gauges give you a better answer than instinct. The cost is another hour of thirsty anger.",
+              "hopeChange": 2,
+              "trustChange": 4,
+              "chaosChange": -5,
+              "humanityChange": 1
+            },
+            {
+              "id": "c",
+              "text": "Train the refugee quarter on the repair while you work.",
+              "outcome": "The fix takes longer, but the next failure will have more than one pair of hands.",
+              "hopeChange": 4,
+              "trustChange": 7,
+              "chaosChange": -3,
+              "humanityChange": 4
+            },
+            {
+              "id": "d",
+              "text": "Bypass the pipe organ safeguards and restore service.",
+              "outcome": "Power returns fast enough to feel miraculous. The warning lights keep blinking after everyone cheers.",
+              "hopeChange": 7,
+              "trustChange": -4,
+              "chaosChange": 6,
+              "humanityChange": -2
+            },
+            {
+              "id": "e",
+              "text": "Route the pipe organ output to your settlement first.",
+              "outcome": "Your grid stabilizes. Neighboring camps read the meters and understand the insult perfectly.",
+              "hopeChange": 5,
+              "trustChange": -6,
+              "chaosChange": 1,
+              "humanityChange": -5
+            },
+            {
+              "id": "f",
+              "text": "Shut the system down until the refugee quarter agree on priority.",
+              "outcome": "The blackout prevents a worse failure. It also makes every argument louder in the dark.",
+              "hopeChange": -4,
+              "trustChange": 3,
+              "chaosChange": -4,
+              "humanityChange": 1
+            }
+          ],
+          "imageKeywords": [
+            "refugee border crossing",
+            "refugee border",
+            "border crossing",
+            "refugees",
+            "checkpoint",
+            "guards",
+            "crossing"
           ]
         }
       ]
