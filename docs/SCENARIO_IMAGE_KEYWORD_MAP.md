@@ -1,14 +1,23 @@
 # Scenario Image Keyword Map
 
-Use this file when manually cropping or replacing scenario images.
+Use this file when manually cropping, replacing, or keyword-matching scenario images.
 
-The app associates scenario art by filename/path and by keyword aliases in `lib/imageAssetCatalog.js`. When fixing an image, keep the same path and filename unless you also update `SCENARIO_IMAGES_BY_AVATAR` and `IMAGE_MATCH_ALIASES` in that file.
+The app primarily respects explicit `scenario.imageUrl` values from seeded scenario packs. Keyword aliases still matter for validation, matching, and future maintenance through `lib/imageAssetCatalog.js`. When replacing an image, keep the same path and filename unless you also update `SCENARIO_IMAGES_BY_AVATAR`, keyword aliases, and any seed-pack references.
 
-Cropping rules:
-- Keep the actual scene top visible.
-- Remove any bottom filename/text strip.
+Rendering rules:
+- Compose the important action near the center of the image.
+- Do not rely on text or detail at the top or bottom edge.
+- Remove any filename/text strip.
 - Remove white divider lines or neighboring sheet fragments.
-- Do not leave contact-sheet labels, numbers, or adjacent image edges visible.
+- Do not leave contact-sheet labels, numbers, watermarks, or adjacent image edges visible.
+- Prefer concrete conflict objects that make the scenario readable without captions.
+
+Validation:
+
+```powershell
+node prisma/check-scenario-images.js
+npm run test -- lib\futureSelfService.test.js lib\seedPacks.test.js
+```
 
 ## Scout
 

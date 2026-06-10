@@ -1,198 +1,164 @@
-# Ashes Between Us - Project Roadmap
+# Project Roadmap
 
-Date: 2026-06-03
+Last updated: 2026-06-10
 
-## 1) Vision
+## Vision
 
-Ashes Between Us is a full-stack, choice-driven RPG set after societal collapse. The central mechanic is timeline causality: future versions of the player send warnings, and each decision shifts outcomes, stats, and ending states.
+Ashes Between Us is a choice-driven post-collapse RPG about receiving warnings from a future self and deciding whether to trust, resist, misunderstand, or exploit them. The game should feel polished, imaginative, and morally specific rather than generic survival fiction.
 
-Creative direction:
-- Emotional survival storytelling, not only bleak survival.
-- Tradeoffs between safety, morality, trust, and long-term stability.
-- Multiple possible futures, including hopeful outcomes.
+## Current Release Shape
 
-## 2) Core Gameplay Loop
+Implemented:
 
-1. Player starts a new run.
-2. Future-self transmission appears.
-3. Current scenario is presented.
-4. Player chooses 2 to 3 actions.
-5. Immediate consequence is shown.
-6. Stats are updated.
-7. Choice is persisted.
-8. Later scenarios and ending react to prior decisions.
+- Opening screen with Start Transmission CTA.
+- Avatar selection for six avatars.
+- Seeded per-avatar scenario packs.
+- 10-turn gameplay loop.
+- Six choices per scenario.
+- Four tracked stats: hope, trust, chaos, humanity.
+- Current-run history scoped by `runId`.
+- Player name capture and final story/profile use.
+- Final archive screen with three-column layout.
+- AI/fallback player profile.
+- AI/fallback ending story.
+- Final archive loading state with pulsing timeline fragment.
+- Turn-based scenario audio loop.
+- Ending-state audio.
+- Scenario image matching through explicit image URLs and keyword metadata.
 
-## 3) MVP Scope
+## Design Pillars
 
-Required for first playable release:
-- Landing page
-- Start game flow
-- Scenario and future-message presentation
-- Choice selection with consequence display
-- Stat changes after choices
-- Choice history tracking
-- Basic ending logic
-- Cohesive visual style with generated art assets
+1. **Specific moral pressure**
+   Choices should be concrete, not vague good/evil options.
 
-## 4) Technical Stack
+2. **Avatar identity matters**
+   A Scout scenario should feel different from a Medic scenario before the avatar label is read.
 
-- Next.js App Router
-- React
-- Tailwind CSS
-- Prisma ORM
-- PostgreSQL on Neon
-- GitHub feature-branch workflow
+3. **Future transmissions are interpretable**
+   Warnings should be useful but not always obvious. The final story should explain whether the player listened, misunderstood, or ignored them.
 
-## 5) Ownership and Boundaries
+4. **The final archive is the payoff**
+   The final screen should make the ending feel earned through a personalized story, visible stats, timeline record, and future-self framing.
 
-Frontend owner (feature/frontend-game-ui):
-- app/page.js
-- app/game/page.js
-- app/history/page.js
-- app/globals.css
-- components/*
-- public/images/*
+5. **Fallbacks should still feel authored**
+   Missing OpenAI or database failures should not produce broken or empty screens.
 
-Backend owner (feature/backend-api-prisma):
-- prisma/schema.prisma
-- prisma/seed.js
-- lib/prisma.js
-- app/api/scenarios/route.js
-- app/api/attempts/route.js
-- app/api/history/route.js
+## Near-Term Priorities
 
-Coordination rules:
-- Do not modify files owned by the other contributor without agreement.
-- Keep main branch merge-only through pull requests.
-- Use focused commits and small PRs.
+### 1. Final Archive Polish
 
-## 6) Delivery Timeline
-
-Day 1 targets:
-- Frontend: landing page, game layout, reusable components, mock-data rendering
-- Backend: schema, seed data, scenario route returning live data
-
-Day 2 targets:
-- Frontend: integrate scenarios API, outcome and stats UX, history page
-- Backend: attempts save route, history route, optional ending support
-
-MVP exit criteria:
-- Player can start game, make choices, see consequences and stat movement, and view stored timeline history.
-
-## 7) Build Phases
-
-### Phase A - Foundation Stability
+Status: active
 
 Goals:
-- Clean project structure and consistent local setup
-- Lint baseline passing
 
-Status:
-- Completed
+- Keep all three large-screen columns visually balanced.
+- Ensure final stats, future notes, latest branch, and timeline record have clear hierarchy.
+- Keep future-self image fully visible.
+- Keep final story and beginning story length balanced against the right-column timeline.
 
-### Phase B - Frontend Reliability Without Backend Dependency
+Files:
 
-Goals:
-- API-first behavior with graceful local fallback while API routes are still stubs
-- Full playable loop even when backend is unavailable
+```text
+app/history/page.js
+components/final-results/FinalResultsPanel.jsx
+lib/aiProfileService.js
+lib/aiEndingStoryService.js
+```
 
-Status:
-- In progress
+### 2. Seed Pack Quality
 
-Deliverables:
-- Local fallback save path in game flow
-- Local fallback read path in history flow
-- Small UI hint when local fallback is active
-
-### Phase C - Ending Experience
+Status: active
 
 Goals:
-- Basic ending resolver based on final stat profile
-- Ending summary presented clearly and stored for timeline view
 
-Status:
-- Planned
+- Maintain 20 scenarios per avatar.
+- Keep six polished choices per scenario.
+- Reduce vague or repetitive future transmissions.
+- Keep each scenario paired with a fitting unique image when possible.
+- Use shared background assets only when they genuinely fit the scene.
 
-### Phase D - Accessibility and UX Hardening
+Files:
+
+```text
+data/seed-packs/
+lib/imageAssetCatalog.js
+docs/SCENARIO_IMAGE_KEYWORD_MAP.md
+```
+
+### 3. AI Prompt Guardrails
+
+Status: active
 
 Goals:
-- Keyboard-visible focus states and improved interaction semantics
-- Defensive rendering for partial/missing scenario payloads
 
-Status:
-- Planned
+- Avoid vague final summaries.
+- Keep profile backstory pre-collapse.
+- Make future notes tactical and non-repetitive.
+- Use the player name naturally when present.
+- Explain final score/state through concrete choices.
 
-### Phase E - Visual and Content Polish
+Files:
 
-Goals:
-- Responsive refinement across landing, game, and history
-- Finalized image pack and robust fallback presentation for missing assets
+```text
+lib/aiProfileService.js
+lib/aiEndingStoryService.js
+```
 
-Status:
-- Planned
+### 4. Test Coverage
 
-## 8) API Contracts (Frontend Expectations)
+Status: ongoing
 
-GET /api/scenarios:
-- Returns scenarios with nested choices
+Current useful suites:
 
-POST /api/attempts:
-- Accepts selected choice and resulting stat snapshot
+```powershell
+npm run test -- lib\aiProfileService.test.js lib\aiEndingStoryService.test.js
+npm run test -- lib\scenarioAudioLoop.test.js lib\futureSelfService.test.js
+npm run test
+```
 
-GET /api/history:
-- Returns prior attempts in reverse chronological order
+Next useful tests:
 
-Frontend behavior policy:
-- Use API first.
-- If API unavailable, continue with local fallback so gameplay remains functional.
+- route behavior around Start Transmission, Change avatar, and New Game
+- final archive loading state
+- seeded scenario pack validation beyond counts/images
+- API route fallbacks for profile and ending story
 
-## 9) Data Model Intent
+## Medium-Term Roadmap
 
-Scenario:
-- Narrative frame, setting, future message, optional image, ordered choices
+### Scenario Continuity
 
-Choice:
-- Player action text, outcome text, stat deltas
+Improve "next scenario" selection so it uses the previous choice as narrative context without fully handing scenario authorship to live AI.
 
-Attempt:
-- What player selected, resulting stats, timestamp
+Preferred direction:
 
-## 10) Image Direction and Asset Pack
+- seeded scenario pool remains the source of playable content
+- AI can help select the next best scenario from the authored pool
+- choice history informs selection pressure
+- no repeated scenario images within a run when avoidable
 
-Style direction:
-- Cinematic apocalyptic RPG concept art
-- Detailed environments and dramatic lighting
-- Muted palette with selective warm hopeful accents
-- No text and no logos
+### Final Ending Variants
 
-Initial reusable pack:
-- Backgrounds: ruined city, radio tower, bunker, forest safe zone, desert highway
-- Portraits: survivor self, leader self, broken timeline self, warlord self
-- Icons: supply crate, cracked radio, timeline shard
+Expand local fallback endings so each avatar has richer endings for:
 
-## 11) Risks and Mitigations
+- rebuilding
+- balanced
+- broken
+- chaotic
+- isolation/warlord edge states where applicable
 
-Risk: Backend routes remain unavailable during frontend work.
-Mitigation: Local fallback persistence and API-first swap strategy.
+### Accessibility And QA
 
-Risk: Scope drift across branches.
-Mitigation: Ownership boundaries and PR review checklist tied to owned files.
+Targets:
 
-Risk: Inconsistent visual tone.
-Mitigation: Single shared art direction and curated reusable image pack.
+- verify keyboard flow through avatar selection and choices
+- confirm loading states are readable
+- verify responsive final archive layout
+- run Playwright after route/layout changes
 
-## 12) PR Checklist
+## Maintenance Rules
 
-Before opening PR:
-- Only owned files changed
-- Lint passes locally
-- Screens tested on desktop and mobile
-- Keyboard flow tested for primary interactions
-- Empty and fallback states validated
-
-## 13) Next Action Queue
-
-1. Finalize and test Phase B fallback behavior end-to-end.
-2. Implement Phase C ending resolver and ending summary UI.
-3. Implement Phase D accessibility and interaction improvements.
-4. Complete Phase E polish and image content pass.
+- Keep `.env` out of commits.
+- Prefer seeded scenarios for authored QA: `ENABLE_LIVE_AI_SCENARIOS=false`.
+- Run `npm run db:seed` after changing seed packs.
+- Run focused tests before committing prompt, audio, image, or layout changes.
+- Update docs when route behavior, env flags, seed format, or final archive layout changes.

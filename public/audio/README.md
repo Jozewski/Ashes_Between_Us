@@ -1,52 +1,77 @@
 # Game Audio
 
-Background **music** for the game lives in `music/`. Each track is mapped to a
-scene or ending so the audio follows the picture on screen.
+Ashes Between Us is music-only. There are no sound effects.
 
-The app loads tracks gracefully: a missing or invalid file fails silently
-(`onloaderror` in `components/MusicProvider.js`) and never blocks gameplay.
+Audio is managed by `components/MusicProvider.js` using Howler. The provider keeps one active track at a time, fades out the old track, fades in the next track, and protects against overlapping orphaned Howl instances during route transitions or React dev remounts.
 
-> There are **no sound effects** — the game is music-only. The previous
-> `sfx/` folder and `SFX_TRACKS` were removed.
+## Audio Model
+
+- **Opening / avatar selection** uses `start-screen.mp3`.
+- **Scenario gameplay** uses a turn-based loop from `lib/scenarioAudioLoop.js`.
+- **Final archive / ending** uses an ending track from `lib/endingAudioMap.js`.
+- Track source paths, volumes, and loop flags live in `lib/audioTracks.js`.
+
+Scenario music is intentionally **not tied to images**. Several scenarios can share visual themes, and image-based audio caused repeated tracks to play back-to-back. The scenario loop now advances by turn so each new scenario changes music predictably.
 
 ## Files
 
-### `music/`
-| File | When it plays |
-| ---- | ------------- |
-| `start-screen.mp3` | Landing → Start Transmission (loop) |
-| `scenario-low-ruins.mp3` | `ruined-city.png` + `ending-broken-future.png` + default fallback (loop) |
-| `scenario-radio-tension.mp3` | `radio-tower.png` (loop) |
-| `scenario-bunker-dread.mp3` | `bunker.png` (loop) |
-| `scenario-chaos-percussion.mp3` | `aurora-mountain-storm.png` + `ending-chaotic-future.png` (loop) |
-| `scenario-desert-highway.mp3` | `desert-highway.png` (loop) |
-| `scenario-forest-hope.mp3` | `forest-safe-zone.png` + `ending-rebuilding-future.png` (loop) |
-| `scenario-timeline-mystery.mp3` | `aurora-lake-sunset.png`, `aurora-winter-forest.png`, `aurora-coastal-beacon.png` + `ending-balanced-future.png` (loop) |
-| `ending-balanced.mp3` | Balanced ending (one-shot) |
-| `ending-broken.mp3` | Broken ending (one-shot) |
-| `ending-chaotic.mp3` | Chaotic ending (one-shot) |
-| `ending-rebuilding.mp3` | Rebuilding ending (one-shot) |
+| File | Use |
+| --- | --- |
+| `music/start-screen.mp3` | Opening screen and avatar selection loop |
+| `music/scenario-low-ruins.mp3` | Scenario loop track |
+| `music/scenario-radio-tension.mp3` | Scenario loop track |
+| `music/scenario-bunker-dread.mp3` | Scenario loop track |
+| `music/scenario-chaos-percussion.mp3` | Scenario loop track |
+| `music/scenario-desert-highway.mp3` | Scenario loop track |
+| `music/scenario-forest-hope.mp3` | Scenario loop track |
+| `music/scenario-timeline-mystery.mp3` | Scenario loop track |
+| `music/ending-balanced.mp3` | Balanced ending |
+| `music/ending-broken.mp3` | Broken ending |
+| `music/ending-chaotic.mp3` | Chaotic ending |
+| `music/ending-rebuilding.mp3` | Rebuilding ending |
 
-To swap a track, replace the file in place (keep the exact filename) and update
-its row in `licenses/audio-credits.json`.
+## Scenario Loop
 
-## How the mapping works
-- Scenario music follows the **background image**, mapped in
-  `lib/sceneAudioMap.js` (file name → track key). Because each avatar's ten
-  scenarios now use ten distinct backgrounds (including the `ending-*-future`
-  vistas as late-game scenes), the music varies turn to turn.
-- Ending music follows the derived ending state, mapped in
-  `lib/endingAudioMap.js`.
-- Track sources/volumes/loop flags live in `lib/audioTracks.js`.
+Scenario turn order is defined in:
 
-## Track switching
-- Switching to a new scene **cleanly swaps** tracks: the old track ducks out
-  fast (~250 ms) while the new one eases in (~600 ms), so only one track is
-  audible at a time — no overlapping crossfade.
-- A module-level registry hard-stops any orphaned track, so a provider remount
-  (React Strict Mode in dev, route changes) can never leave two songs playing.
+```text
+lib/scenarioAudioLoop.js
+```
 
-## Notes
-- Browsers block audible autoplay until a user gesture; music unlocks on the
-  Start Transmission click.
-- Mute is global and persisted in `localStorage` (`abu-muted`).
+Current loop keys:
+
+```js
+[
+  "lowRuins",
+  "radioTension",
+  "bunkerDread",
+  "chaosPercussion",
+  "desertHighway",
+  "forestHope",
+  "timelineMystery",
+]
+```
+
+Turn 1 uses the first key, turn 2 uses the second, and so on. The list wraps if needed.
+
+## Start Screen Exception
+
+The `start` track is intentionally separate from the scenario loop. It should play for:
+
+- opening screen after Start Transmission unlocks audio
+- avatar selection screen
+- returning to avatar selection through Change avatar
+
+It should not be included in the scenario loop.
+
+## Track Switching
+
+- Old music fades out in about 250 ms.
+- New music fades in over about 600 ms.
+- Missing files fail silently so gameplay is not blocked.
+- Browser autoplay restrictions still apply; audio unlocks after the player clicks Start Transmission.
+- Mute is global and persisted in `localStorage` as `abu-muted`.
+
+## Credits
+
+Keep `licenses/audio-credits.json` current when replacing or adding audio.

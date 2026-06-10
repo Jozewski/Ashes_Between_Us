@@ -1,136 +1,40 @@
-# Client
+# Ashes Between Us Docs Index
 
-An apocalyptic butterfly-effect RPG. Your future self is trying to reach you. Every choice ripples forward.
+This file is a lightweight navigation page for the current app documentation. For the most accurate architecture and behavior notes, start with `APP_OVERVIEW.md`.
 
----
+## Current Source Of Truth
 
-## Tech Stack
+- [README](../README.md): setup, scripts, environment, project structure, and maintenance.
+- [App Overview](./APP_OVERVIEW.md): current gameplay flow, route rules, final archive, AI services, image handling, and audio behavior.
+- [Audio README](../public/audio/README.md): turn-based scenario audio loop and track manifest.
+- [Mock Data README](./mockData_README.md): how `lib/mockData.js` is used as fallback/sample data.
+- [Scenario Image Keyword Map](./SCENARIO_IMAGE_KEYWORD_MAP.md): filename-to-keyword reference for scenario art matching.
+- [Scenario Image Suggestions](./SCENARIO_IMAGE_SUGGESTIONS.md): guidance for replacing or generating additional scenario artwork.
 
-- Next.js App Router
-- Prisma + PostgreSQL (Neon)
-- Tailwind CSS v4
-- Google Fonts: Bebas Neue, Share Tech Mono, Barlow
+## Current Product State
 
----
+Ashes Between Us is a playable 10-turn post-collapse RPG with:
 
-## Planning Docs
+- six playable avatars
+- seeded per-avatar scenario packs
+- six choices per scenario
+- stat changes for hope, trust, chaos, and humanity
+- current-run history scoped by `runId`
+- final archive screen with AI/fallback profile and ending story
+- turn-based scenario music loop
+- explicit avatar-selection routes through Start Transmission and Change avatar
 
-- [Project Roadmap](./PROJECT_ROADMAP.md)
-- [Frontend Execution Plan](./FRONTEND_EXECUTION_PLAN.md)
+## Current Priorities
 
----
+1. Keep seeded scenario packs polished and image-matched.
+2. Improve final archive story quality and layout balance.
+3. Keep route behavior predictable:
+   - `/` opening screen
+   - `/game?selectAvatar=1` avatar selection
+   - `/history` final archive
+4. Keep AI generation guarded by deterministic fallbacks.
+5. Maintain tests for scoring, image matching, profile prompts, ending prompts, and audio loop behavior.
 
-## Branch Strategy
+## Historical Docs
 
-| Branch | Owner | Scope |
-|---|---|---|
-| `main` | Both | Clean, merged only |
-| `feature/frontend-game-ui` | Person 1 | All UI, components, pages |
-| `feature/backend-api-prisma` | Person 2 | Prisma, seed, API routes |
-
-**Do not push directly to main. Open a PR.**
-
----
-
-## Getting Started
-
-```bash
-npm install
-npm run dev
-```
-
-App runs at `http://localhost:3000`.
-
-Seed the database with avatar-specific scenarios before gameplay:
-
-```bash
-npm run db:seed
-```
-
-Gameplay now runs seeded-first (`/api/scenarios/generate`) and does not require live AI generation.
-
----
-
-## File Structure
-
-```
-app/
-  page.js                  # Landing page
-  layout.js                # Root layout + fonts
-  globals.css              # Tailwind v4 + animations
-  game/page.js             # Main game screen
-  history/page.js          # Timeline history
-  api/
-    scenarios/route.js     # GET all scenarios (stub → real)
-    attempts/route.js      # POST save attempt (stub → real)
-    history/route.js       # GET attempt history (stub → real)
-
-components/
-  StatsPanel.js            # Hope / Trust / Chaos / Humanity bars
-  FutureMessageCard.js     # Warning from future self
-  ScenarioCard.js          # Scenario title, image, setting text
-  ChoiceButton.js          # Choice with stat preview tags
-  OutcomeCard.js           # Post-choice consequence + stat changes
-  TimelineHistory.js       # Full choice history list
-
-lib/
-  mockData.js              # Mock scenarios (remove after backend merge)
-  prisma.js                # Prisma singleton (used by Person 2)
-
-prisma/
-  schema.prisma            # Person 2 owns this
-  seed.js                  # Person 2 owns this
-
-public/
-  images/                  # Drop scenario backgrounds + portraits here
-```
-
----
-
-## Seed Pack Workflow
-
-Place seed packs in [data/seed-packs/core-pack.json](data/seed-packs/core-pack.json)-style files.
-
-Schema reference:
-- [data/seed-packs/seed-pack.schema.json](data/seed-packs/seed-pack.schema.json)
-
-Rules:
-1. Each avatar block uses one of: `scout`, `medic`, `engineer`, `guardian`, `diplomat`, `scavenger`.
-2. Each scenario must include exactly 6 choices (`A-F`).
-3. Scenario IDs are normalized to `seed-{avatarId}-{scenarioId}` at import time.
-4. `progressionBand` can be `early`, `mid`, `late`, or `any`.
-
-Importer behavior:
-1. `npm run db:seed` imports all JSON files from `data/seed-packs/` (excluding `*.schema.json`).
-2. If no seed packs exist, it falls back to legacy `lib/mockData.js` seed content.
-3. Existing scenario rows are updated in place; choice rows are refreshed per scenario.
-
-Runtime behavior:
-1. `/api/scenarios/generate` selects seeded scenarios by avatar + progression first.
-2. Live AI generation is optional and disabled by default.
-3. To enable live AI generation, set `ENABLE_LIVE_AI_SCENARIOS=true` in `.env`.
-
----
-
-## Image Prompts (for generation)
-
-Style: `cinematic apocalyptic RPG concept art, dramatic lighting, muted colors, warm hopeful light, no text, no logos`
-
-Backgrounds: ruined city, radio tower, underground bunker, forest safe zone, desert highway  
-Portraits: future-survivor, future-leader, future-broken, future-warlord  
-Icons: supply crate, cracked radio, timeline shard
-
-Place generated images in `public/images/` and reference via `scenario.imageUrl`.
-
----
-
-## Stats
-
-| Stat | Color | Meaning |
-|---|---|---|
-| Hope | Gold | Belief in a better future |
-| Trust | Teal | Strength of your alliances |
-| Chaos | Red | Instability in the timeline |
-| Humanity | Sage | Your moral compass |
-
-Stats are clamped 0–100 and updated after every choice.
+The older planning docs are retained for context, but they may mention early branch ownership or incomplete MVP tasks. Prefer the current README and App Overview when making implementation decisions.

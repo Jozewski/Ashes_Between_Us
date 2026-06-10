@@ -1,140 +1,184 @@
-# Frontend Execution Plan - Ashes Between Us
+# Frontend Execution Plan
 
-Date: 2026-06-03
-Owner: Frontend (feature/frontend-game-ui)
+Last updated: 2026-06-10
 
-## Scope Guardrails
+This plan tracks current frontend behavior and polish priorities for Ashes Between Us. It replaces the early MVP execution plan that assumed API routes were still stubs.
 
-Only edit frontend-owned files:
-- app/page.js
-- app/game/page.js
-- app/history/page.js
-- components/*
-- app/globals.css
-- public/images/*
-- frontend-only docs
+## Current Frontend Scope
 
-Do not edit backend-owned files:
-- app/api/*
-- lib/prisma.js
-- prisma/*
-- package.json (unless team agrees)
+Primary UI files:
 
-## Current State Snapshot
+```text
+app/page.js
+app/game/page.js
+app/history/page.js
+app/globals.css
+components/
+components/final-results/
+```
 
-Already implemented:
-- Landing page with clear visual direction and Start button.
-- Game page with scenario, future message, choices, outcome, and stat updates.
-- History page and timeline component.
-- API-first fetch with fallback to mock scenarios.
+Supporting client behavior:
 
-Gaps to reach MVP quality from frontend side:
-- Offline/local fallback for attempts and history while API routes are stubs.
-- Basic ending logic on frontend (if backend ending logic is not ready).
-- Better accessibility and keyboard/focus states.
-- Guardrails for null or partial data from API.
-- Visual polish pass for responsive behavior and consistency.
+```text
+components/StartTransmissionButton.js
+components/MusicProvider.js
+lib/scenarioAudioLoop.js
+lib/endingAudioMap.js
+```
 
-## Phase Plan
+## Current Screen Flow
 
-### Phase 1 - Frontend Reliability (Priority: High)
+### Opening Screen
 
-Goal:
-- Ensure full playable loop even when backend is unavailable.
+File: `app/page.js`
 
-Tasks:
-1. Add localStorage fallback for attempt saves in app/game/page.js.
-2. Read local attempts in app/history/page.js when /api/history is unavailable.
-3. Keep API-first behavior so backend can take over automatically later.
-4. Add user-facing fallback hints (not error-heavy).
+Responsibilities:
+
+- introduce the game mood
+- play/start audio after user gesture
+- route to `/game?selectAvatar=1`
+
+Important behavior:
+
+- Start Transmission should always open avatar selection.
+- It should clear prior avatar/run state so a new run starts cleanly.
+
+### Avatar Selection
+
+File: `app/game/page.js`
+
+Responsibilities:
+
+- show avatar cards
+- start a new `runId`
+- save selected avatar
+- initialize stats
+- request first scenario
+
+Important behavior:
+
+- only Start Transmission and Change avatar should show this screen
+- direct `/game` without saved avatar should return to `/`
+
+### Gameplay
+
+File: `app/game/page.js`
+
+Responsibilities:
+
+- render scenario image and situation text
+- render six choices
+- show future transmission
+- save attempts
+- advance scenario turns
+- route to `/history` after 10 choices
+
+Important behavior:
+
+- scenario music advances by turn, not image
+- attempts include `runId` and `username`
+- choice cards should remain readable without awkward wrapping on large screens
+- scenario image/text area should balance against the choice column
+
+### Final Archive
+
+Files:
+
+```text
+app/history/page.js
+components/final-results/FinalResultsPanel.jsx
+```
+
+Responsibilities:
+
+- load current run history
+- load AI/fallback profile
+- load AI/fallback ending story
+- show timeline-fragment loading screen while final archive content resolves
+- render three balanced columns on large screens
+
+Current large-screen column intent:
+
+- left: final archive title, avatar image, survivor record, beginning story
+- center: future self, final story, future signal reading
+- right: final stats, future notes, latest branch, controls, timeline record
+
+## Current UI Priorities
+
+### 1. Final Archive Balance
 
 Acceptance criteria:
-- User can start game, make choices, continue, and see timeline history with backend offline.
-- If backend becomes available, API data is used first.
 
-### Phase 2 - Gameplay UX and Ending Logic (Priority: High)
+- all three columns stretch to equal height on large screens
+- center story column remains the main reading path
+- right column does not feel empty or cramped
+- future self image uses full-image rendering, not crop
+- final stats sit at top right
 
-Goal:
-- Deliver complete emotional loop with simple ending outcomes.
-
-Tasks:
-1. Add basic ending resolver in app/game/page.js (ex: hopeful, fractured, authoritarian, collapse).
-2. Persist final ending summary for display in app/history/page.js.
-3. Show end state card before navigation to history.
+### 2. Scenario Layout
 
 Acceptance criteria:
-- Final scenario shows clear ending result based on stats.
-- Ending appears in history view.
 
-### Phase 3 - Accessibility and Interaction Quality (Priority: Medium)
+- scenario image and situation text feel balanced with choices
+- choices A-F use available right-side space
+- Future Signal Transmission spans full width below scenario/choice grid on large screens
+- scenario images focus on center area and avoid forced top-crop assumptions
 
-Goal:
-- Improve usability and keyboard support.
-
-Tasks:
-1. Replace hover-only behaviors in components/ChoiceButton.js with class-based focus-visible styles.
-2. Ensure interactive controls have visible focus states.
-3. Add ARIA labels where needed for key controls and status text.
+### 3. Loading States
 
 Acceptance criteria:
-- Full keyboard navigation is usable.
-- Focus ring and active states are visible and consistent.
 
-### Phase 4 - Visual Polish and Content Expansion (Priority: Medium)
+- final archive does not show partial/empty AI content while final story is loading
+- timeline-fragment loading screen is readable and animated
+- no layout jump after AI/fallback content resolves
 
-Goal:
-- Strengthen atmosphere and consistency across screens.
-
-Tasks:
-1. Refine spacing/typography rhythm across landing, game, and history pages.
-2. Add image placeholders and style-safe fallbacks for missing assets.
-3. Add subtle staged transitions for scenario -> outcome -> next scenario.
+### 4. Route UX
 
 Acceptance criteria:
-- UI feels cohesive on desktop and mobile.
-- Missing images do not break layout.
 
-## File-by-File Change Map
+- Start Transmission opens avatar selection
+- Change avatar opens avatar selection
+- New Game returns to opening screen
+- final screen renders after turn 10 and does not redirect unexpectedly
 
-- app/page.js
-  - Keep current structure; only minor polish and CTA microcopy updates if needed.
+### 5. Audio UX
 
-- app/game/page.js
-  - Add attempt persistence fallback and ending resolver.
-  - Improve navigation from hard redirect to router navigation.
+Acceptance criteria:
 
-- app/history/page.js
-  - Merge API data with local fallback.
-  - Add ending summary section.
+- start/avatar-selection clip remains separate
+- scenario clips rotate by turn
+- no two tracks overlap
+- mute persists
 
-- components/ChoiceButton.js
-  - Replace inline mouse event style mutation with classes and focus-visible styles.
+## QA Checklist
 
-- components/ScenarioCard.js
-  - Add null-safe title rendering and image fallback safeguards.
+Before committing frontend changes:
 
-- components/StatsPanel.js
-  - Clamp stat bar width to 0-100 and harden against invalid values.
+- Start from `/`, click Start Transmission, confirm avatar selection.
+- Select avatar, confirm first scenario renders.
+- Make a choice, confirm outcome and stat update.
+- Continue through final turn, confirm `/history` final archive.
+- Confirm final archive loading state appears while story/profile load.
+- Confirm New Game returns to `/`.
+- Confirm Change avatar returns to avatar selection and plays start clip.
+- Confirm final stats appear at top right.
+- Confirm three final archive columns are visually balanced on desktop.
+- Run focused tests:
 
-- app/globals.css
-  - Add reusable utility classes for focus styles and small motion presets.
+```powershell
+npm run test -- lib\aiProfileService.test.js lib\aiEndingStoryService.test.js
+npm run test -- lib\scenarioAudioLoop.test.js lib\futureSelfService.test.js
+```
 
-## Branch Workflow
+Run Playwright after route or responsive layout changes:
 
-- Work only on feature/frontend-game-ui.
-- Keep commits small and scoped by phase.
-- Open PR with a checklist tied to acceptance criteria above.
+```powershell
+npm run test:e2e
+```
 
-Suggested commit sequence:
-1. feat(frontend): add local attempt/history fallback for offline loop
-2. feat(frontend): add basic ending resolver and ending summary UI
-3. fix(frontend): improve accessibility and focus-visible states
-4. style(frontend): responsive polish and transition tuning
+## Notes
 
-## Definition of Done (Frontend)
-
-- Playable loop works with and without backend availability.
-- User sees consequence and stat changes clearly after each choice.
-- History reliably displays decisions made in session.
-- Ending is shown and understandable.
-- Core screens are responsive and keyboard-accessible.
+- Avoid adding visible instructional text inside the app UI unless it is part of the world tone.
+- Prefer dense, readable RPG interface layout over marketing-style sections once gameplay begins.
+- Keep cards at modest radius and preserve the existing gritty visual language.
+- Do not reintroduce image-based scenario audio mapping.

@@ -1,168 +1,216 @@
 # Ashes Between Us
 
-An apocalyptic butterfly-effect RPG. Your future self is trying to reach you across an unstable timeline. Choose an avatar, navigate a 10-turn run of branching moral scenarios, and watch how each decision reshapes who you become.
+Ashes Between Us is an apocalyptic timeline RPG where a player's future self sends warnings across a collapsing timeline. The player chooses an avatar, plays a 10-turn run of authored moral scenarios, and receives a final archive that explains the ending through stats, choices, future transmissions, and avatar identity.
 
-Built with **Next.js 15 (App Router)**, **React 19**, **Prisma 6**, and **Neon serverless PostgreSQL**, with optional **OpenAI**-powered live scenario generation.
+The app is built with **Next.js 15**, **React 19**, **Tailwind CSS v4**, **Prisma 6**, **Neon PostgreSQL**, **Howler**, and optional **OpenAI** services.
 
----
+## Current Gameplay
 
-## Gameplay
+- The opening screen starts with `Start Transmission`.
+- `Start Transmission` opens avatar selection.
+- `Change avatar` is the only in-game path back to avatar selection.
+- Direct `/game` visits without a saved avatar return to the opening screen.
+- A run lasts **10 choices**.
+- Each choice changes **hope**, **trust**, **chaos**, and **humanity**.
+- Attempts are scoped by a session `runId`, so the final archive shows the current run instead of mixing older attempts.
+- The final archive shows:
+  - pre-collapse beginning story / backstory
+  - survivor record with the player name
+  - future self image and description
+  - final outcome story
+  - future signal reading
+  - final stats
+  - future notes
+  - latest branch
+  - timeline record
 
-- Pick one of six avatars, each with a distinct trait, backstory, and starting stats.
-- Each turn presents a scenario with up to six choices.
-- Every choice shifts four stats — **hope**, **trust**, **chaos**, and **humanity** (0–100, clamped).
-- A run ends after **10 turns** (`GAME_TURN_LIMIT`), then redirects to the timeline history / ending screen.
-- The ending engine derives a final state, narrative, and score from your closing stats.
-- Each playthrough is scoped to a unique `runId`, so history and scenario selection never bleed across separate games.
+## AI Behavior
 
----
+The game can use OpenAI in three places:
+
+- **Scenario generation**: optional live scenario generation.
+- **Player profile**: final archive survivor record, pre-collapse backstory, and future notes.
+- **Ending story**: final story summary based on the avatar, final stats, choices, and future transmissions.
+
+For stable authored gameplay, set:
+
+```env
+ENABLE_LIVE_AI_SCENARIOS=false
+```
+
+This keeps scenario play on seeded content while still allowing AI profile and ending-story generation if `OPENAI_API_KEY` is present. If OpenAI is missing or fails, profile and ending-story services return deterministic fallback content.
 
 ## Tech Stack
 
-| Layer        | Technology |
-| ------------ | ---------- |
-| Framework    | Next.js 15 (App Router), React 19 |
-| Styling      | Tailwind CSS v4 |
-| ORM          | Prisma 6 with the Neon driver adapter |
-| Database     | Neon serverless PostgreSQL (WebSocket adapter) |
-| AI (optional)| OpenAI (`openai` SDK) for live scenario generation |
-| Modules      | ES Modules (`"type": "module"`) |
-
----
+| Layer | Technology |
+| --- | --- |
+| App | Next.js 15 App Router, React 19 |
+| Styling | Tailwind CSS v4 |
+| Database | Neon PostgreSQL |
+| ORM | Prisma 6 with Neon serverless adapter |
+| AI | OpenAI SDK |
+| Audio | Howler |
+| Tests | Vitest, Playwright |
 
 ## Project Structure
 
 ```text
 app/
-  layout.js              Root layout
-  page.js                Landing page
-  game/page.js           Main game loop (avatar select → turns → redirect)
-  history/page.js        Timeline history + ending screen
+  layout.js                    Root metadata, fonts, providers
+  page.js                      Opening screen
+  game/page.js                 Avatar selection and 10-turn game loop
+  history/page.js              Final archive and timeline record
   api/
-    avatars/route.js         GET avatars (from DB)
-    scenarios/route.js       GET all scenarios
-    scenarios/generate/route.js   POST next scenario for a run
-    attempts/route.js        GET/POST attempt records
-    history/route.js         GET attempt history (scoped by runId)
-    profile/route.js         POST AI-generated player profile
-components/                UI components (ScenarioCard, ChoiceButton, StatsPanel, …)
-lib/
-  prisma.js                  Prisma client (Neon adapter)
-  scenarioGenerationService.js   Core scenario/attempt/avatar logic
-  aiScenarioService.js       OpenAI scenario generation
-  aiProfileService.js        OpenAI player-profile generation
-  endingEngine.js            Final state, narrative, and score
-  outcomeEngine.js           Stat normalization + future-state derivation
-  mockData.js                Avatars + INITIAL_STATS fallback data
-prisma/
-  schema.prisma              Avatar, Scenario, Choice, Attempt models
-  seed.js                    Purge + seed scenarios from data/seed-packs
-  seedAvatars.js             Seed avatars from mockData
-  bootstrap-neon-schema.js   Create/alter tables via Neon HTTP (when db push is blocked)
-data/
-  seed-packs/                Per-avatar scenario JSON (6 avatars × 10 scenarios × 6 choices)
-```
+    avatars/route.js           Avatar API
+    attempts/route.js          Attempt save/read API
+    ending-story/route.js      AI/fallback ending story API
+    game/                      Server game APIs
+    history/route.js           Current run history API
+    profile/route.js           AI/fallback player profile API
+    scenarios/                 Scenario APIs
 
----
+components/
+  final-results/               Final archive layout
+  MusicProvider.js             Howler singleton audio controller
+  ScenarioCard.js              Scenario image/text panel
+  ChoiceButton.js              Choice card UI
+  FutureMessageCard.js         Future transmission panel
+
+data/
+  seed-packs/                  Authored per-avatar scenario packs
+
+docs/
+  APP_OVERVIEW.md              Current app behavior and architecture notes
+  SCENARIO_IMAGE_KEYWORD_MAP.md
+  SCENARIO_IMAGE_SUGGESTIONS.md
+
+lib/
+  aiEndingStoryService.js      AI/fallback final story generation
+  aiProfileService.js          AI/fallback final profile generation
+  audioTracks.js               Audio manifest
+  scenarioAudioLoop.js         Turn-based scenario music loop
+  scenarioGenerationService.js Scenario, memory, attempt, and seed logic
+  futureSelfService.js         Scenario normalization and image selection
+  imageAssetCatalog.js         Scenario image inventory and aliases
+  endingEngine.js              Final scoring and local endings
+  outcomeEngine.js             Future-state derivation
+  prisma.js                    Prisma client
+
+prisma/
+  schema.prisma                Avatar, Scenario, Choice, Attempt models
+  seed.js                      Purge/reseed scenarios
+  seedAvatars.js               Seed avatar records
+  check-scenario-images.js     Audit DB/selectable image file coverage
+```
 
 ## Data Model
 
-- **Avatar** — `id`, `name`, `trait`, `description`, `backstory`, `imageUrl`, `futureImageUrl`, `futureImageByState` (Json), `startingStats` (Json), `sortOrder`.
-- **Scenario** — `id`, `title`, `setting`, `futureMsg`, `imageUrl`, `consequences` (Json), with related `choices`.
-- **Choice** — `text`, `outcome`, `hopeChange`, `trustChange`, `chaosChange`, `humanityChange`, plus optional `requiredRole` / `roleBonus`.
-- **Attempt** — one saved decision: `runId`, `avatarId`, `scenarioId`, `choiceId`, the four stats after the choice, and `statsAfter` (Json). Indexed by `avatarId+createdAt`, `scenarioId`, and `runId`.
+- **Avatar**: playable identity, art, future images, and starting stats.
+- **Scenario**: authored or generated scene with setting, future message, image, and consequences.
+- **Choice**: one selectable action with stat deltas and outcome text.
+- **Attempt**: one saved player decision, including `runId`, `username`, avatar, scenario, choice, outcome, and final stats after that choice.
 
----
+## Scenario Content
 
-## Getting Started
+Seed packs live in `data/seed-packs/`. The current target is:
 
-### 1. Prerequisites
+- 6 avatars
+- 20 possible scenarios per avatar
+- 6 choices per scenario
+- unique scenario images per avatar pack where possible
+- explicit `imageKeywords`/image URLs used for image matching and seeded display
 
-- Node.js 18+
-- A Neon PostgreSQL database
-- (Optional) An OpenAI API key for live scenario/profile generation
+Run:
 
-### 2. Install
+```powershell
+npm run db:seed:avatars
+npm run db:seed
+```
+
+`npm run db:seed` purges existing `Scenario` and `Choice` rows before importing seed packs.
+
+## Environment
+
+Create `.env` from `.env.example`.
+
+```env
+DATABASE_URL="postgresql://..."
+DIRECT_URL="postgresql://..."
+OPENAI_API_KEY="..."
+ENABLE_LIVE_AI_SCENARIOS=false
+OPENAI_SCENARIO_MODEL=gpt-4o-mini
+OPENAI_SCENARIO_TIMEOUT_MS=20000
+ALLOW_SEEDED_SCENARIO_FALLBACK=true
+```
+
+Notes:
+
+- `DATABASE_URL` is the pooled Neon connection string.
+- `DIRECT_URL` is required for `prisma db push`.
+- Never commit real secrets.
+- Keep `ENABLE_LIVE_AI_SCENARIOS=false` when testing authored seeded scenarios.
+
+## Setup
 
 ```powershell
 npm install
-```
-
-### 3. Environment
-
-Copy `.env.example` to `.env` and fill in your values:
-
-```env
-DATABASE_URL="postgresql://...neon.tech/neondb?sslmode=require"   # pooled
-DIRECT_URL="postgresql://...neon.tech/neondb?sslmode=require"     # non-pooled
-OPENAI_API_KEY=your_openai_api_key_here
-```
-
-Optional flags:
-
-- `ENABLE_LIVE_AI_SCENARIOS=false` — force seeded/fallback scenarios even when `OPENAI_API_KEY` is set.
-- `OPENAI_SCENARIO_MODEL=gpt-4o-mini` — low-latency scenario generation model.
-- `OPENAI_SCENARIO_TIMEOUT_MS=20000` — maximum wait for live scenario generation before fallback content is returned.
-- `ALLOW_SEEDED_SCENARIO_FALLBACK=true` — allow seed-pack scenarios when live AI fails. By default, AI mode skips seeded scenarios and uses generated fallback content instead.
-
-### 4. Set up the database schema
-
-`prisma db push` requires the non-pooled `DIRECT_URL` (port 5432). If that port is blocked on your network, bootstrap the schema over the Neon HTTP driver instead:
-
-```powershell
-npx prisma generate
-node --import dotenv/config prisma/bootstrap-neon-schema.js
-```
-
-Otherwise:
-
-```powershell
+npm run db:generate
 npm run db:push
-```
-
-### 5. Seed data
-
-```powershell
-npm run db:seed:avatars   # seed the six avatars
-npm run db:seed           # purge + import scenarios from data/seed-packs
-```
-
-### 6. Run the dev server
-
-```powershell
+npm run db:seed:avatars
+npm run db:seed
 npm run dev
 ```
 
 Open http://localhost:3000.
 
----
+If `db:push` is blocked by network access to the direct Postgres port, use:
 
-## NPM Scripts
+```powershell
+node --import dotenv/config prisma/bootstrap-neon-schema.js
+```
 
-| Script | Description |
-| ------ | ----------- |
+## Scripts
+
+| Script | Purpose |
+| --- | --- |
 | `npm run dev` | Start the Next.js dev server |
-| `npm run build` | Production build |
-| `npm run start` | Start the production server |
+| `npm run build` | Create a production build |
+| `npm run start` | Run the production server |
 | `npm run lint` | Run ESLint |
-| `npm run db:push` | Push the Prisma schema (needs `DIRECT_URL`) |
-| `npm run db:generate` | Regenerate the Prisma client |
-| `npm run db:seed` | Purge and reseed scenarios from `data/seed-packs` |
-| `npm run db:seed:avatars` | Seed avatars from `lib/mockData.js` |
+| `npm run test` | Run Vitest |
+| `npm run test:e2e` | Run Playwright |
+| `npm run db:generate` | Generate Prisma client |
+| `npm run db:push` | Push Prisma schema |
+| `npm run db:seed:avatars` | Seed avatars |
+| `npm run db:seed` | Purge/reseed scenarios and choices |
 | `npm run db:studio` | Open Prisma Studio |
 
----
+## Audio
 
-## Seeding Scenarios
+Scenario music is no longer tied to scenario images. Gameplay uses a turn-based loop in `lib/scenarioAudioLoop.js`; each new scenario advances to the next scenario music track. The avatar selection/start screen uses `start-screen.mp3` and stays separate from the scenario loop. Ending music is selected by final ending state.
 
-`data/seed-packs/` holds one JSON file per avatar. The seeder reads every `*.json` there (except `*.schema.json`), purges all existing `Scenario` and `Choice` rows, then imports fresh. Each pack provides exactly **6 choices per scenario**; `seed.js` prefixes IDs as `seed-{avatarId}-{scenarioId}`.
+See [public/audio/README.md](public/audio/README.md).
 
-To replace content: drop new packs into `data/seed-packs/`, remove the old ones, and run `npm run db:seed`.
+## Testing
 
----
+Useful focused checks:
 
-## Notes & Gotchas
+```powershell
+npm run test -- lib\aiProfileService.test.js lib\aiEndingStoryService.test.js
+npm run test -- lib\scenarioAudioLoop.test.js lib\futureSelfService.test.js
+npm run test
+```
 
-- **Prisma client lock:** `prisma generate` fails with `EPERM` while the dev server is running. Stop Node processes first, generate, then restart.
-- **Live AI is AI-first when configured.** With `OPENAI_API_KEY` set, `/api/scenarios/generate` attempts live OpenAI generation first, saves the generated scenario and choices, then falls back to local generated content if generation fails or exceeds `OPENAI_SCENARIO_TIMEOUT_MS`. Seed-pack scenarios are skipped in AI mode unless `ALLOW_SEEDED_SCENARIO_FALLBACK=true`. Set `ENABLE_LIVE_AI_SCENARIOS=false` to force seeded/fallback scenarios. The `/api/profile` endpoint still calls OpenAI and falls back to the stored avatar backstory if the key is missing or upstream fails.
-- **Never commit `.env`.** Rotate any credentials that were ever exposed.
+Run Playwright when layout or route flow changes:
+
+```powershell
+npm run test:e2e
+```
+
+## Maintenance Notes
+
+- Stop the dev server before regenerating Prisma client if Windows locks Prisma engine files.
+- If the final archive appears blank, check `/api/history`, `/api/profile`, and `/api/ending-story`.
+- If seeded scenarios feel random, check `imageKeywords`, explicit `imageUrl`, and `lib/imageAssetCatalog.js`.
+- If audio repeats too much, update `SCENARIO_LOOP_TRACKS` order in `lib/scenarioAudioLoop.js`.
+- If the app jumps to the opening screen unexpectedly, check route logic in `app/game/page.js`; avatar selection should only happen through `Start Transmission` or `Change avatar`.
