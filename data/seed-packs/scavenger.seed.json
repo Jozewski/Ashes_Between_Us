@@ -1,6 +1,6 @@
 {
-  "packId": "scavenger-v3",
-  "version": "3.0.0",
+  "packId": "scavenger-v4",
+  "version": "4.0.0",
   "avatars": [
     {
       "avatarId": "scavenger",
@@ -10,7 +10,7 @@
           "title": "The Museum of Broken Weather",
           "setting": "A natural history museum still has climate exhibits running on backup power. One diorama rains real water every hour, another snows chemical frost, and the gift shop safe clicks open whenever thunder plays.",
           "futureMsg": "Future-you says the old world displayed disaster behind glass. You had to decide what to steal from the exhibit and what to learn from it.",
-          "imageUrl": "/images/backgrounds/desert-highway.png",
+          "imageUrl": "/images/scenarios/scavenger/avatar-scavenger-forgotten-warehouse.png",
           "progressionBand": "early",
           "weight": 3,
           "choices": [
@@ -68,6 +68,10 @@
               "chaosChange": -3,
               "humanityChange": 7
             }
+          ],
+          "imageKeywords": [
+            "forgotten warehouse",
+            "warehouse"
           ]
         },
         {
@@ -75,7 +79,7 @@
           "title": "The Vending Machine Oracle",
           "setting": "In a subway mezzanine, a cracked vending machine dispenses whatever item someone needs most, but only after taking something emotionally valuable. The coin slot smells like warm metal and old birthdays.",
           "futureMsg": "Future-you warns that not every bargain with the ruins looks like greed. Sometimes need wears your mother’s ring.",
-          "imageUrl": "/images/backgrounds/bunker.png",
+          "imageUrl": "/images/scenarios/scavenger/avatar-scavenger-black-market-auction.png",
           "progressionBand": "early",
           "weight": 2,
           "choices": [
@@ -133,6 +137,11 @@
               "chaosChange": 0,
               "humanityChange": -2
             }
+          ],
+          "imageKeywords": [
+            "black market auction",
+            "auction",
+            "black market"
           ]
         },
         {
@@ -140,7 +149,7 @@
           "title": "Cargo Drone Graveyard",
           "setting": "Hundreds of delivery drones hang dead in a pine forest, tangled in branches like metal fruit. Their cargo pods contain medicine, toys, surveillance drives, and one active beacon still calling headquarters into an empty sky.",
           "futureMsg": "Future-you says salvage is choosing which ghosts get useful again.",
-          "imageUrl": "/images/backgrounds/radio-tower.png",
+          "imageUrl": "/images/scenarios/scavenger/avatar-scavenger-buried-supply-truck.png",
           "progressionBand": "mid",
           "weight": 2,
           "choices": [
@@ -198,6 +207,11 @@
               "chaosChange": 0,
               "humanityChange": -5
             }
+          ],
+          "imageKeywords": [
+            "buried supply truck",
+            "supply truck",
+            "buried truck"
           ]
         },
         {
@@ -205,7 +219,7 @@
           "title": "The Arcade That Still Takes Quarters",
           "setting": "A buried arcade hums under a collapsed mall. Every machine works, powered by a generator hidden behind a prize wall. The high-score table displays names of people who will enter tomorrow unless you change their route.",
           "futureMsg": "Future-you says the ruins sometimes make prophecy look like play. You had to decide whether to spend the last coin on warning or winning.",
-          "imageUrl": "/images/backgrounds/contested-resource-hearing.png",
+          "imageUrl": "/images/scenarios/scavenger/avatar-scavenger-threatened-fog-market.png",
           "progressionBand": "any",
           "weight": 2,
           "choices": [
@@ -263,6 +277,15 @@
               "chaosChange": 2,
               "humanityChange": -7
             }
+          ],
+          "imageKeywords": [
+            "threatened fog market",
+            "fog market",
+            "threatened market",
+            "market",
+            "barter market",
+            "black market",
+            "traders"
           ]
         },
         {
@@ -270,7 +293,7 @@
           "title": "Underpass of Borrowed Shoes",
           "setting": "An underpass camp trades in shoes taken from abandoned cars. A pair that fits you perfectly has a route stitched inside the tongue, but the cobbler says every pair belongs to someone who may still be walking home.",
           "futureMsg": "Future-you says good boots can carry you farther or deeper into debt. Look at the soles before you call something abandoned.",
-          "imageUrl": "/images/backgrounds/ruined-city.png",
+          "imageUrl": "/images/scenarios/scavenger/avatar-scavenger-refugee-border-crossing.png",
           "progressionBand": "early",
           "weight": 2,
           "choices": [
@@ -328,6 +351,15 @@
               "chaosChange": -3,
               "humanityChange": 5
             }
+          ],
+          "imageKeywords": [
+            "refugee border crossing",
+            "refugee border",
+            "border crossing",
+            "refugees",
+            "checkpoint",
+            "guards",
+            "crossing"
           ]
         },
         {
@@ -335,7 +367,7 @@
           "title": "The Black Market of Gentle Things",
           "setting": "In a tunnel lit by jar candles, traders auction not weapons but lullabies, recipes, clean jokes, and recordings of rain. Your settlement needs morale badly, but one vendor is selling memories stolen from sleeping people.",
           "futureMsg": "Future-you says the apocalypse did not make softness worthless. It made softness expensive enough to become a crime.",
-          "imageUrl": "/images/backgrounds/forest-safe-zone.png",
+          "imageUrl": "/images/scenarios/scavenger/avatar-scavenger-unclear-salvage-claim.png",
           "progressionBand": "mid",
           "weight": 3,
           "choices": [
@@ -393,6 +425,15 @@
               "chaosChange": -2,
               "humanityChange": -3
             }
+          ],
+          "imageKeywords": [
+            "unclear salvage claim",
+            "salvage claim",
+            "unclear claim",
+            "salvage yard",
+            "resource claim",
+            "scrap",
+            "ownership dispute"
           ]
         },
         {
@@ -400,7 +441,7 @@
           "title": "Rooftop Beehives of the Old Hotel",
           "setting": "An abandoned hotel roof hosts thriving beehives around solar panels. Honey could feed children, wax could seal water filters, and the panels could power a radio. The bees swarm anyone carrying metal weapons.",
           "futureMsg": "Future-you says some treasure guards itself better than any lock. Approach like a guest or leave stung by your own hunger.",
-          "imageUrl": "/images/backgrounds/refugee-border-crossing.png",
+          "imageUrl": "/images/scenarios/scavenger/avatar-scavenger-weather-hidden-loyalties.png",
           "progressionBand": "any",
           "weight": 2,
           "choices": [
@@ -458,6 +499,15 @@
               "chaosChange": 1,
               "humanityChange": -2
             }
+          ],
+          "imageKeywords": [
+            "weather hidden loyalties",
+            "weather disaster",
+            "hidden loyalties",
+            "storm",
+            "mountain storm",
+            "flash flood",
+            "forced shelter"
           ]
         },
         {
@@ -465,7 +515,7 @@
           "title": "The Sunken Train Pantry",
           "setting": "A commuter train lies half-submerged in floodwater beneath the avenue. Its pantry car is sealed, but opening it will drain contaminated water into the tunnels where another settlement has begun mushroom farming.",
           "futureMsg": "Future-you says hunger makes every sealed door look personal. Water remembers where you send it.",
-          "imageUrl": "/images/backgrounds/weather-hidden-loyalties.png",
+          "imageUrl": "/images/scenarios/scavenger/avatar-scavenger-limited-evacuation-convoy.png",
           "progressionBand": "mid",
           "weight": 2,
           "choices": [
@@ -523,6 +573,15 @@
               "chaosChange": 4,
               "humanityChange": -8
             }
+          ],
+          "imageKeywords": [
+            "limited evacuation convoy",
+            "limited evacuation",
+            "evacuation convoy",
+            "convoy",
+            "too few seats",
+            "fuel carriers",
+            "transport"
           ]
         },
         {
@@ -530,7 +589,7 @@
           "title": "The Locksmith’s Alphabet",
           "setting": "A dead locksmith’s notebook lists symbols for doors that should never be opened, doors that must be opened together, and doors that open only for lies. You find the same symbols carved into six apartments above a flooded street.",
           "futureMsg": "Future-you says a lock is a story told in metal. You had to decide whether you were reading or interrupting.",
-          "imageUrl": "/images/endings/ending-rebuilding-future.png",
+          "imageUrl": "/images/scenarios/scavenger/avatar-scavenger-scrapyard-ownership-dispute.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [
@@ -588,6 +647,12 @@
               "chaosChange": 2,
               "humanityChange": -1
             }
+          ],
+          "imageKeywords": [
+            "scrapyard ownership dispute",
+            "scrapyard",
+            "ownership dispute",
+            "scrap yard"
           ]
         },
         {
@@ -595,7 +660,7 @@
           "title": "The Price of a Rumor Bird",
           "setting": "A trader arrives with a mechanical bird that repeats rumors only after eating scraps of gold. It claims a hidden reservoir lies beneath the old theater, but its last owner vanished after feeding it wedding rings.",
           "futureMsg": "Future-you says rumors are tools with appetites. Feed one carefully or it learns to nest in your decisions.",
-          "imageUrl": "/images/endings/ending-balanced-future.png",
+          "imageUrl": "/images/scenarios/scavenger/avatar-scavenger-abandoned-fuel-depot.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [
@@ -653,6 +718,741 @@
               "chaosChange": -2,
               "humanityChange": 0
             }
+          ],
+          "imageKeywords": [
+            "abandoned fuel depot",
+            "fuel depot",
+            "fuel"
+          ]
+        },
+        {
+          "id": "scavenger-011",
+          "title": "The Warehouse That Remembers Prices",
+          "setting": "A forgotten warehouse opens only when offered objects at their pre-collapse price. The door accepts a child's toy as worth more than antibiotics, and the watching market starts recalculating morality.",
+          "futureMsg": "The warehouse remembered money. You remembered need. Only one of those memories deserved authority.",
+          "imageUrl": "/images/backgrounds/unclear-salvage-claim.png",
+          "progressionBand": "early",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Tag the price door find openly before hands get greedy.",
+              "outcome": "market crowd see the claim before rumor prices it. The find becomes contested, not stolen.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": 2,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Test the price door value before promising shares.",
+              "outcome": "Your caution exposes a hidden flaw. It also makes everyone suspect you found a better angle.",
+              "hopeChange": 2,
+              "trustChange": 3,
+              "chaosChange": -4,
+              "humanityChange": 0
+            },
+            {
+              "id": "c",
+              "text": "Cut the market crowd into the salvage plan.",
+              "outcome": "More hands mean less profit and fewer knives. The haul leaves with witnesses.",
+              "hopeChange": 3,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 4
+            },
+            {
+              "id": "d",
+              "text": "Grab the price door now and sort ownership later.",
+              "outcome": "You beat the collapse and inherit every accusation attached to the cargo.",
+              "hopeChange": 6,
+              "trustChange": -5,
+              "chaosChange": 5,
+              "humanityChange": -3
+            },
+            {
+              "id": "e",
+              "text": "Fence the price door through a buyer who owes you.",
+              "outcome": "The payout is real and dirty. People who needed the salvage learn what their need was worth.",
+              "hopeChange": 5,
+              "trustChange": -6,
+              "chaosChange": 2,
+              "humanityChange": -6
+            },
+            {
+              "id": "f",
+              "text": "Leave the price door untouched until the market crowd cool down.",
+              "outcome": "The standoff loses heat. The opportunity may not survive the night.",
+              "hopeChange": -3,
+              "trustChange": 2,
+              "chaosChange": -3,
+              "humanityChange": 1
+            }
+          ],
+          "imageKeywords": [
+            "unclear salvage claim",
+            "salvage claim",
+            "unclear claim",
+            "salvage yard",
+            "resource claim",
+            "scrap",
+            "ownership dispute"
+          ]
+        },
+        {
+          "id": "scavenger-012",
+          "title": "Fuel Beneath the Playground",
+          "setting": "Your detector finds sealed fuel tanks under a school playground now used as a refugee camp. Digging saves the convoy; leaving them buried keeps the camp's only safe ground intact.",
+          "futureMsg": "The fuel was old power under new shelter. Taking it meant admitting survival still drills through childhood.",
+          "imageUrl": "/images/backgrounds/refugee-border-crossing.png",
+          "progressionBand": "early",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Tag the buried fuel find openly before hands get greedy.",
+              "outcome": "refugee camp see the claim before rumor prices it. The find becomes contested, not stolen.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": 2,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Test the buried fuel value before promising shares.",
+              "outcome": "Your caution exposes a hidden flaw. It also makes everyone suspect you found a better angle.",
+              "hopeChange": 2,
+              "trustChange": 3,
+              "chaosChange": -4,
+              "humanityChange": 0
+            },
+            {
+              "id": "c",
+              "text": "Cut the refugee camp into the salvage plan.",
+              "outcome": "More hands mean less profit and fewer knives. The haul leaves with witnesses.",
+              "hopeChange": 3,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 4
+            },
+            {
+              "id": "d",
+              "text": "Grab the buried fuel now and sort ownership later.",
+              "outcome": "You beat the collapse and inherit every accusation attached to the cargo.",
+              "hopeChange": 6,
+              "trustChange": -5,
+              "chaosChange": 5,
+              "humanityChange": -3
+            },
+            {
+              "id": "e",
+              "text": "Fence the buried fuel through a buyer who owes you.",
+              "outcome": "The payout is real and dirty. People who needed the salvage learn what their need was worth.",
+              "hopeChange": 5,
+              "trustChange": -6,
+              "chaosChange": 2,
+              "humanityChange": -6
+            },
+            {
+              "id": "f",
+              "text": "Leave the buried fuel untouched until the refugee camp cool down.",
+              "outcome": "The standoff loses heat. The opportunity may not survive the night.",
+              "hopeChange": -3,
+              "trustChange": 2,
+              "chaosChange": -3,
+              "humanityChange": 1
+            }
+          ],
+          "imageKeywords": [
+            "refugee border crossing",
+            "refugee border",
+            "border crossing",
+            "refugees",
+            "checkpoint",
+            "guards",
+            "crossing"
+          ]
+        },
+        {
+          "id": "scavenger-013",
+          "title": "The Auction of Soft Blankets",
+          "setting": "A black-market auction sells hospital blankets still tagged with patient names. Buyers want warmth; families want the names returned; raiders want the bidding list.",
+          "futureMsg": "Soft things can become contraband when winter gets a vote. You decided whether warmth had to erase ownership.",
+          "imageUrl": "/images/backgrounds/threatened-fog-market.png",
+          "progressionBand": "mid",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Tag the tagged blankets find openly before hands get greedy.",
+              "outcome": "auction crowd see the claim before rumor prices it. The find becomes contested, not stolen.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": 2,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Test the tagged blankets value before promising shares.",
+              "outcome": "Your caution exposes a hidden flaw. It also makes everyone suspect you found a better angle.",
+              "hopeChange": 2,
+              "trustChange": 3,
+              "chaosChange": -4,
+              "humanityChange": 0
+            },
+            {
+              "id": "c",
+              "text": "Cut the auction crowd into the salvage plan.",
+              "outcome": "More hands mean less profit and fewer knives. The haul leaves with witnesses.",
+              "hopeChange": 3,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 4
+            },
+            {
+              "id": "d",
+              "text": "Grab the tagged blankets now and sort ownership later.",
+              "outcome": "You beat the collapse and inherit every accusation attached to the cargo.",
+              "hopeChange": 6,
+              "trustChange": -5,
+              "chaosChange": 5,
+              "humanityChange": -3
+            },
+            {
+              "id": "e",
+              "text": "Fence the tagged blankets through a buyer who owes you.",
+              "outcome": "The payout is real and dirty. People who needed the salvage learn what their need was worth.",
+              "hopeChange": 5,
+              "trustChange": -6,
+              "chaosChange": 2,
+              "humanityChange": -6
+            },
+            {
+              "id": "f",
+              "text": "Leave the tagged blankets untouched until the auction crowd cool down.",
+              "outcome": "The standoff loses heat. The opportunity may not survive the night.",
+              "hopeChange": -3,
+              "trustChange": 2,
+              "chaosChange": -3,
+              "humanityChange": 1
+            }
+          ],
+          "imageKeywords": [
+            "threatened fog market",
+            "fog market",
+            "threatened market",
+            "market",
+            "barter market",
+            "black market",
+            "traders"
+          ]
+        },
+        {
+          "id": "scavenger-014",
+          "title": "The Truck in the Sinkhole",
+          "setting": "A supply truck hangs nose-down in a widening sinkhole, its cargo visible through cracked doors. Every minute lowers it closer to floodwater, while the driver's trapped radio keeps asking for her brother.",
+          "futureMsg": "The cargo was easy to count. The voice on the radio made the math dishonest.",
+          "imageUrl": "/images/backgrounds/failed-rescue-witnesses.png",
+          "progressionBand": "mid",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Tag the sinkhole truck find openly before hands get greedy.",
+              "outcome": "salvage crew see the claim before rumor prices it. The find becomes contested, not stolen.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": 2,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Test the sinkhole truck value before promising shares.",
+              "outcome": "Your caution exposes a hidden flaw. It also makes everyone suspect you found a better angle.",
+              "hopeChange": 2,
+              "trustChange": 3,
+              "chaosChange": -4,
+              "humanityChange": 0
+            },
+            {
+              "id": "c",
+              "text": "Cut the salvage crew into the salvage plan.",
+              "outcome": "More hands mean less profit and fewer knives. The haul leaves with witnesses.",
+              "hopeChange": 3,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 4
+            },
+            {
+              "id": "d",
+              "text": "Grab the sinkhole truck now and sort ownership later.",
+              "outcome": "You beat the collapse and inherit every accusation attached to the cargo.",
+              "hopeChange": 6,
+              "trustChange": -5,
+              "chaosChange": 5,
+              "humanityChange": -3
+            },
+            {
+              "id": "e",
+              "text": "Fence the sinkhole truck through a buyer who owes you.",
+              "outcome": "The payout is real and dirty. People who needed the salvage learn what their need was worth.",
+              "hopeChange": 5,
+              "trustChange": -6,
+              "chaosChange": 2,
+              "humanityChange": -6
+            },
+            {
+              "id": "f",
+              "text": "Leave the sinkhole truck untouched until the salvage crew cool down.",
+              "outcome": "The standoff loses heat. The opportunity may not survive the night.",
+              "hopeChange": -3,
+              "trustChange": 2,
+              "chaosChange": -3,
+              "humanityChange": 1
+            }
+          ],
+          "imageKeywords": [
+            "failed rescue witnesses",
+            "failed rescue",
+            "rescue witnesses",
+            "collapsed rescue",
+            "witnesses",
+            "overpass rescue",
+            "rescue scene"
+          ]
+        },
+        {
+          "id": "scavenger-015",
+          "title": "Scrapyard Crown",
+          "setting": "The scrapyard owner dies without naming an heir, leaving a crown made of keys on the scale house desk. Crews start bidding with threats, favors, and the locations of buried parts.",
+          "futureMsg": "A crown of keys still opens cages if people kneel to it. You had to decide what ownership meant after the owner stopped breathing.",
+          "imageUrl": "/images/backgrounds/contested-resource-hearing.png",
+          "progressionBand": "mid",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Tag the key crown find openly before hands get greedy.",
+              "outcome": "scrapyard crews see the claim before rumor prices it. The find becomes contested, not stolen.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": 2,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Test the key crown value before promising shares.",
+              "outcome": "Your caution exposes a hidden flaw. It also makes everyone suspect you found a better angle.",
+              "hopeChange": 2,
+              "trustChange": 3,
+              "chaosChange": -4,
+              "humanityChange": 0
+            },
+            {
+              "id": "c",
+              "text": "Cut the scrapyard crews into the salvage plan.",
+              "outcome": "More hands mean less profit and fewer knives. The haul leaves with witnesses.",
+              "hopeChange": 3,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 4
+            },
+            {
+              "id": "d",
+              "text": "Grab the key crown now and sort ownership later.",
+              "outcome": "You beat the collapse and inherit every accusation attached to the cargo.",
+              "hopeChange": 6,
+              "trustChange": -5,
+              "chaosChange": 5,
+              "humanityChange": -3
+            },
+            {
+              "id": "e",
+              "text": "Fence the key crown through a buyer who owes you.",
+              "outcome": "The payout is real and dirty. People who needed the salvage learn what their need was worth.",
+              "hopeChange": 5,
+              "trustChange": -6,
+              "chaosChange": 2,
+              "humanityChange": -6
+            },
+            {
+              "id": "f",
+              "text": "Leave the key crown untouched until the scrapyard crews cool down.",
+              "outcome": "The standoff loses heat. The opportunity may not survive the night.",
+              "hopeChange": -3,
+              "trustChange": 2,
+              "chaosChange": -3,
+              "humanityChange": 1
+            }
+          ],
+          "imageKeywords": [
+            "contested resource hearing",
+            "resource hearing",
+            "public hearing",
+            "ration hearing",
+            "water rights hearing",
+            "resource dispute",
+            "council hearing"
+          ]
+        },
+        {
+          "id": "scavenger-016",
+          "title": "The Market of Almost Medicine",
+          "setting": "A fog market sells pills that are almost antibiotics, almost painkillers, almost poison. Your tests can expose the counterfeits, but doing so may start a riot among people already dosed.",
+          "futureMsg": "Almost medicine is still a promise. Breaking that promise cleanly took more skill than selling it.",
+          "imageUrl": "/images/backgrounds/quarantine-triage-dispute.png",
+          "progressionBand": "late",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Tag the counterfeit pills find openly before hands get greedy.",
+              "outcome": "fog market see the claim before rumor prices it. The find becomes contested, not stolen.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": 2,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Test the counterfeit pills value before promising shares.",
+              "outcome": "Your caution exposes a hidden flaw. It also makes everyone suspect you found a better angle.",
+              "hopeChange": 2,
+              "trustChange": 3,
+              "chaosChange": -4,
+              "humanityChange": 0
+            },
+            {
+              "id": "c",
+              "text": "Cut the fog market into the salvage plan.",
+              "outcome": "More hands mean less profit and fewer knives. The haul leaves with witnesses.",
+              "hopeChange": 3,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 4
+            },
+            {
+              "id": "d",
+              "text": "Grab the counterfeit pills now and sort ownership later.",
+              "outcome": "You beat the collapse and inherit every accusation attached to the cargo.",
+              "hopeChange": 6,
+              "trustChange": -5,
+              "chaosChange": 5,
+              "humanityChange": -3
+            },
+            {
+              "id": "e",
+              "text": "Fence the counterfeit pills through a buyer who owes you.",
+              "outcome": "The payout is real and dirty. People who needed the salvage learn what their need was worth.",
+              "hopeChange": 5,
+              "trustChange": -6,
+              "chaosChange": 2,
+              "humanityChange": -6
+            },
+            {
+              "id": "f",
+              "text": "Leave the counterfeit pills untouched until the fog market cool down.",
+              "outcome": "The standoff loses heat. The opportunity may not survive the night.",
+              "hopeChange": -3,
+              "trustChange": 2,
+              "chaosChange": -3,
+              "humanityChange": 1
+            }
+          ],
+          "imageKeywords": [
+            "quarantine triage dispute",
+            "quarantine",
+            "triage",
+            "clinic",
+            "medical dispute",
+            "infection",
+            "medicine",
+            "ward"
+          ]
+        },
+        {
+          "id": "scavenger-017",
+          "title": "The Hotel Bees",
+          "setting": "Rooftop bees at an old hotel produce honey that preserves wounds, but their hives are built inside a ventilation shaft full of ration ledgers and hidden jewelry.",
+          "futureMsg": "The bees knew what to save: sweetness, records, gold. You had to choose like a person, not a hive.",
+          "imageUrl": "/images/backgrounds/bunker.png",
+          "progressionBand": "late",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Tag the hotel hives find openly before hands get greedy.",
+              "outcome": "roof scavengers see the claim before rumor prices it. The find becomes contested, not stolen.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": 2,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Test the hotel hives value before promising shares.",
+              "outcome": "Your caution exposes a hidden flaw. It also makes everyone suspect you found a better angle.",
+              "hopeChange": 2,
+              "trustChange": 3,
+              "chaosChange": -4,
+              "humanityChange": 0
+            },
+            {
+              "id": "c",
+              "text": "Cut the roof scavengers into the salvage plan.",
+              "outcome": "More hands mean less profit and fewer knives. The haul leaves with witnesses.",
+              "hopeChange": 3,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 4
+            },
+            {
+              "id": "d",
+              "text": "Grab the hotel hives now and sort ownership later.",
+              "outcome": "You beat the collapse and inherit every accusation attached to the cargo.",
+              "hopeChange": 6,
+              "trustChange": -5,
+              "chaosChange": 5,
+              "humanityChange": -3
+            },
+            {
+              "id": "e",
+              "text": "Fence the hotel hives through a buyer who owes you.",
+              "outcome": "The payout is real and dirty. People who needed the salvage learn what their need was worth.",
+              "hopeChange": 5,
+              "trustChange": -6,
+              "chaosChange": 2,
+              "humanityChange": -6
+            },
+            {
+              "id": "f",
+              "text": "Leave the hotel hives untouched until the roof scavengers cool down.",
+              "outcome": "The standoff loses heat. The opportunity may not survive the night.",
+              "hopeChange": -3,
+              "trustChange": 2,
+              "chaosChange": -3,
+              "humanityChange": 1
+            }
+          ],
+          "imageKeywords": [
+            "bunker"
+          ]
+        },
+        {
+          "id": "scavenger-018",
+          "title": "The Train Pantry Ledger",
+          "setting": "A sunken train pantry contains food sealed behind a conductor's ledger that lists passengers by class. Survivors argue whether the old order should decide the new ration line.",
+          "futureMsg": "The ledger was soaked but still arrogant. You decided whether ink from the dead world could feed the living one.",
+          "imageUrl": "/images/backgrounds/limited-evacuation-convoy.png",
+          "progressionBand": "late",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Tag the passenger ledger find openly before hands get greedy.",
+              "outcome": "train survivors see the claim before rumor prices it. The find becomes contested, not stolen.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": 2,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Test the passenger ledger value before promising shares.",
+              "outcome": "Your caution exposes a hidden flaw. It also makes everyone suspect you found a better angle.",
+              "hopeChange": 2,
+              "trustChange": 3,
+              "chaosChange": -4,
+              "humanityChange": 0
+            },
+            {
+              "id": "c",
+              "text": "Cut the train survivors into the salvage plan.",
+              "outcome": "More hands mean less profit and fewer knives. The haul leaves with witnesses.",
+              "hopeChange": 3,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 4
+            },
+            {
+              "id": "d",
+              "text": "Grab the passenger ledger now and sort ownership later.",
+              "outcome": "You beat the collapse and inherit every accusation attached to the cargo.",
+              "hopeChange": 6,
+              "trustChange": -5,
+              "chaosChange": 5,
+              "humanityChange": -3
+            },
+            {
+              "id": "e",
+              "text": "Fence the passenger ledger through a buyer who owes you.",
+              "outcome": "The payout is real and dirty. People who needed the salvage learn what their need was worth.",
+              "hopeChange": 5,
+              "trustChange": -6,
+              "chaosChange": 2,
+              "humanityChange": -6
+            },
+            {
+              "id": "f",
+              "text": "Leave the passenger ledger untouched until the train survivors cool down.",
+              "outcome": "The standoff loses heat. The opportunity may not survive the night.",
+              "hopeChange": -3,
+              "trustChange": 2,
+              "chaosChange": -3,
+              "humanityChange": 1
+            }
+          ],
+          "imageKeywords": [
+            "limited evacuation convoy",
+            "limited evacuation",
+            "evacuation convoy",
+            "convoy",
+            "too few seats",
+            "fuel carriers",
+            "transport"
+          ]
+        },
+        {
+          "id": "scavenger-019",
+          "title": "The Rumor Bird Cage",
+          "setting": "A mechanical bird repeats market rumors with perfect accuracy until someone winds it backward. Then it recites secrets that have not happened yet.",
+          "futureMsg": "The bird did not know gossip from prophecy. People did, until profit taught them not to care.",
+          "imageUrl": "/images/backgrounds/misinformation-radio-room.png",
+          "progressionBand": "any",
+          "weight": 1,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Tag the rumor bird find openly before hands get greedy.",
+              "outcome": "market brokers see the claim before rumor prices it. The find becomes contested, not stolen.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": 2,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Test the rumor bird value before promising shares.",
+              "outcome": "Your caution exposes a hidden flaw. It also makes everyone suspect you found a better angle.",
+              "hopeChange": 2,
+              "trustChange": 3,
+              "chaosChange": -4,
+              "humanityChange": 0
+            },
+            {
+              "id": "c",
+              "text": "Cut the market brokers into the salvage plan.",
+              "outcome": "More hands mean less profit and fewer knives. The haul leaves with witnesses.",
+              "hopeChange": 3,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 4
+            },
+            {
+              "id": "d",
+              "text": "Grab the rumor bird now and sort ownership later.",
+              "outcome": "You beat the collapse and inherit every accusation attached to the cargo.",
+              "hopeChange": 6,
+              "trustChange": -5,
+              "chaosChange": 5,
+              "humanityChange": -3
+            },
+            {
+              "id": "e",
+              "text": "Fence the rumor bird through a buyer who owes you.",
+              "outcome": "The payout is real and dirty. People who needed the salvage learn what their need was worth.",
+              "hopeChange": 5,
+              "trustChange": -6,
+              "chaosChange": 2,
+              "humanityChange": -6
+            },
+            {
+              "id": "f",
+              "text": "Leave the rumor bird untouched until the market brokers cool down.",
+              "outcome": "The standoff loses heat. The opportunity may not survive the night.",
+              "hopeChange": -3,
+              "trustChange": 2,
+              "chaosChange": -3,
+              "humanityChange": 1
+            }
+          ],
+          "imageKeywords": [
+            "misinformation radio room",
+            "misinformation",
+            "radio room",
+            "radio",
+            "broadcast",
+            "signal",
+            "false warning",
+            "accused broadcaster"
+          ]
+        },
+        {
+          "id": "scavenger-020",
+          "title": "The Last Box Marked Fragile",
+          "setting": "In a collapsed courier depot, one intact crate marked fragile rattles like glass. The manifest says surgical lenses; the sound says family heirlooms; the armed claim tag says neither belongs to you.",
+          "futureMsg": "Fragile meant more than breakable. It meant every hand reaching for the box could become what it feared.",
+          "imageUrl": "/images/backgrounds/ruined-city.png",
+          "progressionBand": "any",
+          "weight": 1,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Tag the fragile crate find openly before hands get greedy.",
+              "outcome": "courier claimants see the claim before rumor prices it. The find becomes contested, not stolen.",
+              "hopeChange": 4,
+              "trustChange": 5,
+              "chaosChange": 2,
+              "humanityChange": 4
+            },
+            {
+              "id": "b",
+              "text": "Test the fragile crate value before promising shares.",
+              "outcome": "Your caution exposes a hidden flaw. It also makes everyone suspect you found a better angle.",
+              "hopeChange": 2,
+              "trustChange": 3,
+              "chaosChange": -4,
+              "humanityChange": 0
+            },
+            {
+              "id": "c",
+              "text": "Cut the courier claimants into the salvage plan.",
+              "outcome": "More hands mean less profit and fewer knives. The haul leaves with witnesses.",
+              "hopeChange": 3,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 4
+            },
+            {
+              "id": "d",
+              "text": "Grab the fragile crate now and sort ownership later.",
+              "outcome": "You beat the collapse and inherit every accusation attached to the cargo.",
+              "hopeChange": 6,
+              "trustChange": -5,
+              "chaosChange": 5,
+              "humanityChange": -3
+            },
+            {
+              "id": "e",
+              "text": "Fence the fragile crate through a buyer who owes you.",
+              "outcome": "The payout is real and dirty. People who needed the salvage learn what their need was worth.",
+              "hopeChange": 5,
+              "trustChange": -6,
+              "chaosChange": 2,
+              "humanityChange": -6
+            },
+            {
+              "id": "f",
+              "text": "Leave the fragile crate untouched until the courier claimants cool down.",
+              "outcome": "The standoff loses heat. The opportunity may not survive the night.",
+              "hopeChange": -3,
+              "trustChange": 2,
+              "chaosChange": -3,
+              "humanityChange": 1
+            }
+          ],
+          "imageKeywords": [
+            "ruined city"
           ]
         }
       ]

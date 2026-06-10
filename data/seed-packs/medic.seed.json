@@ -1,6 +1,6 @@
 {
-  "packId": "medic-v3",
-  "version": "3.0.0",
+  "packId": "medic-v4",
+  "version": "4.0.0",
   "avatars": [
     {
       "avatarId": "medic",
@@ -10,7 +10,7 @@
           "title": "The Fever Choir",
           "setting": "In an abandoned chapel clinic, thirty patients hum the same tune whenever their fever spikes. The melody matches a numbers station broadcasting from the ruined tower, and the sickest child hums tomorrow’s date between breaths.",
           "futureMsg": "Future-you remembers that the song was not madness. It was the body trying to translate danger before the mind could bear it.",
-          "imageUrl": "/images/backgrounds/ruined-city.png",
+          "imageUrl": "/images/scenarios/medic/avatar-medic-fever-ward-overflow.png",
           "progressionBand": "early",
           "weight": 3,
           "choices": [
@@ -68,6 +68,13 @@
               "chaosChange": 10,
               "humanityChange": -3
             }
+          ],
+          "imageKeywords": [
+            "fever ward overflow",
+            "fever ward",
+            "overflow ward",
+            "sick ward",
+            "disease outbreak"
           ]
         },
         {
@@ -75,7 +82,7 @@
           "title": "The Red Inventory",
           "setting": "Your medical ledger shows six red marks beside supplies you have not used yet. By morning, each mark corresponds to a patient who arrives bleeding, burned, or poisoned. Someone or something is editing your inventory before the wounds happen.",
           "futureMsg": "Future-you says the red ledger tempted you to become a prophet. The timeline wanted a doctor instead.",
-          "imageUrl": "/images/backgrounds/desert-highway.png",
+          "imageUrl": "/images/scenarios/medic/avatar-medic-vaccine-lottery.png",
           "progressionBand": "early",
           "weight": 2,
           "choices": [
@@ -133,6 +140,12 @@
               "chaosChange": 0,
               "humanityChange": -3
             }
+          ],
+          "imageKeywords": [
+            "vaccine lottery",
+            "vaccine",
+            "lottery",
+            "medicine allocation"
           ]
         },
         {
@@ -140,7 +153,7 @@
           "title": "The Mercy Engine",
           "setting": "A pre-collapse hospital machine still powers one surgical bay, but it speaks through canned announcement tones and refuses to operate unless you answer ethical prompts. Outside, five patients wait and the battery gauge keeps falling.",
           "futureMsg": "Future-you warns that the machine did not measure medical skill. It measured what you believed a life was worth when the plug was warm in your hand.",
-          "imageUrl": "/images/backgrounds/limited-evacuation-convoy.png",
+          "imageUrl": "/images/scenarios/medic/avatar-medic-limited-evacuation-convoy.png",
           "progressionBand": "mid",
           "weight": 2,
           "choices": [
@@ -198,6 +211,15 @@
               "chaosChange": -4,
               "humanityChange": -8
             }
+          ],
+          "imageKeywords": [
+            "limited evacuation convoy",
+            "limited evacuation",
+            "evacuation convoy",
+            "convoy",
+            "too few seats",
+            "fuel carriers",
+            "transport"
           ]
         },
         {
@@ -205,7 +227,7 @@
           "title": "Salt for the Sleepless",
           "setting": "The bunker’s children have stopped sleeping, drawing the same ocean on every wall. Their pulse rates sync whenever the old desalination pipes clatter below the floor. The adults ask for sedatives; the drawings show a door you never built.",
           "futureMsg": "Future-you remembers that exhaustion made cruelty sound practical. The cure was not rest. It was listening sideways.",
-          "imageUrl": "/images/backgrounds/radio-tower.png",
+          "imageUrl": "/images/scenarios/medic/avatar-medic-last-antibiotic.png",
           "progressionBand": "mid",
           "weight": 3,
           "choices": [
@@ -263,6 +285,11 @@
               "chaosChange": 0,
               "humanityChange": -4
             }
+          ],
+          "imageKeywords": [
+            "last antibiotic",
+            "antibiotic",
+            "scarce medicine"
           ]
         },
         {
@@ -270,7 +297,7 @@
           "title": "The Antivenom Wedding",
           "setting": "Two rival families arrive at your clinic with snakebite victims after a disastrous wedding hunt. You have enough antivenom for one full dose or two dangerous half doses. Each family claims the marriage treaty dies if their child does.",
           "futureMsg": "Future-you says you did not choose between lovers. You chose whether medicine would become another family weapon.",
-          "imageUrl": "/images/backgrounds/refugee-border-crossing.png",
+          "imageUrl": "/images/scenarios/medic/avatar-medic-refugee-border-crossing.png",
           "progressionBand": "any",
           "weight": 2,
           "choices": [
@@ -328,6 +355,15 @@
               "chaosChange": 5,
               "humanityChange": 5
             }
+          ],
+          "imageKeywords": [
+            "refugee border crossing",
+            "refugee border",
+            "border crossing",
+            "refugees",
+            "checkpoint",
+            "guards",
+            "crossing"
           ]
         },
         {
@@ -335,7 +371,7 @@
           "title": "The Borrowed Heartbeat",
           "setting": "A scavenged monitor in the maternity room begins playing a heartbeat from a patient who has not arrived yet. The rhythm falters whenever you move the emergency cot away from the east wall.",
           "futureMsg": "Future-you says the unborn future knocked softly that night. You almost mistook it for faulty wiring.",
-          "imageUrl": "/images/endings/ending-broken-future.png",
+          "imageUrl": "/images/scenarios/medic/avatar-medic-orphaned-patient.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [
@@ -393,6 +429,11 @@
               "chaosChange": 2,
               "humanityChange": -4
             }
+          ],
+          "imageKeywords": [
+            "orphaned patient",
+            "patient",
+            "child patient"
           ]
         },
         {
@@ -400,7 +441,7 @@
           "title": "Ash Lung Market",
           "setting": "A traveling bazaar arrives selling black filters woven from pre-collapse fabric. They work better than yours, but the merchants price them by years of service owed after recovery. Your ward coughs gray into cloth rags.",
           "futureMsg": "Future-you learned that a cure can still be a cage. Breathing is not freedom if every inhale is leased.",
-          "imageUrl": "/images/backgrounds/forest-safe-zone.png",
+          "imageUrl": "/images/scenarios/medic/avatar-medic-public-reckoning-ritual.png",
           "progressionBand": "mid",
           "weight": 2,
           "choices": [
@@ -458,6 +499,15 @@
               "chaosChange": -3,
               "humanityChange": -7
             }
+          ],
+          "imageKeywords": [
+            "public reckoning ritual",
+            "public reckoning",
+            "ritual",
+            "trial",
+            "oath ceremony",
+            "public punishment",
+            "reckoning"
           ]
         },
         {
@@ -465,7 +515,7 @@
           "title": "The Ward Beneath the Ice",
           "setting": "A frozen subway station holds survivors in suspended hypothermia, alive but slowing. You can thaw them one by one, but the power cells needed are also heating your current clinic through the coldest week of the year.",
           "futureMsg": "Future-you says the ice did not ask whether strangers mattered. It asked how far your circle could stretch before it snapped.",
-          "imageUrl": "/images/endings/ending-rebuilding-future.png",
+          "imageUrl": "/images/scenarios/medic/avatar-medic-quarantine-triage-dispute.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [
@@ -523,6 +573,16 @@
               "chaosChange": -2,
               "humanityChange": -7
             }
+          ],
+          "imageKeywords": [
+            "quarantine triage dispute",
+            "quarantine",
+            "triage",
+            "clinic",
+            "medical dispute",
+            "infection",
+            "medicine",
+            "ward"
           ]
         },
         {
@@ -530,7 +590,7 @@
           "title": "The Mask That Chooses Voices",
           "setting": "A child wearing an antique plague mask speaks with the voices of patients you lost, naming symptoms before they appear. The mask cannot be removed without causing seizures, and the camp wants either an oracle or an exorcism.",
           "futureMsg": "Future-you warns that grief can wear a useful face. That does not make it holy, and it does not make it disposable.",
-          "imageUrl": "/images/backgrounds/contested-resource-hearing.png",
+          "imageUrl": "/images/scenarios/medic/avatar-medic-collapse-of-the-clinic.png",
           "progressionBand": "any",
           "weight": 2,
           "choices": [
@@ -588,6 +648,12 @@
               "chaosChange": 2,
               "humanityChange": -3
             }
+          ],
+          "imageKeywords": [
+            "collapse of the clinic",
+            "clinic collapse",
+            "collapsed clinic",
+            "clinic failure"
           ]
         },
         {
@@ -595,7 +661,7 @@
           "title": "The Last Clean Needle",
           "setting": "At dawn, a convoy brings a vaccine sample that must be diluted with your last sterile needle set. The same kit is needed for emergency surgery on your oldest mentor, whose hands taught you every stitch you know.",
           "futureMsg": "Future-you says love made the room smaller. Duty made it unbearable. The person you saved shaped the healer you became.",
-          "imageUrl": "/images/endings/ending-balanced-future.png",
+          "imageUrl": "/images/scenarios/medic/avatar-medic-failed-rescue-witnesses.png",
           "progressionBand": "late",
           "weight": 1,
           "choices": [
@@ -653,6 +719,738 @@
               "chaosChange": 3,
               "humanityChange": 1
             }
+          ],
+          "imageKeywords": [
+            "failed rescue witnesses",
+            "failed rescue",
+            "rescue witnesses",
+            "collapsed rescue",
+            "witnesses",
+            "overpass rescue",
+            "rescue scene"
+          ]
+        },
+        {
+          "id": "medic-011",
+          "title": "The Ward of Borrowed Names",
+          "setting": "Patients in a converted gym recover faster when treated under someone else's name. The registry now mixes enemies, children, and the dead, while a mother begs you not to restore the truth until her son stabilizes.",
+          "futureMsg": "The chart lied, but the pulse was real. I still wonder which name we saved: his, hers, or the one the ward invented to survive.",
+          "imageUrl": "/images/backgrounds/shelter-leadership-vote.png",
+          "progressionBand": "early",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Open treatment notes on the name registry to the whole ward.",
+              "outcome": "gym ward hear the risk plainly. Fear spikes, then settles into useful consent.",
+              "hopeChange": 3,
+              "trustChange": 6,
+              "chaosChange": 2,
+              "humanityChange": 6
+            },
+            {
+              "id": "b",
+              "text": "Run a second test before changing triage.",
+              "outcome": "The extra sample catches a dangerous assumption. The waiting line hates you until the numbers hold.",
+              "hopeChange": 2,
+              "trustChange": 5,
+              "chaosChange": -5,
+              "humanityChange": 2
+            },
+            {
+              "id": "c",
+              "text": "Let the gym ward choose a care rotation in public.",
+              "outcome": "The rotation is imperfect and owned by more than your voice. That makes the bitterness survivable.",
+              "hopeChange": 2,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Seize the name registry protocol and move patients now.",
+              "outcome": "Bodies get out of immediate danger. Trust limps behind the stretchers, catching up slowly if at all.",
+              "hopeChange": 5,
+              "trustChange": -4,
+              "chaosChange": 4,
+              "humanityChange": 1
+            },
+            {
+              "id": "e",
+              "text": "Reserve the name registry for patients your clinic can save fastest.",
+              "outcome": "The survival math works. Families remember that math had their loved ones on the wrong side.",
+              "hopeChange": 4,
+              "trustChange": -6,
+              "chaosChange": -1,
+              "humanityChange": -5
+            },
+            {
+              "id": "f",
+              "text": "Stop intake until the gym ward accept the limits.",
+              "outcome": "The ward becomes safer and colder. Nobody mistakes the closed door for mercy.",
+              "hopeChange": -4,
+              "trustChange": 1,
+              "chaosChange": -4,
+              "humanityChange": -1
+            }
+          ],
+          "imageKeywords": [
+            "shelter leadership vote",
+            "shelter vote",
+            "leadership vote",
+            "vote",
+            "council",
+            "ballots",
+            "governance"
+          ]
+        },
+        {
+          "id": "medic-012",
+          "title": "Glass Fever at Dawn",
+          "setting": "A fever makes patients see through walls for one hour before organ failure begins. They are revealing hidden supplies, private grief, and one sealed room full of medicine your clinic was told did not exist.",
+          "futureMsg": "When the sick started seeing clearly, the healthy called it delirium. That was the first diagnosis you had to challenge.",
+          "imageUrl": "/images/backgrounds/quarantine-triage-dispute.png",
+          "progressionBand": "early",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Open treatment notes on the glass fever to the whole ward.",
+              "outcome": "clinic hallway hear the risk plainly. Fear spikes, then settles into useful consent.",
+              "hopeChange": 3,
+              "trustChange": 6,
+              "chaosChange": 2,
+              "humanityChange": 6
+            },
+            {
+              "id": "b",
+              "text": "Run a second test before changing triage.",
+              "outcome": "The extra sample catches a dangerous assumption. The waiting line hates you until the numbers hold.",
+              "hopeChange": 2,
+              "trustChange": 5,
+              "chaosChange": -5,
+              "humanityChange": 2
+            },
+            {
+              "id": "c",
+              "text": "Let the clinic hallway choose a care rotation in public.",
+              "outcome": "The rotation is imperfect and owned by more than your voice. That makes the bitterness survivable.",
+              "hopeChange": 2,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Seize the glass fever protocol and move patients now.",
+              "outcome": "Bodies get out of immediate danger. Trust limps behind the stretchers, catching up slowly if at all.",
+              "hopeChange": 5,
+              "trustChange": -4,
+              "chaosChange": 4,
+              "humanityChange": 1
+            },
+            {
+              "id": "e",
+              "text": "Reserve the glass fever for patients your clinic can save fastest.",
+              "outcome": "The survival math works. Families remember that math had their loved ones on the wrong side.",
+              "hopeChange": 4,
+              "trustChange": -6,
+              "chaosChange": -1,
+              "humanityChange": -5
+            },
+            {
+              "id": "f",
+              "text": "Stop intake until the clinic hallway accept the limits.",
+              "outcome": "The ward becomes safer and colder. Nobody mistakes the closed door for mercy.",
+              "hopeChange": -4,
+              "trustChange": 1,
+              "chaosChange": -4,
+              "humanityChange": -1
+            }
+          ],
+          "imageKeywords": [
+            "quarantine triage dispute",
+            "quarantine",
+            "triage",
+            "clinic",
+            "medical dispute",
+            "infection",
+            "medicine",
+            "ward"
+          ]
+        },
+        {
+          "id": "medic-013",
+          "title": "The Cradle Quarantine",
+          "setting": "A nursery tent is exposed to spores, but only the adults show symptoms. Evacuating the infants risks carrying contamination through camp; waiting risks panic from families already clawing at the canvas seams.",
+          "futureMsg": "I remember the sound outside that tent. Love can become a breach if no one gives it a door.",
+          "imageUrl": "/images/backgrounds/refugee-border-crossing.png",
+          "progressionBand": "mid",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Open treatment notes on the nursery tent to the whole ward.",
+              "outcome": "quarantined families hear the risk plainly. Fear spikes, then settles into useful consent.",
+              "hopeChange": 3,
+              "trustChange": 6,
+              "chaosChange": 2,
+              "humanityChange": 6
+            },
+            {
+              "id": "b",
+              "text": "Run a second test before changing triage.",
+              "outcome": "The extra sample catches a dangerous assumption. The waiting line hates you until the numbers hold.",
+              "hopeChange": 2,
+              "trustChange": 5,
+              "chaosChange": -5,
+              "humanityChange": 2
+            },
+            {
+              "id": "c",
+              "text": "Let the quarantined families choose a care rotation in public.",
+              "outcome": "The rotation is imperfect and owned by more than your voice. That makes the bitterness survivable.",
+              "hopeChange": 2,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Seize the nursery tent protocol and move patients now.",
+              "outcome": "Bodies get out of immediate danger. Trust limps behind the stretchers, catching up slowly if at all.",
+              "hopeChange": 5,
+              "trustChange": -4,
+              "chaosChange": 4,
+              "humanityChange": 1
+            },
+            {
+              "id": "e",
+              "text": "Reserve the nursery tent for patients your clinic can save fastest.",
+              "outcome": "The survival math works. Families remember that math had their loved ones on the wrong side.",
+              "hopeChange": 4,
+              "trustChange": -6,
+              "chaosChange": -1,
+              "humanityChange": -5
+            },
+            {
+              "id": "f",
+              "text": "Stop intake until the quarantined families accept the limits.",
+              "outcome": "The ward becomes safer and colder. Nobody mistakes the closed door for mercy.",
+              "hopeChange": -4,
+              "trustChange": 1,
+              "chaosChange": -4,
+              "humanityChange": -1
+            }
+          ],
+          "imageKeywords": [
+            "refugee border crossing",
+            "refugee border",
+            "border crossing",
+            "refugees",
+            "checkpoint",
+            "guards",
+            "crossing"
+          ]
+        },
+        {
+          "id": "medic-014",
+          "title": "The Surgeon With Shaking Hands",
+          "setting": "The only surgeon who can remove a shard from the water engineer has tremors from withdrawal. You have sedatives for one person: the surgeon, the patient, or the crowd about to riot over the delay.",
+          "futureMsg": "The hand holding the scalpel was not the only thing shaking. So was the agreement that expertise still deserved care.",
+          "imageUrl": "/images/backgrounds/failed-rescue-witnesses.png",
+          "progressionBand": "mid",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Open treatment notes on the sedative vial to the whole ward.",
+              "outcome": "surgery crowd hear the risk plainly. Fear spikes, then settles into useful consent.",
+              "hopeChange": 3,
+              "trustChange": 6,
+              "chaosChange": 2,
+              "humanityChange": 6
+            },
+            {
+              "id": "b",
+              "text": "Run a second test before changing triage.",
+              "outcome": "The extra sample catches a dangerous assumption. The waiting line hates you until the numbers hold.",
+              "hopeChange": 2,
+              "trustChange": 5,
+              "chaosChange": -5,
+              "humanityChange": 2
+            },
+            {
+              "id": "c",
+              "text": "Let the surgery crowd choose a care rotation in public.",
+              "outcome": "The rotation is imperfect and owned by more than your voice. That makes the bitterness survivable.",
+              "hopeChange": 2,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Seize the sedative vial protocol and move patients now.",
+              "outcome": "Bodies get out of immediate danger. Trust limps behind the stretchers, catching up slowly if at all.",
+              "hopeChange": 5,
+              "trustChange": -4,
+              "chaosChange": 4,
+              "humanityChange": 1
+            },
+            {
+              "id": "e",
+              "text": "Reserve the sedative vial for patients your clinic can save fastest.",
+              "outcome": "The survival math works. Families remember that math had their loved ones on the wrong side.",
+              "hopeChange": 4,
+              "trustChange": -6,
+              "chaosChange": -1,
+              "humanityChange": -5
+            },
+            {
+              "id": "f",
+              "text": "Stop intake until the surgery crowd accept the limits.",
+              "outcome": "The ward becomes safer and colder. Nobody mistakes the closed door for mercy.",
+              "hopeChange": -4,
+              "trustChange": 1,
+              "chaosChange": -4,
+              "humanityChange": -1
+            }
+          ],
+          "imageKeywords": [
+            "failed rescue witnesses",
+            "failed rescue",
+            "rescue witnesses",
+            "collapsed rescue",
+            "witnesses",
+            "overpass rescue",
+            "rescue scene"
+          ]
+        },
+        {
+          "id": "medic-015",
+          "title": "Trial of the Contaminated Well",
+          "setting": "A well tests positive after a refugee child drops a charm into it. The council wants a culprit before sunset. Your samples suggest the poison came from old pipes, not the child everyone can see.",
+          "futureMsg": "That well taught me how fast a community will choose a face for invisible harm. You had the numbers. They needed courage.",
+          "imageUrl": "/images/backgrounds/contested-resource-hearing.png",
+          "progressionBand": "mid",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Open treatment notes on the water samples to the whole ward.",
+              "outcome": "well council hear the risk plainly. Fear spikes, then settles into useful consent.",
+              "hopeChange": 3,
+              "trustChange": 6,
+              "chaosChange": 2,
+              "humanityChange": 6
+            },
+            {
+              "id": "b",
+              "text": "Run a second test before changing triage.",
+              "outcome": "The extra sample catches a dangerous assumption. The waiting line hates you until the numbers hold.",
+              "hopeChange": 2,
+              "trustChange": 5,
+              "chaosChange": -5,
+              "humanityChange": 2
+            },
+            {
+              "id": "c",
+              "text": "Let the well council choose a care rotation in public.",
+              "outcome": "The rotation is imperfect and owned by more than your voice. That makes the bitterness survivable.",
+              "hopeChange": 2,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Seize the water samples protocol and move patients now.",
+              "outcome": "Bodies get out of immediate danger. Trust limps behind the stretchers, catching up slowly if at all.",
+              "hopeChange": 5,
+              "trustChange": -4,
+              "chaosChange": 4,
+              "humanityChange": 1
+            },
+            {
+              "id": "e",
+              "text": "Reserve the water samples for patients your clinic can save fastest.",
+              "outcome": "The survival math works. Families remember that math had their loved ones on the wrong side.",
+              "hopeChange": 4,
+              "trustChange": -6,
+              "chaosChange": -1,
+              "humanityChange": -5
+            },
+            {
+              "id": "f",
+              "text": "Stop intake until the well council accept the limits.",
+              "outcome": "The ward becomes safer and colder. Nobody mistakes the closed door for mercy.",
+              "hopeChange": -4,
+              "trustChange": 1,
+              "chaosChange": -4,
+              "humanityChange": -1
+            }
+          ],
+          "imageKeywords": [
+            "contested resource hearing",
+            "resource hearing",
+            "public hearing",
+            "ration hearing",
+            "water rights hearing",
+            "resource dispute",
+            "council hearing"
+          ]
+        },
+        {
+          "id": "medic-016",
+          "title": "The Blood Battery",
+          "setting": "An improvised transfusion rig can keep the generator operator alive if volunteers donate in rotation. A rumor spreads that your blood list will become a loyalty register after the lights return.",
+          "futureMsg": "The machine needed blood, but the settlement needed proof that giving would not become ownership.",
+          "imageUrl": "/images/backgrounds/sabotaged-infrastructure-repair.png",
+          "progressionBand": "late",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Open treatment notes on the transfusion rig to the whole ward.",
+              "outcome": "generator volunteers hear the risk plainly. Fear spikes, then settles into useful consent.",
+              "hopeChange": 3,
+              "trustChange": 6,
+              "chaosChange": 2,
+              "humanityChange": 6
+            },
+            {
+              "id": "b",
+              "text": "Run a second test before changing triage.",
+              "outcome": "The extra sample catches a dangerous assumption. The waiting line hates you until the numbers hold.",
+              "hopeChange": 2,
+              "trustChange": 5,
+              "chaosChange": -5,
+              "humanityChange": 2
+            },
+            {
+              "id": "c",
+              "text": "Let the generator volunteers choose a care rotation in public.",
+              "outcome": "The rotation is imperfect and owned by more than your voice. That makes the bitterness survivable.",
+              "hopeChange": 2,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Seize the transfusion rig protocol and move patients now.",
+              "outcome": "Bodies get out of immediate danger. Trust limps behind the stretchers, catching up slowly if at all.",
+              "hopeChange": 5,
+              "trustChange": -4,
+              "chaosChange": 4,
+              "humanityChange": 1
+            },
+            {
+              "id": "e",
+              "text": "Reserve the transfusion rig for patients your clinic can save fastest.",
+              "outcome": "The survival math works. Families remember that math had their loved ones on the wrong side.",
+              "hopeChange": 4,
+              "trustChange": -6,
+              "chaosChange": -1,
+              "humanityChange": -5
+            },
+            {
+              "id": "f",
+              "text": "Stop intake until the generator volunteers accept the limits.",
+              "outcome": "The ward becomes safer and colder. Nobody mistakes the closed door for mercy.",
+              "hopeChange": -4,
+              "trustChange": 1,
+              "chaosChange": -4,
+              "humanityChange": -1
+            }
+          ],
+          "imageKeywords": [
+            "sabotaged infrastructure repair",
+            "sabotaged infrastructure",
+            "infrastructure repair",
+            "repair site",
+            "aqueduct repair",
+            "floodgate repair",
+            "damaged machinery"
+          ]
+        },
+        {
+          "id": "medic-017",
+          "title": "The Ash-Mouth Choir",
+          "setting": "Miners with ash-lung can breathe only when singing in rhythm. Their song keeps the clinic calm until a prisoner recognizes the melody as a raider marching chant and demands you silence it.",
+          "futureMsg": "You saved breath by letting a hated song change jobs. Not everyone forgave the tune. Some learned to breathe anyway.",
+          "imageUrl": "/images/backgrounds/public-reckoning-ritual.png",
+          "progressionBand": "late",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Open treatment notes on the breathing song to the whole ward.",
+              "outcome": "ash-lung miners hear the risk plainly. Fear spikes, then settles into useful consent.",
+              "hopeChange": 3,
+              "trustChange": 6,
+              "chaosChange": 2,
+              "humanityChange": 6
+            },
+            {
+              "id": "b",
+              "text": "Run a second test before changing triage.",
+              "outcome": "The extra sample catches a dangerous assumption. The waiting line hates you until the numbers hold.",
+              "hopeChange": 2,
+              "trustChange": 5,
+              "chaosChange": -5,
+              "humanityChange": 2
+            },
+            {
+              "id": "c",
+              "text": "Let the ash-lung miners choose a care rotation in public.",
+              "outcome": "The rotation is imperfect and owned by more than your voice. That makes the bitterness survivable.",
+              "hopeChange": 2,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Seize the breathing song protocol and move patients now.",
+              "outcome": "Bodies get out of immediate danger. Trust limps behind the stretchers, catching up slowly if at all.",
+              "hopeChange": 5,
+              "trustChange": -4,
+              "chaosChange": 4,
+              "humanityChange": 1
+            },
+            {
+              "id": "e",
+              "text": "Reserve the breathing song for patients your clinic can save fastest.",
+              "outcome": "The survival math works. Families remember that math had their loved ones on the wrong side.",
+              "hopeChange": 4,
+              "trustChange": -6,
+              "chaosChange": -1,
+              "humanityChange": -5
+            },
+            {
+              "id": "f",
+              "text": "Stop intake until the ash-lung miners accept the limits.",
+              "outcome": "The ward becomes safer and colder. Nobody mistakes the closed door for mercy.",
+              "hopeChange": -4,
+              "trustChange": 1,
+              "chaosChange": -4,
+              "humanityChange": -1
+            }
+          ],
+          "imageKeywords": [
+            "public reckoning ritual",
+            "public reckoning",
+            "ritual",
+            "trial",
+            "oath ceremony",
+            "public punishment",
+            "reckoning"
+          ]
+        },
+        {
+          "id": "medic-018",
+          "title": "The Cold Room Lottery",
+          "setting": "A solar freezer can preserve either vaccines, insulin, or the unidentified bodies awaiting burial. Families argue that memory is medicine too, and the freezer door is already sweating.",
+          "futureMsg": "The cold room held three kinds of future: prevention, survival, and names. You could not keep all of them frozen.",
+          "imageUrl": "/images/backgrounds/bunker.png",
+          "progressionBand": "late",
+          "weight": 2,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Open treatment notes on the solar freezer to the whole ward.",
+              "outcome": "waiting families hear the risk plainly. Fear spikes, then settles into useful consent.",
+              "hopeChange": 3,
+              "trustChange": 6,
+              "chaosChange": 2,
+              "humanityChange": 6
+            },
+            {
+              "id": "b",
+              "text": "Run a second test before changing triage.",
+              "outcome": "The extra sample catches a dangerous assumption. The waiting line hates you until the numbers hold.",
+              "hopeChange": 2,
+              "trustChange": 5,
+              "chaosChange": -5,
+              "humanityChange": 2
+            },
+            {
+              "id": "c",
+              "text": "Let the waiting families choose a care rotation in public.",
+              "outcome": "The rotation is imperfect and owned by more than your voice. That makes the bitterness survivable.",
+              "hopeChange": 2,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Seize the solar freezer protocol and move patients now.",
+              "outcome": "Bodies get out of immediate danger. Trust limps behind the stretchers, catching up slowly if at all.",
+              "hopeChange": 5,
+              "trustChange": -4,
+              "chaosChange": 4,
+              "humanityChange": 1
+            },
+            {
+              "id": "e",
+              "text": "Reserve the solar freezer for patients your clinic can save fastest.",
+              "outcome": "The survival math works. Families remember that math had their loved ones on the wrong side.",
+              "hopeChange": 4,
+              "trustChange": -6,
+              "chaosChange": -1,
+              "humanityChange": -5
+            },
+            {
+              "id": "f",
+              "text": "Stop intake until the waiting families accept the limits.",
+              "outcome": "The ward becomes safer and colder. Nobody mistakes the closed door for mercy.",
+              "hopeChange": -4,
+              "trustChange": 1,
+              "chaosChange": -4,
+              "humanityChange": -1
+            }
+          ],
+          "imageKeywords": [
+            "bunker"
+          ]
+        },
+        {
+          "id": "medic-019",
+          "title": "The Antenna in the Bone",
+          "setting": "A patient's healed fracture receives emergency broadcasts through the metal pin inside her arm. Every message is useful, painful, and possibly traceable by the people who sent it.",
+          "futureMsg": "Her bone became a radio because the old world left metal where mercy should have been. You decided how much pain counted as public property.",
+          "imageUrl": "/images/backgrounds/radio-tower.png",
+          "progressionBand": "any",
+          "weight": 1,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Open treatment notes on the bone antenna to the whole ward.",
+              "outcome": "injured courier hear the risk plainly. Fear spikes, then settles into useful consent.",
+              "hopeChange": 3,
+              "trustChange": 6,
+              "chaosChange": 2,
+              "humanityChange": 6
+            },
+            {
+              "id": "b",
+              "text": "Run a second test before changing triage.",
+              "outcome": "The extra sample catches a dangerous assumption. The waiting line hates you until the numbers hold.",
+              "hopeChange": 2,
+              "trustChange": 5,
+              "chaosChange": -5,
+              "humanityChange": 2
+            },
+            {
+              "id": "c",
+              "text": "Let the injured courier choose a care rotation in public.",
+              "outcome": "The rotation is imperfect and owned by more than your voice. That makes the bitterness survivable.",
+              "hopeChange": 2,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Seize the bone antenna protocol and move patients now.",
+              "outcome": "Bodies get out of immediate danger. Trust limps behind the stretchers, catching up slowly if at all.",
+              "hopeChange": 5,
+              "trustChange": -4,
+              "chaosChange": 4,
+              "humanityChange": 1
+            },
+            {
+              "id": "e",
+              "text": "Reserve the bone antenna for patients your clinic can save fastest.",
+              "outcome": "The survival math works. Families remember that math had their loved ones on the wrong side.",
+              "hopeChange": 4,
+              "trustChange": -6,
+              "chaosChange": -1,
+              "humanityChange": -5
+            },
+            {
+              "id": "f",
+              "text": "Stop intake until the injured courier accept the limits.",
+              "outcome": "The ward becomes safer and colder. Nobody mistakes the closed door for mercy.",
+              "hopeChange": -4,
+              "trustChange": 1,
+              "chaosChange": -4,
+              "humanityChange": -1
+            }
+          ],
+          "imageKeywords": [
+            "radio tower"
+          ]
+        },
+        {
+          "id": "medic-020",
+          "title": "The Last Quiet Hour",
+          "setting": "A medication that eases dying also makes patients speak one final truth. The ward is full, the bottle is small, and several leaders are suddenly terrified of who might receive mercy first.",
+          "futureMsg": "We called it comfort care. They feared it as testimony. Both were true in that room.",
+          "imageUrl": "/images/backgrounds/ruined-city.png",
+          "progressionBand": "any",
+          "weight": 1,
+          "choices": [
+            {
+              "id": "a",
+              "text": "Open treatment notes on the truth sedative to the whole ward.",
+              "outcome": "crowded ward hear the risk plainly. Fear spikes, then settles into useful consent.",
+              "hopeChange": 3,
+              "trustChange": 6,
+              "chaosChange": 2,
+              "humanityChange": 6
+            },
+            {
+              "id": "b",
+              "text": "Run a second test before changing triage.",
+              "outcome": "The extra sample catches a dangerous assumption. The waiting line hates you until the numbers hold.",
+              "hopeChange": 2,
+              "trustChange": 5,
+              "chaosChange": -5,
+              "humanityChange": 2
+            },
+            {
+              "id": "c",
+              "text": "Let the crowded ward choose a care rotation in public.",
+              "outcome": "The rotation is imperfect and owned by more than your voice. That makes the bitterness survivable.",
+              "hopeChange": 2,
+              "trustChange": 7,
+              "chaosChange": -2,
+              "humanityChange": 5
+            },
+            {
+              "id": "d",
+              "text": "Seize the truth sedative protocol and move patients now.",
+              "outcome": "Bodies get out of immediate danger. Trust limps behind the stretchers, catching up slowly if at all.",
+              "hopeChange": 5,
+              "trustChange": -4,
+              "chaosChange": 4,
+              "humanityChange": 1
+            },
+            {
+              "id": "e",
+              "text": "Reserve the truth sedative for patients your clinic can save fastest.",
+              "outcome": "The survival math works. Families remember that math had their loved ones on the wrong side.",
+              "hopeChange": 4,
+              "trustChange": -6,
+              "chaosChange": -1,
+              "humanityChange": -5
+            },
+            {
+              "id": "f",
+              "text": "Stop intake until the crowded ward accept the limits.",
+              "outcome": "The ward becomes safer and colder. Nobody mistakes the closed door for mercy.",
+              "hopeChange": -4,
+              "trustChange": 1,
+              "chaosChange": -4,
+              "humanityChange": -1
+            }
+          ],
+          "imageKeywords": [
+            "ruined city"
           ]
         }
       ]

@@ -96,13 +96,16 @@ async function normalizeSeedScenario({ scenario, avatarId, packId, scenarioIndex
         ? scenario.futureSelfMessage.trim()
         : ensureString(scenario?.futureMsg, `futureMsg for ${scenarioId}`),
     imageUrl: await ensurePublicImageExists(
-      getSeedScenarioImage({ avatarId, scenarioIndex }) ?? scenario?.imageUrl,
+      scenario?.imageUrl ?? getSeedScenarioImage({ avatarId, scenarioIndex }),
       `imageUrl for ${scenarioId}`,
     ),
     consequences: {
       ...(scenario?.consequences && typeof scenario.consequences === "object"
         ? scenario.consequences
         : {}),
+      imageKeywords: Array.isArray(scenario?.imageKeywords)
+        ? scenario.imageKeywords
+        : [],
       seedMeta: {
         type: "seed-pack",
         packId,
