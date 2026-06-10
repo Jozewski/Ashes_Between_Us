@@ -26,10 +26,40 @@
   }
 }
 
+@keyframes fragment-pulse {
+  0%,
+  100% {
+    opacity: 0.38;
+    transform: scale(1);
+    filter: saturate(0.85) brightness(0.86);
+  }
+  50% {
+    opacity: 0.72;
+    transform: scale(1.035);
+    filter: saturate(1.28) brightness(1.18);
+  }
+}
+
+@keyframes signal-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.92;
+  }
+}
+
 /* ── Animation utilities ── */
 @layer utilities {
   .animate-fade-up {
     animation: fade-up 0.65s ease forwards;
+  }
+  .animate-fragment-pulse {
+    animation: fragment-pulse 2.8s ease-in-out infinite;
+  }
+  .animate-signal-pulse {
+    animation: signal-pulse 1.8s ease-in-out infinite;
   }
 }
 

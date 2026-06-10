@@ -1,32 +1,20 @@
 // prisma/check-scenario-images.js
 //
-// Audits audio coverage for every scenario background image. Confirms that
-// each image used in the live DB (and each AI-selectable image) resolves to a
-// music track whose file actually exists on disk — so no scenario can ever be
-// silent, whether the image came from seed data or AI generation.
+// Audits scenario image coverage. Confirms that each image used in the live DB
+// and each AI-selectable image exists on disk.
 //
-// Run with:  node prisma/check-scenario-images.js
+// Run with: node prisma/check-scenario-images.js
 
 import { existsSync } from "node:fs";
 import path from "node:path";
 import { prisma } from "../lib/prisma.js";
-import { trackKeyForImage } from "../lib/sceneAudioMap.js";
-import { MUSIC_TRACKS } from "../lib/audioTracks.js";
 import { VALID_BACKGROUND_IMAGES } from "../lib/futureSelfService.js";
 
 const PUBLIC_DIR = path.join(process.cwd(), "public");
 
-function trackFileExists(trackKey) {
-  const src = MUSIC_TRACKS[trackKey]?.src;
-  if (!src) return false;
-  return existsSync(path.join(PUBLIC_DIR, src.replace(/^\//, "")));
-}
-
-function describe(imageUrl) {
-  const trackKey = trackKeyForImage(imageUrl);
-  const dedicated = trackKey !== "default";
-  const fileOk = trackFileExists(trackKey);
-  return { trackKey, dedicated, fileOk };
+function imageFileExists(imageUrl) {
+  if (typeof imageUrl !== "string" || !imageUrl) return false;
+  return existsSync(path.join(PUBLIC_DIR, imageUrl.replace(/^\//, "")));
 }
 
 let problems = 0;
@@ -42,28 +30,20 @@ try {
     counts.set(key, (counts.get(key) ?? 0) + 1);
   }
 
-  console.log("SEED/DB SCENARIO IMAGES -> TRACK");
+  console.log("SEED/DB SCENARIO IMAGES");
   for (const [url, n] of [...counts.entries()].sort()) {
-    const { trackKey, dedicated, fileOk } = describe(url);
-    const flag = !fileOk
-      ? "  x MISSING TRACK FILE"
-      : dedicated
-        ? ""
-        : "  (default loop)";
+    const fileOk = imageFileExists(url);
+    const flag = fileOk ? "" : "  x MISSING IMAGE FILE";
     if (!fileOk) problems++;
-    console.log(`  ${String(n).padStart(2)}  ${url}  ->  ${trackKey}${flag}`);
+    console.log(`  ${String(n).padStart(2)}  ${url}${flag}`);
   }
 
-  console.log("\nAI-SELECTABLE IMAGES -> TRACK");
+  console.log("\nAI-SELECTABLE IMAGES");
   for (const url of VALID_BACKGROUND_IMAGES) {
-    const { trackKey, dedicated, fileOk } = describe(url);
-    const flag = !fileOk
-      ? "  x MISSING TRACK FILE"
-      : dedicated
-        ? ""
-        : "  x NO DEDICATED TRACK";
-    if (!fileOk || !dedicated) problems++;
-    console.log(`      ${url}  ->  ${trackKey}${flag}`);
+    const fileOk = imageFileExists(url);
+    const flag = fileOk ? "" : "  x MISSING IMAGE FILE";
+    if (!fileOk) problems++;
+    console.log(`      ${url}${flag}`);
   }
 
   console.log(

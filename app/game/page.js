@@ -12,7 +12,7 @@ import ChoiceButton from "@/components/ChoiceButton";
 import OutcomeCard from "@/components/OutcomeCard";
 import MuteButton from "@/components/MuteButton";
 import { useMusic } from "@/components/MusicProvider";
-import { trackKeyForImage } from "@/lib/sceneAudioMap";
+import { trackKeyForScenarioTurn } from "@/lib/scenarioAudioLoop";
 import { INITIAL_STATS } from "@/lib/mockData";
 import { deriveFutureStateFromStats } from "@/lib/outcomeEngine";
 
@@ -42,16 +42,9 @@ function startNewRun() {
   return runId;
 }
 
-function didHardRefresh() {
+function shouldOpenAvatarSelection() {
   if (typeof window === "undefined") return false;
-
-  const navEntries = window.performance?.getEntriesByType?.("navigation");
-  if (Array.isArray(navEntries) && navEntries.length > 0) {
-    return navEntries[0].type === "reload";
-  }
-
-  // Fallback for older browsers.
-  return window.performance?.navigation?.type === 1;
+  return new URLSearchParams(window.location.search).get("selectAvatar") === "1";
 }
 
 function clearGameStorage() {
@@ -105,6 +98,7 @@ export default function GamePage() {
   const [loading, setLoading]           = useState(true);
   const [loadingScenario, setLoadingScenario] = useState(false);
   const [loadError, setLoadError] = useState("");
+  const [allowAvatarSelection, setAllowAvatarSelection] = useState(false);
 
   const selectedAvatar = avatars.find((avatar) => avatar.id === selectedAvatarId) ?? null;
   const futureState = deriveFutureStateFromStats(stats);
@@ -114,13 +108,14 @@ export default function GamePage() {
     null;
 
   useEffect(() => {
-    if (!scenario?.imageUrl) return;
-    playMusic(trackKeyForImage(scenario.imageUrl));
-  }, [scenario?.imageUrl, playMusic]);
+    if (!scenario?.id) return;
+    playMusic(trackKeyForScenarioTurn(turn));
+  }, [scenario?.id, turn, playMusic]);
 
   useEffect(() => {
-    if (didHardRefresh()) {
-      clearGameStorage();
+    const canSelectAvatar = shouldOpenAvatarSelection();
+    if (canSelectAvatar) {
+      setAllowAvatarSelection(true);
     }
 
     let cancelled = false;
@@ -144,6 +139,9 @@ export default function GamePage() {
           if (savedAvatar) {
             setSelectedAvatarId(savedAvatar.id);
             setStats(savedAvatar.startingStats);
+          } else if (!canSelectAvatar) {
+            router.replace("/");
+            return;
           }
         }
       } catch (error) {
@@ -160,7 +158,7 @@ export default function GamePage() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [router]);
 
   useEffect(() => {
     if (!selectedAvatarId || scenario) return;
@@ -247,12 +245,15 @@ export default function GamePage() {
     setRecentChoices([]);
     setStats(INITIAL_STATS);
     setSelectedAvatarId(null);
+    setAllowAvatarSelection(true);
     setLoadError("");
 
     if (typeof window !== "undefined") {
       window.localStorage.removeItem(LOCAL_AVATAR_KEY);
       window.sessionStorage.removeItem(SESSION_RUN_ID_KEY);
     }
+
+    playMusic("start");
   }
 
   // ── handlers ──────────────────────────────────────────────────
