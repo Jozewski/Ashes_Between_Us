@@ -25,8 +25,15 @@ const barlow = Barlow({
 });
 
 export const metadata = {
-  title: "Client",
+  applicationName: "Ashes Between Us",
+  title: {
+    default: "Ashes Between Us",
+    template: "%s | ABU",
+  },
   description: "An apocalyptic butterfly-effect RPG. Your future self is trying to reach you.",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({ children }) {

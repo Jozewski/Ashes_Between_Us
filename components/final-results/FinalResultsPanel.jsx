@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import TimelineHistory from "@/components/TimelineHistory";
-import { getEndingSymbolItems } from "@/lib/endingEngine";
 
 export default function FinalResultsPanel({
   attempts,
@@ -14,22 +13,30 @@ export default function FinalResultsPanel({
   latestAvatar,
   latestAttempt,
   endingNarrative,
+  endingStory,
   endingState,
   endingScore,
   finalStats,
   futureImageUrl,
   onNewGame,
 }) {
+  const endingTitle =
+    endingStory?.title ??
+    endingNarrative?.title ??
+    "Timeline Recorded";
   const endingText =
+    endingStory?.summary ??
     endingNarrative?.narrative ??
     latestAttempt?.outcome ??
     playerProfile?.backstory ??
     "";
-  const symbolicItems = getEndingSymbolItems(endingState);
+  const futureSelfDescription = latestAvatar
+    ? `${latestAvatar.name} reaches this future as a ${endingState ?? "recorded"} survivor, shaped by the last branch${latestAttempt?.scenarioTitle ? ` at ${latestAttempt.scenarioTitle}` : ""}. This image is the version that looks back, not another warning note.`
+    : "Your future self reflects the outcome created by this run and the final branch recorded in the archive.";
 
   return (
-    <div className="grid min-w-0 gap-4 sm:gap-5 xl:grid-cols-[minmax(280px,0.9fr)_minmax(360px,1.25fr)_minmax(280px,0.95fr)]">
-      <section className="min-w-0 flex flex-col gap-3.5">
+    <div className="grid min-w-0 items-stretch gap-4 sm:gap-5 xl:min-h-[calc(100vh-176px)] xl:grid-cols-[minmax(290px,0.92fr)_minmax(420px,1.18fr)_minmax(300px,0.9fr)]">
+      <section className="order-2 min-w-0 flex h-full flex-col gap-3.5 xl:order-1">
         <div>
           <p className="mb-2 font-mono text-[10px] tracking-[0.3em] text-[#6B6558] uppercase">
             Final archive
@@ -38,7 +45,7 @@ export default function FinalResultsPanel({
             className="font-display tracking-wide text-[#F0EAD6]"
             style={{ fontSize: "clamp(34px, 6vw, 58px)", lineHeight: 0.92 }}
           >
-            {endingNarrative?.title ?? "Timeline Recorded"}
+            {endingTitle}
           </h1>
           <p className="mt-3 font-mono text-[9px] tracking-[0.24em] text-[#4ECDC4] uppercase">
             {latestAvatar?.name ?? "Unknown survivor"}
@@ -73,26 +80,59 @@ export default function FinalResultsPanel({
           <p className="mb-2 font-mono text-[9px] tracking-[0.25em] text-[#4ECDC4] uppercase">
             Survivor record
           </p>
+          {playerProfile?.profileTitle && (
+            <p className="mb-2 font-display text-2xl leading-none tracking-wide text-[#F0EAD6]">
+              {playerProfile.profileTitle}
+            </p>
+          )}
           <p className="text-base leading-relaxed text-[#B8AC8D]">
             {playerProfile?.bio ??
               "Complete a timeline to generate a survivor record from your choices."}
           </p>
         </div>
 
-        <div className="border border-white/10 bg-white/[0.03] p-4">
+        <div className="flex-1 border border-white/10 bg-white/[0.03] p-4 xl:min-h-0">
           <p className="mb-2 font-mono text-[9px] tracking-[0.25em] text-[#4ECDC4] uppercase">
-            Backstory
+            Beginning story
           </p>
-          <p className="text-base leading-relaxed text-[#B8AC8D]">
-            {playerProfile?.backstory ??
-              latestAvatar?.backstory ??
-              "The archive will fill in as your run creates more choices."}
+          <p className="whitespace-pre-line text-base leading-relaxed text-[#B8AC8D]">
+            {playerProfile?.backstory
+              ? playerProfile.backstory
+              : latestAvatar?.backstory ??
+                "The archive will fill in as your run creates more choices."}
           </p>
         </div>
       </section>
 
-      <main className="min-w-0 flex flex-col gap-4">
-        <article className="border border-[#4ECDC4]/30 bg-[#4ECDC4]/5 p-4 sm:p-5">
+      <main className="order-1 min-w-0 flex h-full flex-col gap-4 xl:order-2">
+        <section className="border border-white/10 bg-black/20">
+          <div className="grid md:grid-cols-[0.85fr_1fr]">
+            <div className="relative min-h-[260px] overflow-hidden bg-black/35">
+              {futureImageUrl && (
+                <Image
+                  src={futureImageUrl}
+                  alt={`Future state: ${endingState}`}
+                  fill
+                  sizes="(max-width: 1280px) 100vw, 420px"
+                  className="object-contain object-center p-3"
+                />
+              )}
+            </div>
+            <div className="flex flex-col justify-center p-4 sm:p-5">
+              <p className="mb-2 font-mono text-[9px] tracking-[0.25em] text-[#4ECDC4] uppercase">
+                Future self
+              </p>
+              <h3 className="font-display text-3xl leading-none tracking-wide text-[#F0EAD6]">
+                {(endingState ?? "unknown").toUpperCase()}
+              </h3>
+              <p className="mt-3 text-base leading-relaxed text-[#B8AC8D]">
+                {futureSelfDescription}
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <article className="flex-1 border border-[#4ECDC4]/30 bg-[#4ECDC4]/5 p-5 sm:p-6 xl:min-h-0">
           <div className="mb-3.5 flex items-start gap-3">
             {endingNarrative?.icon && (
               <span className="text-4xl leading-none">{endingNarrative.icon}</span>
@@ -102,21 +142,38 @@ export default function FinalResultsPanel({
                 Final outcome
               </p>
               <h2 className="mt-1 font-display text-3xl leading-none tracking-wide text-[#F0EAD6] sm:text-4xl">
-                {endingNarrative?.title ?? "The future answers"}
+                {endingTitle}
               </h2>
             </div>
           </div>
-          <p className="text-[17px] leading-relaxed text-[#D4C9A8]">
+          <p className="whitespace-pre-line text-[17px] leading-relaxed text-[#D4C9A8]">
             {endingText || "No final narrative is available yet."}
           </p>
+          {endingStory?.futureSignalReading && (
+            <div className="mt-5 border-t border-[#4ECDC4]/20 pt-4">
+              <p className="mb-2 font-mono text-[9px] tracking-[0.25em] text-[#4ECDC4] uppercase">
+                Future signal reading
+              </p>
+              <p className="text-base leading-relaxed text-[#B8AC8D]">
+                {endingStory.futureSignalReading}
+              </p>
+            </div>
+          )}
+          {endingStory?.closingLine && (
+            <p className="mt-5 font-display text-2xl leading-tight tracking-wide text-[#F0EAD6]">
+              {endingStory.closingLine}
+            </p>
+          )}
         </article>
+      </main>
 
+      <aside className="order-3 min-w-0 flex h-full flex-col gap-3.5">
         {finalStats && (
           <section className="border border-white/10 bg-white/[0.03] p-4">
             <p className="mb-4 font-mono text-[9px] tracking-[0.25em] text-[#6B6558] uppercase">
               Final stats
             </p>
-            <div className="grid gap-3 sm:grid-cols-2">
+            <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-1 2xl:grid-cols-2">
               {finalStats.map(({ label, value, color }) => (
                 <div key={label} className="border border-white/10 bg-black/15 p-3">
                   <div className="mb-2 flex items-center justify-between gap-3">
@@ -143,83 +200,6 @@ export default function FinalResultsPanel({
           </section>
         )}
 
-        <section className="border border-white/10 bg-black/20">
-          <div className="grid md:min-h-[300px] md:grid-cols-[1fr_1.05fr]">
-            <div className="relative min-h-[200px] overflow-hidden sm:min-h-[250px]">
-              {futureImageUrl && (
-                <Image
-                  src={futureImageUrl}
-                  alt={`Future state: ${endingState}`}
-                  fill
-                  sizes="(max-width: 1280px) 100vw, 520px"
-                  className="object-cover"
-                />
-              )}
-            </div>
-            <div className="flex flex-col justify-between gap-4 p-4 sm:p-5">
-              <div>
-                <p className="mb-2 font-mono text-[9px] tracking-[0.25em] text-[#4ECDC4] uppercase">
-                  Future state
-                </p>
-                <h3 className="font-display text-3xl leading-none tracking-wide text-[#F0EAD6]">
-                  {(endingState ?? "unknown").toUpperCase()}
-                </h3>
-                <p className="mt-3 text-base leading-relaxed text-[#B8AC8D]">
-                  {playerProfile?.futureNotes?.[0] ??
-                    latestAttempt?.choiceText ??
-                    "Your future state is shaped by the choices recorded in this run."}
-                </p>
-              </div>
-              <div>
-                <p className="mb-3 font-mono text-[9px] tracking-[0.25em] text-[#6B6558] uppercase">
-                  Timeline relics
-                </p>
-                <div className="grid grid-cols-3 gap-2.5">
-                  {symbolicItems.map((item) => (
-                    <div
-                      key={`${endingState}-${item.name}`}
-                      className="min-w-0 border border-white/10 bg-black/20 p-2"
-                    >
-                      <div className="relative mx-auto mb-2 aspect-square w-full max-w-[76px]">
-                        <Image
-                          src={item.imageUrl}
-                          alt={`${item.name}: ${item.meaning}`}
-                          fill
-                          sizes="76px"
-                          className="object-contain"
-                        />
-                      </div>
-                      <p className="truncate text-center font-mono text-[8px] tracking-[0.12em] text-[#D4C9A8] uppercase">
-                        {item.name}
-                      </p>
-                      <p className="mt-1 text-center font-mono text-[7px] tracking-[0.1em] text-[#6B6558] uppercase">
-                        {item.meaning}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                <button
-                  type="button"
-                  onClick={onNewGame}
-                  className="bg-[#4ECDC4] px-5 py-3 font-display text-sm tracking-[0.12em] text-[#1A1814] transition-colors hover:bg-[#F7C948]"
-                >
-                  NEW TIMELINE
-                </button>
-                <Link
-                  href="/game"
-                  className="border border-white/10 px-5 py-3 text-center font-mono text-[9px] tracking-[0.2em] text-[#B8AC8D] uppercase transition-colors hover:border-[#4ECDC4]/40 hover:text-[#4ECDC4]"
-                >
-                  Continue current run
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <aside className="min-w-0 flex flex-col gap-3.5">
         <section className="border border-white/10 bg-white/[0.03] p-4">
           <p className="mb-2 font-mono text-[9px] tracking-[0.25em] text-[#4ECDC4] uppercase">
             Future notes
@@ -252,7 +232,23 @@ export default function FinalResultsPanel({
           )}
         </section>
 
-        <section className="min-h-[300px] border border-white/10 bg-white/[0.03] p-4 sm:min-h-[380px]">
+        <div className="flex flex-col gap-3">
+          <button
+            type="button"
+            onClick={onNewGame}
+            className="bg-[#4ECDC4] px-5 py-3 font-display text-sm tracking-[0.12em] text-[#1A1814] transition-colors hover:bg-[#F7C948]"
+          >
+            NEW TIMELINE
+          </button>
+          <Link
+            href="/game"
+            className="border border-white/10 px-5 py-3 text-center font-mono text-[9px] tracking-[0.2em] text-[#B8AC8D] uppercase transition-colors hover:border-[#4ECDC4]/40 hover:text-[#4ECDC4]"
+          >
+            Continue current run
+          </Link>
+        </div>
+
+        <section className="min-h-[300px] flex-1 border border-white/10 bg-white/[0.03] p-4 sm:min-h-[380px] xl:min-h-0">
           <div className="mb-4">
             <p className="font-mono text-[10px] tracking-[0.3em] text-[#6B6558] uppercase">
               Timeline record

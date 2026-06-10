@@ -4,6 +4,9 @@
 import { useRouter } from "next/navigation";
 import { useMusic } from "@/components/MusicProvider";
 
+const LOCAL_AVATAR_KEY = "abu_avatar_v1";
+const SESSION_RUN_ID_KEY = "abu_run_id_v1";
+
 export default function StartTransmissionButton() {
   const router = useRouter();
   const { playMusic } = useMusic();
@@ -11,7 +14,13 @@ export default function StartTransmissionButton() {
   function handleStart() {
     // The click is the user gesture that unlocks audio playback.
     playMusic("start");
-    router.push("/game");
+
+    if (typeof window !== "undefined") {
+      window.localStorage.removeItem(LOCAL_AVATAR_KEY);
+      window.sessionStorage.removeItem(SESSION_RUN_ID_KEY);
+    }
+
+    router.push("/game?selectAvatar=1");
   }
 
   return (

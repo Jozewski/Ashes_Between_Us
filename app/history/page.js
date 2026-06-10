@@ -33,6 +33,43 @@ function handleNewGame(router) {
   router.push("/");
 }
 
+function FinalArchiveLoading() {
+  return (
+    <section className="relative min-h-[calc(100vh-96px)] overflow-hidden bg-[#080604]">
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-55 animate-fragment-pulse"
+        style={{
+          backgroundImage: "url('/images/items/timeline-fragment.png')",
+        }}
+      />
+      <div className="absolute inset-0 bg-black/70" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_42%,rgba(78,205,196,0.22),transparent_62%)] animate-signal-pulse" />
+      <div className="relative z-10 flex min-h-[calc(100vh-96px)] flex-col items-center justify-center px-6 text-center">
+        <p className="mb-4 font-mono text-[10px] tracking-[0.34em] text-[#4ECDC4] uppercase">
+          Timeline fragment active
+        </p>
+        <h1 className="font-display leading-none tracking-wide text-[#F0EAD6]"
+          style={{ fontSize: "clamp(34px, 7vw, 72px)" }}>
+          Rendering final archive
+        </h1>
+        <p className="mt-5 max-w-xl text-base leading-relaxed text-[#B8AC8D]">
+          Your future self is reconstructing the story from the choices,
+          transmissions, and consequences recorded in this timeline.
+        </p>
+        <div className="mt-8 flex gap-2">
+          {[0, 1, 2].map((item) => (
+            <span
+              key={item}
+              className="h-2 w-2 rounded-full bg-[#4ECDC4] animate-pulse"
+              style={{ animationDelay: `${item * 180}ms` }}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function HistoryPage() {
   const router = useRouter();
   const { playMusic } = useMusic();
@@ -41,6 +78,11 @@ export default function HistoryPage() {
   const [source, setSource] = useState("api");
   const [loading, setLoading] = useState(true);
   const [playerProfile, setPlayerProfile] = useState(null);
+  const [endingStory, setEndingStory] = useState(null);
+  const [profileLoading, setProfileLoading] = useState(false);
+  const [endingStoryLoading, setEndingStoryLoading] = useState(false);
+  const [profileSettled, setProfileSettled] = useState(false);
+  const [endingStorySettled, setEndingStorySettled] = useState(false);
   const [loadError, setLoadError] = useState("");
 
   useEffect(() => {
@@ -90,10 +132,14 @@ export default function HistoryPage() {
     const latestAttempt = getLatestAttempt(attempts);
     if (!latestAttempt?.avatarId) {
       setPlayerProfile(null);
+      setProfileLoading(false);
+      setProfileSettled(true);
       return;
     }
 
     async function loadProfile() {
+      setProfileLoading(true);
+      setProfileSettled(false);
       const username =
         typeof window !== "undefined"
           ? window.sessionStorage.getItem(SESSION_USERNAME_KEY) ?? ""
@@ -121,10 +167,61 @@ export default function HistoryPage() {
         setPlayerProfile(data);
       } catch {
         setPlayerProfile(null);
+      } finally {
+        setProfileLoading(false);
+        setProfileSettled(true);
       }
     }
 
     loadProfile();
+  }, [attempts]);
+
+  useEffect(() => {
+    const latestAttempt = getLatestAttempt(attempts);
+    if (!latestAttempt?.avatarId) {
+      setEndingStory(null);
+      setEndingStoryLoading(false);
+      setEndingStorySettled(true);
+      return;
+    }
+
+    async function loadEndingStory() {
+      setEndingStoryLoading(true);
+      setEndingStorySettled(false);
+      const username =
+        typeof window !== "undefined"
+          ? window.sessionStorage.getItem(SESSION_USERNAME_KEY) ?? ""
+          : "";
+
+      try {
+        const res = await fetch("/api/ending-story", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            avatarId: latestAttempt.avatarId,
+            stats: {
+              hope: latestAttempt.hope,
+              trust: latestAttempt.trust,
+              chaos: latestAttempt.chaos,
+              humanity: latestAttempt.humanity,
+            },
+            username,
+            attempts,
+          }),
+        });
+
+        if (!res.ok) throw new Error("Ending story API unavailable");
+        const data = await res.json();
+        setEndingStory(data);
+      } catch {
+        setEndingStory(null);
+      } finally {
+        setEndingStoryLoading(false);
+        setEndingStorySettled(true);
+      }
+    }
+
+    loadEndingStory();
   }, [attempts]);
 
   const latestAttempt = getLatestAttempt(attempts);
@@ -169,6 +266,12 @@ export default function HistoryPage() {
         { label: "Humanity", value: latestAttempt.humanity, color: "#A8C4A2" },
       ]
     : null;
+  const finalArchiveLoading =
+    Boolean(latestAttempt) &&
+    (profileLoading ||
+      endingStoryLoading ||
+      !profileSettled ||
+      !endingStorySettled);
 
   return (
     <div
@@ -212,30 +315,35 @@ export default function HistoryPage() {
         </div>
       </header>
 
-      <div
-        className="mx-auto w-full max-w-[1500px] py-6 sm:py-10"
-        style={{
-          paddingLeft: "clamp(18px, 5vw, 96px)",
-          paddingRight: "clamp(18px, 5vw, 96px)",
-          paddingBottom: "max(40px, env(safe-area-inset-bottom))",
-        }}
-      >
-        <FinalResultsPanel
-          attempts={attempts}
-          loading={loading}
-          source={source}
-          loadError={loadError}
-          playerProfile={playerProfile}
-          latestAvatar={latestAvatar}
-          latestAttempt={latestAttempt}
-          endingNarrative={endingNarrative}
-          endingState={endingState}
-          endingScore={endingScore}
-          finalStats={finalStats}
-          futureImageUrl={futureImageUrl}
-          onNewGame={() => handleNewGame(router)}
-        />
-      </div>
+      {finalArchiveLoading ? (
+        <FinalArchiveLoading />
+      ) : (
+        <div
+          className="mx-auto w-full max-w-[1500px] py-6 sm:py-10"
+          style={{
+            paddingLeft: "clamp(18px, 5vw, 96px)",
+            paddingRight: "clamp(18px, 5vw, 96px)",
+            paddingBottom: "max(40px, env(safe-area-inset-bottom))",
+          }}
+        >
+          <FinalResultsPanel
+            attempts={attempts}
+            loading={loading}
+            source={source}
+            loadError={loadError}
+            playerProfile={playerProfile}
+            latestAvatar={latestAvatar}
+            latestAttempt={latestAttempt}
+            endingNarrative={endingNarrative}
+            endingStory={endingStory}
+            endingState={endingState}
+            endingScore={endingScore}
+            finalStats={finalStats}
+            futureImageUrl={futureImageUrl}
+            onNewGame={() => handleNewGame(router)}
+          />
+        </div>
+      )}
     </div>
   );
 }
